@@ -1,0 +1,1 @@
+tools/memguard.sh 6 harness/build/boot_overflow_probe --log-ring 12 --mode     2.94s user 0.21s system 72% cpu 4.314 total

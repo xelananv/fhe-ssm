@@ -1,0 +1,10 @@
+BUILD_IDENTITY 2026-09-19T13:23:04Z
+binary /root/fhe-main-demo/build-demo/gpu_real_model
+binary_sha256 b52f182f02ff8da792982e9b5a22cb6aba56aafb55e3920be725201a6af9ee22
+binary_x /root/fhe-main-demo/build-demo/gpu_real_model_x
+binary_x_sha256 c503feeb1fee329c9cceba10c6751d92bb7c9cf4dbb536c74c3e7494e84387d7
+fideslib_commit fa972864ae8d624e77d3ac6ad31a1d40ef1c4d0c
+fideslib_a_gnu_lto_sections 0
+nvcc Build cuda_12.9.r12.9/compiler.36037853_0
+cuda_arch 120
+repo_commit 73f57fcab936368418739c598c4a1f0a0d36dacf dirty=1

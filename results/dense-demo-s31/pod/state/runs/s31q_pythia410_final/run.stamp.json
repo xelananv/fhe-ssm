@@ -1,0 +1,61 @@
+{
+  "cmdline": [
+    "/usr/bin/env",
+    "bash",
+    "-c",
+    "cd /root/src && /root/venv/bin/python ml-eval/anchor_eval.py --model EleutherAI/pythia-410m --axes wt103,lambada --device cuda:0 --out /root/campaign/state/runs/s31q_pythia410_final/anchor.jsonl"
+  ],
+  "config_campaign": "dense-demo-s31-2xbw",
+  "cwd": "{RUN_DIR}",
+  "git_commit": "1efcc0830d76a62c145610752dc45203155c3845",
+  "git_dirty": true,
+  "git_state": "ok",
+  "gpu_indices": [
+    0
+  ],
+  "host": "O-2066889",
+  "manifest": {
+    "backs_up": null,
+    "block": "S31Q",
+    "card": null,
+    "check_cmd": null,
+    "cmd": [
+      "/usr/bin/env",
+      "bash",
+      "-c",
+      "cd /root/src && /root/venv/bin/python ml-eval/anchor_eval.py --model EleutherAI/pythia-410m --axes wt103,lambada --device cuda:0 --out {RUN_DIR}/anchor.jsonl"
+    ],
+    "cwd": "{RUN_DIR}",
+    "deferred_reason": null,
+    "depends_on": [],
+    "env": {
+      "HF_HOME": "/root/hf_cache"
+    },
+    "exclusive": false,
+    "expected_minutes": 40,
+    "fail_modes": [],
+    "id": "s31q_pythia410_final",
+    "kill_after_minutes": 180,
+    "liveness": {
+      "grace_min": 10,
+      "interval_min": 10,
+      "path": "{RUN_DIR}/console.log",
+      "type": "file_growth"
+    },
+    "notes": "Non-exclusive: quality numbers, not clocks.",
+    "notify_on_fail": 1,
+    "pass_criteria": "anchorEvalDone true; wt103 tokensScored ~ full split; lambada items ~5153. HARNESS VALIDATION: lambada acc near published 51.4 / ppl 10.84 or the implementation is wrong and every band is void.",
+    "priority": 905,
+    "question": "S3.0 quality plan: anchor evaluation of EleutherAI/pythia-410m@final on WT103-full + LAMBADA-full, committed BEFORE Phase B launches (bands set on numbers, not guesses).",
+    "requires": {
+      "gpus": 1
+    },
+    "requires_signoff": null,
+    "run_kind": "measure",
+    "script_sha256": {}
+  },
+  "question": "S3.0 quality plan: anchor evaluation of EleutherAI/pythia-410m@final on WT103-full + LAMBADA-full, committed BEFORE Phase B launches (bands set on numbers, not guesses).",
+  "run_id": "s31q_pythia410_final",
+  "script_sha256": {},
+  "utc": "2026-08-28T17:22:32Z"
+}

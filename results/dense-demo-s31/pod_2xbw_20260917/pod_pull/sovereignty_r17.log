@@ -1,0 +1,79 @@
+=== SOVEREIGNTY 2026-09-18T01:12:48Z keys=/root/mac_keys_r17 ===
+LOADSTATE 2026-09-18T01:12:48Z uptime: 01:12:48 up 26 days, 21:42,  0 user,  load average: 9.65, 7.81, 6.56
+LOADSTATE gpu compute apps: 1689393, 570 MiB;1689393, 570 MiB;
+LOADSTATE busy marker: 50_sovereignty.sh pid=1563229 since=2026-09-18T01:12:48Z
+total 49633288
+drwxr-xr-x 2 root root        4096 Sep 18 01:02 .
+drwx------ 1 root root        4096 Sep 17 22:48 ..
+-rw-r--r-- 1  501 staff       3508 Sep 17 23:17 MANIFEST.sha256
+-rw-r--r-- 1  501 staff       2196 Sep 17 23:17 contract_r17.json
+-rw-r--r-- 1  501 staff       2833 Sep 17 23:17 cryptocontext.bin
+-rw-r--r-- 1  501 staff        361 Sep 17 23:17 cryptocontext.bin.dev
+-rw-r--r-- 1  501 staff  352338971 Sep  4 10:35 evalmult.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 22:51 evalrot.part000.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 22:55 evalrot.part001.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 22:58 evalrot.part002.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:02 evalrot.part003.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:05 evalrot.part004.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:09 evalrot.part005.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:12 evalrot.part006.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:16 evalrot.part007.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:21 evalrot.part008.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:25 evalrot.part009.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:29 evalrot.part010.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:32 evalrot.part011.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:35 evalrot.part012.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:39 evalrot.part013.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:42 evalrot.part014.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:45 evalrot.part015.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:49 evalrot.part016.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:53 evalrot.part017.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:56 evalrot.part018.bin
+-rw-r--r-- 1 root root  1409337439 Sep 17 23:59 evalrot.part019.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:02 evalrot.part020.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:06 evalrot.part021.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:10 evalrot.part022.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:13 evalrot.part023.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:17 evalrot.part024.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:21 evalrot.part025.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:25 evalrot.part026.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:30 evalrot.part027.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:36 evalrot.part028.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:40 evalrot.part029.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:44 evalrot.part030.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:47 evalrot.part031.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:51 evalrot.part032.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:55 evalrot.part033.bin
+-rw-r--r-- 1 root root  1409337439 Sep 18 00:59 evalrot.part034.bin
+-rw-r--r-- 1 root root  1057004619 Sep 18 01:02 evalrot.part035.bin
+-rw-r--r-- 1  501 staff   88086109 Sep  4 10:35 public.key
+CMD: /root/fhe-main-demo/build-demo/gpu_real_model --tag pbd430a --bundle-dir /root/src/ml-eval/artifacts --device 0 --log-ring 17 --secure --level-budget 3 3 --ms-norm 5.5 --enc-threads 24 --boot-floor 3 --matvec-margin 4 --extra-depth 12 --canonical-carry --pack-tokens 1 --compressed-store --devices 0,1 --store-multi-gpu --keys-dir /root/mac_keys_r17 --keys-load --selftest
+FIDESLIB_USE_MEMCPY_PEER=0, set to: 0
+{"schedLevers":true,"schedule":"stock","pfEntry":"loop","shareBabies":false,"newtonDepth2":false,"poolLevels":2,"stockPath":true}
+{"keysLoad":true,"evalRotFiles":36,"autoKeysInMap":143}
+{"vramTrace":"keysHost","dev":0,"usedGB":24.0159,"freeGB":70.9543,"totalGB":94.9702,"poolOk":true,"poolReservedGB":0,"poolReservedHighGB":0,"poolUsedGB":0,"poolUsedHighGB":0,"poolSlackGB":0,"poolTransientGB":0}
+{"warn":"vramTrace: default pool reserves < 0.5 GB while the card shows 24.0159 GB used -- the library is not allocating from the device default pool; the pool* fields describe only the harness's own pool use"}
+{"vramTrace":"keysHost","dev":1,"usedGB":22.9979,"freeGB":71.9724,"totalGB":94.9702,"poolOk":true,"poolReservedGB":0,"poolReservedHighGB":0,"poolUsedGB":0,"poolUsedHighGB":0,"poolSlackGB":0,"poolTransientGB":0}
+GPU 0: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU 1: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU P2P? 1
+Adding bootstrap precomputation to GPU for 65536 slots.
+Plaintexts loaded: 762 ~ 35814MB
+Rotation keys loaded: 143 ~ 48048MB
+{"vramTrace":"loadContext","dev":0,"usedGB":85.1584,"freeGB":9.81177,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"vramTrace":"loadContext","dev":1,"usedGB":84.1404,"freeGB":10.8298,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"harness":"gpu_real_model","arch":"native","tag":"pbd430a","secure":true,"ringDim":131072,"slots":65536,"d":1024,"Dpad":1024,"REP":64,"L":24,"dff":4096,"BS":32,"haveBundle":true,"ompMaxThreads":24,"scaleBits":59,"normEpsOn":true,"setupMs":67361}
+{"selftest":"encdec","throw":"bad any_cast"}
+{"selftest":"rotate","throw":"bad any_cast"}
+{"selftest":"matvec","throw":"bad any_cast"}
+{"selftest":"rmsnorm","throw":"bad any_cast"}
+{"selftest":"rmsnormSeeded","throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":1,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":5,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":22,"throw":"bad any_cast"}
+{"selftest":"bootstrap","throw":"bad any_cast"}
+{"selftestSummary":true,"hardFail":3,"softFail":6,"peakVramGB":91.4319}
+RC=3 (4 is the designed rmsnorm soft-fail, T6; never the verdict)
+=== VERDICT: PASS -- Mac eval material loads and drives the CUDA primitives (no secret on the box) ===

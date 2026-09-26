@@ -1,0 +1,85 @@
+diff --git a/src/CKKS/Bootstrap.cu b/src/CKKS/Bootstrap.cu
+index df16c1c..eccbba6 100644
+--- a/src/CKKS/Bootstrap.cu
++++ b/src/CKKS/Bootstrap.cu
+@@ -21,6 +21,22 @@ using namespace FIDESlib::CKKS;
+ 
+ constexpr bool PRINT = false;
+ 
++namespace FIDESlib::CKKS {
++BootPreRaiseHook g_bootPreRaiseHook; // TEST INSTRUMENT (Bootstrap.cuh): empty by default
++} // namespace FIDESlib::CKKS
++
++/** g_bootPreRaiseHook helper: blocking host copy of every limb of a level-0 polynomial, i.e. of limb 0 alone. */
++static void bootPreRaiseFetch(RNSPoly& poly, std::vector<std::vector<uint64_t>>& out) {
++	int prevDevice = 0;
++	cudaGetDevice(&prevDevice);
++	for (auto& part : poly.GPU) {
++		cudaSetDevice(part.device);
++		cudaDeviceSynchronize();
++	}
++	poly.store(out); // RNSPoly::store: level + 1 limbs, each on its own device, stream-synchronized
++	cudaSetDevice(prevDevice);
++}
++
+ void FIDESlib::CKKS::BootstrapCPUraise(Ciphertext& ctxt,
+   const int slots,
+   std::shared_ptr<lbcrypto::CryptoContextImpl<lbcrypto::DCRTPolyImpl<bigintdyn::mubintvec<bigintdyn::ubint<expdtype>>>>>& CPUcc,
+@@ -616,6 +632,9 @@ void FIDESlib::CKKS::ModRaise(Ciphertext& ctxt, const int slots, const uint32_t
+ 	}
+ 
+ 	ctxt.c0.INTT(cc.batch, true);
++	std::vector<std::vector<uint64_t>> hookC0; // g_bootPreRaiseHook only: limb 0 of c0 as broadcastLimb0() will read it
++	if (g_bootPreRaiseHook)
++		bootPreRaiseFetch(ctxt.c0, hookC0);
+ 
+ 	if constexpr (PRINT) {
+ 		CudaCheckErrorMod;
+@@ -671,6 +690,12 @@ void FIDESlib::CKKS::ModRaise(Ciphertext& ctxt, const int slots, const uint32_t
+ 		std::cout << std::endl;
+ 	}
+ 	ctxt.c1.INTT(cc.batch, true);
++	if (g_bootPreRaiseHook) {
++		std::vector<std::vector<uint64_t>> hookC1;
++		bootPreRaiseFetch(ctxt.c1, hookC1);
++		if (hookC0.size() == 1 && hookC1.size() == 1 && hookC0[0].size() == hookC1[0].size())
++			g_bootPreRaiseHook(hookC0[0].data(), hookC1[0].data(), hookC0[0].size(), cc.prime[0].p, false);
++	}
+ 	if constexpr (PRINT) {
+ 		std::cout << "Adjustment c1 ";
+ 		for (auto& j : ctxt.c1.GPU) {
+diff --git a/src/CKKS/Bootstrap.cuh b/src/CKKS/Bootstrap.cuh
+index 504e8c2..ef7d403 100644
+--- a/src/CKKS/Bootstrap.cuh
++++ b/src/CKKS/Bootstrap.cuh
+@@ -7,6 +7,9 @@
+ 
+ #include "forwardDefs.cuh"
+ #include "pke/openfhe.h"
++#include <cstddef>
++#include <cstdint>
++#include <functional>
+ 
+ namespace FIDESlib::CKKS {
+ void BootstrapCPUraise(Ciphertext& ctxt,
+@@ -18,6 +21,20 @@ void BootstrapCPUraise(Ciphertext& ctxt,
+ void Bootstrap(Ciphertext& ctxt, const int slots, const bool prescaled = false);
+ double GetPreScaleFactor(Context& cc, int slots);
+ void ModRaise(Ciphertext& ctxt, const int slots, const uint32_t correction, const bool prescaled = false, bool sparse_encaps = false);
++
++/**
++ * TEST INSTRUMENT, empty by default (then ModRaise does no extra work and behaves exactly as before).
++ * When a callback is set, ModRaise hands it a host copy of limb 0 (the residues modulo q0 = prime[0]) of c0 and c1,
++ * each taken right after its INTT, i.e. the coefficient-representation array that broadcastLimb0() lifts to the
++ * other limbs: after the scale adjustment / rescale / dropToLevel(0) (and the sparse-encapsulation key switch, if
++ * that mode is on), before grow(). evalRepresentation is false for that array (natural coefficient order, values
++ * in [0, q0)). The call is synchronous on the calling thread and every device is synchronized first; the pointers
++ * are valid only during the call. A caller that holds a TEST secret s can compute the mod-raise overflow
++ * I = round(([c0]_q0 + [c1]_q0 * s) / q0) with [.]_q0 the centered residue (v > q0/2 -> v - q0, as SwitchModulus).
++ */
++#define FIDESLIB_HAS_BOOT_PRERAISE_HOOK 1
++using BootPreRaiseHook = std::function<void(const uint64_t* c0, const uint64_t* c1, size_t N, uint64_t q0, bool evalRepresentation)>;
++extern BootPreRaiseHook g_bootPreRaiseHook;
+ } // namespace FIDESlib::CKKS
+ 
+ #endif // GPUCKKS_BOOTSTRAP_CUH

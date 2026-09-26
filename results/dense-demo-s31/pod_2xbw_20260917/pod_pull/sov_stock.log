@@ -1,0 +1,35 @@
+01:03:35Z stock set verified on the pod
+01:03:35Z === sovereignty STOCK ===
+[2026-09-18T01:03:35Z] evalrot parts: 36 files, 50383814984 bytes total
+[2026-09-18T01:03:58Z] MANIFEST.sha256: all files verified
+[2026-09-18T01:03:58Z] waiting for /root/demo/.busy to clear (held: 60_fidelity_gate.sh pid=1396332 since=2026-09-18T00:52:20Z)
+selftest lines:
+{"selftest":"encdec","throw":"bad any_cast"}
+{"selftest":"rotate","throw":"bad any_cast"}
+{"selftest":"matvec","throw":"bad any_cast"}
+{"selftest":"rmsnorm","throw":"bad any_cast"}
+{"selftest":"rmsnormSeeded","throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":1,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":5,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":22,"throw":"bad any_cast"}
+{"selftest":"bootstrap","throw":"bad any_cast"}
+summary: {"selftestSummary":true,"hardFail":3,"softFail":6,"peakVramGB":91.4319}  (hardFail counts bad any_cast sentinels when no secret is loaded -- expected)
+=== VERDICT: PASS -- Mac eval material loads and drives the CUDA primitives (no secret on the box) ===
+01:14:05Z sovereignty stock rc=0
+01:14:05Z === selftest stock keys --no-norm-eps (V1 control: rmsnormSeeded must FAIL ~0.028) ===
+[2026-09-18T01:14:05Z] WARNING: 2 GPU compute process(es) already running -- a timing taken now is CONTENDED (MEASUREMENTS.md 1d, 19.7x swing). Recorded as such.
+selftest lines:
+{"selftest":"encdec","throw":"bad any_cast"}
+{"selftest":"rotate","throw":"bad any_cast"}
+{"selftest":"matvec","throw":"bad any_cast"}
+{"selftest":"rmsnorm","throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":1,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":5,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":22,"throw":"bad any_cast"}
+{"selftest":"bootstrap","throw":"bad any_cast"}
+{"selftestSummary":true,"hardFail":3,"softFail":5,"peakVramGB":92.4358}
+RC=3 (recorded, not trusted: F74)
+WALL_S=55
+=== VERDICT: RAN (selftest_stock_noeps) -- judge the fields against POD_PLAN_S37.md section 5 ===
+01:15:00Z selftest noeps rc=0
+01:15:00Z SOV_STOCK_DONE

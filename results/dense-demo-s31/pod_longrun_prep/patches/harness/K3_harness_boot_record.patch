@@ -1,0 +1,337 @@
+diff --git a/hpc_gpu_port/experimental/gpu_real_model_x.cu b/hpc_gpu_port/experimental/gpu_real_model_x.cu
+index d936a61..85294c6 100644
+--- a/hpc_gpu_port/experimental/gpu_real_model_x.cu
++++ b/hpc_gpu_port/experimental/gpu_real_model_x.cu
+@@ -130,6 +130,10 @@
+ #include "CKKS/Context.cuh"                           // T1b: FIDESlib::CKKS::Context (compressed store)
+ #include "CKKS/Plaintext.cuh"                         // T1b: device Plaintext (public c0)
+ #include "CKKS/Limb.cuh"                              // T1b: Limb<T>.v device buffers
++#include "CKKS/Bootstrap.cuh"                         // K3 (2026-09-18): --boot-record. A FIDESlib carrying
++                                                      // K2_boot_preraise_hook.patch defines FIDESLIB_HAS_BOOT_PRERAISE_HOOK
++                                                      // and g_bootPreRaiseHook there; on a stock FIDESlib the header exists
++                                                      // without them and --boot-record is refused at parse time.
+ #include <any>
+ #include <cstdlib>
+ #include <memory>
+@@ -195,6 +199,108 @@ static double msSince(Clock::time_point t0) {
+     std::cerr << "{\"cudaError\":\"" << cudaGetErrorString(e_) << "\",\"at\":\"" \
+               << __FILE__ << ":" << __LINE__ << "\"}\n"; std::exit(1);} } while(0)
+ 
++// ---- K3 (2026-09-18): the arithmetic of --boot-record (TEST-KEY INSTRUMENT; nothing here runs without the flag).
++// For the one-limb ciphertext (c0, c1) that FIDESlib's ModRaise is about to lift, the overflow polynomial is
++//   I = round(([c0] + [c1]*s) / q0)   over Z[X]/(X^N + 1),
++// [.] the centered residue mod q0 (v > q0>>1 -> v - q0: the lift FIDESlib's SwitchModulus performs, Rescale.cuh:44-64)
++// and s the ternary secret. The negacyclic product runs in double precision through a self-contained radix-2 complex
++// FFT with the twist zeta^k, zeta = exp(i*pi/N): the operands are c1/q0 in [-1/2, 1/2] and s in {-1, 0, 1}, so the
++// result is I + m/q0 with an absolute error ~1e-13 at N = 2^17 (a Python transliteration of exactly these loops was
++// checked against exact integers: results/dense-demo-s31/pod_longrun_prep/reports/k3_recorder_arithmetic_check.py).
++// maxFrac = max_j |x_j - round(x_j)| is the instrument's self-check: it is the message m/q0 (small, a few 1e-2 at most)
++// when the key, the modulus and the coefficient order are right, and ~0.5 when any of them is wrong.
++struct FheSsmNegacyclic {
++    size_t N = 0;
++    std::vector<double> twRe, twIm;   // zeta^k, k < N
++    std::vector<double> wRe, wIm;     // exp(-2*pi*i*k/N), k < N/2
++    std::vector<uint32_t> rev;        // bit-reversal permutation
++    std::vector<double> sRe, sIm;     // FFT(twist(s)), set once by setSecret
++    std::vector<double> aRe, aIm;     // scratch
++    struct Stats { long long maxI = 0, over512 = 0, nonCanon = 0; double rmsI = 0.0, maxFrac = 0.0; };
++    bool init(size_t n) {
++        if (n < 2 || (n & (n - 1)) != 0) return false;
++        N = n;
++        int logN = 0;
++        while (((size_t)1 << logN) < n) logN++;
++        const double kPi = 3.14159265358979323846;
++        twRe.resize(n); twIm.resize(n); wRe.resize(n / 2); wIm.resize(n / 2); rev.assign(n, 0u);
++        for (size_t k = 0; k < n; k++) {
++            const double a = kPi * (double)k / (double)n;
++            twRe[k] = std::cos(a); twIm[k] = std::sin(a);
++        }
++        for (size_t k = 0; k < n / 2; k++) {
++            const double a = 2.0 * kPi * (double)k / (double)n;
++            wRe[k] = std::cos(a); wIm[k] = -std::sin(a);
++        }
++        for (size_t i = 1; i < n; i++)
++            rev[i] = (rev[i >> 1] >> 1) | (uint32_t)((i & 1) << (logN - 1));
++        aRe.assign(n, 0.0); aIm.assign(n, 0.0);
++        return true;
++    }
++    void fft(std::vector<double>& re, std::vector<double>& im, bool inverse) const {
++        const size_t n = N;
++        const double sgn = inverse ? -1.0 : 1.0;
++        for (size_t i = 0; i < n; i++) {
++            const size_t j = rev[i];
++            if (i < j) { std::swap(re[i], re[j]); std::swap(im[i], im[j]); }
++        }
++        for (size_t len = 2; len <= n; len <<= 1) {
++            const size_t hl = len >> 1, step = n / len;
++            for (size_t i = 0; i < n; i += len)
++                for (size_t j = 0; j < hl; j++) {
++                    const double wr = wRe[j * step], wi = sgn * wIm[j * step];
++                    const size_t a = i + j, b = a + hl;
++                    const double xr = re[b] * wr - im[b] * wi, xi = re[b] * wi + im[b] * wr;
++                    re[b] = re[a] - xr; im[b] = im[a] - xi;
++                    re[a] += xr; im[a] += xi;
++                }
++        }
++        if (inverse) {
++            const double inv = 1.0 / (double)n;
++            for (size_t i = 0; i < n; i++) { re[i] *= inv; im[i] *= inv; }
++        }
++    }
++    void setSecret(const std::vector<int8_t>& s) {
++        sRe.assign(N, 0.0); sIm.assign(N, 0.0);
++        for (size_t k = 0; k < N && k < s.size(); k++) { sRe[k] = (double)s[k] * twRe[k]; sIm[k] = (double)s[k] * twIm[k]; }
++        fft(sRe, sIm, false);
++    }
++    static double centeredFrac(uint64_t v, uint64_t q0, uint64_t halfQ, double invQ) {
++        if (v >= q0) v %= q0;
++        return v > halfQ ? -(double)(q0 - v) * invQ : (double)v * invQ;
++    }
++    // c0, c1: N residues mod q0 in COEFFICIENT representation, natural order.
++    Stats overflow(const uint64_t* c0, const uint64_t* c1, uint64_t q0) {
++        Stats st;
++        const uint64_t halfQ = q0 >> 1;
++        const double invQ = 1.0 / (double)q0;
++        for (size_t k = 0; k < N; k++) {
++            if (c0[k] >= q0 || c1[k] >= q0) st.nonCanon++;   // the device lift (SwitchModulus) assumes words in [0, q0): expect 0
++            const double a = centeredFrac(c1[k], q0, halfQ, invQ);
++            aRe[k] = a * twRe[k]; aIm[k] = a * twIm[k];
++        }
++        fft(aRe, aIm, false);
++        for (size_t k = 0; k < N; k++) {
++            const double pr = aRe[k] * sRe[k] - aIm[k] * sIm[k], pm = aRe[k] * sIm[k] + aIm[k] * sRe[k];
++            aRe[k] = pr; aIm[k] = pm;
++        }
++        fft(aRe, aIm, true);
++        double sumSq = 0.0;
++        for (size_t k = 0; k < N; k++) {
++            const double x = centeredFrac(c0[k], q0, halfQ, invQ) + (aRe[k] * twRe[k] + aIm[k] * twIm[k]);
++            const double r = std::nearbyint(x);
++            const double f = std::fabs(x - r);
++            const long long ai = (long long)std::fabs(r);
++            if (ai > st.maxI) st.maxI = ai;
++            if (ai > 512) st.over512++;
++            if (f > st.maxFrac) st.maxFrac = f;
++            sumSq += r * r;
++        }
++        st.rmsI = std::sqrt(sumSq / (double)N);
++        return st;
++    }
++};
++
+ static size_t g_total_vram = 0, g_min_free = SIZE_MAX;
+ // ---- T0.1 (S3.1, 2026-08-25): per-PROCESS VRAM peak via NVML (--proc-vram).
+ // peakVramGB() below is CARD-WIDE (cudaMemGetInfo free-memory drawdown): the
+@@ -944,6 +1050,18 @@ int main(int argc, char** argv) {
+     // ptScalarAdd, ptScalarDeg2Fallback, ptScalarClasses, ptScalarClassesRejected, ptScalarRejectedOps;
+     // one ptCacheTick line per pass. The store stamp is unchanged (no lever moves the level trajectory).
+     bool ptCache = false, ptScalar = false, ptCacheVerify = false; double ptCacheMaxGb = 16.0;
++    // ==== K3 (2026-09-18): --boot-record, the bootstrap flight recorder. TEST-KEY INSTRUMENT, default OFF ====
++    // --boot-record --boot-record-secret PATH   for EVERY bootstrap, FIDESlib's ModRaise (with K2_boot_preraise_hook.patch)
++    //                       hands the host limb 0 of c0 and c1 exactly as broadcastLimb0() is about to lift them; the
++    //                       callback computes I = round(([c0] + [c1]*s)/q0) with the secret at PATH (an OpenFHE BINARY
++    //                       secret.key of THIS key set; the word `self` takes the secret the process already holds,
++    //                       for smoke tests) and prints one {"bootRecord":true,...} line per bootstrap; the
++    //                       serve line gains reqBootRecN / reqBootMaxI / reqBootOver512 / reqBootOver530 /
++    //                       reqBootOver537 / reqBootOver768 / reqBootRecMs. The process then HOLDS A SECRET KEY: pod
++    //                       test keys only, never a client's key set, never a recorded session. It synchronizes every
++    //                       device once per bootstrap, so a run with the flag is not a timing cell. With the flag off
++    //                       not one statement of it runs and every output line is HEAD's.
++    bool bootRecord = false; std::string bootRecordSecretPath;
+     for (int i = 1; i < argc; i++) {
+         std::string s = argv[i];
+         auto nx = [&] { return std::string(argv[++i]); };
+@@ -1096,6 +1214,9 @@ int main(int argc, char** argv) {
+         else if (s == "--vram-trace") vramTrace = true;
+         else if (s == "--store-multi-gpu") storeMultiGpu = true;
+         else if (s == "--store-peer-writes") storePeerWrites = true;
++        // ==== K3 boot recorder ====
++        else if (s == "--boot-record") bootRecord = true;
++        else if (s == "--boot-record-secret") bootRecordSecretPath = nx();
+         else {
+             // 2026-09-02: an unknown flag used to be IGNORED -- a typo such as
+             // --store-fle silently ran the un-flagged configuration (F62 class).
+@@ -1247,6 +1368,19 @@ int main(int argc, char** argv) {
+ #endif
+     if (replyLimbs > 0 || replyConjAdd)
+         std::cout << "{\"x5Levers\":true,\"replyLimbs\":" << replyLimbs << ",\"replyConjAdd\":" << (replyConjAdd ? "true" : "false") << "}" << std::endl;
++    // ==== K3 boot recorder: guards (refuse loudly, never degrade) ====
++    if (bootRecord != !bootRecordSecretPath.empty()) {
++        std::cerr << "{\"fatal\":\"--boot-record and --boot-record-secret PATH go together (PATH = the OpenFHE BINARY secret.key of the pod TEST key set)\"}\n"; return 2;
++    }
++    if (bootRecord && clientCrypto) {
++        std::cerr << "{\"fatal\":\"--boot-record instruments the GPU bootstrap; a client-crypto process (--enc-in/--dec-out) has no device\"}\n"; return 2;
++    }
++#if !defined(FHE_SSM_DEMO_SER) || !defined(FIDESLIB_HAS_BOOT_PRERAISE_HOOK)
++    if (bootRecord) {
++        std::cerr << "{\"fatal\":\"--boot-record needs a -DFHE_SSM_DEMO_SER build against a FIDESlib that carries K2_boot_preraise_hook.patch "
++                     "(CKKS/Bootstrap.cuh then defines FIDESLIB_HAS_BOOT_PRERAISE_HOOK); this binary has no hook to register\"}\n"; return 2;
++    }
++#endif
+     if (!rsqrtSidecarPath.empty()) {
+         if (rsqrtItersOverride >= 0) { std::cerr << "{\"fatal\":\"--rsqrt-iters-sidecar and --rsqrt-iters are mutually exclusive\"}\n"; return 2; }
+         std::ifstream sf(rsqrtSidecarPath);
+@@ -1990,6 +2124,117 @@ int main(int argc, char** argv) {
+     // so they live outside the DEMO_SER block (the plain build failed: "canonLevel is undefined", build_fideslib.log:922).
+     long long canonBoots = 0; uint32_t canonMaxGap = 0;   // --canonical-carry: boots spent and the largest align gap
+     int canonLevel = -1;                                  // the post-bootstrap level, learned from the first canonical boot
++    // ==== K3 (2026-09-18): --boot-record state. Everything the FIDESlib hook's lambda touches lives HERE, at main scope:
++    // the library keeps the (by-reference) callback for the rest of the process. All zero and unread without the flag.
++    long long brN = 0, brOver512 = 0, brOver530 = 0, brOver537 = 0, brOver768 = 0;   // cumulative: recorded boots / boots whose max|I| > B
++    long long brReqMaxI = 0, brRunMaxI = 0;                                          // max|I| of the current request / of the run
++    double brMs = 0.0, brRunMaxFrac = 0.0;                                           // host time inside the callback; worst self-check
++    long long brN0 = 0, brOver512_0 = 0, brOver530_0 = 0, brOver537_0 = 0, brOver768_0 = 0; double brMs0 = 0.0;   // per-request snapshots
++    long long brSkipped = 0;                                                         // hook calls that could not be evaluated (N or q0 mismatch, exception)
++#if defined(FHE_SSM_DEMO_SER) && defined(FIDESLIB_HAS_BOOT_PRERAISE_HOOK)
++    FheSsmNegacyclic brFft;
++    lbcrypto::NativePoly brTmpl;       // tower-0 parameter carrier (q0, root of unity), only for an EVALUATION-representation hand-over
++    uint64_t brQ0 = 0;
++    if (bootRecord) {
++        lbcrypto::PrivateKey<lbcrypto::DCRTPoly> brSk;
++        if (bootRecordSecretPath == "self") {   // the secret this process already holds (fresh KeyGen, or --keys-load
++                                                 // --allow-secret): for a smoke test of the instrument without key files
++            try {
++                if (keys.secretKey) brSk = std::any_cast<const lbcrypto::PrivateKey<lbcrypto::DCRTPoly>&>(keys.secretKey->pimpl);
++            } catch (const std::bad_any_cast&) {}
++            if (!brSk) { std::cerr << "{\"fatal\":\"--boot-record-secret self: this process holds no secret key\"}\n"; return 2; }
++        } else {                                 // the loader --allow-secret uses (api/Serialize.cpp), then its lbcrypto key
++            fideslib::PrivateKey<fideslib::DCRTPoly> brFsk;
++            if (fideslib::Serial::DeserializeFromFile(bootRecordSecretPath, brFsk, fideslib::SerType::BINARY) && brFsk) {
++                try { brSk = std::any_cast<const lbcrypto::PrivateKey<lbcrypto::DCRTPoly>&>(brFsk->pimpl); }
++                catch (const std::bad_any_cast&) {}
++            }
++            if (!brSk) {
++                std::cerr << "{\"fatal\":\"--boot-record-secret: not a deserializable OpenFHE BINARY secret key\",\"path\":\""
++                          << bootRecordSecretPath << "\"}\n"; return 2;
++            }
++        }
++        try {   // the secret must belong to the key set this process evaluates under
++            if (keys.publicKey) {
++                const auto& brPk = std::any_cast<const lbcrypto::PublicKey<lbcrypto::DCRTPoly>&>(keys.publicKey->pimpl);
++                if (brPk && brPk->GetKeyTag() != brSk->GetKeyTag()) {
++                    std::cerr << "{\"fatal\":\"--boot-record-secret: key tag differs from the loaded public key (wrong key set)\"}\n"; return 2;
++                }
++            }
++        } catch (const std::bad_any_cast&) {
++            std::cerr << "{\"warn\":\"--boot-record: public key not readable, key-tag check skipped; trust maxFrac in the bootRecord lines\"}" << std::endl;
++        }
++        const auto& brEl = brSk->GetPrivateElement();
++        if (brEl.GetNumOfElements() < 1) { std::cerr << "{\"fatal\":\"--boot-record-secret: empty secret element\"}\n"; return 2; }
++        brTmpl = brEl.GetElementAtIndex(0);
++        brTmpl.SetFormat(Format::EVALUATION);
++        lbcrypto::NativePoly brS = brTmpl;
++        brS.SetFormat(Format::COEFFICIENT);
++        brTmpl.SetValuesToZero();          // the carrier keeps the tower-0 parameters only, not a copy of the secret
++        brQ0 = brS.GetModulus().ConvertToInt<uint64_t>();
++        const size_t brRing = (size_t)brS.GetLength();
++        std::vector<int8_t> brTern(brRing, 0);
++        size_t brHamming = 0;
++        for (size_t i = 0; i < brRing; i++) {
++            const uint64_t v = brS[(uint32_t)i].ConvertToInt<uint64_t>();
++            if (v == 0) continue;
++            if (v == 1) { brTern[i] = 1; brHamming++; }
++            else if (v == brQ0 - 1) { brTern[i] = -1; brHamming++; }
++            else { std::cerr << "{\"fatal\":\"--boot-record-secret: tower-0 secret is not ternary (coefficient " << i << ")\"}\n"; return 2; }
++        }
++        if (brRing != (size_t)cc->GetRingDimension() || !brFft.init(brRing)) {
++            std::cerr << "{\"fatal\":\"--boot-record-secret: ring dimension " << brRing << " does not match the context ("
++                      << cc->GetRingDimension() << ") or is not a power of two\"}\n"; return 2;
++        }
++        brFft.setSecret(brTern);
++        FIDESlib::CKKS::g_bootPreRaiseHook = [&](const uint64_t* hc0, const uint64_t* hc1, size_t hn, uint64_t hq0, bool evalRep) {
++            const auto tRec = Clock::now();
++            try {
++                if (hn != brFft.N || hq0 != brQ0) {
++                    if (brSkipped++ == 0)
++                        std::cout << "{\"bootRecordSkipped\":true,\"why\":\"ring or q0 differs from the secret's tower 0\",\"n\":" << hn
++                                  << ",\"q0\":" << hq0 << ",\"secretN\":" << brFft.N << ",\"secretQ0\":" << brQ0 << "}" << std::endl;
++                    return;
++                }
++                std::vector<uint64_t> t0, t1;
++                if (evalRep) {   // not what K2 hands over (it passes coefficients); kept so either hook placement works
++                    for (int which = 0; which < 2; which++) {
++                        lbcrypto::NativePoly p = brTmpl;
++                        const uint64_t* src = which == 0 ? hc0 : hc1;
++                        for (size_t i = 0; i < hn; i++) p[(uint32_t)i] = lbcrypto::NativeInteger(src[i] % hq0);
++                        p.SetFormat(Format::COEFFICIENT);
++                        std::vector<uint64_t>& dst = which == 0 ? t0 : t1;
++                        dst.resize(hn);
++                        for (size_t i = 0; i < hn; i++) dst[i] = p[(uint32_t)i].ConvertToInt<uint64_t>();
++                    }
++                    hc0 = t0.data(); hc1 = t1.data();
++                }
++                const FheSsmNegacyclic::Stats st = brFft.overflow(hc0, hc1, hq0);
++                brN++;
++                if (st.maxI > 512) brOver512++;
++                if (st.maxI > 530) brOver530++;
++                if (st.maxI > 537) brOver537++;
++                if (st.maxI > 768) brOver768++;
++                if (st.maxI > brReqMaxI) brReqMaxI = st.maxI;
++                if (st.maxI > brRunMaxI) brRunMaxI = st.maxI;
++                if (st.maxFrac > brRunMaxFrac) brRunMaxFrac = st.maxFrac;
++                const double recMs = msSince(tRec);
++                brMs += recMs;
++                std::cout << "{\"bootRecord\":true,\"n\":" << (boots + 1) << ",\"maxI\":" << st.maxI << ",\"rmsI\":" << st.rmsI
++                          << ",\"coeffsOver512\":" << st.over512 << ",\"maxFrac\":" << st.maxFrac << ",\"nonCanon\":" << st.nonCanon
++                          << ",\"stage\":\"" << (stagePtr ? *stagePtr : std::string("")) << "\",\"ms\":" << recMs << "}" << std::endl;
++            } catch (const std::exception& e) {
++                if (brSkipped++ == 0)
++                    std::cout << "{\"bootRecordSkipped\":true,\"why\":\"exception\",\"what\":\"" << e.what() << "\"}" << std::endl;
++            }
++        };
++        std::cerr << "\n*** --boot-record: THIS PROCESS HOLDS A SECRET KEY (" << bootRecordSecretPath << "). TEST-KEY INSTRUMENT: "
++                     "pod test keys only, never a client key set, never a recorded session. ***\n" << std::endl;
++        std::cout << "{\"bootRecordArmed\":true,\"testKeyInstrument\":true,\"secret\":\"" << bootRecordSecretPath << "\",\"ring\":" << brRing
++                  << ",\"q0\":" << brQ0 << ",\"hamming\":" << brHamming << ",\"sigmaIPred\":" << std::sqrt(((double)brHamming + 1.0) / 12.0)
++                  << ",\"representation\":\"coefficient, limb 0 of c0 and c1 after their INTT in ModRaise\"}" << std::endl;
++    }
++#endif
+ #ifdef FHE_SSM_DEMO_SER
+     // ---- T1b (S3.1): the compressed store + per-level scratch pool. -------
+     // Key is VALUE IDENTITY — (layer, op, chunk, rowOff, level, diagonal) —
+@@ -5217,6 +5462,8 @@ int main(int argc, char** argv) {
+         serveNormBoot0 = normBootMs; serveLoop0 = layerLoopMs; serveLoopTimed0 = layerLoopTimedMs;   // S3.7 V2
+         serveShift0 = shiftMixMs; serveScan0 = scanMs; serveGate0 = gateMs; serveHid0 = hiddenMs; serveRes0 = residualMs;
+         servePtEnc0 = hostPtEncodeMs; servePtEncN0 = hostPtEncodeCount;
++        brReqMaxI = 0; brN0 = brN; brOver512_0 = brOver512; brOver530_0 = brOver530; brOver537_0 = brOver537;   // K3: per-request
++        brOver768_0 = brOver768; brMs0 = brMs;                                                                     // boot-record deltas
+         stageOpenDepth = 0;                                          // S3.7 V2: never carry an open stage window across a failed request
+         failed = false; stage = "serve.req";                         // per-request status
+         babyCache.open = false; babyCache.clear(); pfNormKind = 0;   // S3.3 (review 2026-09-03): never carry a share
+@@ -6383,6 +6630,15 @@ int main(int argc, char** argv) {
+         std::remove((reqPrefix + ".meta").c_str());
+         std::remove((reqPrefix + ".seed").c_str());     // S3.7 X5: the seeded request's seed file, when there is one
+         std::remove((reqPrefix + ".ready").c_str());
++        std::string brServed;   // K3: stays EMPTY without --boot-record, so the serve line below is HEAD's byte for byte
++        if (bootRecord) {
++            std::ostringstream bo;
++            bo << ",\"reqBootRecN\":" << (brN - brN0) << ",\"reqBootMaxI\":" << brReqMaxI
++               << ",\"reqBootOver512\":" << (brOver512 - brOver512_0) << ",\"reqBootOver530\":" << (brOver530 - brOver530_0)
++               << ",\"reqBootOver537\":" << (brOver537 - brOver537_0) << ",\"reqBootOver768\":" << (brOver768 - brOver768_0)
++               << ",\"reqBootRecMs\":" << (int)(brMs - brMs0);
++            brServed = bo.str();
++        }
+         std::cout << "{\"serve\":\"served\",\"req\":" << serveReqN
+                   << ",\"failed\":" << (failed ? "true" : "false")
+                   << ",\"tokens\":" << tokensReal
+@@ -6403,7 +6659,7 @@ int main(int argc, char** argv) {
+                   << ",\"hidden\":" << (int)(hiddenMs - serveHid0) << ",\"residual\":" << (int)(residualMs - serveRes0) << "}"
+                   << ",\"reqHostPtEncodeMs\":" << (int)(hostPtEncodeMs - servePtEnc0)
+                   << ",\"reqHostPtEncodeCount\":" << (hostPtEncodeCount - servePtEncN0)
+-                  << ",\"peakVramGB\":" << peakVramGB() << "}" << std::endl;
++                  << ",\"peakVramGB\":" << peakVramGB() << brServed << "}" << std::endl;
+         vramTraceLine("serve.done." + std::to_string(serveReqN));
+         // --store-file: persist after EVERY successful request that added
+         // entries -- the base file once, journal appends thereafter (a
+@@ -6432,6 +6688,11 @@ int main(int argc, char** argv) {
+     // passTiming lines instead -- but any tool aggregating summary lines got
+     // `passes`x garbage. Denominator is now token-passes, so the field means
+     // "mean ms per token across all passes" for any --passes value.
++    if (bootRecord)   // K3: the run's totals on a line of their own (the summary record below is untouched)
++        std::cout << "{\"bootRecordSummary\":true,\"recorded\":" << brN << ",\"boots\":" << boots << ",\"skipped\":" << brSkipped
++                  << ",\"runMaxI\":" << brRunMaxI << ",\"over512\":" << brOver512 << ",\"over530\":" << brOver530
++                  << ",\"over537\":" << brOver537 << ",\"over768\":" << brOver768 << ",\"runMaxFrac\":" << brRunMaxFrac
++                  << ",\"recMs\":" << (long long)brMs << "}" << std::endl;
+     vramTraceLine("final");
+     const double tokPasses = (double)std::max<uint32_t>(tokensReal, 1) * (double)std::max(1, passes);
+     std::cout << "{\"summary\":true,\"realModel\":true,\"arch\":\"" << arch << "\",\"tag\":\"" << tag << "\""

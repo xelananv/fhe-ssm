@@ -1,0 +1,54 @@
+[nice 64, 300 tokens, PERTURBED seed 3] lanes 64, ticks 311 (prompts 6-11 tokens + 300 generated), seed mode: robust 0.3/8, perturbed: flip prob 0.5 below margin 0.15 -> 479 flips
+Newton rsqrt over all sites/lanes/ticks: worst relErr inf at tick 37; divergent lane-site events 16; lanes that ever diverge 1
+max|scan state| 4.81 at tick 162; max|norm input| 0.68; max ms/hi 16.47 at tick 77; min ms/lo 0.673 at tick 37
+lanes in a repetition loop (<= 3 distinct tokens in the last 24): at tick 77: 2, 155: 3, 310: 5 of 64
+tick | worst Newton relErr | divergent | max|S| | max ms/hi | min ms/lo | lanes looping
+   0 | 4.84e-12 | 0 | 0.36 | 0.96 | 1.589 | 0
+  12 | 2.39e-06 | 0 | 1.46 | 1.07 | 1.002 | 0
+  24 | 7.51e-06 | 0 | 2.12 | 1.03 | 0.969 | 0
+  36 | 5.31e-07 | 0 | 2.35 | 1.52 | 1.000 | 0
+  48 | 5.29e-08 | 0 | 2.76 | 1.26 | 0.968 | 1
+  60 | 7.51e-06 | 0 | 3.30 | 1.01 | 0.987 | 2
+  72 | 7.51e-06 | 0 | 3.73 | 1.10 | 0.920 | 2
+  84 | 2.37e-07 | 0 | 3.98 | 1.02 | 0.898 | 2
+  96 | 6.87e-08 | 0 | 4.08 | 1.15 | 0.927 | 3
+ 108 | 2.16e-01 | 0 | 4.07 | 8.80 | 0.974 | 3
+ 120 | 7.51e-06 | 0 | 4.12 | 2.47 | 0.937 | 3
+ 132 | 7.51e-06 | 0 | 4.45 | 3.04 | 0.989 | 3
+ 144 | 7.51e-06 | 0 | 4.69 | 3.48 | 0.946 | 3
+ 156 | 2.00e-07 | 0 | 4.80 | 3.81 | 0.960 | 3
+ 168 | 7.51e-06 | 0 | 4.80 | 4.05 | 1.007 | 3
+ 180 | 7.51e-06 | 0 | 4.77 | 4.22 | 1.022 | 3
+ 192 | 2.00e+00 | 1 | 4.73 | 11.92 | 0.992 | 3
+ 204 | 9.30e-08 | 0 | 4.71 | 4.46 | 0.975 | 3
+ 216 | 4.41e-07 | 0 | 4.69 | 4.54 | 0.974 | 3
+ 228 | 2.39e-06 | 0 | 4.68 | 4.60 | 0.979 | 3
+ 240 | 7.51e-06 | 0 | 4.67 | 4.64 | 0.993 | 3
+ 252 | 9.79e-08 | 0 | 4.67 | 4.68 | 1.034 | 4
+ 264 | 5.58e-07 | 0 | 4.67 | 4.71 | 0.986 | 4
+ 276 | 2.00e+00 | 1 | 4.68 | 10.99 | 0.974 | 4
+ 288 | 2.84e-08 | 0 | 4.69 | 4.76 | 1.033 | 4
+ 300 | 5.31e-07 | 0 | 4.70 | 4.77 | 1.053 | 5
+ 310 | 9.79e-08 | 0 | 4.71 | 4.79 | 1.002 | 5
+  first divergence lane 40 {'tick': 37, 'site': 'ln_out', 'ms': 0.015431341032418023, 'ms_range': [9.766286104000866e-05, 0.0009551167549747804]} prompt: The castle stood on a hill overlooking
+lanes with the largest ms/hi (site, tick):
+  lane 40: ms/hi 16.47 at ln_out tick 77 | 'The castle stood on a hill overlooking' -> ' the sea, and was surrounded by a\r\n\r\nfence'...
+  lane 36: ms/hi 4.79 at L1.cm tick 310 | 'Genetics determines many traits including eye' -> ' color, hair color, eye color, hair color, eye'...
+  lane 11: ms/hi 3.59 at L19.tm tick 7 | 'The printing press was invented by Johannes' -> ' Gutenberg in 1450. It was a revolutionary invention'...
+  lane 23: ms/hi 2.36 at ln_out tick 19 | 'Mount Everest is the highest mountain in the' -> ' world, at 8,948 meters (25,9'...
+  lane 27: ms/hi 2.07 at L4.cm tick 179 | 'The history of cryptography begins with' -> ' the invention of the first cryptographic system, the cryptograph'...
+  lane 16: ms/hi 1.94 at L4.cm tick 1 | 'Albert Einstein is famous for his theory of' -> ' relativity, which describes the movement of matter around the earth.'...
+lanes with the smallest ms/lo (site, tick):
+  lane 8: ms/lo 0.673 at ln_out tick 37
+  lane 49: ms/lo 0.710 at L23.tm tick 29
+  lane 60: ms/lo 0.893 at L12.cm tick 274
+  lane 22: ms/lo 0.917 at ln_out tick 74
+candidate seed settings on this trajectory (event = relErr > 1e-3 at a lane-site-tick):
+  frac 0.3 iters 8: worst relErr inf, events 17, lanes [40]
+  frac 0.2 iters 9: worst relErr 7.98e-06, events 0, lanes []
+  frac 0.2 iters 10: worst relErr 9.56e-11, events 0, lanes []
+  frac 0.15 iters 10: worst relErr 6.54e-07, events 0, lanes []
+  frac 0.15 iters 11: worst relErr 6.42e-13, events 0, lanes []
+  frac 0.1 iters 11: worst relErr 6.67e-07, events 0, lanes []
+  frac 0.1 iters 12: worst relErr 6.67e-13, events 0, lanes []
+  frac 0.07 iters 13: worst relErr 6.14e-14, events 0, lanes []

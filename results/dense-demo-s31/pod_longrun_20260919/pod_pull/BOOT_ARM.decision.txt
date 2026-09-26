@@ -1,0 +1,5 @@
+None -- the STOCK arm did not pass: the binary or the box is broken, nothing to choose yet
+MANUAL OVERRIDE 2026-09-19T13:30:50Z: arm = split. The script printed None because its bootRestored criterion misreads this cell: the selftest bootstraps a
+ciphertext at level 3 (lvlPre 3 -> lvlPost 19 in all six runs, stock included), so lvlPost < lvlPre is false although the bootstrap ran and the selftest value check
+passed (bootstrap result ok, hardFail 0) in all six. By the rule as written beforehand (split if its line shows scaleEncOddPart 3, every repeat passes, mean err <= 2x stock):
+stock 0.00166651 / 0.00255942 (mean 0.002113), =1 0.00287927 / 0.00236043 (mean 0.002620), split 0.00108217 / 0.00131477 (mean 0.001198); lvlPost 19 in all.

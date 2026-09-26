@@ -1,0 +1,28 @@
+g_coefficientsUniform: entries 89, degree 88, K = 512, GetDepthByDegree = 8, ComputeDegreesPS -> k = 6, m = 4; input (E0, NoiseLevel 1)
+  power basis T_1..T_k (level - E0, NoiseLevel): [(-1, 1), (-2, 1), (-2, 1), (-2, 1), (-3, 1), (-3, 1)]
+  T_k*2^i (level - E0, NoiseLevel) after the series: [(-6, 2), (-3, 2), (-5, 2), (-5, 2)]
+  series output (level - E0, NoiseLevel) = (-6, 2); after 6 double angles = (-12, 2); levels consumed, settled input to settled output = 13
+  ct x ct multiplications: series 18 + double angle 6 = 24 per ciphertext; x2 ciphertexts (fully packed slots) = 48 per bootstrap
+  rescales 43, level-adjust scalar multiplications 13, weighted sums 15 over 82 inputs
+  PS recursion nodes (m, level_offset, deg c, deg q, deg s, node output (level - E0, NoiseLevel)): [(2, 0, 5, 6, 6, (-4, 2)), (2, 1, 5, 6, 6, (-5, 2)), (3, 0, 5, 18, 18, (-5, 2)), (2, 1, 5, 6, 6, (-5, 2)), (2, 2, 5, 6, 6, (-6, 2)), (3, 1, 5, 18, 18, (-6, 2)), (4, 0, 5, 42, 42, (-6, 2))]
+g_coefficientsUniform: entries 89, degree 88, K = 512, GetDepthByDegree = 8, ComputeDegreesPS -> k = 6, m = 4; input (E0, NoiseLevel 2)
+  power basis T_1..T_k (level - E0, NoiseLevel): [(-2, 1), (-3, 1), (-3, 1), (-3, 1), (-4, 1), (-4, 1)]
+  T_k*2^i (level - E0, NoiseLevel) after the series: [(-7, 2), (-4, 2), (-6, 2), (-6, 2)]
+  series output (level - E0, NoiseLevel) = (-7, 2); after 6 double angles = (-13, 2); levels consumed, settled input to settled output = 13
+  ct x ct multiplications: series 18 + double angle 6 = 24 per ciphertext; x2 ciphertexts (fully packed slots) = 48 per bootstrap
+  rescales 45, level-adjust scalar multiplications 13, weighted sums 15 over 82 inputs
+  PS recursion nodes (m, level_offset, deg c, deg q, deg s, node output (level - E0, NoiseLevel)): [(2, 0, 5, 6, 6, (-5, 2)), (2, 1, 5, 6, 6, (-6, 2)), (3, 0, 5, 18, 18, (-6, 2)), (2, 1, 5, 6, 6, (-6, 2)), (2, 2, 5, 6, 6, (-7, 2)), (3, 1, 5, 18, 18, (-7, 2)), (4, 0, 5, 42, 42, (-7, 2))]
+g_coefficientsUniformExt: entries 119, degree 118, K = 768, GetDepthByDegree = 8, ComputeDegreesPS -> k = 8, m = 4; input (E0, NoiseLevel 1)
+  power basis T_1..T_k (level - E0, NoiseLevel): [(-1, 1), (-2, 1), (-2, 1), (-2, 1), (-3, 1), (-3, 1), (-3, 1), (-3, 1)]
+  T_k*2^i (level - E0, NoiseLevel) after the series: [(-6, 2), (-3, 2), (-5, 2), (-5, 2)]
+  series output (level - E0, NoiseLevel) = (-6, 2); after 6 double angles = (-12, 2); levels consumed, settled input to settled output = 13
+  ct x ct multiplications: series 20 + double angle 6 = 26 per ciphertext; x2 ciphertexts (fully packed slots) = 52 per bootstrap
+  rescales 45, level-adjust scalar multiplications 13, weighted sums 15 over 112 inputs
+  PS recursion nodes (m, level_offset, deg c, deg q, deg s, node output (level - E0, NoiseLevel)): [(2, 0, 7, 8, 8, (-4, 2)), (2, 1, 7, 8, 8, (-5, 2)), (3, 0, 7, 24, 24, (-5, 2)), (2, 1, 7, 8, 8, (-5, 2)), (2, 2, 7, 8, 8, (-6, 2)), (3, 1, 7, 24, 24, (-6, 2)), (4, 0, 7, 56, 56, (-6, 2))]
+g_coefficientsUniformExt: entries 119, degree 118, K = 768, GetDepthByDegree = 8, ComputeDegreesPS -> k = 8, m = 4; input (E0, NoiseLevel 2)
+  power basis T_1..T_k (level - E0, NoiseLevel): [(-2, 1), (-3, 1), (-3, 1), (-3, 1), (-4, 1), (-4, 1), (-4, 1), (-4, 1)]
+  T_k*2^i (level - E0, NoiseLevel) after the series: [(-7, 2), (-4, 2), (-6, 2), (-6, 2)]
+  series output (level - E0, NoiseLevel) = (-7, 2); after 6 double angles = (-13, 2); levels consumed, settled input to settled output = 13
+  ct x ct multiplications: series 20 + double angle 6 = 26 per ciphertext; x2 ciphertexts (fully packed slots) = 52 per bootstrap
+  rescales 47, level-adjust scalar multiplications 13, weighted sums 15 over 112 inputs
+  PS recursion nodes (m, level_offset, deg c, deg q, deg s, node output (level - E0, NoiseLevel)): [(2, 0, 7, 8, 8, (-5, 2)), (2, 1, 7, 8, 8, (-6, 2)), (3, 0, 7, 24, 24, (-6, 2)), (2, 1, 7, 8, 8, (-6, 2)), (2, 2, 7, 8, 8, (-7, 2)), (3, 1, 7, 24, 24, (-7, 2)), (4, 0, 7, 56, 56, (-7, 2))]

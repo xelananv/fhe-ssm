@@ -1,0 +1,13 @@
+start 2026-09-18T16:48:18Z
+853ce9cd6d6c75adf1a6410ec9f082baccf07d1dbe98d014aaff4ed5b57ccff5  harness/build/boot_overflow_probe_k768
+c5ae6e9c167d1a513470a198918d653a13543805a4ab4671449d1e0fdd845b4a  harness/build/boot_overflow_probe_k768b
+c760781be72bd1af6427617c75d22cfd2c0117626651c652fd82a01007a626d0  harness/boot_overflow_probe.cpp
+f96529cc99c9ebb38903d3015fd72c349b05d21a99d3eea7125a5e48e0e6693c  vendor/install-k768/lib/libOPENFHEpke.1.5.1.dylib
+f8cc9ff0b19c6226aa163e359cbcfb1f9ae5ee976174975f4d9f2cc649b9ed8a  vendor/install-k768/lib/libOPENFHEcore.1.5.1.dylib
+acc0dc220ca26be8752ddd611c8dc92aa7baf89e2b9455cccd7d021b00e13a48  vendor/install-k768b/lib/libOPENFHEpke.1.5.1.dylib
+018e706025a4dedb63edc8f9bdfd15c73bb7f49e6fb267cdda15229da027486b  vendor/install-k768b/lib/libOPENFHEcore.1.5.1.dylib
+{"availGB":6.34,"totalGB":16.00,"swapUsedMB":1937,"compressorGB":2.25,"heavyProcs":0,"heavyFootprintGB":0.00}
+19:48  up 11 days, 14:16, 1 user, load averages: 2.50 2.60 2.40
+end 2026-09-18T17:05:07Z
+{"availGB":5.41,"totalGB":16.00,"swapUsedMB":1929,"compressorGB":3.35,"heavyProcs":0,"heavyFootprintGB":0.00}
+20:05  up 11 days, 14:33, 1 user, load averages: 2.48 3.07 2.86

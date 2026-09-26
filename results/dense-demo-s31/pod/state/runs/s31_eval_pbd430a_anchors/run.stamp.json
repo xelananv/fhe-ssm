@@ -1,0 +1,61 @@
+{
+  "cmdline": [
+    "/usr/bin/env",
+    "bash",
+    "-c",
+    "cd /root/src && /root/venv/bin/python ml-eval/anchor_eval.py --backend native --model pbd430a --axes wt103,lambada,holdout --art-dir ml-eval/artifacts --device cuda:0 --out /root/campaign/state/runs/s31_eval_pbd430a_anchors/anchor.jsonl 2>&1 | tail -30"
+  ],
+  "config_campaign": "dense-demo-s31-2xbw",
+  "cwd": "{RUN_DIR}",
+  "git_commit": "a22ea082e252eaaa877312e054790c5676a69d6a",
+  "git_dirty": false,
+  "git_state": "ok",
+  "gpu_indices": [
+    0
+  ],
+  "host": "O-2066889",
+  "manifest": {
+    "backs_up": null,
+    "block": "S31P",
+    "card": null,
+    "check_cmd": null,
+    "cmd": [
+      "/usr/bin/env",
+      "bash",
+      "-c",
+      "cd /root/src && /root/venv/bin/python ml-eval/anchor_eval.py --backend native --model pbd430a --axes wt103,lambada,holdout --art-dir ml-eval/artifacts --device cuda:0 --out {RUN_DIR}/anchor.jsonl 2>&1 | tail -30"
+    ],
+    "cwd": "{RUN_DIR}",
+    "deferred_reason": null,
+    "depends_on": [
+      "s31_anneal_pbd430a"
+    ],
+    "env": {},
+    "exclusive": false,
+    "expected_minutes": 20,
+    "fail_modes": [],
+    "id": "s31_eval_pbd430a_anchors",
+    "kill_after_minutes": 60,
+    "liveness": {
+      "grace_min": 15,
+      "interval_min": 10,
+      "path": "{RUN_DIR}/console.log",
+      "type": "file_growth"
+    },
+    "notes": "",
+    "notify_on_fail": 1,
+    "pass_criteria": "RECORD-ONLY: rc 0 + all 3 axes (holdout.bin restored 2026-08-31). Demo model choice at author sign-off reads pbd430 vs pbd430a side by side.",
+    "priority": 844,
+    "question": "Anneal verdict: pbd430a vs the SAME frozen bands, side by side with pbd430 (60.74/10.1%).",
+    "requires": {
+      "gpus": 1
+    },
+    "requires_signoff": null,
+    "run_kind": "measure",
+    "script_sha256": {}
+  },
+  "question": "Anneal verdict: pbd430a vs the SAME frozen bands, side by side with pbd430 (60.74/10.1%).",
+  "run_id": "s31_eval_pbd430a_anchors",
+  "script_sha256": {},
+  "utc": "2026-08-31T18:51:46Z"
+}

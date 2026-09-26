@@ -1,0 +1,20 @@
+diff --git a/src/CKKS/LimbPartitionMGPU.cu b/src/CKKS/LimbPartitionMGPU.cu
+index f595ed1..2527c01 100644
+--- a/src/CKKS/LimbPartitionMGPU.cu
++++ b/src/CKKS/LimbPartitionMGPU.cu
+@@ -1869,6 +1869,15 @@ void LimbPartition::modup_ksk_moddown_mgpu(LimbPartition& c0,
+ 	ksk_a.getS().wait(s);
+ 	ksk_b.getS().wait(s);
+ 	// digits.free(s);
++	// Without graph capture the pointer table is allocated on every call (cudaMallocAsync above) and is
++	// never stored in map_exec, so it has to be released here. Its only readers are the two fusedDotKSK_2_
++	// launches, on s and on cc.digitStream2[0][id]; s has waited on the latter since, so a stream-ordered
++	// free on s cannot run before the last read. With graph capture the table is baked into the captured
++	// kernels (and cached in map_exec on the capturing device), so it must stay alive: no free on that path.
++	if (!GRAPH_CAPTURE && exec_old == map_exec.end()) {
++		cudaFreeAsync(digits, s.ptr());
++		CudaCheckErrorModNoSync;
++	}
+ 	cudaEventDestroy(ev);
+ }
+ 

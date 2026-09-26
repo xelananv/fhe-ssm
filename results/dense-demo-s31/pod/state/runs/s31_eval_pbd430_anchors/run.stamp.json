@@ -1,0 +1,61 @@
+{
+  "cmdline": [
+    "/usr/bin/env",
+    "bash",
+    "-c",
+    "cd /root/src && /root/venv/bin/python ml-eval/anchor_eval.py --backend native --model pbd430 --axes wt103,lambada,holdout --art-dir ml-eval/artifacts --device cuda:0 --out /root/campaign/state/runs/s31_eval_pbd430_anchors/anchor.jsonl 2>&1 | tail -40"
+  ],
+  "config_campaign": "dense-demo-s31-2xbw",
+  "cwd": "{RUN_DIR}",
+  "git_commit": "f96e0812b5dc60962ef7ba6e3eb02d0838cdd481",
+  "git_dirty": false,
+  "git_state": "ok",
+  "gpu_indices": [
+    0
+  ],
+  "host": "O-2066889",
+  "manifest": {
+    "backs_up": null,
+    "block": "S31P",
+    "card": null,
+    "check_cmd": null,
+    "cmd": [
+      "/usr/bin/env",
+      "bash",
+      "-c",
+      "cd /root/src && /root/venv/bin/python ml-eval/anchor_eval.py --backend native --model pbd430 --axes wt103,lambada,holdout --art-dir ml-eval/artifacts --device cuda:0 --out {RUN_DIR}/anchor.jsonl 2>&1 | tail -40"
+    ],
+    "cwd": "{RUN_DIR}",
+    "deferred_reason": null,
+    "depends_on": [
+      "s31_train_pbd430"
+    ],
+    "env": {},
+    "exclusive": false,
+    "expected_minutes": 45,
+    "fail_modes": [],
+    "id": "s31_eval_pbd430_anchors",
+    "kill_after_minutes": 120,
+    "liveness": {
+      "grace_min": 20,
+      "interval_min": 15,
+      "path": "{RUN_DIR}/console.log",
+      "type": "file_growth"
+    },
+    "notes": "Native backend loads pbd430_config.json + pbd430_weights.npz (R2: eval binds to the finished checkpoint on disk at run time).",
+    "notify_on_fail": 1,
+    "pass_criteria": "RECORD-ONLY, both outcomes are results: rc 0 + anchor.jsonl rows for wt103+lambada+holdout. Bands (frozen pre-launch): COMPETITIVE iff WT103 token-ppl <= 32.50 AND LAMBADA acc >= 31.6%; HONEST-BUT-WEAKER iff token-ppl <= 38.70. Quality numbers are load-insensitive; band16 training on GPU1 does not contaminate them (not a timing cell).",
+    "priority": 897,
+    "question": "THE dense quality verdict: finished pbd430 vs the FROZEN bands (QUALITY_ANCHORS_20260828.md) on the certified harness. Runs on GPU0 the moment dense finishes; band16 keeps GPU1.",
+    "requires": {
+      "gpus": 1
+    },
+    "requires_signoff": null,
+    "run_kind": "measure",
+    "script_sha256": {}
+  },
+  "question": "THE dense quality verdict: finished pbd430 vs the FROZEN bands (QUALITY_ANCHORS_20260828.md) on the certified harness. Runs on GPU0 the moment dense finishes; band16 keeps GPU1.",
+  "run_id": "s31_eval_pbd430_anchors",
+  "script_sha256": {},
+  "utc": "2026-08-31T08:37:32Z"
+}

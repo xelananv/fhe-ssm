@@ -1,0 +1,3 @@
+=== F-est FULL LWE.estimate() battery, N=2^17 sets, sigma=3.19 ===
+
+=== R17-DEPLOYED (N=131072, logQP=2371, secret=uniform_ternary) -- the deployed chain: 2-attack 195.39 bits (fest_battery.jsonl) ===

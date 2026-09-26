@@ -1,0 +1,61 @@
+{
+  "cmdline": [
+    "/usr/bin/env",
+    "bash",
+    "-c",
+    "test -f /root/anneal_staged/READY || { echo 'anneal corpus not READY'; exit 4; }\n/usr/bin/env bash /root/src/campaign/scripts/train_gate.sh --tag pbd430a --artifacts /root/src/ml-eval/artifacts --check /root/src/campaign/scripts/check_train_log.py -- /root/venv/bin/python /root/src/ml-eval/train_fhe_native_ssm.py train --tag pbd430a --d-model 1024 --layers 24 --batch 8 --grad-accum 4 --data staged:/root/anneal_staged --steps 1532422 --seed 1234 --window-carry --compile --resume"
+  ],
+  "config_campaign": "dense-demo-s31-2xbw",
+  "cwd": "{RUN_DIR}",
+  "git_commit": "a22ea082e252eaaa877312e054790c5676a69d6a",
+  "git_dirty": false,
+  "git_state": "ok",
+  "gpu_indices": [
+    0
+  ],
+  "host": "O-2066889",
+  "manifest": {
+    "backs_up": null,
+    "block": "S31P",
+    "card": null,
+    "check_cmd": null,
+    "cmd": [
+      "/usr/bin/env",
+      "bash",
+      "-c",
+      "test -f /root/anneal_staged/READY || { echo 'anneal corpus not READY'; exit 4; }\n/usr/bin/env bash /root/src/campaign/scripts/train_gate.sh --tag pbd430a --artifacts /root/src/ml-eval/artifacts --check /root/src/campaign/scripts/check_train_log.py -- /root/venv/bin/python /root/src/ml-eval/train_fhe_native_ssm.py train --tag pbd430a --d-model 1024 --layers 24 --batch 8 --grad-accum 4 --data staged:/root/anneal_staged --steps 1532422 --seed 1234 --window-carry --compile --resume"
+    ],
+    "cwd": "{RUN_DIR}",
+    "deferred_reason": null,
+    "depends_on": [
+      "s31q_pythia410_step25000"
+    ],
+    "env": {},
+    "exclusive": false,
+    "expected_minutes": 140,
+    "fail_modes": [],
+    "id": "s31_anneal_pbd430a",
+    "kill_after_minutes": 300,
+    "liveness": {
+      "grace_min": 25,
+      "interval_min": 15,
+      "path": "{RUN_DIR}/console.log",
+      "type": "file_growth"
+    },
+    "notes": "Forked checkpoint pbd430a_(resume|weights|config) made 2026-08-31 ~10:20Z; original untouched. Resume restarts corpus stream at anneal dir start (trainer docstring: honest bounded behavior).",
+    "notify_on_fail": 1,
+    "pass_criteria": "trainer rc 0, TRAINGATE PASS, 0 nonfinite; step reaches 1,532,422. lr during anneal ~6e-5 (schedule floor).",
+    "priority": 845,
+    "question": "Quality anneal (verdict 2026-08-31: WT103 60.74 / LAMBADA 10.1% vs bands 32.50/31.6%): +50k steps (410M tok) on WT103-train + Gutenberg fiction + FineWeb replay mix at lr~min_lr=6e-5 (cosine tail floor; no trainer changes). Side-by-side rule: pbd430a reported NEXT TO pbd430, never instead.",
+    "requires": {
+      "gpus": 1
+    },
+    "requires_signoff": null,
+    "run_kind": "train",
+    "script_sha256": {}
+  },
+  "question": "Quality anneal (verdict 2026-08-31: WT103 60.74 / LAMBADA 10.1% vs bands 32.50/31.6%): +50k steps (410M tok) on WT103-train + Gutenberg fiction + FineWeb replay mix at lr~min_lr=6e-5 (cosine tail floor; no trainer changes). Side-by-side rule: pbd430a reported NEXT TO pbd430, never instead.",
+  "run_id": "s31_anneal_pbd430a",
+  "script_sha256": {},
+  "utc": "2026-08-31T16:45:44Z"
+}

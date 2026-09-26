@@ -1,0 +1,10 @@
+== planted_r13_F10_pos: --log-ring 13 --mode stock --plant 500:560:1 --trials 3 --plant-index 100 2026-09-18T13:19:53Z
+   exit=0 2026-09-18T13:24:21Z
+== planted_r13_F10_neg: --log-ring 13 --mode stock --plant -560:-500:2 --trials 2 --plant-index 100 2026-09-18T13:24:21Z
+   exit=0 2026-09-18T13:25:57Z
+== planted_r13_F07_pos: --log-ring 13 --mode stock --corr 7 --plant 500:560:1 --trials 3 --plant-index 100 2026-09-18T13:25:57Z
+   exit=0 2026-09-18T13:30:45Z
+== planted_r12_F11_pos: --log-ring 12 --mode stock --plant 500:560:1 --trials 3 --plant-index 100 2026-09-18T13:30:45Z
+   exit=0 2026-09-18T13:33:00Z
+== planted_r13_F10_imag: --log-ring 13 --mode stock --plant 510:545:5 --trials 3 --plant-index 6000 2026-09-18T13:33:00Z
+   exit=0 2026-09-18T13:33:39Z

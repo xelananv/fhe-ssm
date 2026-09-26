@@ -1,0 +1,39 @@
+LOADSTATE 2026-09-18T01:14:05Z uptime: 01:14:05 up 26 days, 21:43,  0 user,  load average: 5.39, 6.91, 6.34
+LOADSTATE gpu compute apps: 1689393, 47810 MiB;1689393, 47810 MiB;
+LOADSTATE busy marker: 90_s37_cell.sh pid=1696574 since=2026-09-18T01:14:05Z
+--- top CPU ---
+%CPU   RSS COMMAND
+ 324 88458836 gpu_real_model
+17.4 2211096 python
+ 0.0 25688 supervisord
+ 0.0  7224 sshd
+ 0.0 74660 jupyter-noteboo
+ 0.0  1580 bash
+ 0.0  3092 bash
+--- nvidia-smi ---
+Fri Sep 18 01:14:05 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.84                 Driver Version: 595.84         CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX PRO 6000 Blac...    Off |   00000000:11:00.0  On |                  Off |
+| 56%   49C    P1            241W /  400W |   47857MiB /  97887MiB |      6%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA RTX PRO 6000 Blac...    Off |   00000000:E1:00.0 Off |                  Off |
+| 55%   51C    P1            226W /  400W |   47841MiB /  97887MiB |     30%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1689393      C   ...emo/build-demo/gpu_real_model      47810MiB |
+|    1   N/A  N/A         1689393      C   ...emo/build-demo/gpu_real_model      47810MiB |
++-----------------------------------------------------------------------------------------+
+LOADSTATE CONTENDED

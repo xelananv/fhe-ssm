@@ -1,0 +1,8 @@
+=== F-est FULL LWE.estimate() battery, sigma=3.19 ===
+
+=== R17-SPARSE-H32 (N=131072, logQP=2371, secret=sparse_ternary_h32) ===
+    why: F-est (a): 2-attack said 195.08 - must survive hybrid to mean anything
+=== F-est FULL LWE.estimate() battery, sigma=3.19 ===
+
+=== R16-1711 (N=65536, logQP=1711, secret=uniform_ternary) ===
+    why: F-est (b): 2-attack said 130.97 - only 3 bits over, check the full list

@@ -1,0 +1,24 @@
+== ext_r13_F10_planted_wide: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 13 --mode stock --plant 100:760:20 --trials 3 --plant-index 100 2026-09-18T16:48:18Z
+   exit=0 2026-09-18T16:51:11Z lines=105
+== ctrl_r13_F10_planted_wide: (no env) harness/build/boot_overflow_probe_k768 --log-ring 13 --mode stock --plant 100:500:20 --trials 3 --plant-index 100 2026-09-18T16:51:11Z
+   exit=0 2026-09-18T16:52:49Z lines=66
+== ctrl_r13_F07_base: (no env) harness/build/boot_overflow_probe_k768 --log-ring 13 --mode stock --corr 7 --trials 40 --err-by-absI 1 2026-09-18T16:52:49Z
+   exit=0 2026-09-18T16:53:53Z lines=82
+== ext_r13_F07_base: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 13 --mode stock --corr 7 --trials 40 --err-by-absI 1 2026-09-18T16:53:53Z
+   exit=0 2026-09-18T16:55:05Z lines=82
+== ext_r13_F07_planted_edge: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 13 --mode stock --corr 7 --plant 765:805:1 --trials 3 --plant-index 100 2026-09-18T16:55:05Z
+   exit=0 2026-09-18T16:58:48Z lines=126
+== ext_r13_F07_planted_old: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 13 --mode stock --corr 7 --plant 510:600:10 --trials 3 --plant-index 100 2026-09-18T16:58:48Z
+   exit=0 2026-09-18T16:59:44Z lines=33
+== ctrl_r12_F11_base: (no env) harness/build/boot_overflow_probe_k768 --log-ring 12 --mode stock --trials 40 --err-by-absI 1 2026-09-18T16:59:44Z
+   exit=0 2026-09-18T17:00:15Z lines=82
+== ext_r12_F11_base: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 12 --mode stock --trials 40 --err-by-absI 1 2026-09-18T17:00:15Z
+   exit=0 2026-09-18T17:00:49Z lines=82
+== ext_r12_F11_planted_wide: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 12 --mode stock --plant 100:760:60 --trials 3 --plant-index 100 2026-09-18T17:00:49Z
+   exit=0 2026-09-18T17:01:21Z lines=39
+== ext_r12_F11_planted_edge: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 12 --mode stock --plant 765:800:1 --trials 3 --plant-index 100 2026-09-18T17:01:21Z
+   exit=0 2026-09-18T17:03:00Z lines=111
+== ext_r13_F10_planted_neg: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 13 --mode stock --plant -806:-766:2 --trials 2 --plant-index 100 2026-09-18T17:03:00Z
+   exit=0 2026-09-18T17:04:17Z lines=45
+== ext_r13_F10_planted_imag: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768 --k-bound 768 --log-ring 13 --mode stock --plant 765:805:5 --trials 3 --plant-index 6000 2026-09-18T17:04:17Z
+   exit=0 2026-09-18T17:05:07Z lines=30

@@ -1,0 +1,37 @@
+{
+  "selftest": "serve_ollama",
+  "when": "2026-09-22T20:50:20.965Z",
+  "tag": "pbd430a",
+  "weights": "$BACKUP/pbd430a_weights_DEMO_MODEL_20260901.npz",
+  "device": "mps",
+  "dtype": "float32",
+  "tokens": 30,
+  "cases": [
+    {
+      "case": "chunk_T_vs_batched",
+      "maxAbs": 0.0,
+      "meanAbs": 0.0,
+      "relMax": 0.0,
+      "top1Agree": 1.0,
+      "rows": 30
+    },
+    {
+      "case": "token_by_token_vs_batched",
+      "maxAbs": 6.961822509765625e-05,
+      "meanAbs": 4.4824496399087366e-06,
+      "relMax": 4.546710128232796e-06,
+      "top1Agree": 1.0,
+      "rows": 30
+    },
+    {
+      "case": "resumed_half_vs_batched",
+      "maxAbs": 3.910064697265625e-05,
+      "meanAbs": 3.876278242387343e-06,
+      "relMax": 2.5536317158567763e-06,
+      "top1Agree": 1.0,
+      "rows": 15
+    }
+  ],
+  "pass": true,
+  "tol": 0.002
+}

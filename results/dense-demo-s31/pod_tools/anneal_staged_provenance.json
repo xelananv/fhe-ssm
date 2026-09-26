@@ -1,0 +1,32 @@
+{
+ "mix": {
+  "wt103": 119289413,
+  "gutenberg": 150000000,
+  "fineweb_replay": 150000000
+ },
+ "total": 419289413,
+ "chunk": 1000000,
+ "interleave": "round-robin-1M",
+ "tokenizer": "EleutherAI/pythia-410m",
+ "order_head": [
+  "wt103",
+  "gutenberg",
+  "fineweb_replay",
+  "wt103",
+  "gutenberg",
+  "fineweb_replay",
+  "wt103",
+  "gutenberg",
+  "fineweb_replay",
+  "wt103",
+  "gutenberg",
+  "fineweb_replay"
+ ],
+ "purpose": "pbd430a quality anneal (DEMO_DECISIONS + verdict 2026-08-31)",
+ "dtype": "uint16",
+ "train_tokens": 419289413,
+ "holdout_tokens": 0,
+ "eos_id": 0,
+ "vocab": 50277,
+ "bin_bytes": 838578826
+}

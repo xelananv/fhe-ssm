@@ -1,0 +1,61 @@
+{
+  "cmdline": [
+    "/usr/bin/env",
+    "bash",
+    "-c",
+    "cd /root/src/ml-eval && nice -n 10 /root/venv/bin/python train_fhe_native_ssm.py export --tag pbd430a --tokens 512 2>&1 | tail -8"
+  ],
+  "config_campaign": "dense-demo-s31-2xbw",
+  "cwd": "{RUN_DIR}",
+  "git_commit": "cf26ea7ecf70711792909a2b86f752ad7fea4384",
+  "git_dirty": false,
+  "git_state": "ok",
+  "gpu_indices": [
+    0
+  ],
+  "host": "O-2066889",
+  "manifest": {
+    "backs_up": null,
+    "block": "S31P",
+    "card": null,
+    "check_cmd": null,
+    "cmd": [
+      "/usr/bin/env",
+      "bash",
+      "-c",
+      "cd /root/src/ml-eval && nice -n 10 /root/venv/bin/python train_fhe_native_ssm.py export --tag pbd430a --tokens 512 2>&1 | tail -8"
+    ],
+    "cwd": "{RUN_DIR}",
+    "deferred_reason": null,
+    "depends_on": [
+      "s31_eval_pbd430a_anchors"
+    ],
+    "env": {},
+    "exclusive": false,
+    "expected_minutes": 60,
+    "fail_modes": [],
+    "id": "s31_export_pbd430a",
+    "kill_after_minutes": 150,
+    "liveness": {
+      "grace_min": 20,
+      "interval_min": 15,
+      "path": "{RUN_DIR}/console.log",
+      "type": "file_growth"
+    },
+    "notes": "CPU float64 forward, nice-10 so band16 dataloaders keep priority.",
+    "notify_on_fail": 1,
+    "pass_criteria": "rc 0, bundle_pbd430.bin + index written, rsqrt_basin_ok true, worst_rsqrt_iters <= 5 (seed-calibration sanity).",
+    "priority": 886,
+    "question": "Bundle export of the CHOSEN demo model pbd430a (verdict 2026-08-31: A beats anchor on WT103; B regressed everywhere and is discarded).",
+    "requires": {
+      "gpus": 1
+    },
+    "requires_signoff": null,
+    "run_kind": "measure",
+    "script_sha256": {}
+  },
+  "question": "Bundle export of the CHOSEN demo model pbd430a (verdict 2026-08-31: A beats anchor on WT103; B regressed everywhere and is discarded).",
+  "run_id": "s31_export_pbd430a",
+  "script_sha256": {},
+  "utc": "2026-08-31T21:28:50Z"
+}

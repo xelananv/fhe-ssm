@@ -1,0 +1,6 @@
+== sound_r13_stock: --log-ring 13 --mode stock --trials 40 2026-09-18T13:37:16Z
+   exit=0 2026-09-18T13:38:17Z
+== sound_r13_hand_a1: --log-ring 13 --mode hand --widths 1 --trials 40 2026-09-18T13:38:17Z
+   exit=0 2026-09-18T13:39:18Z
+== dose_r13_F10: --log-ring 13 --mode hand --widths 8,9,7,10,6,5 --trials-list 300,300,300,150,200,100 2026-09-18T13:39:18Z
+   exit=0 2026-09-18T14:18:38Z

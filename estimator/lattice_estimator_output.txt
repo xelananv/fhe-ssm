@@ -1,0 +1,81 @@
+    set      N  logQP  full lattice-estimator result
+
+=== LAB (N=16384, logQP=360) ===
+  primal_usvp                   rop: ≈2^155.3
+         red: ≈2^155.3
+           δ: 1.003805
+           β:      427
+           d:    32115
+         tag:     usvp
+  dual                          rop: ≈2^156.6
+         mem: ≈2^101.8
+           m: ≈2^14.0
+           β:      428
+           d:    32747
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 5.81309232851950e46
+
+=== PS-G1 (N=16384, logQP=415) ===
+  primal_usvp                   rop: ≈2^133.4
+         red: ≈2^133.4
+           δ: 1.004382
+           β:      348
+           d:    31616
+         tag:     usvp
+  dual                          rop: ≈2^134.4
+         mem: ≈2^85.9
+           m: ≈2^14.0
+           β:      348
+           d:    32754
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 1.43664263628822e40
+
+=== PS-G1c (N=16384, logQP=335) ===
+  primal_usvp                   rop: ≈2^168.1
+         red: ≈2^168.1
+           δ: 1.003541
+           β:      473
+           d:    32002
+         tag:     usvp
+  dual                          rop: ≈2^169.3
+         mem: ≈2^110.8
+           m: ≈2^14.0
+           β:      474
+           d:    32736
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 4.09747122544557e50
+
+=== PS-P (N=32768, logQP=840) ===
+  primal_usvp                   rop: ≈2^132.5
+         red: ≈2^132.5
+           δ: 1.004443
+           β:      341
+           d:    63774
+         tag:     usvp
+  dual                          rop: ≈2^133.6
+         mem: ≈2^85.5
+           m: ≈2^15.0
+           β:      341
+           d:    65527
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 7.59294842452392e39
+
+=== PS-G2 (N=65536, logQP=1570) ===
+  primal_usvp                   rop: ≈2^143.2
+         red: ≈2^143.2
+           δ: 1.004156
+           β:      376
+           d:   128693
+         tag:     usvp
+  dual                          rop: ≈2^144.3
+         mem: ≈2^93.1
+           m: ≈2^16.0
+           β:      376
+           d:   131053
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 1.28368249311322e43

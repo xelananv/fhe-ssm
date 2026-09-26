@@ -1,0 +1,8 @@
+23:33:37Z === control arm requested; waiting for the GPUs to be free ===
+23:33:42Z launching CTRL512: FIDESLIB_BOOT_UNIFORM_EXT=0 (stock K = 512), TICKS=40, stop file at 2026-09-20 00:00:00
+23:39:01Z smaps snapshot after request 1 (pid 378386, 26598 lines)
+23:42:13Z smaps snapshot after request 2 (pid 378386, 26650 lines)
+23:45:24Z smaps snapshot after request 3 (pid 378386, 26650 lines)
+23:48:35Z smaps snapshot after request 4 (pid 378386, 26650 lines)
+00:00:03Z stop file written
+00:01:29Z CTRL512 finished: 8 served ticks

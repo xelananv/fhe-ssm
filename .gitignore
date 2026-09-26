@@ -1,0 +1,12 @@
+# weights, bundles, keys, stores and ciphertexts are never committed
+*.npz
+*.bin
+*.ct
+*.f64
+*.key
+secret*
+keys_*/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

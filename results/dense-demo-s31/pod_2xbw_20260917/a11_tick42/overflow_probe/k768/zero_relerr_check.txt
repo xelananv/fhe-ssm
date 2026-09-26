@@ -1,0 +1,1 @@
+trial records: 1735; non-throwing trials with relErrRms == 0: 0; with relErrRms null: 0; with nonFinite > 0: 0; with coefNonFinite > 0: 0

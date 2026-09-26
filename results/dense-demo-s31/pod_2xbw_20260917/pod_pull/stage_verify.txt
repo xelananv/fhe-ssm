@@ -1,0 +1,12 @@
+=== STAGE VERIFY 2026-09-17T22:36:18Z ART=/root/src/ml-eval/artifacts ===
+ok   file                         bytes        want         sha256
+OK   bundle_pbd430a.bin           3448050888   3448050888   67069799192af9e2447abca0e707c8464576d35f0f06aaae83029bd03b45b5fc
+OK   bundle_pbd430a.index.txt     18332        18332        4fde393f8456ba8c09fcf16945310e965cf0125f40a9281ff11fd25df33c501d
+OK   pbd430a_weights.npz          1824931038   1824931038   3ec3f1d8b9b71e7eee38055a7621213991c6417a89576f1c02590963293e784b
+OK   pbd430a_config.json          465          465          1829d34eeddbbfc4ce023a43d828085c6e71a2a941e7da8aa17790544b770ba7
+OK   pbd430a_seeds.json           9332         9332         d63288181655ebbb5370a16be4b59d7bd6745fcf98bf8ca14e1ca15ec51245b7
+OK   bundle_agnd768b.bin          1313514120   1313514120   12d3bf11063b589f90929855a11691953f10cf892cf15e633c6df559045c1be2
+OK   bundle_agnd768b.index.txt    8553         8553         ae1b5dc4a4db12710470003fda558b0ca74628c0ac328248e96a4ad928089bc8
+OK   demo_prompts_64.txt          2709         2709         0713393b8e61e58c9c9c1360e2c6fc3269b554280e5425c4140af02f95772f49
+prompts path: /root/demo/demo_prompts_64.txt (64 lines)
+=== STAGE VERIFY: PASS ===

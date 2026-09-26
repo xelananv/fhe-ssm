@@ -1,0 +1,10 @@
+N = 2^17, trials 3000: mean h 87387 (2N/3 = 87381); sigma_I measured 85.336 (predicted sqrt((h+1)/12) = 85.337)
+max|I| per ciphertext: min 342, median 389, max 517
+B | observed P(max|I| > B) | predicted 1-(1-2Q((B+.5)/sigma))^N | observed count
+380 | 0.6623 | 0.6605 | 1987
+400 | 0.3110 | 0.2971 | 933
+420 | 0.1103 | 0.1034 | 331
+440 | 0.0337 | 0.0315 | 101
+460 | 0.0087 | 0.0089 | 26
+480 | 0.0040 | 0.0024 | 12
+500 | 0.0007 | 0.0006 | 2

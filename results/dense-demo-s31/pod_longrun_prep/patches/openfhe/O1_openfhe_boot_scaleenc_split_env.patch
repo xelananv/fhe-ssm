@@ -1,0 +1,74 @@
+diff --git a/src/pke/include/scheme/ckksrns/ckksrns-fhe.h b/src/pke/include/scheme/ckksrns/ckksrns-fhe.h
+index 765a33f..0b68685 100644
+--- a/src/pke/include/scheme/ckksrns/ckksrns-fhe.h
++++ b/src/pke/include/scheme/ckksrns/ckksrns-fhe.h
+@@ -123,6 +123,10 @@ public:
+ 
+ using namespace std::literals::complex_literals;
+ 
++// fhe-ssm O1: this build's EvalBootstrapSetup / EvalBootstrapPrecompute honour FIDESLIB_BOOT_UNIFORM_EXT=split (scaleEnc = pre / 3).
++// FIDESlib's K1 patch tests this macro before it divides by 256 * N instead of 768 * N.
++#define OPENFHE_FHESSM_BOOT_UNIFORM_SPLIT_ENV 1
++
+ class FHECKKSRNS : public FHERNS {
+ private:
+ public:
+diff --git a/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp b/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp
+index 060f9b6..1624c8d 100644
+--- a/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp
++++ b/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp
+@@ -55,6 +55,11 @@
+ #include <utility>
+ #include <vector>
+ 
++// fhe-ssm O1 (see BootUniformScaleEncDivisorFromEnv below)
++#include <cstdlib>
++#include <cstring>
++#include <iostream>
++
+ #ifdef BOOTSTRAPTIMING
+     #include <ostream>
+     #define PROFILE
+@@ -72,6 +77,24 @@ double GetBigModulus(const std::shared_ptr<lbcrypto::CryptoParametersCKKSRNS>& c
+     }
+     return qDouble;
+ }
++
++// fhe-ssm O1 -- opt-in, default OFF. FIDESLIB_BOOT_UNIFORM_EXT=split (the SAME variable FIDESlib's RawCiphertext.cu reads, so the two
++// libraries cannot disagree) folds the odd part of K_UNIFORMEXT = 768 = 3 * 2^8 into the CoeffsToSlots precomputation of a
++// UNIFORM_TERNARY context: scaleEnc = pre / 3, the place where the sparse cases fold their whole K. The GPU bootstrap then divides
++// the raised ciphertext by the power of two 256 * N. Why: EvalMult by a double encodes the constant as round(c * SF) / SF; for
++// c = pre / (768 * N) that rounding is a relative scale error of the sine's input (+7.2e-12 at N = 2^13, measured on CPU as an error
++// linear in every coefficient's overflow; +9.5e-11 at N = 2^17 by the same arithmetic), for a power of two it is what the stock
++// K = 512 path has. Same depth, same keys, same level budget. Any other value of the variable (unset, 0, 1): stock behaviour.
++double BootUniformScaleEncDivisorFromEnv() {
++    const char* v    = std::getenv("FIDESLIB_BOOT_UNIFORM_EXT");
++    const bool split = (v != nullptr) && (std::strcmp(v, "split") == 0);
++    static bool noted = false;
++    if (split && !noted) {
++        noted = true;
++        std::cout << "{\"openfheBootScaleEnc\":\"pre/3\",\"oddPartOfK\":3,\"env\":\"FIDESLIB_BOOT_UNIFORM_EXT=split\"}" << std::endl;
++    }
++    return split ? 3.0 : 1.0;
++}
+ }  // namespace
+ 
+ namespace lbcrypto {
+@@ -228,7 +251,7 @@ void FHECKKSRNS::EvalBootstrapSetup(const CryptoContextImpl<DCRTPoly>& cc, std::
+         double k;
+         switch (cryptoParams->GetSecretKeyDist()) {
+             case UNIFORM_TERNARY:
+-                k = 1.0;
++                k = BootUniformScaleEncDivisorFromEnv();  // fhe-ssm O1: 3.0 only under FIDESLIB_BOOT_UNIFORM_EXT=split
+                 break;
+             case SPARSE_TERNARY:
+                 k = K_SPARSE;
+@@ -419,7 +442,7 @@ void FHECKKSRNS::EvalBootstrapPrecompute(const CryptoContextImpl<DCRTPoly>& cc,
+     double k;
+     switch (cryptoParams->GetSecretKeyDist()) {
+         case UNIFORM_TERNARY:
+-            k = 1.0;
++            k = BootUniformScaleEncDivisorFromEnv();  // fhe-ssm O1: 3.0 only under FIDESLIB_BOOT_UNIFORM_EXT=split
+             break;
+         case SPARSE_TERNARY:
+             k = K_SPARSE;

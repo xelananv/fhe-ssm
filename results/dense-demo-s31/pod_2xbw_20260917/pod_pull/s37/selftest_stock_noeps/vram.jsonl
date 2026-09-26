@@ -1,0 +1,4 @@
+{"vramTrace":"keysHost","dev":0,"usedGB":48.3069,"freeGB":46.6633,"totalGB":94.9702,"poolOk":true,"poolReservedGB":0,"poolReservedHighGB":0,"poolUsedGB":0,"poolUsedHighGB":0,"poolSlackGB":0,"poolTransientGB":0}
+{"vramTrace":"keysHost","dev":1,"usedGB":47.2908,"freeGB":47.6794,"totalGB":94.9702,"poolOk":true,"poolReservedGB":0,"poolReservedHighGB":0,"poolUsedGB":0,"poolUsedHighGB":0,"poolSlackGB":0,"poolTransientGB":0}
+{"vramTrace":"loadContext","dev":0,"usedGB":86.1584,"freeGB":8.81177,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"vramTrace":"loadContext","dev":1,"usedGB":86.1424,"freeGB":8.82782,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}

@@ -1,0 +1,166 @@
+=== F-est battery, sigma=3.19, lattice-estimator in lattice-estimator-src ===
+                 set       N  logQP               secret
+
+=== R17-DEPLOYED (N=131072, logQP=2371, secret=uniform_ternary) ===
+    why: the deployed chain; paper's own operating point, never estimated
+  primal_usvp                   rop: ≈2^195.4
+         red: ≈2^195.4
+           δ: 1.003139
+           β:      560
+           d:   258928
+         tag:     usvp
+  dual                          rop: ≈2^196.5
+         mem:      565
+           m: ≈2^17.0
+           β:      564
+           d:   262750
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 6.59337099753217e58  = 2^195.39  CLEARS 128-bit
+  (0.1 s)
+
+=== R17-CEILING (N=131072, logQP=3523, secret=uniform_ternary) ===
+    why: HEStd_128_classic ceiling at 2^17 - estimate the table constant itself
+  primal_usvp                   rop: ≈2^128.1
+         red: ≈2^128.1
+           δ: 1.004657
+           β:      318
+           d:   250762
+         tag:     usvp
+  dual                          rop: ≈2^128.4
+         mem:      320
+           m: ≈2^17.0
+           β:      319
+           d:   262662
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 3.61760218510297e38  = 2^128.09  CLEARS 128-bit
+  (0.1 s)
+
+=== R17-SPARSE-H32 (N=131072, logQP=2371, secret=sparse_ternary_h32) ===
+    why: F-est (a): lever 2 encapsulated bootstrap, h'=32, at the deployed chain
+  primal_usvp                   rop: ≈2^195.1
+         red: ≈2^195.1
+           δ: 1.003143
+           β:      559
+           d:   252431
+         tag:     usvp
+  dual                          rop: ≈2^196.0
+         mem: ≈2^129.7
+           m: ≈2^17.0
+           β:      559
+           d:   261593
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 5.29842366240650e58  = 2^195.08  CLEARS 128-bit
+  (0.1 s)
+
+=== R17-SPARSE-H32-CEIL (N=131072, logQP=3523, secret=sparse_ternary_h32) ===
+    why: F-est (a): same secret at the ceiling - sizes the sparse margin
+  primal_usvp                   rop: ≈2^127.8
+         red: ≈2^127.8
+           δ: 1.004667
+           β:      317
+           d:   251741
+         tag:     usvp
+  dual                          rop: ≈2^128.2
+         mem:      319
+           m: ≈2^17.0
+           β:      318
+           d:   262173
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 2.99739424368197e38  = 2^127.82  FAILS 128-bit
+  (0.1 s)
+
+=== R16-1711 (N=65536, logQP=1711, secret=uniform_ternary) ===
+    why: F-est (b): lever 3 short chain, claimed 1711 <= 1747 with 9 bits spare
+  primal_usvp                   rop: ≈2^131.0
+         red: ≈2^131.0
+           δ: 1.004524
+           β:      332
+           d:   126007
+         tag:     usvp
+  dual                          rop: ≈2^131.9
+         mem:      336
+           m: ≈2^16.0
+           β:      335
+           d:   131544
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 2.66987304092462e39  = 2^130.97  CLEARS 128-bit
+  (0.1 s)
+
+=== R16-CEILING (N=65536, logQP=1747, secret=uniform_ternary) ===
+    why: control for (b): the 2^16 ceiling constant
+  primal_usvp                   rop: ≈2^128.2
+         red: ≈2^128.2
+           δ: 1.004618
+           β:      322
+           d:   125668
+         tag:     usvp
+  dual                          rop: ≈2^129.1
+         mem:      326
+           m: ≈2^16.0
+           β:      325
+           d:   131573
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 3.90249655171892e38  = 2^128.20  CLEARS 128-bit
+  (0.1 s)
+
+=== D45 (N=131072, logQP=3187, secret=uniform_ternary) ===
+    why: F-est (c): lever 4 D=45 chain (logQ 2715 + 8 specials)
+  primal_usvp                   rop: ≈2^142.0
+         red: ≈2^142.0
+           δ: 1.004218
+           β:      368
+           d:   255108
+         tag:     usvp
+  dual                          rop: ≈2^142.6
+         mem:      371
+           m: ≈2^17.0
+           β:      370
+           d:   262690
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 5.47121137520261e42  = 2^141.97  CLEARS 128-bit
+  (0.1 s)
+
+=== D53-DNUM10 (N=131072, logQP=3541, secret=uniform_ternary) ===
+    why: F-est (c): D=53 at dnum=10 - expected to BREACH (3541 > 3523)
+  primal_usvp                   rop: ≈2^127.3
+         red: ≈2^127.3
+           δ: 1.004687
+           β:      315
+           d:   254906
+         tag:     usvp
+  dual                          rop: ≈2^127.9
+         mem:      318
+           m: ≈2^17.0
+           β:      317
+           d:   262778
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 2.06748841942923e38  = 2^127.28  FAILS 128-bit
+  (0.1 s)
+
+=== D53-DNUM12 (N=131072, logQP=3482, secret=uniform_ternary) ===
+    why: F-est (c): D=53 at dnum>=12, the forced repair
+  primal_usvp                   rop: ≈2^129.5
+         red: ≈2^129.5
+           δ: 1.004609
+           β:      323
+           d:   254846
+         tag:     usvp
+  dual                          rop: ≈2^130.1
+         mem:      326
+           m: ≈2^17.0
+           β:      325
+           d:   262766
+           ↻:        1
+         tag:     dual
+  --> weakest attack: 9.60167355056566e38  = 2^129.50  CLEARS 128-bit
+  (0.1 s)
+
+=== battery complete ===

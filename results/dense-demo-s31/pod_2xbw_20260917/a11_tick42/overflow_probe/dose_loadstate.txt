@@ -1,0 +1,8 @@
+start 2026-09-18T13:37:16Z
+bcaaea2a47d627b50c6381aa6fac47e7c164911267c4ea7559133da59a6746ac  harness/build/boot_overflow_probe
+da7c0fd6127e0ba78de356815ad415745d7b2c7c11a8d002d8adc8f30848405a  harness/boot_overflow_probe.cpp
+{"availGB":5.31,"totalGB":16.00,"swapUsedMB":1600,"compressorGB":2.93,"heavyProcs":0,"heavyFootprintGB":0.00}
+16:37  up 11 days, 11:05, 1 user, load averages: 2.95 2.68 2.69
+end 2026-09-18T14:18:38Z
+{"availGB":5.80,"totalGB":16.00,"swapUsedMB":1993,"compressorGB":2.90,"heavyProcs":0,"heavyFootprintGB":0.00}
+17:18  up 11 days, 11:47, 1 user, load averages: 2.93 3.13 3.28

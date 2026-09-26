@@ -1,0 +1,39 @@
+$REPO/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[serve_ollama] tag=pbd430a d=1024 L=24 d_ffn=4096 nonlin=poly block=sequential
+[serve_ollama] params=404.7M weights=$BACKUP/pbd430a_weights_DEMO_MODEL_20260901.npz (1.4s) device=mps dtype=float32
+[serve_ollama] PLAINTEXT model — this path says nothing about FHE timings
+{
+  "bench": "serve_ollama",
+  "device": "mps",
+  "dtype": "float32",
+  "promptTokens": 108,
+  "prefillSec": 0.992,
+  "prefillTokPerSec": 108.89,
+  "evalTokens": 64,
+  "evalSec": 1.374,
+  "decodeTokPerSec": 46.59
+}
+        7.49 real         3.14 user         2.15 sys
+          2090041344  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              261913  page reclaims
+                6747  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                5210  voluntary context switches
+               38688  involuntary context switches
+         61982131172  instructions retired
+         21683200922  cycles elapsed
+          4247111840  peak memory footprint
+
+# context (2026-09-23): `python ml-eval/serve_ollama.py --bench --num-predict 64` under /usr/bin/time -l on the 16 GiB Apple M5 laptop,
+# MPS float32, greedy, the chmod-444 demo checkpoint. Load state: another serve_ollama.py (port 11435, the author's chat server) was
+# alive during the run, activity unknown -> a few-percent difference from a quiet run is noise (repo rule R6). Peak RSS 2.09 GB.
+# Reading: decode 46.6 tok/s over 64 tokens, prefill 109 tok/s over 108 tokens; the model card's "50 tokens/s" is the right order.

@@ -1,0 +1,18 @@
+13:24:50Z === boot arms selftest: bin /root/fhe-main-demo/build-demo/gpu_real_model_x (c503feeb1fee329c), REPS=2 ===
+13:24:50Z run bootarm_0_r1
+13:25:33Z run bootarm_0_r2
+13:26:15Z run bootarm_1_r1
+13:26:57Z run bootarm_1_r2
+13:27:39Z run bootarm_split_r1
+13:28:22Z run bootarm_split_r2
+| arm | rep | table | tableK | bootK (scalar) | scaleEncOddPart | OpenFHE O1 line | chebyDegree | selftest bootstrap | err (max-abs) | lvlPost | bootRestored | hardFail | softFail |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | 1 | g_coefficientsUniform | 512 | 512 | 1 | False | 88 | ok | 0.00166651 | [19] | False | 0 | 1 |
+| 0 | 2 | g_coefficientsUniform | 512 | 512 | 1 | False | 88 | ok | 0.00255942 | [19] | False | 0 | 1 |
+| 1 | 1 | g_coefficientsUniformExt | 768 | 768 | 1 | False | 118 | ok | 0.00287927 | [19] | False | 0 | 1 |
+| 1 | 2 | g_coefficientsUniformExt | 768 | 768 | 1 | False | 118 | ok | 0.00236043 | [19] | False | 0 | 1 |
+| split | 1 | g_coefficientsUniformExt | 768 | 256 | 3 | True | 118 | ok | 0.00108217 | [19] | False | 0 | 1 |
+| split | 2 | g_coefficientsUniformExt | 768 | 256 | 3 | True | 118 | ok | 0.00131477 | [19] | False | 0 | 1 |
+mean err per arm (None = some repeat failed or is missing): {'0': None, '1': None, 'split': None}
+BOOT ARM DECISION: None -- the STOCK arm did not pass: the binary or the box is broken, nothing to choose yet
+13:29:04Z BOOT_ARMS_DONE: None -- the STOCK arm did not pass: the binary or the box is broken, nothing to choose yet

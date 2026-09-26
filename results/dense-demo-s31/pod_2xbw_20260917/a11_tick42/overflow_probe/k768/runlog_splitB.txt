@@ -1,0 +1,14 @@
+== B_split_r13_F10_base: OPENFHE_BOOT_UNIFORM_EXT=1 OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1 harness/build/boot_overflow_probe_k768b --k-bound 768 --log-ring 13 --mode stock --trials 40 --err-by-absI 1 2026-09-18T16:39:14Z
+   exit=0 2026-09-18T16:40:22Z lines=82
+== B_split_r13_F10_planted_wide: OPENFHE_BOOT_UNIFORM_EXT=1 OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1 harness/build/boot_overflow_probe_k768b --k-bound 768 --log-ring 13 --mode stock --plant 100:760:20 --trials 3 --plant-index 100 2026-09-18T16:40:22Z
+   exit=0 2026-09-18T16:43:13Z lines=105
+== B_split_r13_F10_planted_edge: OPENFHE_BOOT_UNIFORM_EXT=1 OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1 harness/build/boot_overflow_probe_k768b --k-bound 768 --log-ring 13 --mode stock --plant 765:805:1 --trials 3 --plant-index 100 2026-09-18T16:43:13Z
+   exit=0 2026-09-18T16:46:39Z lines=126
+== B_split_r12_F11_base: OPENFHE_BOOT_UNIFORM_EXT=1 OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1 harness/build/boot_overflow_probe_k768b --k-bound 768 --log-ring 12 --mode stock --trials 40 --err-by-absI 1 2026-09-18T16:46:39Z
+   exit=0 2026-09-18T16:47:12Z lines=82
+== B_split_r12_F11_planted_wide: OPENFHE_BOOT_UNIFORM_EXT=1 OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1 harness/build/boot_overflow_probe_k768b --k-bound 768 --log-ring 12 --mode stock --plant 100:760:60 --trials 3 --plant-index 100 2026-09-18T16:47:12Z
+   exit=0 2026-09-18T16:47:42Z lines=39
+== B_nosplit_r13_F10_base: OPENFHE_BOOT_UNIFORM_EXT=1 harness/build/boot_overflow_probe_k768b --k-bound 768 --log-ring 13 --mode stock --trials 10 --err-by-absI 1 2026-09-18T16:47:42Z
+   exit=0 2026-09-18T16:48:01Z lines=22
+== B_ctrl_r13_F10_base: (no env) harness/build/boot_overflow_probe_k768b --log-ring 13 --mode stock --trials 10 --err-by-absI 1 2026-09-18T16:48:01Z
+   exit=0 2026-09-18T16:48:18Z lines=22
