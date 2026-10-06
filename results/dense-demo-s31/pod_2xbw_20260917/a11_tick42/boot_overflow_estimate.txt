@@ -1,0 +1,36 @@
+library constants: K_UNIFORM = 512, R_UNIFORM = 6, Chebyshev degree 88
+inside |I| <= K: worst |g - sin| at integers 1.732e-12; at I+0.01 1.944e-12 (sanity: the table reproduces the target)
+
+overflow I | t = I/K | |g(t) - sin(2 pi I)| (error injected into ONE coefficient, in units of the sine output)
+   512 | 1.0000 | 1.067e-12   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   513 | 1.0020 | 3.564e-11   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   514 | 1.0039 | 1.477e-10   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   515 | 1.0059 | 5.394e-10   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   516 | 1.0078 | 1.739e-09   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   517 | 1.0098 | 5.098e-09   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   518 | 1.0117 | 1.387e-08   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   519 | 1.0137 | 3.554e-08   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   520 | 1.0156 | 8.679e-08   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   521 | 1.0176 | 2.036e-07   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   522 | 1.0195 | 4.614e-07   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   523 | 1.0215 | 1.016e-06   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   527 | 1.0293 | 1.918e-05   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   532 | 1.0391 | 5.548e-04   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   538 | 1.0508 | 2.813e-02   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   544 | 1.0625 | 6.121e-02   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   552 | 1.0781 | 1.236e-01   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+   563 | 1.0996 | 9.154e+149   (the message itself is ~ m/q0 <= ~1e-3 in these units)
+
+first overflow at which the injected error exceeds a threshold: {'1e-06': 523, '0.0001': 532, '0.01': 538}
+
+ring N = 131072: uniform ternary h ~ 87381, sigma_I = 85.33, K/sigma = 6.00
+  P(|I_j| > 512) = 1.90e-09 per coefficient -> 2.49e-04 per bootstrap -> 1.13e-01 per tick at 480 boots (mean ticks to first event 9)
+  P(|I_j| > 523) = 8.53e-10 per coefficient -> 1.12e-04 per bootstrap -> 5.23e-02 per tick at 480 boots (mean ticks to first event 19)
+  P(|I_j| > 532) = 4.37e-10 per coefficient -> 5.73e-05 per bootstrap -> 2.71e-02 per tick at 480 boots (mean ticks to first event 37)
+  P(|I_j| > 538) = 2.78e-10 per coefficient -> 3.65e-05 per bootstrap -> 1.73e-02 per tick at 480 boots (mean ticks to first event 58)
+
+ring N = 65536: uniform ternary h ~ 43691, sigma_I = 60.34, K/sigma = 8.49
+  P(|I_j| > 512) = 2.01e-17 per coefficient -> 0.00e+00 per bootstrap
+  P(|I_j| > 523) = 4.11e-18 per coefficient -> 0.00e+00 per bootstrap
+  P(|I_j| > 532) = 1.10e-18 per coefficient -> 0.00e+00 per bootstrap
+  P(|I_j| > 538) = 4.48e-19 per coefficient -> 0.00e+00 per bootstrap

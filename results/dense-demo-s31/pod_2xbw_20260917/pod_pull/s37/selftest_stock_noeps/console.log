@@ -1,0 +1,35 @@
+=== S3.7 CELL selftest_stock_noeps (selftest) 2026-09-18T01:14:05Z ===
+LOADSTATE 2026-09-18T01:14:05Z uptime: 01:14:05 up 26 days, 21:43,  0 user,  load average: 5.39, 6.91, 6.34
+LOADSTATE gpu compute apps: 1689393, 47810 MiB;1689393, 47810 MiB;
+LOADSTATE busy marker: 90_s37_cell.sh pid=1696574 since=2026-09-18T01:14:05Z
+CMD: /root/fhe-main-demo/build-demo/gpu_real_model --tag pbd430a --bundle-dir /root/src/ml-eval/artifacts --device 0 --log-ring 17 --secure --level-budget 3 3 --ms-norm 5.5 --enc-threads 24 --boot-floor 3 --matvec-margin 4 --extra-depth 12 --canonical-carry --pack-tokens 1 --compressed-store --devices 0,1 --store-multi-gpu --selftest --self-d 1024 --self-dff 4096 --keys-dir /root/mac_keys_r17 --keys-load --no-norm-eps
+LOADSTATE CONTENDED
+FIDESLIB_USE_MEMCPY_PEER=0, set to: 0
+{"schedLevers":true,"schedule":"stock","pfEntry":"loop","shareBabies":false,"newtonDepth2":false,"poolLevels":2,"stockPath":true}
+{"keysLoad":true,"evalRotFiles":36,"autoKeysInMap":143}
+{"vramTrace":"keysHost","dev":0,"usedGB":48.3069,"freeGB":46.6633,"totalGB":94.9702,"poolOk":true,"poolReservedGB":0,"poolReservedHighGB":0,"poolUsedGB":0,"poolUsedHighGB":0,"poolSlackGB":0,"poolTransientGB":0}
+{"warn":"vramTrace: default pool reserves < 0.5 GB while the card shows 48.3069 GB used -- the library is not allocating from the device default pool; the pool* fields describe only the harness's own pool use"}
+{"vramTrace":"keysHost","dev":1,"usedGB":47.2908,"freeGB":47.6794,"totalGB":94.9702,"poolOk":true,"poolReservedGB":0,"poolReservedHighGB":0,"poolUsedGB":0,"poolUsedHighGB":0,"poolSlackGB":0,"poolTransientGB":0}
+GPU 0: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU 1: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU P2P? 1
+Adding bootstrap precomputation to GPU for 65536 slots.
+Plaintexts loaded: 762 ~ 35814MB
+Rotation keys loaded: 143 ~ 48048MB
+{"vramTrace":"loadContext","dev":0,"usedGB":86.1584,"freeGB":8.81177,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"vramTrace":"loadContext","dev":1,"usedGB":86.1424,"freeGB":8.82782,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"harness":"gpu_real_model","arch":"native","tag":"pbd430a","secure":true,"ringDim":131072,"slots":65536,"d":1024,"Dpad":1024,"REP":64,"L":1,"dff":4096,"BS":32,"haveBundle":false,"ompMaxThreads":24,"scaleBits":59,"normEpsOn":false,"setupMs":46657}
+{"selftest":"encdec","throw":"bad any_cast"}
+{"selftest":"rotate","throw":"bad any_cast"}
+{"selftest":"matvec","throw":"bad any_cast"}
+{"selftest":"rmsnorm","throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":1,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":5,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":22,"throw":"bad any_cast"}
+{"selftest":"bootstrap","throw":"bad any_cast"}
+{"selftestSummary":true,"hardFail":3,"softFail":5,"peakVramGB":92.4358}
+RC=3 (recorded, not trusted: F74)
+WALL_S=55
+=== VERDICT: RAN (selftest_stock_noeps) -- judge the fields against POD_PLAN_S37.md section 5 ===

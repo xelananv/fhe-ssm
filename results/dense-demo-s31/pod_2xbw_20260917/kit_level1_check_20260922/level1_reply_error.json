@@ -1,0 +1,371 @@
+{
+ "definitions": [
+  "(tick_TTT_reqN_resp.f64, tick_TTT_reqN_req.f64; 64 x 1024 float64, lane-major).",
+  "Definitions (a = re-decrypted, b = recorded, per tick):",
+  "  rel_rms        = ||a-b||_F / ||b||_F                    over the 64 x 1024 matrix",
+  "  rel_max_global = max|a-b| / max|b|                      (compare.py's figure)",
+  "  row_rel_max    = max over lanes of max|a_l-b_l| / max|b_l|"
+ ],
+ "ticks": [
+  {
+   "tick": 0,
+   "reply": {
+    "rel_rms": 0.00231597372259083,
+    "rel_max_global": 0.000622932400290224,
+    "row_rel_max": 0.0011282952181379071,
+    "row_rel_rms_min": 0.0021821594008472676,
+    "row_rel_rms_max": 0.002502465086374652,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.3736448441348065e-11,
+    "rel_max_global": 8.275622409830682e-12,
+    "row_rel_max": 1.396764363056034e-11,
+    "row_rel_rms_min": 2.2534878238571135e-11,
+    "row_rel_rms_max": 5.384776708337483e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 1,
+   "reply": {
+    "rel_rms": 0.0021872859651898813,
+    "rel_max_global": 0.00046810557375412,
+    "row_rel_max": 0.0012506161034843317,
+    "row_rel_rms_min": 0.002029151179076412,
+    "row_rel_rms_max": 0.0023529504496114253,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 3.989386775432613e-11,
+    "rel_max_global": 9.376681668073108e-12,
+    "row_rel_max": 5.146639735479156e-11,
+    "row_rel_rms_min": 2.702535700509245e-11,
+    "row_rel_rms_max": 7.239780361596454e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 2,
+   "reply": {
+    "rel_rms": 0.002323855362167476,
+    "rel_max_global": 0.00038739179667020166,
+    "row_rel_max": 0.002216170155903935,
+    "row_rel_rms_min": 0.0019081848971291109,
+    "row_rel_rms_max": 0.002620387812896208,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.424467020532319e-11,
+    "rel_max_global": 1.0422245548716326e-11,
+    "row_rel_max": 5.5643433751393703e-11,
+    "row_rel_rms_min": 3.1077231505432113e-11,
+    "row_rel_rms_max": 6.68704663686115e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 3,
+   "reply": {
+    "rel_rms": 0.008550141931240091,
+    "rel_max_global": 0.0018548516178001893,
+    "row_rel_max": 0.0058113391360800504,
+    "row_rel_rms_min": 0.007634382872971009,
+    "row_rel_rms_max": 0.009818643108343319,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 5.016855938181014e-11,
+    "rel_max_global": 9.759846404378363e-12,
+    "row_rel_max": 6.954210942235313e-11,
+    "row_rel_rms_min": 3.059411083564869e-11,
+    "row_rel_rms_max": 6.741936557717745e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 4,
+   "reply": {
+    "rel_rms": 0.003618180703970056,
+    "rel_max_global": 0.000911271227632635,
+    "row_rel_max": 0.0022228881254192,
+    "row_rel_rms_min": 0.003345246749509322,
+    "row_rel_rms_max": 0.0038857909764826023,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.5839103871908316e-11,
+    "rel_max_global": 9.247632098131545e-12,
+    "row_rel_max": 5.6738041581040345e-11,
+    "row_rel_rms_min": 2.71762462634016e-11,
+    "row_rel_rms_max": 6.770222274683775e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 5,
+   "reply": {
+    "rel_rms": 0.0030958252354197796,
+    "rel_max_global": 0.000841158800079162,
+    "row_rel_max": 0.0020268304666133715,
+    "row_rel_rms_min": 0.00292045177711778,
+    "row_rel_rms_max": 0.0033513208767565967,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.8709307744836456e-11,
+    "rel_max_global": 1.0037946298925743e-11,
+    "row_rel_max": 5.640633165014777e-11,
+    "row_rel_rms_min": 3.413894081923819e-11,
+    "row_rel_rms_max": 6.740850264761254e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 6,
+   "reply": {
+    "rel_rms": 0.0031827874242553833,
+    "rel_max_global": 0.0007066324797019785,
+    "row_rel_max": 0.0033236510658583183,
+    "row_rel_rms_min": 0.002934981048571402,
+    "row_rel_rms_max": 0.003586234801374418,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.7760329693010936e-11,
+    "rel_max_global": 9.064766454328186e-12,
+    "row_rel_max": 6.115128080502403e-11,
+    "row_rel_rms_min": 2.760919049053416e-11,
+    "row_rel_rms_max": 6.746843767672053e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 7,
+   "reply": {
+    "rel_rms": 0.003349877089728881,
+    "rel_max_global": 0.0006955472151737764,
+    "row_rel_max": 0.003136387302368839,
+    "row_rel_rms_min": 0.002969283276429435,
+    "row_rel_rms_max": 0.0036282229403780154,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.815567880218011e-11,
+    "rel_max_global": 1.115512403263085e-11,
+    "row_rel_max": 6.200745796447481e-11,
+    "row_rel_rms_min": 3.2383312705772924e-11,
+    "row_rel_rms_max": 7.768281223453001e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 8,
+   "reply": {
+    "rel_rms": 0.003328169461376683,
+    "rel_max_global": 0.000580273313569344,
+    "row_rel_max": 0.002919536321658875,
+    "row_rel_rms_min": 0.0029279197419310454,
+    "row_rel_rms_max": 0.0037729594332498936,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.44917595366941e-11,
+    "rel_max_global": 9.351756521651365e-12,
+    "row_rel_max": 4.6118404991946946e-11,
+    "row_rel_rms_min": 2.840818551234109e-11,
+    "row_rel_rms_max": 6.700246889483227e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 9,
+   "reply": {
+    "rel_rms": 0.0035554152792628226,
+    "rel_max_global": 0.0009323298329255964,
+    "row_rel_max": 0.00314039093140584,
+    "row_rel_rms_min": 0.0032410089359953113,
+    "row_rel_rms_max": 0.004040983850860002,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.4227445022347794e-11,
+    "rel_max_global": 9.012980650394426e-12,
+    "row_rel_max": 6.029770238294778e-11,
+    "row_rel_rms_min": 2.6060452193581047e-11,
+    "row_rel_rms_max": 8.257834315356177e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 10,
+   "reply": {
+    "rel_rms": 0.00381555514294717,
+    "rel_max_global": 0.0007623577536872749,
+    "row_rel_max": 0.003433465980562105,
+    "row_rel_rms_min": 0.0034932708528560403,
+    "row_rel_rms_max": 0.00415678845888021,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.5323159796812195e-11,
+    "rel_max_global": 8.575496089003799e-12,
+    "row_rel_max": 5.347042594303051e-11,
+    "row_rel_rms_min": 2.3990723280181325e-11,
+    "row_rel_rms_max": 6.432038346586952e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 11,
+   "reply": {
+    "rel_rms": 0.0037583485456655326,
+    "rel_max_global": 0.0007640803022591242,
+    "row_rel_max": 0.0037709541274589735,
+    "row_rel_rms_min": 0.0034246700192711753,
+    "row_rel_rms_max": 0.004088447050799029,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.689600978668565e-11,
+    "rel_max_global": 1.183823334035492e-11,
+    "row_rel_max": 6.4134699638992e-11,
+    "row_rel_rms_min": 3.115860655613143e-11,
+    "row_rel_rms_max": 7.974071026302464e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 12,
+   "reply": {
+    "rel_rms": 0.003638264805166043,
+    "rel_max_global": 0.0007372560019887147,
+    "row_rel_max": 0.0022167686412932104,
+    "row_rel_rms_min": 0.0032917672628346305,
+    "row_rel_rms_max": 0.004060589923138033,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.692062820352487e-11,
+    "rel_max_global": 1.0890028049586341e-11,
+    "row_rel_max": 5.2876957875682435e-11,
+    "row_rel_rms_min": 3.076334735544631e-11,
+    "row_rel_rms_max": 7.652252961700572e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 13,
+   "reply": {
+    "rel_rms": 0.003993831230857827,
+    "rel_max_global": 0.0008957668368149843,
+    "row_rel_max": 0.0037162191446571823,
+    "row_rel_rms_min": 0.003609139389004508,
+    "row_rel_rms_max": 0.004430636961060649,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.740113940608538e-11,
+    "rel_max_global": 1.0155357399158614e-11,
+    "row_rel_max": 5.69718273155691e-11,
+    "row_rel_rms_min": 2.912288916110803e-11,
+    "row_rel_rms_max": 7.974156774025989e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 14,
+   "reply": {
+    "rel_rms": 0.004333873887698004,
+    "rel_max_global": 0.0007921937226453471,
+    "row_rel_max": 0.003625923438695553,
+    "row_rel_rms_min": 0.0038834909642066146,
+    "row_rel_rms_max": 0.004709643987464135,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.6525801634904546e-11,
+    "rel_max_global": 1.1261093365297661e-11,
+    "row_rel_max": 7.006618342811124e-11,
+    "row_rel_rms_min": 3.097586783228047e-11,
+    "row_rel_rms_max": 8.101542259005542e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 15,
+   "reply": {
+    "rel_rms": 0.005586837295294757,
+    "rel_max_global": 0.0010819522937427503,
+    "row_rel_max": 0.00439324593163197,
+    "row_rel_rms_min": 0.004900047096033083,
+    "row_rel_rms_max": 0.006357989899176334,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.758284546017981e-11,
+    "rel_max_global": 9.575527665050098e-12,
+    "row_rel_max": 5.885654971302124e-11,
+    "row_rel_rms_min": 3.0228377527204554e-11,
+    "row_rel_rms_max": 7.978190665775854e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 16,
+   "reply": {
+    "rel_rms": 0.006532872784005765,
+    "rel_max_global": 0.0012963365901578752,
+    "row_rel_max": 0.005248635500084162,
+    "row_rel_rms_min": 0.00595717234731224,
+    "row_rel_rms_max": 0.007278089917841675,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.6281684550498757e-11,
+    "rel_max_global": 1.2118777720558785e-11,
+    "row_rel_max": 5.2166394487323924e-11,
+    "row_rel_rms_min": 3.141972696583412e-11,
+    "row_rel_rms_max": 8.053276196332685e-11,
+    "nan": 0
+   }
+  },
+  {
+   "tick": 17,
+   "reply": {
+    "rel_rms": 0.006300963062399106,
+    "rel_max_global": 0.0012512819777280289,
+    "row_rel_max": 0.004625985151259295,
+    "row_rel_rms_min": 0.005630418092720406,
+    "row_rel_rms_max": 0.007056668146410206,
+    "nan": 0
+   },
+   "request": {
+    "rel_rms": 4.710048429281703e-11,
+    "rel_max_global": 1.0034920920482322e-11,
+    "row_rel_max": 6.729722799311589e-11,
+    "row_rel_rms_min": 3.1573149170976846e-11,
+    "row_rel_rms_max": 7.803953759101594e-11,
+    "nan": 0
+   }
+  }
+ ],
+ "reply_summary": {
+  "rel_rms_min": 0.0021872859651898813,
+  "rel_rms_max": 0.008550141931240091,
+  "rel_max_global_max": 0.0018548516178001893,
+  "row_rel_max_max": 0.0058113391360800504,
+  "row_rel_rms_min": 0.0019081848971291109,
+  "row_rel_rms_max": 0.009818643108343319,
+  "nan_total": 0
+ },
+ "request_summary": {
+  "rel_rms_min": 3.989386775432613e-11,
+  "rel_rms_max": 5.016855938181014e-11,
+  "rel_max_global_max": 1.2118777720558785e-11,
+  "row_rel_max_max": 7.006618342811124e-11,
+  "row_rel_rms_min": 2.2534878238571135e-11,
+  "row_rel_rms_max": 8.257834315356177e-11,
+  "nan_total": 0
+ }
+}

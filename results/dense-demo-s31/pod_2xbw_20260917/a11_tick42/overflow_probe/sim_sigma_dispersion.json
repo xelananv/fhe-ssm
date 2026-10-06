@@ -1,0 +1,21 @@
+{
+ "N": 1024,
+ "q": 1073741827,
+ "ciphertexts": 6000,
+ "hamming": 651,
+ "sigmaPred": 7.371114795831994,
+ "R2": 0.9399081172531447,
+ "prediction_correlatedGaussian": 1.9399081172531447,
+ "A_uniform_c1": {
+  "meanVar_over_pred": 0.9986526581290308,
+  "VarOfVar_over_independent": 1.274222674136574,
+  "stdErrOfThatRatio": 0.023264016730305207,
+  "meanMaxAbsI_over_sigma": 3.4298068474385257
+ },
+ "B_public_key_encryption": {
+  "meanVar_over_pred": 0.9998832009087311,
+  "VarOfVar_over_independent": 1.3521904190651257,
+  "stdErrOfThatRatio": 0.024687506485477767,
+  "meanMaxAbsI_over_sigma": 3.434894273294544
+ }
+}

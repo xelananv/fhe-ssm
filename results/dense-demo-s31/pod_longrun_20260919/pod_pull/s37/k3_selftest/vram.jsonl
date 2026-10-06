@@ -1,0 +1,2 @@
+{"vramTrace":"loadContext","dev":0,"usedGB":38.454,"freeGB":56.5162,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"vramTrace":"loadContext","dev":1,"usedGB":38.436,"freeGB":56.5342,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}

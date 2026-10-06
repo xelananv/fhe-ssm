@@ -1,0 +1,32 @@
+=== S3.7 CELL bootarm2_0_r2 (selftest) 2026-09-19T13:41:03Z ===
+LOADSTATE 2026-09-19T13:41:03Z uptime: 13:41:03 up 28 days, 10:10,  0 user,  load average: 7.48, 4.94, 11.86
+LOADSTATE gpu compute apps: 
+LOADSTATE busy marker: 90_s37_cell.sh pid=38205 since=2026-09-19T13:41:03Z
+CMD: /root/fhe-main-demo/build-demo/gpu_real_model_x.base --tag pbd430a --bundle-dir /root/src/ml-eval/artifacts --device 0 --log-ring 17 --secure --level-budget 3 3 --ms-norm 5.5 --enc-threads 24 --boot-floor 3 --matvec-margin 4 --extra-depth 12 --canonical-carry --pack-tokens 1 --lanes-block --compressed-store --devices 0,1 --store-multi-gpu --selftest --self-d 1024 --self-dff 4096 --trace-boots
+FIDESLIB_USE_MEMCPY_PEER=0, set to: 0
+{"schedLevers":true,"schedule":"stock","pfEntry":"loop","shareBabies":false,"newtonDepth2":false,"poolLevels":2,"stockPath":true}
+{"fideslibBootTable":"g_coefficientsUniform","tableK":512,"bootK":512,"scaleEncOddPart":1,"doubleAngleIts":6,"chebyDegree":88,"envBootUniformExt":"0","splitAskedButOpenfheLacksO1":false}
+GPU 0: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU 1: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU P2P? 1
+Adding bootstrap precomputation to GPU for 65536 slots.
+Plaintexts loaded: 762 ~ 35814MB
+Rotation keys loaded: 143 ~ 48048MB
+{"vramTrace":"loadContext","dev":0,"usedGB":38.454,"freeGB":56.5162,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"vramTrace":"loadContext","dev":1,"usedGB":38.436,"freeGB":56.5342,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"harness":"gpu_real_model","arch":"native","tag":"pbd430a","secure":true,"ringDim":131072,"slots":65536,"d":1024,"Dpad":1024,"REP":64,"L":1,"dff":4096,"BS":32,"haveBundle":false,"ompMaxThreads":24,"scaleBits":59,"normEpsOn":true,"setupMs":32601}
+{"selftest":"encdec","result":"ok","err":4.73183e-12}
+{"selftest":"rotate","result":"ok","err":8.41864e-11}
+{"selftest":"matvec","result":"ok","err":7.4145e-12}
+{"selftest":"rmsnorm","result":"fail","err":0.0310645}
+{"selftest":"levelMismatch","gap":1,"aLvl":0,"bLvl":1,"alignOnlyErr":3.5613e-12,"mismatchedAddErr":5.09759e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":5,"aLvl":0,"bLvl":5,"alignOnlyErr":3.22575e-12,"mismatchedAddErr":5.32374e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":22,"aLvl":0,"bLvl":22,"alignOnlyErr":3.90094e-12,"mismatchedAddErr":4.25038e-12,"result":"ok"}
+{"bootTrace":true,"boot":1,"lvlPre":3,"lvlPost":19,"bootRestored":false,"levelsRemainingAfterBoot":22,"stage":"","ms":171.648}
+{"selftest":"bootstrap","result":"ok","err":0.00249227}
+{"selftestSummary":true,"hardFail":0,"softFail":1,"peakVramGB":44.7294}
+RC=4 (recorded, not trusted: F74)
+WALL_S=42
+=== VERDICT: RAN (bootarm2_0_r2) -- judge the fields against POD_PLAN_S37.md section 5 ===

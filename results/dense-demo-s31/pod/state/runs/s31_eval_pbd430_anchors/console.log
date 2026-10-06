@@ -1,0 +1,19 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"anchorEval": "config", "model": "pbd430", "revision": null, "backend": "native", "device": "cuda:0", "torch": "2.11.0+cu128", "script": "6ab1f5a3b7d7f751"}
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 383082.40 examples/s]
+Generating train split:   0%|          | 0/1801350 [00:00<?, ? examples/s]Generating train split:   7%|▋         | 134000/1801350 [00:00<00:01, 1333626.15 examples/s]Generating train split:  16%|█▋        | 296000/1801350 [00:00<00:01, 1495350.77 examples/s]Generating train split:  26%|██▌       | 466000/1801350 [00:00<00:00, 1584186.69 examples/s]Generating train split:  38%|███▊      | 691000/1801350 [00:00<00:00, 1539053.73 examples/s]Generating train split:  48%|████▊     | 867000/1801350 [00:00<00:00, 1604794.20 examples/s]Generating train split:  57%|█████▋    | 1031675/1801350 [00:00<00:00, 1616358.01 examples/s]Generating train split:  69%|██████▊   | 1235675/1801350 [00:00<00:00, 1741531.59 examples/s]Generating train split:  83%|████████▎ | 1491675/1801350 [00:00<00:00, 1724090.22 examples/s]Generating train split:  93%|█████████▎| 1675675/1801350 [00:01<00:00, 1751117.91 examples/s]Generating train split: 100%|██████████| 1801350/1801350 [00:01<00:00, 1662128.86 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 1081287.83 examples/s]
+{"anchorEval": "wt103", "model": "native:pbd430", "revision": null, "ctx": 1024, "stride": 1024, "windows": 280, "tokensScored": 285830, "tokensTotal": 285831, "wordsTotal": 241211, "tokenPpl": 60.74343646332991, "wordPplDerived": 129.8403000711001, "wordPplBasisNote": "exp(nll_total/n_words), n_words = whitespace words of the raw test split; valid at full split only (truncated runs: token ppl only)", "truncated": false, "nllTotalNats": 1173806.3518676758, "wallSec": 7.7, "script": "6ab1f5a3b7d7f751"}
+{"anchorEval": "lambada", "model": "native:pbd430", "revision": null, "items": 5153, "acc": 0.1009120900446342, "lastWordPpl": 115.66794094596115, "lambadaPplWord": 667.3530117330284, "tgtTokens": 7054, "defNote": "acc = teacher-forced greedy argmax matches EVERY token of the last whitespace word (leading space attached); ppl = exp(mean nll over last-word tokens)", "published": null, "wallSec": 43.6, "script": "6ab1f5a3b7d7f751"}
+Traceback (most recent call last):
+  File "/root/src/ml-eval/anchor_eval.py", line 329, in <module>
+    main()
+  File "/root/src/ml-eval/anchor_eval.py", line 323, in main
+    {"wt103": eval_wt103, "lambada": eval_lambada,
+  File "/root/src/ml-eval/anchor_eval.py", line 293, in eval_holdout
+    ids = holdout_ids(ARGS.holdout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/src/ml-eval/anchor_eval.py", line 189, in holdout_ids
+    return np.fromfile(path, dtype=np.uint16).astype(np.int64)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'ml-eval/artifacts/staged/holdout.bin'

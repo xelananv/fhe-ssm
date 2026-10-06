@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="system-ui,sans-serif" font-size="12">
+<rect width="900" height="420" fill="#fff"/>
+<line x1="70" y1="370.0" x2="880" y2="370.0" stroke="#888"/>
+<line x1="70" y1="30" x2="70" y2="370.0" stroke="#888"/>
+<line x1="66" y1="370.0" x2="880" y2="370.0" stroke="#eee"/><text x="62" y="374.0" text-anchor="end">0</text>
+<line x1="66" y1="302.0" x2="880" y2="302.0" stroke="#eee"/><text x="62" y="306.0" text-anchor="end">66</text>
+<line x1="66" y1="234.0" x2="880" y2="234.0" stroke="#eee"/><text x="62" y="238.0" text-anchor="end">132</text>
+<line x1="66" y1="166.0" x2="880" y2="166.0" stroke="#eee"/><text x="62" y="170.0" text-anchor="end">199</text>
+<line x1="66" y1="98.0" x2="880" y2="98.0" stroke="#eee"/><text x="62" y="102.0" text-anchor="end">265</text>
+<line x1="66" y1="30.0" x2="880" y2="30.0" stroke="#eee"/><text x="62" y="34.0" text-anchor="end">331</text>
+<text x="70.0" y="386" text-anchor="middle">0</text>
+<text x="117.6" y="386" text-anchor="middle">1</text>
+<text x="165.3" y="386" text-anchor="middle">2</text>
+<text x="212.9" y="386" text-anchor="middle">3</text>
+<text x="260.6" y="386" text-anchor="middle">4</text>
+<text x="308.2" y="386" text-anchor="middle">5</text>
+<text x="355.9" y="386" text-anchor="middle">6</text>
+<text x="403.5" y="386" text-anchor="middle">7</text>
+<text x="451.2" y="386" text-anchor="middle">8</text>
+<text x="498.8" y="386" text-anchor="middle">9</text>
+<text x="546.5" y="386" text-anchor="middle">10</text>
+<text x="594.1" y="386" text-anchor="middle">11</text>
+<text x="641.8" y="386" text-anchor="middle">12</text>
+<text x="689.4" y="386" text-anchor="middle">13</text>
+<text x="737.1" y="386" text-anchor="middle">14</text>
+<text x="784.7" y="386" text-anchor="middle">15</text>
+<text x="832.4" y="386" text-anchor="middle">16</text>
+<text x="880.0" y="386" text-anchor="middle">17</text>
+<text x="475" y="412" text-anchor="middle">context position (tick)</text>
+<text transform="translate(16,200) rotate(-90)" text-anchor="middle">seconds per token</text>
+<polyline points="70.0,226.8 117.6,229.9 165.3,229.2 212.9,229.4 260.6,230.4 308.2,229.6 355.9,229.2 403.5,228.9 451.2,229.6 498.8,230.5 546.5,229.3 594.1,229.5 641.8,228.2 689.4,229.0 737.1,228.0 784.7,228.7 832.4,230.1 880.0,229.4" fill="none" stroke="#1f5fbf" stroke-width="1.5"/><circle cx="70.0" cy="226.8" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 0: 139.4 s</title></circle><circle cx="117.6" cy="229.9" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 1: 136.4 s</title></circle><circle cx="165.3" cy="229.2" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 2: 137.1 s</title></circle><circle cx="212.9" cy="229.4" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 3: 136.9 s</title></circle><circle cx="260.6" cy="230.4" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 4: 136.0 s</title></circle><circle cx="308.2" cy="229.6" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 5: 136.7 s</title></circle><circle cx="355.9" cy="229.2" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 6: 137.1 s</title></circle><circle cx="403.5" cy="228.9" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 7: 137.4 s</title></circle><circle cx="451.2" cy="229.6" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 8: 136.7 s</title></circle><circle cx="498.8" cy="230.5" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 9: 135.8 s</title></circle><circle cx="546.5" cy="229.3" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 10: 136.9 s</title></circle><circle cx="594.1" cy="229.5" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 11: 136.8 s</title></circle><circle cx="641.8" cy="228.2" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 12: 138.1 s</title></circle><circle cx="689.4" cy="229.0" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 13: 137.3 s</title></circle><circle cx="737.1" cy="228.0" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 14: 138.2 s</title></circle><circle cx="784.7" cy="228.7" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 15: 137.6 s</title></circle><circle cx="832.4" cy="230.1" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 16: 136.2 s</title></circle><circle cx="880.0" cy="229.4" r="3" fill="#1f5fbf"><title>server reqMsPerToken tick 17: 136.9 s</title></circle>
+<polyline points="70.0,55.2 117.6,119.9 165.3,115.0 212.9,94.3 260.6,93.4 308.2,91.6 355.9,102.3 403.5,102.6 451.2,98.2 498.8,108.1 546.5,98.0 594.1,97.0 641.8,102.7 689.4,90.8 737.1,96.2 784.7,98.6 832.4,75.4 880.0,117.7" fill="none" stroke="#c0392b" stroke-width="1.5"/><circle cx="70.0" cy="55.2" r="3" fill="#c0392b"><title>client serveSec tick 0: 306.5 s</title></circle><circle cx="117.6" cy="119.9" r="3" fill="#c0392b"><title>client serveSec tick 1: 243.5 s</title></circle><circle cx="165.3" cy="115.0" r="3" fill="#c0392b"><title>client serveSec tick 2: 248.2 s</title></circle><circle cx="212.9" cy="94.3" r="3" fill="#c0392b"><title>client serveSec tick 3: 268.5 s</title></circle><circle cx="260.6" cy="93.4" r="3" fill="#c0392b"><title>client serveSec tick 4: 269.3 s</title></circle><circle cx="308.2" cy="91.6" r="3" fill="#c0392b"><title>client serveSec tick 5: 271.1 s</title></circle><circle cx="355.9" cy="102.3" r="3" fill="#c0392b"><title>client serveSec tick 6: 260.7 s</title></circle><circle cx="403.5" cy="102.6" r="3" fill="#c0392b"><title>client serveSec tick 7: 260.3 s</title></circle><circle cx="451.2" cy="98.2" r="3" fill="#c0392b"><title>client serveSec tick 8: 264.7 s</title></circle><circle cx="498.8" cy="108.1" r="3" fill="#c0392b"><title>client serveSec tick 9: 255.0 s</title></circle><circle cx="546.5" cy="98.0" r="3" fill="#c0392b"><title>client serveSec tick 10: 264.8 s</title></circle><circle cx="594.1" cy="97.0" r="3" fill="#c0392b"><title>client serveSec tick 11: 265.8 s</title></circle><circle cx="641.8" cy="102.7" r="3" fill="#c0392b"><title>client serveSec tick 12: 260.2 s</title></circle><circle cx="689.4" cy="90.8" r="3" fill="#c0392b"><title>client serveSec tick 13: 271.8 s</title></circle><circle cx="737.1" cy="96.2" r="3" fill="#c0392b"><title>client serveSec tick 14: 266.5 s</title></circle><circle cx="784.7" cy="98.6" r="3" fill="#c0392b"><title>client serveSec tick 15: 264.2 s</title></circle><circle cx="832.4" cy="75.4" r="3" fill="#c0392b"><title>client serveSec tick 16: 286.8 s</title></circle><circle cx="880.0" cy="117.7" r="3" fill="#c0392b"><title>client serveSec tick 17: 245.7 s</title></circle>
+<rect x="80" y="34" width="12" height="12" fill="#1f5fbf"/><text x="98" y="44">server reqMsPerToken / 1000</text>
+<rect x="80" y="52" width="12" height="12" fill="#c0392b"/><text x="98" y="62">client serveSec (includes the wire)</text>
+<text x="880" y="20" text-anchor="end" fill="#555">partial (17 warm ticks < 64): no trend detected, NOT a flatness claim</text>
+</svg>

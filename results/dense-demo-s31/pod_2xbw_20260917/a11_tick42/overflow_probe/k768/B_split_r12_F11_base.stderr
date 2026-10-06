@@ -1,0 +1,1 @@
+[openfhe-k768-patch] EvalBootstrap: OPENFHE_BOOT_UNIFORM_EXT=1 -> Chebyshev degree 118, K in the scalar constant = 256 (OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1: the factor 3 is in CoeffsToSlots)

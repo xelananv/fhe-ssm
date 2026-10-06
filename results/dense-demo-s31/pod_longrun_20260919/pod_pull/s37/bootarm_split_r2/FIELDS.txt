@@ -1,0 +1,12 @@
+selftest lines:
+{"selftest":"encdec","result":"ok","err":4.61875e-12}
+{"selftest":"rotate","result":"ok","err":2.73377e-11}
+{"selftest":"matvec","result":"ok","err":3.21199e-12}
+{"selftest":"rmsnorm","result":"fail","err":0.0310645}
+{"selftest":"levelMismatch","gap":1,"aLvl":0,"bLvl":1,"alignOnlyErr":3.41721e-12,"mismatchedAddErr":5.20785e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":5,"aLvl":0,"bLvl":5,"alignOnlyErr":3.32867e-12,"mismatchedAddErr":4.21696e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":22,"aLvl":0,"bLvl":22,"alignOnlyErr":3.46612e-12,"mismatchedAddErr":3.88201e-12,"result":"ok"}
+{"selftest":"bootstrap","result":"ok","err":0.00131477}
+{"selftestSummary":true,"hardFail":0,"softFail":1,"peakVramGB":44.7294}
+RC=4 (recorded, not trusted: F74)
+WALL_S=42

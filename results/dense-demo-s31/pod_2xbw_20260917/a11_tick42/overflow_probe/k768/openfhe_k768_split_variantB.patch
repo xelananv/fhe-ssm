@@ -1,0 +1,77 @@
+diff -ru openfhe-k768-src/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp openfhe-k768b-src/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp
+--- openfhe-k768-src/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp	2026-09-18 19:10:18
++++ openfhe-k768b-src/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp	2026-09-18 19:35:01
+@@ -87,6 +87,21 @@
+     return (v != nullptr) && (v[0] == '1') && (v[1] == '\0');
+ }
+ 
++// ---- K768 PATCH, part B: where the division by K = 768 = 3 * 2^8 is done -----------------------------
++// The stock code divides the raised ciphertext by K with ONE scalar constant, pre / (K * N). EvalMult by a double
++// encodes that constant as round(c * SF) / SF (ckksrns-leveledshe.cpp, GetElementForEvalMult), SF ~ 2^59. For
++// K = 512 the constant is a power of two and the rounding is (almost) exact; for K = 768 it is 1/(3 * 2^m), c * SF is
++// ~ 2^37/3 at N = 2^13 (2^33/3 at N = 2^17) and the rounding error of ~1/3 is a RELATIVE scale error of the input of
++// the sine, eta ~ 7e-12 at N = 2^13 (~1.2e-10 at N = 2^17): every coefficient's overflow I is seen as I * (1 + eta).
++//   OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1 (only with OPENFHE_BOOT_UNIFORM_EXT=1) folds the odd part of K (the 3) into the
++//   CoeffsToSlots precomputation (scaleEnc = pre / 3, exactly as the sparse cases fold their whole K there) and leaves
++//   the scalar constant pre / (256 * N), a power of two. Same depth, same keys, same level budget.
++bool UniformExtSplitRequestedByEnv() {
++    const char* v = std::getenv("OPENFHE_BOOT_UNIFORM_EXT_SPLIT");
++    return UniformExtRequestedByEnv() && (v != nullptr) && (v[0] == '1') && (v[1] == '\0');
++}
++constexpr double K_UNIFORMEXT_ODD_PART = 3.0;   // 768 = 3 * 256
++
+ // One line on stderr, once per process and ONLY when the switch is on: what the library actually selected
+ // (degree read from the vector in use, k from the variable in use), so that a run record can prove the arm.
+ void NoteUniformExtOnce(const char* site, size_t degree, double k) {
+@@ -94,7 +109,10 @@
+     if (!noted) {
+         noted = true;
+         std::cerr << "[openfhe-k768-patch] " << site << ": OPENFHE_BOOT_UNIFORM_EXT=1 -> Chebyshev degree " << degree
+-                  << ", K = " << k << std::endl;
++                  << ", K in the scalar constant = " << k
++                  << (UniformExtSplitRequestedByEnv() ? " (OPENFHE_BOOT_UNIFORM_EXT_SPLIT=1: the factor 3 is in CoeffsToSlots)" :
++                                                        " (no split)")
++                  << std::endl;
+     }
+ }
+ 
+@@ -201,7 +219,8 @@
+         double k;
+         switch (cryptoParams->GetSecretKeyDist()) {
+             case UNIFORM_TERNARY:
+-                k = 1.0;
++                // K768 PATCH part B: with the split switch the odd part of K = 768 is folded in here
++                k = UniformExtSplitRequestedByEnv() ? K_UNIFORMEXT_ODD_PART : 1.0;
+                 break;
+             case SPARSE_TERNARY:
+                 k = K_SPARSE;
+@@ -367,7 +386,8 @@
+     double k;
+     switch (cryptoParams->GetSecretKeyDist()) {
+         case UNIFORM_TERNARY:
+-            k = 1.0;
++            // K768 PATCH part B: with the split switch the odd part of K = 768 is folded in here
++            k = UniformExtSplitRequestedByEnv() ? K_UNIFORMEXT_ODD_PART : 1.0;
+             break;
+         case SPARSE_TERNARY:
+             k = K_SPARSE;
+@@ -658,6 +678,9 @@
+         else {
+             coefficients = g_coefficientsUniformExt;
+             k            = K_UNIFORMEXT;
++            // K768 PATCH part B: the odd part of K was folded into CoeffsToSlots at precomputation time
++            if (UniformExtSplitRequestedByEnv())
++                k = K_UNIFORMEXT / K_UNIFORMEXT_ODD_PART;
+         }
+         if (forceUniformExt)
+             NoteUniformExtOnce("EvalBootstrap", coefficients.size() - 1, k);
+@@ -1012,6 +1035,9 @@
+         else {
+             coefficients = g_coefficientsUniformExt;
+             k            = K_UNIFORMEXT;
++            // K768 PATCH part B: the odd part of K was folded into CoeffsToSlots at precomputation time
++            if (UniformExtSplitRequestedByEnv())
++                k = K_UNIFORMEXT / K_UNIFORMEXT_ODD_PART;
+         }
+         if (forceUniformExt)
+             NoteUniformExtOnce("EvalBootstrapStCFirst", coefficients.size() - 1, k);

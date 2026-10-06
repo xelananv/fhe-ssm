@@ -1,0 +1,13 @@
+selftest lines:
+{"selftest":"encdec","result":"ok","err":4.96006e-12}
+{"selftest":"rotate","result":"ok","err":1.66845e-10}
+{"selftest":"matvec","result":"ok","err":1.54663e-11}
+{"selftest":"rmsnorm","result":"fail","err":0.0310645}
+{"selftest":"levelMismatch","gap":1,"aLvl":0,"bLvl":1,"alignOnlyErr":3.05167e-12,"mismatchedAddErr":4.15901e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":5,"aLvl":0,"bLvl":5,"alignOnlyErr":3.04484e-12,"mismatchedAddErr":4.96314e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":22,"aLvl":0,"bLvl":22,"alignOnlyErr":4.45594e-12,"mismatchedAddErr":5.2548e-12,"result":"ok"}
+{"selftest":"bootstrap","result":"ok","err":0.00186485}
+{"selftestSummary":true,"hardFail":0,"softFail":1,"peakVramGB":44.7294}
+RC=4 (recorded, not trusted: F74)
+WALL_S=42
+=== VERDICT: RAN (bootarm2_0_r1) -- judge the fields against POD_PLAN_S37.md section 5 ===

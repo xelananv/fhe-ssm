@@ -1,0 +1,10 @@
+{"harness":"gpu_real_model","arch":"native","tag":"pbd430a","secure":true,"ringDim":131072,"slots":65536,"d":1024,"Dpad":1024,"REP":64,"L":1,"dff":4096,"BS":32,"haveBundle":false,"ompMaxThreads":24,"scaleBits":59,"normEpsOn":false,"setupMs":46657}
+{"selftest":"encdec","throw":"bad any_cast"}
+{"selftest":"rotate","throw":"bad any_cast"}
+{"selftest":"matvec","throw":"bad any_cast"}
+{"selftest":"rmsnorm","throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":1,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":5,"throw":"bad any_cast"}
+{"selftest":"levelMismatch","gap":22,"throw":"bad any_cast"}
+{"selftest":"bootstrap","throw":"bad any_cast"}
+{"selftestSummary":true,"hardFail":3,"softFail":5,"peakVramGB":92.4358}

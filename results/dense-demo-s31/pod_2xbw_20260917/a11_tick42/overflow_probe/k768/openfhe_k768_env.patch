@@ -1,0 +1,97 @@
+diff -ru openfhe-development/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp openfhe-k768-src/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp
+--- openfhe-development/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp	2026-04-10 21:07:34
++++ openfhe-k768-src/src/pke/lib/scheme/ckksrns/ckksrns-fhe.cpp	2026-09-18 19:10:18
+@@ -46,7 +46,9 @@
+ 
+ #include <algorithm>
+ #include <cmath>
++#include <cstdlib>  // K768 PATCH: std::getenv
+ #include <functional>
++#include <iostream>  // K768 PATCH: one-time notice on stderr
+ #include <limits>
+ #include <map>
+ #include <memory>
+@@ -74,6 +76,28 @@
+     return qDouble;
+ }
+ 
++// ---- K768 PATCH (fhe-ssm-research, 2026-09-18) ---------------------------------------------------
++// Run-time switch for the approximate modular reduction of the UNIFORM_TERNARY CKKS bootstrap.
++//   OPENFHE_BOOT_UNIFORM_EXT=1 -> g_coefficientsUniformExt (degree 118) with K_UNIFORMEXT = 768
++//   unset / any other value    -> the stock selection (g_coefficientsUniform, degree 88, K_UNIFORM = 512,
++//                                 unless composite scaling already asks for the Ext table)
++// Read with std::getenv at EVERY selection site, so that ONE build serves both arms of an A/B.
++bool UniformExtRequestedByEnv() {
++    const char* v = std::getenv("OPENFHE_BOOT_UNIFORM_EXT");
++    return (v != nullptr) && (v[0] == '1') && (v[1] == '\0');
++}
++
++// One line on stderr, once per process and ONLY when the switch is on: what the library actually selected
++// (degree read from the vector in use, k from the variable in use), so that a run record can prove the arm.
++void NoteUniformExtOnce(const char* site, size_t degree, double k) {
++    static bool noted = false;
++    if (!noted) {
++        noted = true;
++        std::cerr << "[openfhe-k768-patch] " << site << ": OPENFHE_BOOT_UNIFORM_EXT=1 -> Chebyshev degree " << degree
++                  << ", K = " << k << std::endl;
++    }
++}
++
+ }  // namespace
+ 
+ namespace lbcrypto {
+@@ -625,7 +649,9 @@
+     }
+     else {
+         // For larger composite degrees, larger K used to achieve a reasonable probability of failure
+-        if ((compositeDegree == 1) || ((compositeDegree == 2) && (N < (1 << 17)))) {
++        // K768 PATCH: OPENFHE_BOOT_UNIFORM_EXT=1 forces the Ext table / K_UNIFORMEXT for every compositeDegree and N
++        const bool forceUniformExt = UniformExtRequestedByEnv();
++        if (!forceUniformExt && ((compositeDegree == 1) || ((compositeDegree == 2) && (N < (1 << 17))))) {
+             coefficients = g_coefficientsUniform;
+             k            = K_UNIFORM;
+         }
+@@ -633,6 +659,8 @@
+             coefficients = g_coefficientsUniformExt;
+             k            = K_UNIFORMEXT;
+         }
++        if (forceUniformExt)
++            NoteUniformExtOnce("EvalBootstrap", coefficients.size() - 1, k);
+     }
+ 
+     cc->EvalMultInPlace(raised, pre * (1.0 / (k * N)));
+@@ -975,7 +1003,9 @@
+     }
+     else {
+         // For larger composite degrees, larger K used to achieve a reasonable probability of failure
+-        if ((compositeDegree == 1) || ((compositeDegree == 2) && (N < (1 << 17)))) {
++        // K768 PATCH: OPENFHE_BOOT_UNIFORM_EXT=1 forces the Ext table / K_UNIFORMEXT for every compositeDegree and N
++        const bool forceUniformExt = UniformExtRequestedByEnv();
++        if (!forceUniformExt && ((compositeDegree == 1) || ((compositeDegree == 2) && (N < (1 << 17))))) {
+             coefficients = g_coefficientsUniform;
+             k            = K_UNIFORM;
+         }
+@@ -983,6 +1013,8 @@
+             coefficients = g_coefficientsUniformExt;
+             k            = K_UNIFORMEXT;
+         }
++        if (forceUniformExt)
++            NoteUniformExtOnce("EvalBootstrapStCFirst", coefficients.size() - 1, k);
+     }
+ 
+     // no linear transformations are needed for Chebyshev series as the range has been normalized to [-1,1]
+@@ -2220,8 +2252,12 @@
+ }
+ 
+ uint32_t FHECKKSRNS::GetModDepthInternal(SecretKeyDist secretKeyDist) {
+-    if (secretKeyDist == UNIFORM_TERNARY)
+-        return GetMultiplicativeDepthByCoeffVector(g_coefficientsUniform, false) + R_UNIFORM;
++    if (secretKeyDist == UNIFORM_TERNARY) {
++        // K768 PATCH: budget the depth of the table in use. Both tables fall in the same GetDepthByDegree
++        // bucket (degree 60..119 -> 8), so the returned depth is the same number for either.
++        const auto& coefficientsInUse = UniformExtRequestedByEnv() ? g_coefficientsUniformExt : g_coefficientsUniform;
++        return GetMultiplicativeDepthByCoeffVector(coefficientsInUse, false) + R_UNIFORM;
++    }
+     return GetMultiplicativeDepthByCoeffVector(g_coefficientsSparse, false) + R_SPARSE;
+ }
+ 

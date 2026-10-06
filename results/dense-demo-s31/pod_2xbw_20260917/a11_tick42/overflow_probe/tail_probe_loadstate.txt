@@ -1,0 +1,8 @@
+start 2026-09-18T14:19:55Z
+ac4ca2fb63f4d2c36e467720a1aa4d3dac396928a200343c1648f4209c0c1257  harness/build/overflow_tail_probe
+cf1a32c913982c49e36e728968affd504b755183a47640fb3b75d9f83efc0b53  harness/overflow_tail_probe.cpp
+{"availGB":5.12,"totalGB":16.00,"swapUsedMB":1993,"compressorGB":2.87,"heavyProcs":0,"heavyFootprintGB":0.00}
+17:19  up 11 days, 11:48, 1 user, load averages: 2.56 2.97 3.20
+cmd: caffeinate -i tools/memguard.sh 4 harness/build/overflow_tail_probe --log-ring 12 --cts 50000
+exit=0 2026-09-18T14:43:36Z
+{"availGB":5.31,"totalGB":16.00,"swapUsedMB":1961,"compressorGB":2.59,"heavyProcs":0,"heavyFootprintGB":0.00}

@@ -1,0 +1,230 @@
+15:18:48Z === LONG: free-running [client decode: --decode-policy norepeat --rep-penalty 1.3 --rep-window 64 --no-repeat-ngram 4], prompts /root/demo/longrun_prompts64.txt (6081d62f576fb897), TICKS=400, 64 lanes, flags [--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.1 12] + [--pt-cache --pt-cache-verify --pt-cache-max-gb 28 --boot-record --boot-record-secret /root/demo/keys_pod_r17/secret.key], FIDESLIB_BOOT_UNIFORM_EXT=split, bin /root/fhe-main-demo/build-demo/gpu_real_model_x (df8ada73af7e79fa), store /root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin ===
+[2026-09-19T15:18:48Z] serving arm LONG: ARM=LONG XBIN=1 BIN=/root/fhe-main-demo/build-demo/gpu_real_model_x LOG_RING=17 EXTRA_DEPTH=12 SECURE=1 LANES_BLOCK=1 DEVICES=0,1 EXTRA_FLAGS(server)=--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.1 12 --pt-cache --pt-cache-verify --pt-cache-max-gb 28 --boot-record --boot-record-secret /root/demo/keys_pod_r17/secret.key STORE=/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin PROMPTS=/root/demo/longrun_prompts64.txt TICKS=400 KEYS_POD=/root/demo/keys_pod_r17 binary_sha256 df8ada73af7e79fa779f645897980ee7f5c6c8bdde33c4e56ce1b2afd2c5ba2c utc 2026-09-19T15:18:48Z 
+60 rc=1 (0 GO / 2 CONDITIONAL / 1 NO-GO; the arm's record is the table below, not this code)
+## arm serve_LONG -- 148 served ticks (asked 400)
+
+| tick | reqMsPerToken | reqMsPerTokenExBoot | reqEncPtMs | reqBoots | storeAppends | peakVramGB | failed |
+|---|---|---|---|---|---|---|---|
+| 0 | 208826 | 164940 | 0 | 577 |  | 68.7451 | False |
+| 1 | 202865 | 157875 | 0 | 529 |  | 74.7451 | False |
+| 2 | 203060 | 158123 | 0 | 529 |  | 74.7451 | False |
+| 3 | 203104 | 158171 | 0 | 529 |  | 74.7451 | False |
+| 4 | 202933 | 157994 | 0 | 529 |  | 74.7451 | False |
+| 5 | 202732 | 157762 | 0 | 529 |  | 74.7451 | False |
+| 6 | 203204 | 158250 | 0 | 529 |  | 74.7451 | False |
+| 7 | 203214 | 158238 | 0 | 529 |  | 74.7451 | False |
+| 8 | 202544 | 157610 | 0 | 529 |  | 74.7451 | False |
+| 9 | 203342 | 158415 | 0 | 529 |  | 74.7451 | False |
+| 10 | 203044 | 158106 | 0 | 529 |  | 74.7451 | False |
+| 11 | 202217 | 157296 | 0 | 529 |  | 74.7451 | False |
+| 12 | 202852 | 157927 | 0 | 529 |  | 74.7451 | False |
+| 13 | 202541 | 157610 | 0 | 529 |  | 74.7451 | False |
+| 14 | 202838 | 157856 | 0 | 529 |  | 74.7451 | False |
+| 15 | 202594 | 157649 | 0 | 529 |  | 74.7451 | False |
+| 16 | 202594 | 157674 | 0 | 529 |  | 74.7451 | False |
+| 17 | 203291 | 158299 | 0 | 529 |  | 74.7451 | False |
+| 18 | 203270 | 158274 | 0 | 529 |  | 74.7451 | False |
+| 19 | 203441 | 158467 | 0 | 529 |  | 74.7451 | False |
+| 20 | 203544 | 158566 | 0 | 529 |  | 74.7451 | False |
+| 21 | 203474 | 158444 | 0 | 529 |  | 74.7451 | False |
+| 22 | 203267 | 158285 | 0 | 529 |  | 74.7451 | False |
+| 23 | 202903 | 157943 | 0 | 529 |  | 74.7451 | False |
+| 24 | 203066 | 158093 | 0 | 529 |  | 74.7451 | False |
+| 25 | 203261 | 158307 | 0 | 529 |  | 74.7451 | False |
+| 26 | 202670 | 157788 | 0 | 529 |  | 74.7451 | False |
+| 27 | 202315 | 157454 | 0 | 529 |  | 74.7451 | False |
+| 28 | 201910 | 157046 | 0 | 529 |  | 74.7451 | False |
+| 29 | 202461 | 157465 | 0 | 529 |  | 74.7451 | False |
+| 30 | 202981 | 158021 | 0 | 529 |  | 74.7451 | False |
+| 31 | 202875 | 157874 | 0 | 529 |  | 74.7451 | False |
+| 32 | 202328 | 157395 | 0 | 529 |  | 74.7451 | False |
+| 33 | 202092 | 157207 | 0 | 529 |  | 74.7451 | False |
+| 34 | 202619 | 157686 | 0 | 529 |  | 74.7451 | False |
+| 35 | 203060 | 158119 | 0 | 529 |  | 74.7451 | False |
+| 36 | 203066 | 158112 | 0 | 529 |  | 74.7451 | False |
+| 37 | 202451 | 157566 | 0 | 529 |  | 74.7451 | False |
+| 38 | 202774 | 157808 | 0 | 529 |  | 74.7451 | False |
+| 39 | 203034 | 158056 | 0 | 529 |  | 74.7451 | False |
+| 40 | 202472 | 157557 | 0 | 529 |  | 74.7451 | False |
+| 41 | 202377 | 157429 | 0 | 529 |  | 74.7451 | False |
+| 42 | 202935 | 158002 | 0 | 529 |  | 74.7451 | False |
+| 43 | 203544 | 158543 | 0 | 529 |  | 74.7451 | False |
+| 44 | 203179 | 158240 | 0 | 529 |  | 74.7451 | False |
+| 45 | 202756 | 157844 | 0 | 529 |  | 74.7451 | False |
+| 46 | 201954 | 157088 | 0 | 529 |  | 74.7451 | False |
+| 47 | 201881 | 157014 | 0 | 529 |  | 74.7451 | False |
+| 48 | 202684 | 157782 | 0 | 529 |  | 74.7451 | False |
+| 49 | 202596 | 157691 | 0 | 529 |  | 74.7451 | False |
+| 50 | 202563 | 157699 | 0 | 529 |  | 74.7451 | False |
+| 51 | 202678 | 157735 | 0 | 529 |  | 74.7451 | False |
+| 52 | 202325 | 157391 | 0 | 529 |  | 74.7451 | False |
+| 53 | 201798 | 156925 | 0 | 529 |  | 74.7451 | False |
+| 54 | 202634 | 157719 | 0 | 529 |  | 74.7451 | False |
+| 55 | 203323 | 158374 | 0 | 529 |  | 74.7451 | False |
+| 56 | 202790 | 157844 | 0 | 529 |  | 74.7451 | False |
+| 57 | 201867 | 157007 | 0 | 529 |  | 74.7451 | False |
+| 58 | 202418 | 157490 | 0 | 529 |  | 74.7451 | False |
+| 59 | 203358 | 158362 | 0 | 529 |  | 74.7451 | False |
+| 60 | 203318 | 158388 | 0 | 529 |  | 74.7451 | False |
+| 61 | 202483 | 157556 | 0 | 529 |  | 74.7451 | False |
+| 62 | 202424 | 157514 | 0 | 529 |  | 74.7451 | False |
+| 63 | 202673 | 157682 | 0 | 529 |  | 74.7451 | False |
+| 64 | 203406 | 158448 | 0 | 529 |  | 74.7451 | False |
+| 65 | 202388 | 157438 | 0 | 529 |  | 74.7451 | False |
+| 66 | 203179 | 158236 | 0 | 529 |  | 74.7451 | False |
+| 67 | 202794 | 157881 | 0 | 529 |  | 74.7451 | False |
+| 68 | 202975 | 158025 | 0 | 529 |  | 74.7451 | False |
+| 69 | 202500 | 157566 | 0 | 529 |  | 74.7451 | False |
+| 70 | 202303 | 157379 | 0 | 529 |  | 74.7451 | False |
+| 71 | 202338 | 157360 | 0 | 529 |  | 74.7451 | False |
+| 72 | 202331 | 157414 | 0 | 529 |  | 74.7451 | False |
+| 73 | 202268 | 157337 | 0 | 529 |  | 74.7451 | False |
+| 74 | 202572 | 157653 | 0 | 529 |  | 74.7451 | False |
+| 75 | 203333 | 158342 | 0 | 529 |  | 74.7451 | False |
+| 76 | 203139 | 158153 | 0 | 529 |  | 74.7451 | False |
+| 77 | 202928 | 157989 | 0 | 529 |  | 74.7451 | False |
+| 78 | 203061 | 158143 | 0 | 529 |  | 74.7451 | False |
+| 79 | 202481 | 157597 | 0 | 529 |  | 74.7451 | False |
+| 80 | 202357 | 157439 | 0 | 529 |  | 74.7451 | False |
+| 81 | 202433 | 157469 | 0 | 529 |  | 74.7451 | False |
+| 82 | 202652 | 157686 | 0 | 529 |  | 74.7451 | False |
+| 83 | 202488 | 157556 | 0 | 529 |  | 74.7451 | False |
+| 84 | 201819 | 156931 | 0 | 529 |  | 74.7451 | False |
+| 85 | 202550 | 157647 | 0 | 529 |  | 74.7451 | False |
+| 86 | 201804 | 156962 | 0 | 529 |  | 74.7451 | False |
+| 87 | 202730 | 157833 | 0 | 529 |  | 74.7451 | False |
+| 88 | 202442 | 157481 | 0 | 529 |  | 74.7451 | False |
+| 89 | 202491 | 157543 | 0 | 529 |  | 74.7451 | False |
+| 90 | 202945 | 158062 | 0 | 529 |  | 74.7451 | False |
+| 91 | 201927 | 157088 | 0 | 529 |  | 74.7451 | False |
+| 92 | 201718 | 156828 | 0 | 529 |  | 74.7451 | False |
+| 93 | 203129 | 158150 | 0 | 529 |  | 74.7451 | False |
+| 94 | 203006 | 158115 | 0 | 529 |  | 74.7451 | False |
+| 95 | 202775 | 157825 | 0 | 529 |  | 74.7451 | False |
+| 96 | 202258 | 157320 | 0 | 529 |  | 74.7451 | False |
+| 97 | 202281 | 157434 | 0 | 529 |  | 74.7451 | False |
+| 98 | 202599 | 157652 | 0 | 529 |  | 74.7451 | False |
+| 99 | 201905 | 157071 | 0 | 529 |  | 74.7451 | False |
+| 100 | 202795 | 157868 | 0 | 529 |  | 74.7451 | False |
+| 101 | 203073 | 158160 | 0 | 529 |  | 74.7451 | False |
+| 102 | 202009 | 157074 | 0 | 529 |  | 74.7451 | False |
+| 103 | 201877 | 157000 | 0 | 529 |  | 74.7451 | False |
+| 104 | 202777 | 157840 | 0 | 529 |  | 74.7451 | False |
+| 105 | 202551 | 157600 | 0 | 529 |  | 74.7451 | False |
+| 106 | 203238 | 158259 | 0 | 529 |  | 74.7451 | False |
+| 107 | 202846 | 157932 | 0 | 529 |  | 74.7451 | False |
+| 108 | 202248 | 157332 | 0 | 529 |  | 74.7451 | False |
+| 109 | 202416 | 157482 | 0 | 529 |  | 74.7451 | False |
+| 110 | 201694 | 156838 | 0 | 529 |  | 74.7451 | False |
+| 111 | 202434 | 157546 | 0 | 529 |  | 74.7451 | False |
+| 112 | 203170 | 158210 | 0 | 529 |  | 74.7451 | False |
+| 113 | 202511 | 157578 | 0 | 529 |  | 74.7451 | False |
+| 114 | 202411 | 157568 | 0 | 529 |  | 74.7451 | False |
+| 115 | 202810 | 157844 | 0 | 529 |  | 74.7451 | False |
+| 116 | 202457 | 157540 | 0 | 529 |  | 74.7451 | False |
+| 117 | 202140 | 157207 | 0 | 529 |  | 74.7451 | False |
+| 118 | 202513 | 157597 | 0 | 529 |  | 74.7451 | False |
+| 119 | 203329 | 158389 | 0 | 529 |  | 74.7451 | False |
+| 120 | 203204 | 158262 | 0 | 529 |  | 74.7451 | False |
+| 121 | 203362 | 158361 | 0 | 529 |  | 74.7451 | False |
+| 122 | 202495 | 157539 | 0 | 529 |  | 74.7451 | False |
+| 123 | 202598 | 157673 | 0 | 529 |  | 74.7451 | False |
+| 124 | 202706 | 157814 | 0 | 529 |  | 74.7451 | False |
+| 125 | 202482 | 157551 | 0 | 529 |  | 74.7451 | False |
+| 126 | 202168 | 157265 | 0 | 529 |  | 74.7451 | False |
+| 127 | 202694 | 157788 | 0 | 529 |  | 74.7451 | False |
+| 128 | 203018 | 158066 | 0 | 529 |  | 74.7451 | False |
+| 129 | 203318 | 158357 | 0 | 529 |  | 74.7451 | False |
+| 130 | 202449 | 157509 | 0 | 529 |  | 74.7451 | False |
+| 131 | 202360 | 157432 | 0 | 529 |  | 74.7451 | False |
+| 132 | 203178 | 158203 | 0 | 529 |  | 74.7451 | False |
+| 133 | 203207 | 158256 | 0 | 529 |  | 74.7451 | False |
+| 134 | 202954 | 158008 | 0 | 529 |  | 74.7451 | False |
+| 135 | 202512 | 157606 | 0 | 529 |  | 74.7451 | False |
+| 136 | 202360 | 157481 | 0 | 529 |  | 74.7451 | False |
+| 137 | 202926 | 157999 | 0 | 529 |  | 74.7451 | False |
+| 138 | 203200 | 158224 | 0 | 529 |  | 74.7451 | False |
+| 139 | 203020 | 158065 | 0 | 529 |  | 74.7451 | False |
+| 140 | 203000 | 158046 | 0 | 529 |  | 74.7451 | False |
+| 141 | 202350 | 157489 | 0 | 529 |  | 74.7451 | False |
+| 142 | 202630 | 157770 | 0 | 529 |  | 74.7451 | False |
+| 143 | 203092 | 158145 | 0 | 529 |  | 74.7451 | False |
+| 144 | 202832 | 157874 | 0 | 529 |  | 74.7451 | False |
+| 145 | 202766 | 157831 | 0 | 529 |  | 74.7451 | False |
+| 146 | 202588 | 157618 | 0 | 529 |  | 74.7451 | False |
+| 147 | 203073 | 158122 | 0 | 529 |  | 74.7451 | False |
+
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [529])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: n/a (no identical lanes in the prompt file) identical groups [] disagreements []
+VERDICT rowsComplete: 9472 rows vs 148 ticks x 64 lanes = 9472
+VERDICT decFailedTicks: [] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 9445/9472, relErrRms median 0.001849 worst 0.03206; serveSec per tick [316.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0]
+SUMMARY {"boots": 78340, "storeBytes": 68417617920, "storeHits": 101842944, "storeMisses": 0, "poolBuilds": 2, "peakVramGB": 74.7451, "procPeakVramGB": -1, "periodicEncodeCount": 120, "periodicVerifyCount": 0, "periodicVerifyOk": 0, "periodicFallbackCount": 0, "ptCacheEntries": 1144, "ptCacheHits": 388736, "ptCacheMisses": 1144, "dropsApplied": 21312, "dropsSkippedDeeper": 0, "rsqrtItersSum": 170, "canonBoots": 7152, "failed": false, "harnessSha256": "2c5f26a4b758755c"}
+line {"storeLoad":true,"path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin","entries":688128,"dead":336,"dataBytes":68417617920,"ms":32358,"verifySamplesPerPrefix":2}
+line {"canonicalCarry":"cold","scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":4416,"ptCacheHits":3276,"ptCacheMisses":1140,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1140,"ptCacheLimbs":20677,"ptCacheResidentGB":20.1924,"ptScalarOps":0,"ptScalarDeg2Fallback":0,
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2618,"ptCacheMisses":4,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2622,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2622,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2622,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+23:22:27Z LONG rc=0
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [529])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: n/a (no identical lanes in the prompt file) identical groups [] disagreements []
+VERDICT rowsComplete: 9472 rows vs 148 ticks x 64 lanes = 9472
+VERDICT decFailedTicks: [] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 9445/9472, relErrRms median 0.001849 worst 0.03206; serveSec per tick [316.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188.0, 188
+23:22:27Z LONG_DONE
+23:33:42Z === CTRL512: free-running [client decode: --decode-policy norepeat --rep-penalty 1.3 --rep-window 64 --no-repeat-ngram 4], prompts /root/demo/longrun_prompts64.txt (6081d62f576fb897), TICKS=40, 64 lanes, flags [--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.1 12] + [--pt-cache --pt-cache-verify --pt-cache-max-gb 28 --boot-record --boot-record-secret /root/demo/keys_pod_r17/secret.key], FIDESLIB_BOOT_UNIFORM_EXT=0, bin /root/fhe-main-demo/build-demo/gpu_real_model_x (df8ada73af7e79fa), store /root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin ===
+[2026-09-19T23:33:42Z] serving arm CTRL512: ARM=CTRL512 XBIN=1 BIN=/root/fhe-main-demo/build-demo/gpu_real_model_x LOG_RING=17 EXTRA_DEPTH=12 SECURE=1 LANES_BLOCK=1 DEVICES=0,1 EXTRA_FLAGS(server)=--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.1 12 --pt-cache --pt-cache-verify --pt-cache-max-gb 28 --boot-record --boot-record-secret /root/demo/keys_pod_r17/secret.key STORE=/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin PROMPTS=/root/demo/longrun_prompts64.txt TICKS=40 KEYS_POD=/root/demo/keys_pod_r17 binary_sha256 df8ada73af7e79fa779f645897980ee7f5c6c8bdde33c4e56ce1b2afd2c5ba2c utc 2026-09-19T23:33:42Z 
+60 rc=1 (0 GO / 2 CONDITIONAL / 1 NO-GO; the arm's record is the table below, not this code)
+## arm serve_CTRL512 -- 8 served ticks (asked 40)
+
+| tick | reqMsPerToken | reqMsPerTokenExBoot | reqEncPtMs | reqBoots | storeAppends | peakVramGB | failed |
+|---|---|---|---|---|---|---|---|
+| 0 | 203941 | 161854 | 0 | 577 |  | 68.7451 | False |
+| 1 | 198499 | 155476 | 0 | 529 |  | 74.7451 | False |
+| 2 | 198967 | 155903 | 0 | 529 |  | 74.7451 | False |
+| 3 | 198832 | 155705 | 0 | 529 |  | 74.7451 | False |
+| 4 | 198020 | 155005 | 0 | 529 |  | 74.7451 | False |
+| 5 | 198142 | 155128 | 0 | 529 |  | 74.7451 | False |
+| 6 | 197968 | 154949 | 0 | 529 |  | 74.7451 | False |
+| 7 | 198336 | 155367 | 0 | 529 |  | 74.7451 | False |
+
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [529])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: n/a (no identical lanes in the prompt file) identical groups [] disagreements []
+VERDICT rowsComplete: 512 rows vs 8 ticks x 64 lanes = 512
+VERDICT decFailedTicks: [] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 512/512, relErrRms median 0.001604 worst 0.01704; serveSec per tick [312.0, 184.0, 184.0, 184.0, 184.0, 184.0, 184.0, 184.0]
+SUMMARY {"boots": 4280, "storeBytes": 68417617920, "storeHits": 5505024, "storeMisses": 0, "poolBuilds": 2, "peakVramGB": 74.7451, "procPeakVramGB": -1, "periodicEncodeCount": 120, "periodicVerifyCount": 0, "periodicVerifyOk": 0, "periodicFallbackCount": 0, "ptCacheEntries": 1144, "ptCacheHits": 21656, "ptCacheMisses": 1144, "dropsApplied": 1152, "dropsSkippedDeeper": 0, "rsqrtItersSum": 170, "canonBoots": 432, "failed": false, "harnessSha256": "2c5f26a4b758755c"}
+line {"storeLoad":true,"path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin","entries":688128,"dead":336,"dataBytes":68417617920,"ms":35972,"verifySamplesPerPrefix":2}
+line {"canonicalCarry":"cold","scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":4416,"ptCacheHits":3276,"ptCacheMisses":1140,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1140,"ptCacheLimbs":20677,"ptCacheResidentGB":20.1924,"ptScalarOps":0,"ptScalarDeg2Fallback":0,
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2618,"ptCacheMisses":4,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2622,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2622,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2622,"ptCacheHits":2622,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+00:01:27Z CTRL512 rc=0
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [529])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: n/a (no identical lanes in the prompt file) identical groups [] disagreements []
+VERDICT rowsComplete: 512 rows vs 8 ticks x 64 lanes = 512
+VERDICT decFailedTicks: [] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 512/512, relErrRms median 0.001604 worst 0.01704; serveSec per tick [312.0, 184.0, 184.0, 184.0, 184.0, 184.0, 184.0, 184.0]
+00:01:27Z CTRL512_DONE

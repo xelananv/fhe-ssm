@@ -1,0 +1,43 @@
+11:52:04Z === X2: TICKS=4 lanes 64, flags [--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.3 8] + [--pt-cache --pt-cache-verify --pt-cache-max-gb 24], bin /root/fhe-main-demo/build-demo/gpu_real_model_x (xbin 1), store /root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr.bin ===
+[2026-09-18T11:52:04Z] serving arm X2: ARM=X2 XBIN=1 BIN=/root/fhe-main-demo/build-demo/gpu_real_model_x LOG_RING=17 EXTRA_DEPTH=12 SECURE=1 LANES_BLOCK=1 DEVICES=0,1 EXTRA_FLAGS(server)=--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.3 8 --pt-cache --pt-cache-verify --pt-cache-max-gb 24 STORE=/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr.bin PROMPTS=/root/src/results/dense-demo-s31/sessions/a11_prompts64_long.txt TICKS=4 KEYS_POD=/root/demo/keys_pod_r17 binary_sha256 a6778d2b4429105e87f83b916a867e8f86d172cf7c3231f052a673353dbe0da5 utc 2026-09-18T11:52:04Z 
+60 rc=1 (0 GO / 2 CONDITIONAL / 1 NO-GO; the arm's record is the table below, not this code)
+## arm serve_X2 -- 4 served ticks (asked 4)
+
+| tick | reqMsPerToken | reqMsPerTokenExBoot | reqEncPtMs | reqBoots | storeAppends | peakVramGB | failed |
+|---|---|---|---|---|---|---|---|
+| 0 | 150283 | 129569 | 0 | 528 |  | 68.7763 | False |
+| 1 | 142457 | 120730 | 0 | 480 |  | 74.7763 | False |
+| 2 | 142865 | 121174 | 0 | 480 |  | 74.7763 | False |
+| 3 | 142776 | 120976 | 0 | 480 |  | 74.8076 | False |
+
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [480])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: True identical groups [[0, 63]] disagreements []
+VERDICT rowsComplete: 256 rows vs 4 ticks x 64 lanes = 256
+VERDICT decFailedTicks: [] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 254/256, relErrRms median 0.001204 worst 0.06683; serveSec per tick [302.0, 170.0, 170.0, 170.0]
+SUMMARY {"boots": 1968, "storeBytes": 68417617920, "storeHits": 2752512, "storeMisses": 0, "poolBuilds": 2, "peakVramGB": 74.8076, "procPeakVramGB": -1, "periodicEncodeCount": 120, "periodicVerifyCount": 0, "periodicVerifyOk": 0, "periodicFallbackCount": 0, "ptCacheEntries": 1144, "ptCacheHits": 9600, "ptCacheMisses": 1144, "dropsApplied": 576, "dropsSkippedDeeper": 0, "rsqrtItersSum": 170, "canonBoots": 240, "failed": false, "harnessSha256": "10e23d1d2d2ce9a7"}
+line {"storeLoad":true,"path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr.bin","entries":688128,"dead":336,"dataBytes":68417617920,"ms":36144,"verifySamplesPerPrefix":2}
+line {"canonicalCarry":"cold","scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":4032,"ptCacheHits":2892,"ptCacheMisses":1140,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1140,"ptCacheLimbs":20677,"ptCacheResidentGB":20.1924,"ptScalarOps":0,"ptScalarDeg2Fallback":0,
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2230,"ptCacheHits":2226,"ptCacheMisses":4,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2230,"ptCacheHits":2230,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"ptCacheTick":true,"pass":0,"ptCalls":2230,"ptCacheHits":2230,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptSc
+12:06:23Z X2 rc=0
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [480])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: True identical groups [[0, 63]] disagreements []
+VERDICT rowsComplete: 256 rows vs 4 ticks x 64 lanes = 256
+VERDICT decFailedTicks: [] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 254/256, relErrRms median 0.001204 worst 0.06683; serveSec per tick [302.0, 170.0, 170.0, 170.0]
+{"ptCacheTick":true,"pass":0,"ptCalls":4032,"ptCacheHits":2892,"ptCacheMisses":1140,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1140,"ptCacheLimbs":20677,"ptCacheResidentGB":20.1924,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptScalarRejectedOps":0,"ptScalarClasses":0,"ptScalarClassesRejected":0}
+{"ptCacheTick":true,"pass":0,"ptCalls":2230,"ptCacheHits":2226,"ptCacheMisses":4,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptScalarRejectedOps":0,"ptScalarClasses":0,"ptScalarClassesRejected":0}
+{"ptCacheTick":true,"pass":0,"ptCalls":2230,"ptCacheHits":2230,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptScalarRejectedOps":0,"ptScalarClasses":0,"ptScalarClassesRejected":0}
+{"ptCacheTick":true,"pass":0,"ptCalls":2230,"ptCacheHits":2230,"ptCacheMisses":0,"ptCacheDenseFallback":0,"ptCacheSkipped":0,"ptCacheEntries":1144,"ptCacheLimbs":20695,"ptCacheResidentGB":20.21,"ptScalarOps":0,"ptScalarDeg2Fallback":0,"ptScalarRejectedOps":0,"ptScalarClasses":0,"ptScalarClassesRejected":0}
+12:06:23Z X2_DONE

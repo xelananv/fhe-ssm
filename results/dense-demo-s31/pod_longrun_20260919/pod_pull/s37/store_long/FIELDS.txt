@@ -1,0 +1,17 @@
+FIELDS {"tag": "pbd430a", "tokens": 1, "passes": 1, "secure": true, "ringDim": 131072, "depth": 41, "extraDepth": 12, "boots": 529, "canonBoots": 48, "pfBoots": 0, "encPtCount": 687792, "encPtMs": 249291, "msPerToken": 609486, "wallMsPerToken": 673365, "msPerTokenExBoot": 561038, "normBootMs": 48448, "gpuEvalMs": 503413, "gpuEvalMsExBoot": 454964, "gpuBootstrapMs": 106073, "totalWallMs": 705856, "setupMs": 32490, "unaccountedMs": 47739, "unaccountedMsExBoot": 96187, "unaccountedMsAfterStages": 74798, "layerLoopMs": 578173, "layerLoopResidualMs": 6403, "hostPtEncodeMs": 54468, "hostPtEncodeCount": 4446, "hostPtEncodeStageMs": 14157, "hostPtEncodeStageCount": 1152, "stageMs": {"shiftMix": 708, "scan": 936, "gate": 3319, "hidden": 16417, "residual": 6}, "peakVramGB": 57.745, "procPeakVramGB": 57.6992, "poolHighRun": [{"dev": 0, "usedHighGB": 56.016607, "reservedHighGB": 56.03125}, {"dev": 1, "usedHighGB": 56.016607, "reservedHighGB": 56.03125}], "poolBuilds": 2, "poolBuildMs": 873, "storeOn": true, "storeHits": 0, "storeMisses": 688128, "storeDead": 336, "storeUncompressible": 0, "storeBytes": 68417617920, "storeFetchMs": 360141, "periodicEncodeOn": true, "periodicVerifyEvery": 0, "periodicEncodeCount": 687792, "periodicVerifyCount": 0, "periodicVerifyOk": 0, "periodicFallbackCount": 0, "ptCacheEntries": 0, "ptCacheHits": 0, "ptCacheMisses": 0, "ptCacheMissMs": 0, "dropsApplied": 144, "dropsSettled": 0, "dropsSkippedDeeper": 0, "dropsAtTarget": 192, "rsqrtItersSum": 170, "schedule": "stock", "newtonDepth2": false, "normEps": 1e-05, "canonicalCarry": true, "failed": false, "harnessSha256": "2c5f26a4b758755c", "harnessCommit": "73f57fcab936", "buildUtc": "2026-09-19T13:32:57Z"}
+fidelity {"logitCheckTokens": 1, "top1Agree": 1, "relLogitErrRmsMean": 0.000257791, "relLogitErrRmsMax": 0.000257791, "worstLogitErrIsMaxClass": true}
+passes []
+line {"storeLoad":false,"reason":"absent","path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin","willSaveAfterFirstPass":true}
+line {"canonicalCarry":"cold","scanLevel":19,"uLevel":19,"maxGap":38}
+line {"storeSave":"begin","entries":688128,"bytes":68447895616,"freeBytes":3727372771328}
+line {"storeSave":true,"path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin","entries":688128,"dataBytes":68417617920,"ms":30355}
+wvCheck(layer0 relErr): 0.000310872 0.000317555 0.000435415 0.000355827 
+=== VRAM ===
+  poolBuild.lvl37                     1    50.7192     44.251
+  poolBuild.lvl34                     0     53.745    41.2252
+  poolBuild.lvl34                     1     52.727    42.2432
+  final                               0     57.745    37.2252
+  final                               1     57.727    37.2432
+  peak usedGB over the trace: 57.745
+RC=0 (recorded, not trusted: F74)
+WALL_S=710

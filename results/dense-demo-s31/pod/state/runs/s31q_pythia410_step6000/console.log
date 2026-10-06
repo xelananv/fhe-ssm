@@ -1,0 +1,7 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 21808.77it/s]
+{"anchorEval": "config", "model": "EleutherAI/pythia-410m", "revision": "step6000", "backend": "hf", "device": "cuda:0", "torch": "2.11.0+cu128", "script": "1488d6d3c0922027"}
+{"anchorEval": "wt103", "model": "EleutherAI/pythia-410m", "revision": "step6000", "ctx": 1024, "stride": 1024, "windows": 280, "tokensScored": 285830, "tokensTotal": 285831, "wordsTotal": 241211, "tokenPpl": 30.956939479094483, "wordPplDerived": 58.41402519366542, "wordPplBasisNote": "exp(nll_total/n_words), n_words = whitespace words of the raw test split; valid at full split only (truncated runs: token ppl only)", "truncated": false, "nllTotalNats": 981139.2547607422, "wallSec": 6.3, "script": "1488d6d3c0922027"}
+{"anchorEval": "lambada", "model": "EleutherAI/pythia-410m", "revision": "step6000", "items": 5153, "acc": 0.33572676111003297, "lastWordPpl": 14.231929701859729, "tgtTokens": 7054, "defNote": "acc = teacher-forced greedy argmax matches EVERY token of the last whitespace word (leading space attached); ppl = exp(mean nll over last-word tokens)", "published": null, "wallSec": 37.2, "script": "1488d6d3c0922027"}
+{"anchorEvalDone": true, "model": "EleutherAI/pythia-410m", "revision": "step6000"}

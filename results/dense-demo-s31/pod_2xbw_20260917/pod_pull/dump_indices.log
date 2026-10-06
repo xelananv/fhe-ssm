@@ -1,0 +1,6 @@
+CMD: /root/fhe-main-demo/build-demo/gpu_real_model --tag pbd430a --bundle-dir /root/src/ml-eval/artifacts --device 0 --log-ring 17 --secure --level-budget 3 3 --ms-norm 5.5 --enc-threads 24 --boot-floor 3 --matvec-margin 4 --extra-depth 12 --canonical-carry --pack-tokens 1 --lanes-block --compressed-store --dump-rot-indices /root/demo/contract_r17.json
+FIDESLIB_USE_MEMCPY_PEER=0, set to: 0
+{"schedLevers":true,"schedule":"stock","pfEntry":"loop","shareBabies":false,"newtonDepth2":false,"poolLevels":2,"stockPath":true}
+{"dumpRotIndices":true,"path":"/root/demo/contract_r17.json","ring":131072,"rotationAmounts":73,"bootstrapSteps":168,"autoIndices":143,"openfheMapCount":143,"missingFromOwnKeygen":0}
+RC=0
+CONTRACT: {"ring": 131072, "slots": 65536, "depth": 41, "bootstrapSlots": 65536, "nRotationAmounts": 73, "nAutoIndices": 143, "nKeysToMint": 143, "expectedUploadBytes": 50824028296, "expectedUploadGB": 50.82, "minutesAt12.5MBps": 67.8, "problems": []}

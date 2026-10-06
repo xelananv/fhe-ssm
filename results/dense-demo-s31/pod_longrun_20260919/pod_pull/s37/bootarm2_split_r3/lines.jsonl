@@ -1,0 +1,10 @@
+{"harness":"gpu_real_model","arch":"native","tag":"pbd430a","secure":true,"ringDim":131072,"slots":65536,"d":1024,"Dpad":1024,"REP":64,"L":1,"dff":4096,"BS":32,"haveBundle":false,"ompMaxThreads":24,"scaleBits":59,"normEpsOn":true,"setupMs":32682}
+{"selftest":"encdec","result":"ok","err":4.37528e-12}
+{"selftest":"rotate","result":"ok","err":1.45715e-11}
+{"selftest":"matvec","result":"ok","err":8.80398e-12}
+{"selftest":"rmsnorm","result":"fail","err":0.0310645}
+{"selftest":"levelMismatch","gap":1,"aLvl":0,"bLvl":1,"alignOnlyErr":3.40022e-12,"mismatchedAddErr":4.13491e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":5,"aLvl":0,"bLvl":5,"alignOnlyErr":3.39945e-12,"mismatchedAddErr":4.59932e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":22,"aLvl":0,"bLvl":22,"alignOnlyErr":3.18495e-12,"mismatchedAddErr":4.52438e-12,"result":"ok"}
+{"selftest":"bootstrap","result":"ok","err":0.0012446}
+{"selftestSummary":true,"hardFail":0,"softFail":1,"peakVramGB":44.7294}

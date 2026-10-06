@@ -1,0 +1,14 @@
+[2026-09-17T22:01:16Z] nvcc missing -> running /root/src/results/dense-demo-s31/pod_tools/00_toolchain.sh (apt cuda-toolkit-12-9; untimed on record)
+[2026-09-17T22:05:24Z] toolchain OK
+[2026-09-17T22:05:28Z] running /root/src/results/dense-demo-s31/pod_tools/s31_bootstrap.sh (venv + fideslib main + demo build; logs in /root/*.log)
+BUILD_IDENTITY 2026-09-17T22:08:24Z
+binary /root/fhe-main-demo/build-demo/gpu_real_model
+binary_sha256 aaa0cc21ff07e131ac68fd1f71236368577618ee70a8dc7947520d9b49cb7273
+binary_x /root/fhe-main-demo/build-demo/gpu_real_model_x
+binary_x_sha256 
+fideslib_commit fa972864ae8d624e77d3ac6ad31a1d40ef1c4d0c
+fideslib_a_gnu_lto_sections 0
+nvcc Build cuda_12.9.r12.9/compiler.36037853_0
+cuda_arch 120
+repo_commit a50f0cb25edd502e6cd1f7768a079e791eb1689e dirty=3
+[2026-09-17T22:08:24Z] BUILD PROBLEM: RIDER:harness:ok missing (/root/build_fideslib.log)

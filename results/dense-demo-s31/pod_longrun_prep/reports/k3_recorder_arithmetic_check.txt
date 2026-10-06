@@ -1,0 +1,5 @@
+part 1  N =    256  h =    176  coefficients checked    256  I mismatches 0  worst |frac(float) - frac(exact)| 4.163e-15  max|I| 13  rms I 3.774 (pred 3.841)
+part 1  N =   1024  h =    683  coefficients checked   1024  I mismatches 0  worst |frac(float) - frac(exact)| 8.826e-15  max|I| 25  rms I 7.566 (pred 7.550)
+part 1  N =   4096  h =   2730  coefficients checked   4096  I mismatches 0  worst |frac(float) - frac(exact)| 2.871e-14  max|I| 57  rms I 15.290 (pred 15.086)
+part 2  N = 131072  h =  87244  coefficients checked     64  I mismatches 0  worst |frac(float) - frac(exact)| 1.782e-13  max|I| 366  rms I 85.208 (pred 85.267)
+note: c0, c1 here are uniform, so the exact fractional part is uniform too; on a real ciphertext it is the message m/q0, small. The check is that the float fraction equals the exact one to ~1e-10, i.e. the double-precision FFT resolves I exactly.

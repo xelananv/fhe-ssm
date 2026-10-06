@@ -1,0 +1,4 @@
+FIDESLIB_USE_MEMCPY_PEER=0, set to: 0
+{"x8Levers":true,"dropWv":7,"dropWkr":4,"dropWout":7,"dropWin":4,"rsqrtSidecar":"","baseline":"stock"}
+{"schedLevers":true,"schedule":"stock","pfEntry":"loop","shareBabies":false,"newtonDepth2":false,"poolLevels":2,"stockPath":true}
+{"clientEnc":true,"file":"/root/demo/s37/serve_LONG/row_tail.f64.ct","count":1,"tokens":1,"packTokens":1,"lanes":64,"totalBytes":88088569,"encMs":368}

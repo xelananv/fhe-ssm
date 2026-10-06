@@ -1,0 +1,1878 @@
+{
+ "bases": [
+  {
+   "base": "DEMO: lanes-block, X8 drops, robust 8 (take 9 / A11: record 480 boots)",
+   "args": [
+    "--lanes-block",
+    "--robust-iters",
+    "8",
+    "--drop-wv",
+    "7",
+    "--drop-wkr",
+    "4",
+    "--drop-wout",
+    "7",
+    "--drop-win",
+    "4"
+   ],
+   "rows": [
+    {
+     "variant": "fixed coefficients (today's model)",
+     "args": [],
+     "boots_total": 480,
+     "boots_stock_rule": 432,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1706,
+     "ctpt_elem": 1996,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      480,
+      480,
+      480,
+      480,
+      480
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-2 gate",
+     "args": [
+      "--sel",
+      "diag"
+     ],
+     "boots_total": 480,
+     "boots_stock_rule": 432,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1754,
+     "ctpt_elem": 1946,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      480,
+      480,
+      480,
+      480,
+      480
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-4 gate",
+     "args": [
+      "--sel",
+      "diag",
+      "--sel-poly",
+      "2"
+     ],
+     "boots_total": 480,
+     "boots_stock_rule": 432,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1778,
+     "ctpt_elem": 1946,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      480,
+      480,
+      480,
+      480,
+      480
+     ],
+     "period1": true
+    },
+    {
+     "variant": "projected selective decay (one d->d matvec per layer)",
+     "args": [
+      "--sel",
+      "proj"
+     ],
+     "boots_total": 504,
+     "boots_stock_rule": 456,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 1754,
+     "ctpt_elem": 1972,
+     "matvec_chunks": 360,
+     "diag_limbs": 4421520,
+     "boots_by_tick": [
+      504,
+      504,
+      504,
+      504,
+      504
+     ],
+     "period1": true
+    },
+    {
+     "variant": "low-rank selective decay (d->64->d; rectangular matvec: projection)",
+     "args": [
+      "--sel",
+      "lowrank"
+     ],
+     "boots_total": 504,
+     "boots_stock_rule": 456,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34004,
+     "ctct": 1754,
+     "ctpt_elem": 1972,
+     "matvec_chunks": 336,
+     "diag_limbs": 4203528,
+     "boots_by_tick": [
+      504,
+      504,
+      504,
+      504,
+      504
+     ],
+     "period1": true
+    },
+    {
+     "variant": "input gate only (S3.8 Vector A)",
+     "args": [
+      "--input-gate"
+     ],
+     "boots_total": 504,
+     "boots_stock_rule": 456,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 1754,
+     "ctpt_elem": 1972,
+     "matvec_chunks": 360,
+     "diag_limbs": 4421520,
+     "boots_by_tick": [
+      504,
+      504,
+      504,
+      504,
+      504
+     ],
+     "period1": true
+    },
+    {
+     "variant": "RG-LRU pair: projected decay + input gate",
+     "args": [
+      "--sel",
+      "proj",
+      "--input-gate"
+     ],
+     "boots_total": 528,
+     "boots_stock_rule": 480,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 37076,
+     "ctct": 1802,
+     "ctpt_elem": 1948,
+     "matvec_chunks": 384,
+     "diag_limbs": 4667160,
+     "boots_by_tick": [
+      528,
+      528,
+      528,
+      528,
+      528
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 2, fixed coefficients",
+     "args": [
+      "--state-width",
+      "2"
+     ],
+     "boots_total": 504,
+     "boots_stock_rule": 432,
+     "canon_boots": 72,
+     "carried_cts": 72,
+     "rot": 32564,
+     "ctct": 1706,
+     "ctpt_elem": 2500,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      504,
+      504,
+      504,
+      504,
+      504
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 4, fixed coefficients",
+     "args": [
+      "--state-width",
+      "4"
+     ],
+     "boots_total": 552,
+     "boots_stock_rule": 432,
+     "canon_boots": 120,
+     "carried_cts": 120,
+     "rot": 32564,
+     "ctct": 1706,
+     "ctpt_elem": 3508,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      552,
+      552,
+      552,
+      552,
+      552
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 16, fixed coefficients",
+     "args": [
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 840,
+     "boots_stock_rule": 432,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 1706,
+     "ctpt_elem": 9556,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      840,
+      840,
+      840,
+      840,
+      840
+     ],
+     "period1": true
+    },
+    {
+     "variant": "N = 16 + diagonal selective decay",
+     "args": [
+      "--sel",
+      "diag",
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 840,
+     "boots_stock_rule": 432,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 2114,
+     "ctpt_elem": 8036,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      840,
+      840,
+      840,
+      840,
+      840
+     ],
+     "period1": true
+    },
+    {
+     "variant": "Mamba-shaped time-mix INSIDE our block: N = 16, low-rank Delta (deg 4), exp ladder (deg 4), selective B/C, conv 4",
+     "args": [
+      "--sel",
+      "lowrank",
+      "--sel-poly",
+      "2",
+      "--decay-exp",
+      "2",
+      "--state-width",
+      "16",
+      "--bc-selective",
+      "--conv",
+      "4"
+     ],
+     "boots_total": 912,
+     "boots_stock_rule": 456,
+     "canon_boots": 456,
+     "carried_cts": 456,
+     "rot": 49364,
+     "ctct": 3674,
+     "ctpt_elem": 9716,
+     "matvec_chunks": 336,
+     "diag_limbs": 4203528,
+     "boots_by_tick": [
+      912,
+      912,
+      912,
+      912,
+      912
+     ],
+     "period1": true
+    }
+   ]
+  },
+  {
+   "base": "LONG-RUN PLAN: lanes-block, X8 drops, robust 12",
+   "args": [
+    "--lanes-block",
+    "--robust-iters",
+    "12",
+    "--drop-wv",
+    "7",
+    "--drop-wkr",
+    "4",
+    "--drop-wout",
+    "7",
+    "--drop-win",
+    "4"
+   ],
+   "rows": [
+    {
+     "variant": "fixed coefficients (today's model)",
+     "args": [],
+     "boots_total": 529,
+     "boots_stock_rule": 481,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 2294,
+     "ctpt_elem": 2192,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      529,
+      529,
+      529,
+      529,
+      529
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-2 gate",
+     "args": [
+      "--sel",
+      "diag"
+     ],
+     "boots_total": 529,
+     "boots_stock_rule": 481,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 2342,
+     "ctpt_elem": 2142,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      529,
+      529,
+      529,
+      529,
+      529
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-4 gate",
+     "args": [
+      "--sel",
+      "diag",
+      "--sel-poly",
+      "2"
+     ],
+     "boots_total": 529,
+     "boots_stock_rule": 481,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 2366,
+     "ctpt_elem": 2142,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      529,
+      529,
+      529,
+      529,
+      529
+     ],
+     "period1": true
+    },
+    {
+     "variant": "projected selective decay (one d->d matvec per layer)",
+     "args": [
+      "--sel",
+      "proj"
+     ],
+     "boots_total": 553,
+     "boots_stock_rule": 505,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 2342,
+     "ctpt_elem": 2168,
+     "matvec_chunks": 360,
+     "diag_limbs": 4421520,
+     "boots_by_tick": [
+      553,
+      553,
+      553,
+      553,
+      553
+     ],
+     "period1": true
+    },
+    {
+     "variant": "low-rank selective decay (d->64->d; rectangular matvec: projection)",
+     "args": [
+      "--sel",
+      "lowrank"
+     ],
+     "boots_total": 553,
+     "boots_stock_rule": 505,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34004,
+     "ctct": 2342,
+     "ctpt_elem": 2168,
+     "matvec_chunks": 336,
+     "diag_limbs": 4203528,
+     "boots_by_tick": [
+      553,
+      553,
+      553,
+      553,
+      553
+     ],
+     "period1": true
+    },
+    {
+     "variant": "input gate only (S3.8 Vector A)",
+     "args": [
+      "--input-gate"
+     ],
+     "boots_total": 553,
+     "boots_stock_rule": 505,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 2342,
+     "ctpt_elem": 2168,
+     "matvec_chunks": 360,
+     "diag_limbs": 4421520,
+     "boots_by_tick": [
+      553,
+      553,
+      553,
+      553,
+      553
+     ],
+     "period1": true
+    },
+    {
+     "variant": "RG-LRU pair: projected decay + input gate",
+     "args": [
+      "--sel",
+      "proj",
+      "--input-gate"
+     ],
+     "boots_total": 577,
+     "boots_stock_rule": 529,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 37076,
+     "ctct": 2390,
+     "ctpt_elem": 2144,
+     "matvec_chunks": 384,
+     "diag_limbs": 4667160,
+     "boots_by_tick": [
+      577,
+      577,
+      577,
+      577,
+      577
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 2, fixed coefficients",
+     "args": [
+      "--state-width",
+      "2"
+     ],
+     "boots_total": 553,
+     "boots_stock_rule": 481,
+     "canon_boots": 72,
+     "carried_cts": 72,
+     "rot": 32564,
+     "ctct": 2294,
+     "ctpt_elem": 2696,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      553,
+      553,
+      553,
+      553,
+      553
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 4, fixed coefficients",
+     "args": [
+      "--state-width",
+      "4"
+     ],
+     "boots_total": 601,
+     "boots_stock_rule": 481,
+     "canon_boots": 120,
+     "carried_cts": 120,
+     "rot": 32564,
+     "ctct": 2294,
+     "ctpt_elem": 3704,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      601,
+      601,
+      601,
+      601,
+      601
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 16, fixed coefficients",
+     "args": [
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 889,
+     "boots_stock_rule": 481,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 2294,
+     "ctpt_elem": 9752,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      889,
+      889,
+      889,
+      889,
+      889
+     ],
+     "period1": true
+    },
+    {
+     "variant": "N = 16 + diagonal selective decay",
+     "args": [
+      "--sel",
+      "diag",
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 889,
+     "boots_stock_rule": 481,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 2702,
+     "ctpt_elem": 8232,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      889,
+      889,
+      889,
+      889,
+      889
+     ],
+     "period1": true
+    },
+    {
+     "variant": "Mamba-shaped time-mix INSIDE our block: N = 16, low-rank Delta (deg 4), exp ladder (deg 4), selective B/C, conv 4",
+     "args": [
+      "--sel",
+      "lowrank",
+      "--sel-poly",
+      "2",
+      "--decay-exp",
+      "2",
+      "--state-width",
+      "16",
+      "--bc-selective",
+      "--conv",
+      "4"
+     ],
+     "boots_total": 961,
+     "boots_stock_rule": 505,
+     "canon_boots": 456,
+     "carried_cts": 456,
+     "rot": 49364,
+     "ctct": 4262,
+     "ctpt_elem": 9912,
+     "matvec_chunks": 336,
+     "diag_limbs": 4203528,
+     "boots_by_tick": [
+      961,
+      961,
+      961,
+      961,
+      961
+     ],
+     "period1": true
+    }
+   ]
+  },
+  {
+   "base": "lanes-block, X8 drops, bundle Newton (record 404 boots)",
+   "args": [
+    "--lanes-block",
+    "--drop-wv",
+    "7",
+    "--drop-wkr",
+    "4",
+    "--drop-wout",
+    "7",
+    "--drop-win",
+    "4"
+   ],
+   "rows": [
+    {
+     "variant": "fixed coefficients (today's model)",
+     "args": [],
+     "boots_total": 404,
+     "boots_stock_rule": 356,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 1769,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      404,
+      404,
+      404,
+      404,
+      404
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-2 gate",
+     "args": [
+      "--sel",
+      "diag"
+     ],
+     "boots_total": 404,
+     "boots_stock_rule": 356,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1088,
+     "ctpt_elem": 1714,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      404,
+      404,
+      404,
+      404,
+      404
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-4 gate",
+     "args": [
+      "--sel",
+      "diag",
+      "--sel-poly",
+      "2"
+     ],
+     "boots_total": 404,
+     "boots_stock_rule": 356,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1112,
+     "ctpt_elem": 1714,
+     "matvec_chunks": 336,
+     "diag_limbs": 4173833,
+     "boots_by_tick": [
+      404,
+      404,
+      404,
+      404,
+      404
+     ],
+     "period1": true
+    },
+    {
+     "variant": "projected selective decay (one d->d matvec per layer)",
+     "args": [
+      "--sel",
+      "proj"
+     ],
+     "boots_total": 428,
+     "boots_stock_rule": 380,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 1088,
+     "ctpt_elem": 1745,
+     "matvec_chunks": 360,
+     "diag_limbs": 4421520,
+     "boots_by_tick": [
+      428,
+      428,
+      428,
+      428,
+      428
+     ],
+     "period1": true
+    },
+    {
+     "variant": "low-rank selective decay (d->64->d; rectangular matvec: projection)",
+     "args": [
+      "--sel",
+      "lowrank"
+     ],
+     "boots_total": 428,
+     "boots_stock_rule": 380,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34004,
+     "ctct": 1088,
+     "ctpt_elem": 1745,
+     "matvec_chunks": 336,
+     "diag_limbs": 4203528,
+     "boots_by_tick": [
+      428,
+      428,
+      428,
+      428,
+      428
+     ],
+     "period1": true
+    },
+    {
+     "variant": "input gate only (S3.8 Vector A)",
+     "args": [
+      "--input-gate"
+     ],
+     "boots_total": 428,
+     "boots_stock_rule": 380,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 1088,
+     "ctpt_elem": 1745,
+     "matvec_chunks": 360,
+     "diag_limbs": 4421520,
+     "boots_by_tick": [
+      428,
+      428,
+      428,
+      428,
+      428
+     ],
+     "period1": true
+    },
+    {
+     "variant": "RG-LRU pair: projected decay + input gate",
+     "args": [
+      "--sel",
+      "proj",
+      "--input-gate"
+     ],
+     "boots_total": 452,
+     "boots_stock_rule": 404,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 37076,
+     "ctct": 1136,
+     "ctpt_elem": 1721,
+     "matvec_chunks": 384,
+     "diag_limbs": 4667160,
+     "boots_by_tick": [
+      452,
+      452,
+      452,
+      452,
+      452
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 2, fixed coefficients",
+     "args": [
+      "--state-width",
+      "2"
+     ],
+     "boots_total": 428,
+     "boots_stock_rule": 356,
+     "canon_boots": 72,
+     "carried_cts": 72,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 2273,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      428,
+      428,
+      428,
+      428,
+      428
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 4, fixed coefficients",
+     "args": [
+      "--state-width",
+      "4"
+     ],
+     "boots_total": 476,
+     "boots_stock_rule": 356,
+     "canon_boots": 120,
+     "carried_cts": 120,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 3281,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      476,
+      476,
+      476,
+      476,
+      476
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 16, fixed coefficients",
+     "args": [
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 764,
+     "boots_stock_rule": 356,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 9329,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      764,
+      764,
+      764,
+      764,
+      764
+     ],
+     "period1": true
+    },
+    {
+     "variant": "N = 16 + diagonal selective decay",
+     "args": [
+      "--sel",
+      "diag",
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 764,
+     "boots_stock_rule": 356,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 1448,
+     "ctpt_elem": 7729,
+     "matvec_chunks": 336,
+     "diag_limbs": 4175880,
+     "boots_by_tick": [
+      764,
+      764,
+      764,
+      764,
+      764
+     ],
+     "period1": true
+    },
+    {
+     "variant": "Mamba-shaped time-mix INSIDE our block: N = 16, low-rank Delta (deg 4), exp ladder (deg 4), selective B/C, conv 4",
+     "args": [
+      "--sel",
+      "lowrank",
+      "--sel-poly",
+      "2",
+      "--decay-exp",
+      "2",
+      "--state-width",
+      "16",
+      "--bc-selective",
+      "--conv",
+      "4"
+     ],
+     "boots_total": 836,
+     "boots_stock_rule": 380,
+     "canon_boots": 456,
+     "carried_cts": 456,
+     "rot": 49364,
+     "ctct": 3008,
+     "ctpt_elem": 9409,
+     "matvec_chunks": 336,
+     "diag_limbs": 4201481,
+     "boots_by_tick": [
+      836,
+      836,
+      836,
+      836,
+      836
+     ],
+     "period1": true
+    }
+   ]
+  },
+  {
+   "base": "lanes-block, no drops, bundle Newton (record 380 boots)",
+   "args": [
+    "--lanes-block"
+   ],
+   "rows": [
+    {
+     "variant": "fixed coefficients (today's model)",
+     "args": [],
+     "boots_total": 380,
+     "boots_stock_rule": 332,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 1737,
+     "matvec_chunks": 336,
+     "diag_limbs": 7930078,
+     "boots_by_tick": [
+      380,
+      380,
+      380,
+      380,
+      380
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-2 gate",
+     "args": [
+      "--sel",
+      "diag"
+     ],
+     "boots_total": 380,
+     "boots_stock_rule": 332,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1088,
+     "ctpt_elem": 1714,
+     "matvec_chunks": 336,
+     "diag_limbs": 7487926,
+     "boots_by_tick": [
+      380,
+      380,
+      380,
+      380,
+      380
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-4 gate",
+     "args": [
+      "--sel",
+      "diag",
+      "--sel-poly",
+      "2"
+     ],
+     "boots_total": 364,
+     "boots_stock_rule": 316,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 32564,
+     "ctct": 1112,
+     "ctpt_elem": 1712,
+     "matvec_chunks": 336,
+     "diag_limbs": 7709002,
+     "boots_by_tick": [
+      364,
+      364,
+      364,
+      364,
+      364
+     ],
+     "period1": true
+    },
+    {
+     "variant": "projected selective decay (one d->d matvec per layer)",
+     "args": [
+      "--sel",
+      "proj"
+     ],
+     "boots_total": 380,
+     "boots_stock_rule": 332,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 1088,
+     "ctpt_elem": 1690,
+     "matvec_chunks": 360,
+     "diag_limbs": 8554413,
+     "boots_by_tick": [
+      380,
+      380,
+      380,
+      380,
+      380
+     ],
+     "period1": true
+    },
+    {
+     "variant": "low-rank selective decay (d->64->d; rectangular matvec: projection)",
+     "args": [
+      "--sel",
+      "lowrank"
+     ],
+     "boots_total": 364,
+     "boots_stock_rule": 316,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34004,
+     "ctct": 1088,
+     "ctpt_elem": 1664,
+     "matvec_chunks": 336,
+     "diag_limbs": 7836746,
+     "boots_by_tick": [
+      364,
+      364,
+      364,
+      364,
+      364
+     ],
+     "period1": true
+    },
+    {
+     "variant": "input gate only (S3.8 Vector A)",
+     "args": [
+      "--input-gate"
+     ],
+     "boots_total": 364,
+     "boots_stock_rule": 316,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 34820,
+     "ctct": 1088,
+     "ctpt_elem": 1664,
+     "matvec_chunks": 360,
+     "diag_limbs": 8755019,
+     "boots_by_tick": [
+      364,
+      364,
+      364,
+      364,
+      364
+     ],
+     "period1": true
+    },
+    {
+     "variant": "RG-LRU pair: projected decay + input gate",
+     "args": [
+      "--sel",
+      "proj",
+      "--input-gate"
+     ],
+     "boots_total": 364,
+     "boots_stock_rule": 316,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 37076,
+     "ctct": 1136,
+     "ctpt_elem": 1640,
+     "matvec_chunks": 384,
+     "diag_limbs": 9753955,
+     "boots_by_tick": [
+      364,
+      364,
+      364,
+      364,
+      364
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 2, fixed coefficients",
+     "args": [
+      "--state-width",
+      "2"
+     ],
+     "boots_total": 404,
+     "boots_stock_rule": 332,
+     "canon_boots": 72,
+     "carried_cts": 72,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 2186,
+     "matvec_chunks": 336,
+     "diag_limbs": 7930078,
+     "boots_by_tick": [
+      404,
+      404,
+      404,
+      404,
+      404
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 4, fixed coefficients",
+     "args": [
+      "--state-width",
+      "4"
+     ],
+     "boots_total": 452,
+     "boots_stock_rule": 332,
+     "canon_boots": 120,
+     "carried_cts": 120,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 3084,
+     "matvec_chunks": 336,
+     "diag_limbs": 7930078,
+     "boots_by_tick": [
+      452,
+      452,
+      452,
+      452,
+      452
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 16, fixed coefficients",
+     "args": [
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 740,
+     "boots_stock_rule": 332,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 1040,
+     "ctpt_elem": 8472,
+     "matvec_chunks": 336,
+     "diag_limbs": 7930078,
+     "boots_by_tick": [
+      740,
+      740,
+      740,
+      740,
+      740
+     ],
+     "period1": true
+    },
+    {
+     "variant": "N = 16 + diagonal selective decay",
+     "args": [
+      "--sel",
+      "diag",
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 740,
+     "boots_stock_rule": 332,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 32564,
+     "ctct": 1448,
+     "ctpt_elem": 7729,
+     "matvec_chunks": 336,
+     "diag_limbs": 7487926,
+     "boots_by_tick": [
+      740,
+      740,
+      740,
+      740,
+      740
+     ],
+     "period1": true
+    },
+    {
+     "variant": "Mamba-shaped time-mix INSIDE our block: N = 16, low-rank Delta (deg 4), exp ladder (deg 4), selective B/C, conv 4",
+     "args": [
+      "--sel",
+      "lowrank",
+      "--sel-poly",
+      "2",
+      "--decay-exp",
+      "2",
+      "--state-width",
+      "16",
+      "--bc-selective",
+      "--conv",
+      "4"
+     ],
+     "boots_total": 1096,
+     "boots_stock_rule": 640,
+     "canon_boots": 456,
+     "carried_cts": 456,
+     "rot": 49364,
+     "ctct": 3008,
+     "ctpt_elem": 5392,
+     "matvec_chunks": 336,
+     "diag_limbs": 10365269,
+     "boots_by_tick": [
+      1096,
+      1096,
+      1096,
+      1096,
+      1096
+     ],
+     "period1": true
+    }
+   ]
+  },
+  {
+   "base": "SCHEDULED: lanes-block, parent-first + share-babies + late-margin, bundle Newton",
+   "args": [
+    "--lanes-block",
+    "--schedule",
+    "parent-first",
+    "--share-babies",
+    "--late-margin"
+   ],
+   "rows": [
+    {
+     "variant": "fixed coefficients (today's model)",
+     "args": [],
+     "boots_total": 144,
+     "boots_stock_rule": 96,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 21980,
+     "ctct": 1040,
+     "ctpt_elem": 1916,
+     "matvec_chunks": 336,
+     "diag_limbs": 11328098,
+     "boots_by_tick": [
+      144,
+      144,
+      144,
+      144,
+      144
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-2 gate",
+     "args": [
+      "--sel",
+      "diag"
+     ],
+     "boots_total": 144,
+     "boots_stock_rule": 96,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 21980,
+     "ctct": 1088,
+     "ctpt_elem": 1916,
+     "matvec_chunks": 336,
+     "diag_limbs": 11278970,
+     "boots_by_tick": [
+      144,
+      144,
+      144,
+      144,
+      144
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-4 gate",
+     "args": [
+      "--sel",
+      "diag",
+      "--sel-poly",
+      "2"
+     ],
+     "boots_total": 154,
+     "boots_stock_rule": 106,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 21980,
+     "ctct": 1112,
+     "ctpt_elem": 1916,
+     "matvec_chunks": 336,
+     "diag_limbs": 11229842,
+     "boots_by_tick": [
+      154,
+      154,
+      154,
+      154,
+      154
+     ],
+     "period1": true
+    },
+    {
+     "variant": "projected selective decay (one d->d matvec per layer)",
+     "args": [
+      "--sel",
+      "proj"
+     ],
+     "boots_total": 144,
+     "boots_stock_rule": 96,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 24236,
+     "ctct": 1088,
+     "ctpt_elem": 1892,
+     "matvec_chunks": 360,
+     "diag_limbs": 12128475,
+     "boots_by_tick": [
+      144,
+      144,
+      144,
+      144,
+      144
+     ],
+     "period1": true
+    },
+    {
+     "variant": "low-rank selective decay (d->64->d; rectangular matvec: projection)",
+     "args": [
+      "--sel",
+      "lowrank"
+     ],
+     "boots_total": 154,
+     "boots_stock_rule": 106,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 23420,
+     "ctct": 1088,
+     "ctpt_elem": 1868,
+     "matvec_chunks": 336,
+     "diag_limbs": 11333010,
+     "boots_by_tick": [
+      154,
+      154,
+      154,
+      154,
+      154
+     ],
+     "period1": true
+    },
+    {
+     "variant": "input gate only (S3.8 Vector A)",
+     "args": [
+      "--input-gate"
+     ],
+     "boots_total": 154,
+     "boots_stock_rule": 106,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 24236,
+     "ctct": 1088,
+     "ctpt_elem": 1868,
+     "matvec_chunks": 360,
+     "diag_limbs": 12079347,
+     "boots_by_tick": [
+      154,
+      154,
+      154,
+      154,
+      154
+     ],
+     "period1": true
+    },
+    {
+     "variant": "RG-LRU pair: projected decay + input gate",
+     "args": [
+      "--sel",
+      "proj",
+      "--input-gate"
+     ],
+     "boots_total": 154,
+     "boots_stock_rule": 106,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 24980,
+     "ctct": 1136,
+     "ctpt_elem": 1844,
+     "matvec_chunks": 384,
+     "diag_limbs": 13186774,
+     "boots_by_tick": [
+      154,
+      154,
+      154,
+      154,
+      154
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 2, fixed coefficients",
+     "args": [
+      "--state-width",
+      "2"
+     ],
+     "boots_total": 168,
+     "boots_stock_rule": 96,
+     "canon_boots": 72,
+     "carried_cts": 72,
+     "rot": 21980,
+     "ctct": 1040,
+     "ctpt_elem": 2259,
+     "matvec_chunks": 336,
+     "diag_limbs": 11328098,
+     "boots_by_tick": [
+      168,
+      168,
+      168,
+      168,
+      168
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 4, fixed coefficients",
+     "args": [
+      "--state-width",
+      "4"
+     ],
+     "boots_total": 216,
+     "boots_stock_rule": 96,
+     "canon_boots": 120,
+     "carried_cts": 120,
+     "rot": 21980,
+     "ctct": 1040,
+     "ctpt_elem": 2945,
+     "matvec_chunks": 336,
+     "diag_limbs": 11328098,
+     "boots_by_tick": [
+      216,
+      216,
+      216,
+      216,
+      216
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 16, fixed coefficients",
+     "args": [
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 504,
+     "boots_stock_rule": 96,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 21980,
+     "ctct": 1040,
+     "ctpt_elem": 7061,
+     "matvec_chunks": 336,
+     "diag_limbs": 11328098,
+     "boots_by_tick": [
+      504,
+      504,
+      504,
+      504,
+      504
+     ],
+     "period1": true
+    },
+    {
+     "variant": "N = 16 + diagonal selective decay",
+     "args": [
+      "--sel",
+      "diag",
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 504,
+     "boots_stock_rule": 96,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 21980,
+     "ctct": 1448,
+     "ctpt_elem": 6341,
+     "matvec_chunks": 336,
+     "diag_limbs": 11278970,
+     "boots_by_tick": [
+      504,
+      504,
+      504,
+      504,
+      504
+     ],
+     "period1": true
+    },
+    {
+     "variant": "Mamba-shaped time-mix INSIDE our block: N = 16, low-rank Delta (deg 4), exp ladder (deg 4), selective B/C, conv 4",
+     "args": [
+      "--sel",
+      "lowrank",
+      "--sel-poly",
+      "2",
+      "--decay-exp",
+      "2",
+      "--state-width",
+      "16",
+      "--bc-selective",
+      "--conv",
+      "4"
+     ],
+     "boots_total": 563,
+     "boots_stock_rule": 107,
+     "canon_boots": 456,
+     "carried_cts": 456,
+     "rot": 38780,
+     "ctct": 3008,
+     "ctpt_elem": 7164,
+     "matvec_chunks": 336,
+     "diag_limbs": 11566368,
+     "boots_by_tick": [
+      563,
+      563,
+      563,
+      563,
+      563
+     ],
+     "period1": true
+    }
+   ]
+  },
+  {
+   "base": "SCHEDULED + robust 8",
+   "args": [
+    "--lanes-block",
+    "--schedule",
+    "parent-first",
+    "--share-babies",
+    "--late-margin",
+    "--robust-iters",
+    "8"
+   ],
+   "rows": [
+    {
+     "variant": "fixed coefficients (today's model)",
+     "args": [],
+     "boots_total": 193,
+     "boots_stock_rule": 145,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 21980,
+     "ctct": 1706,
+     "ctpt_elem": 1992,
+     "matvec_chunks": 336,
+     "diag_limbs": 8965860,
+     "boots_by_tick": [
+      193,
+      193,
+      193,
+      193,
+      193
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-2 gate",
+     "args": [
+      "--sel",
+      "diag"
+     ],
+     "boots_total": 193,
+     "boots_stock_rule": 145,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 21980,
+     "ctct": 1754,
+     "ctpt_elem": 1992,
+     "matvec_chunks": 336,
+     "diag_limbs": 8916732,
+     "boots_by_tick": [
+      193,
+      193,
+      193,
+      193,
+      193
+     ],
+     "period1": true
+    },
+    {
+     "variant": "diagonal selective decay, degree-4 gate",
+     "args": [
+      "--sel",
+      "diag",
+      "--sel-poly",
+      "2"
+     ],
+     "boots_total": 216,
+     "boots_stock_rule": 168,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 21980,
+     "ctct": 1778,
+     "ctpt_elem": 1992,
+     "matvec_chunks": 336,
+     "diag_limbs": 8867604,
+     "boots_by_tick": [
+      216,
+      216,
+      216,
+      216,
+      216
+     ],
+     "period1": true
+    },
+    {
+     "variant": "projected selective decay (one d->d matvec per layer)",
+     "args": [
+      "--sel",
+      "proj"
+     ],
+     "boots_total": 193,
+     "boots_stock_rule": 145,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 24236,
+     "ctct": 1754,
+     "ctpt_elem": 1968,
+     "matvec_chunks": 360,
+     "diag_limbs": 9616806,
+     "boots_by_tick": [
+      193,
+      193,
+      193,
+      193,
+      193
+     ],
+     "period1": true
+    },
+    {
+     "variant": "low-rank selective decay (d->64->d; rectangular matvec: projection)",
+     "args": [
+      "--sel",
+      "lowrank"
+     ],
+     "boots_total": 216,
+     "boots_stock_rule": 168,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 23420,
+     "ctct": 1754,
+     "ctpt_elem": 1944,
+     "matvec_chunks": 336,
+     "diag_limbs": 8952084,
+     "boots_by_tick": [
+      216,
+      216,
+      216,
+      216,
+      216
+     ],
+     "period1": true
+    },
+    {
+     "variant": "input gate only (S3.8 Vector A)",
+     "args": [
+      "--input-gate"
+     ],
+     "boots_total": 216,
+     "boots_stock_rule": 168,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 24236,
+     "ctct": 1754,
+     "ctpt_elem": 1944,
+     "matvec_chunks": 360,
+     "diag_limbs": 9567678,
+     "boots_by_tick": [
+      216,
+      216,
+      216,
+      216,
+      216
+     ],
+     "period1": true
+    },
+    {
+     "variant": "RG-LRU pair: projected decay + input gate",
+     "args": [
+      "--sel",
+      "proj",
+      "--input-gate"
+     ],
+     "boots_total": 216,
+     "boots_stock_rule": 168,
+     "canon_boots": 48,
+     "carried_cts": 48,
+     "rot": 24980,
+     "ctct": 1802,
+     "ctpt_elem": 1920,
+     "matvec_chunks": 384,
+     "diag_limbs": 10924839,
+     "boots_by_tick": [
+      216,
+      216,
+      216,
+      216,
+      216
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 2, fixed coefficients",
+     "args": [
+      "--state-width",
+      "2"
+     ],
+     "boots_total": 217,
+     "boots_stock_rule": 145,
+     "canon_boots": 72,
+     "carried_cts": 72,
+     "rot": 21980,
+     "ctct": 1706,
+     "ctpt_elem": 2262,
+     "matvec_chunks": 336,
+     "diag_limbs": 8965860,
+     "boots_by_tick": [
+      217,
+      217,
+      217,
+      217,
+      217
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 4, fixed coefficients",
+     "args": [
+      "--state-width",
+      "4"
+     ],
+     "boots_total": 265,
+     "boots_stock_rule": 145,
+     "canon_boots": 120,
+     "carried_cts": 120,
+     "rot": 21980,
+     "ctct": 1706,
+     "ctpt_elem": 2802,
+     "matvec_chunks": 336,
+     "diag_limbs": 8965860,
+     "boots_by_tick": [
+      265,
+      265,
+      265,
+      265,
+      265
+     ],
+     "period1": true
+    },
+    {
+     "variant": "state width N = 16, fixed coefficients",
+     "args": [
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 553,
+     "boots_stock_rule": 145,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 21980,
+     "ctct": 1706,
+     "ctpt_elem": 6042,
+     "matvec_chunks": 336,
+     "diag_limbs": 8965860,
+     "boots_by_tick": [
+      553,
+      553,
+      553,
+      553,
+      553
+     ],
+     "period1": true
+    },
+    {
+     "variant": "N = 16 + diagonal selective decay",
+     "args": [
+      "--sel",
+      "diag",
+      "--state-width",
+      "16"
+     ],
+     "boots_total": 553,
+     "boots_stock_rule": 145,
+     "canon_boots": 408,
+     "carried_cts": 408,
+     "rot": 21980,
+     "ctct": 2114,
+     "ctpt_elem": 5322,
+     "matvec_chunks": 336,
+     "diag_limbs": 8916732,
+     "boots_by_tick": [
+      553,
+      553,
+      553,
+      553,
+      553
+     ],
+     "period1": true
+    },
+    {
+     "variant": "Mamba-shaped time-mix INSIDE our block: N = 16, low-rank Delta (deg 4), exp ladder (deg 4), selective B/C, conv 4",
+     "args": [
+      "--sel",
+      "lowrank",
+      "--sel-poly",
+      "2",
+      "--decay-exp",
+      "2",
+      "--state-width",
+      "16",
+      "--bc-selective",
+      "--conv",
+      "4"
+     ],
+     "boots_total": 624,
+     "boots_stock_rule": 168,
+     "canon_boots": 456,
+     "carried_cts": 456,
+     "rot": 38780,
+     "ctct": 3674,
+     "ctpt_elem": 6072,
+     "matvec_chunks": 336,
+     "diag_limbs": 9605077,
+     "boots_by_tick": [
+      624,
+      624,
+      624,
+      624,
+      624
+     ],
+     "period1": true
+    }
+   ]
+  }
+ ]
+}

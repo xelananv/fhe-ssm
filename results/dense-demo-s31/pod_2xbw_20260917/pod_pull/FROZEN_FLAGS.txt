@@ -1,0 +1,2 @@
+--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.3 8
+/root/fhe-main-demo/build-demo/gpu_real_model_x

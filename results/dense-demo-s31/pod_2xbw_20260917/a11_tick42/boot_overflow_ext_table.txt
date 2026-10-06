@@ -1,0 +1,12 @@
+g_coefficientsUniform: degree 88 (depth bucket 8 + R = 6 double angles), K = 512 = 6.00 sigma at N = 2^17 (sigma_I 85.33)
+  reproduces (1/2pi) sin(2 pi x) inside |I| <= K to 1.73e-12 at integers, 1.64e-12 off-integer
+  first overflow where the injected error exceeds 1e-6 / 1e-4 / 1e-2: 523 / 530 / 537  (overshoot +3.5% at 1e-4)
+  P(some |I_j| > 512) = 2.49e-04 per bootstrap, 1.13e-01 per 480-boot tick (mean 8.86 ticks to the first event)
+  P(some |I_j| > 530) = 6.65e-05 per bootstrap, 3.14e-02 per 480-boot tick (mean 31.8 ticks to the first event)
+  P(some |I_j| > 537) = 3.93e-05 per bootstrap, 1.87e-02 per 480-boot tick (mean 53.5 ticks to the first event)
+g_coefficientsUniformExt: degree 118 (depth bucket 8 + R = 6 double angles), K = 768 = 9.00 sigma at N = 2^17 (sigma_I 85.33)
+  reproduces (1/2pi) sin(2 pi x) inside |I| <= K to 8.60e-12 at integers, 9.13e-12 off-integer
+  first overflow where the injected error exceeds 1e-6 / 1e-4 / 1e-2: 778 / 784 / 790  (overshoot +2.1% at 1e-4)
+  P(some |I_j| > 768) = 2.81e-14 per bootstrap, 1.35e-11 per 480-boot tick (mean 7.42e+10 ticks to the first event)
+  P(some |I_j| > 784) = 4.99e-15 per bootstrap, 2.40e-12 per 480-boot tick (mean 4.17e+11 ticks to the first event)
+  P(some |I_j| > 790) = 2.59e-15 per bootstrap, 1.24e-12 per 480-boot tick (mean 8.04e+11 ticks to the first event)

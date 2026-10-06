@@ -1,0 +1,7 @@
+{"checkA": "feed invariant (prompt-in-order, self-feed, retired-freeze)", "lanes": 64, "violations": 0, "pass": true}
+{"checkBconfig": "from session tokens.json", "words_per_lane": 8, "stop_ids": [187, 535], "stop_on_newline": true}
+{"checkB": "transcript reconciles with the keep/discard rule", "ticks": 18, "pass": true}
+{"checkC": "plaintext greedy replay", "noiseFlips": 1, "bugSuspects": 0, "flipDetail": [{"lane": 33, "genPos": 5, "recorded": 187, "plaintextArgmax": 733, "logitMargin": 0.0053}]}
+{"checkD": "shift test (scheduler off-by-N discriminator)", "lagScores": {"0": "491/492", "1": "1/492", "2": "23/492"}, "bestLag": 0, "shiftDetected": false, "reading": "lag 0 best or nothing decisive => disagreement is circuit approximation (judge vs a MEASURED fidelity baseline, not vs zero); a nonzero lag winning => bookkeeping displaced the tokens"}
+{"checkCrate": 0.998, "baselineTop1": null, "note": "no --expect-top1 given: the mismatch rate is REPORTED, not judged (an approximate circuit cannot be held to zero mismatches \u2014 R4)"}
+{"auditRagged": true, "lanes": 64, "generated": [3, 3, 8, 7, 8, 8, 8, 8, 8, 8, 6, 8, 8, 8, 8, 8, 8, 8, 5, 8, 8, 8, 8, 8, 8, 6, 8, 8, 8, 8, 8, 8, 8, 6, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], "checkAran": true, "retireCfgFromSession": true, "top1AgreeRate": 0.998, "shiftDetected": false, "pass": true, "noiseFlips": 1, "bugSuspects": 0}

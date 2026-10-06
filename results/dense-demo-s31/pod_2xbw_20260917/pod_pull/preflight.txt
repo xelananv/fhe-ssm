@@ -1,0 +1,87 @@
+=== PREFLIGHT 2026-09-17T22:01:15Z host=O-2159471 ===
+--- nvidia-smi (index, name, memory.total, compute_cap) ---
+0, NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 97887 MiB, 12.0
+1, NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 97887 MiB, 12.0
+--- nvidia-smi topo -p2p w (two-card route: GPU0->GPU1 must be OK; NS/CNS = no peer path, the 2026-09-03 box) ---
+ 	[4mGPU0	GPU1	[0m
+ GPU0	X	OK	
+ GPU1	OK	X	
+
+Legend:
+
+  X    = Self
+  OK   = Status Ok
+  CNS  = Chipset not supported
+  GNS  = GPU not supported
+  TNS  = Topology not supported
+  NS   = Not supported
+  U    = Unknown
+--- nvidia-smi topo -m (link TYPE: NV* = NVLink bandwidth, PIX/PXB/PHB = PCIe; information, not the gate) ---
+	[4mGPU0	GPU1	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	NODE	0-63	0		N/A
+GPU1	NODE	 X 	0-63	0		N/A
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+--- nvidia-smi compute apps (must be empty for any timing) ---
+--- free -g ---
+               total        used        free      shared  buff/cache   available
+Mem:             251           7         125           2         123         244
+Swap:              0           0           0
+--- df -h /root ---
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         3.5T   27G  3.5T   1% /
+--- nproc ---
+64
+--- toolchain ---
+nvcc     MISSING
+cmake    MISSING
+ninja    MISSING
+g++      MISSING
+git      /usr/bin/git
+rsync    MISSING
+python3  /usr/bin/python3
+readelf  MISSING
+driver 595.84
+--- uplink DNS sanity (198.18/15 = reserved benchmark range = tunnelled, RECOVERY_STATE:4-5) ---
+172.18.0.13 
+=== GATES ===
+  GO         GPUs: 2 x 97887 MiB (95 GiB)       
+  GO         GPU0->GPU1 P2P write OK over PCIe (NODE) peer capability exposed (P2P=1 class of mgpu17.log:5 / the A100 PCIe box); 41 rung 0 (peer_pool_probe) still decides POOL access before any two-card store run
+  RISK       VRAM 95 GiB per card in [93,140), 2 cards single-card records: 92.27 GB keys-load stateless, 94.28 GB T=64 pass -- the demo config runs SHARDED here: export DEVICES=0,1, 41_mgpu_ladder.sh rungs 0-3 first (fit model ~72 GB/card today, ~60 with the key patch, MGPU_FIT_MODEL_20260903.md 2)
+  RISK       RAM 263 GB in [250,384)            stateful store grew 5.12x at 2^15 (genRb) -> ~312 GB class at 2^17; 60 measures the growth
+  GO         disk /root 3544 GB free >= 700     
+  INFO       nproc 64                           encode uses --enc-threads 24 (ompMaxThreads in the header line must read 24)
+  INFO       nvcc missing                       10_bringup.sh runs 00_toolchain.sh (apt cuda-toolkit-12-9; untimed on record)
+  INFO       rsync missing                      10_bringup.sh installs it (20_stage needs it on the receiving side)
+=== INBOUND BANDWIDTH GATE (run BEFORE any key upload) ===
+  On the MAC, run (fill KEY/PORT/HOST):
+    dd if=/dev/urandom bs=1m count=512 of=/tmp/bw512.bin
+    time scp -i KEY -P PORT /tmp/bw512.bin root@HOST:/root/bw512.bin
+  MB/s = 512 / real-seconds. Then on the pod: BW_SECONDS=<real> 00_box_preflight.sh
+  Need >= 5 MB/s (40 Mbit/s): the ~50.8 GB eval-key upload takes 50.8e3/MBps s
+  (68 min at 12.5 MB/s = 100 Mbit; 2.8 h at 5 MB/s; 17 DAYS at the 35 KB/s of 2026-09-01).
+  PENDING    inbound bandwidth not measured     re-run with BW_SECONDS=<seconds>
+=== NOTES (records) ===
+  VRAM: keys-load stateless single-lane 132 keys peaked 92.2676 GB (s31_oom_keysload_probe/console.log);
+        lanes keys +3,696 MB (lanes17.log:7 48,048 MB vs store record :5 44,352 MB); 4-lane batch OOMed
+        at xd12 (lanes17.log:19) and xd10 (lanes17_ladder.log:20); the T=64 stateless pass peaked 94.28 GB
+        card-wide (x_clockv2_dense_t64). TWO-CARD ROUTE (2026-09-03, author): --devices 0,1 --store-multi-gpu,
+        limbs sharded by global id, peer writes need cudaMemPoolSetAccess (peer_pool_probe = 41 rung 0);
+        never yet exercised on hardware (the 2026-09-03 box exposed no P2P; the 2026-09-01 2x RTX PRO 6000 box,
+        PCIe only, printed GPU P2P? 1 and its OOM is unattributed; the 4x A100 PCIe box completed 2-device 2^17
+        runs, mgpu2_secure_d59). PCIe vs NVLink is bandwidth, not viability. Export DEVICES=0,1, run 41 first.
+  RAM : store 60,850,962,432 B single-lane (s31_t1b_store_secure_r17/console.log:18); stateful+lanes-block
+        at 2^15 grew to 275,917,520,896 B in 13 ticks (genRb/logs/server.jsonl) = 5.12x the 53,854,863,360 B
+        single-lane 2^15 store (s31_t1b_store_block_r15/console.log). Never evicted (gpu_real_model.cu:2482).
+        S3.3 replay (results/theory/S33_REPORT_20260903.md 4): under the STOCK schedule the 2^17 store converges
+        to ~1,800 distinct keys ~ 637 GB over ~20 ticks (parent-first ~250 GB) -- a 384 GB box covers a
+        short timing cell and a ~12-tick session, not a 24-tick stock-schedule session.
+=== VERDICT: GO-WITH-RISK (see RISK rows) ===

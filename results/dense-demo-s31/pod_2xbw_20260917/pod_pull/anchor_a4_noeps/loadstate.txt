@@ -1,0 +1,3 @@
+LOADSTATE 2026-09-17T22:36:28Z uptime: 22:36:28 up 26 days, 19:05,  0 user,  load average: 0.35, 0.50, 5.08
+LOADSTATE gpu compute apps: 
+LOADSTATE busy marker: 10_bringup.sh pid=22869 since=2026-09-17T22:36:28Z

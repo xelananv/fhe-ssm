@@ -1,0 +1,39 @@
+=== KEYGEN POD 2026-09-19T14:07:01Z ===
+CMD: /root/fhe-main-demo/build-demo/gpu_real_model_x --tag pbd430a --bundle-dir /root/src/ml-eval/artifacts --device 0 --log-ring 17 --secure --level-budget 3 3 --ms-norm 5.5 --enc-threads 24 --boot-floor 3 --matvec-margin 4 --extra-depth 12 --canonical-carry --pack-tokens 1 --lanes-block --compressed-store --keys-dir /root/demo/keys_pod_r17 --keys-save --selftest
+FIDESLIB_USE_MEMCPY_PEER=0, set to: 0
+{"schedLevers":true,"schedule":"stock","pfEntry":"loop","shareBabies":false,"newtonDepth2":false,"poolLevels":2,"stockPath":true}
+{"openfheBootScaleEnc":"pre/3","oddPartOfK":3,"env":"FIDESLIB_BOOT_UNIFORM_EXT=split"}
+{"keysSave":true,"dir":"/root/demo/keys_pod_r17","cryptocontextBytes":2866,"publicKeyBytes":88086142,"secretKeyBytes":44044536,"evalMultKeyBytes":352339004,"evalRotKeyBytes":50383599452}
+{"fideslibBootTable":"g_coefficientsUniformExt","tableK":768,"bootK":256,"scaleEncOddPart":3,"doubleAngleIts":6,"chebyDegree":118,"envBootUniformExt":"split","splitAskedButOpenfheLacksO1":false}
+GPU 0: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU 1: NVIDIA RTX PRO 6000 Blackwell Workstation Edition
+ SMs: 188, SharedMem: 100 KB, Blocks/SM: 24, Threads/SM: 1536, L2 size: 128 MB, Bus: 512-bit
+GPU P2P? 1
+Adding bootstrap precomputation to GPU for 65536 slots.
+Plaintexts loaded: 762 ~ 35814MB
+Rotation keys loaded: 143 ~ 48048MB
+{"vramTrace":"loadContext","dev":0,"usedGB":38.454,"freeGB":56.5162,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"vramTrace":"loadContext","dev":1,"usedGB":38.436,"freeGB":56.5342,"totalGB":94.9702,"poolOk":true,"poolReservedGB":37.0312,"poolReservedHighGB":37.0312,"poolUsedGB":37.0088,"poolUsedHighGB":37.0088,"poolSlackGB":0.0224609,"poolTransientGB":0}
+{"harness":"gpu_real_model","arch":"native","tag":"pbd430a","secure":true,"ringDim":131072,"slots":65536,"d":1024,"Dpad":1024,"REP":64,"L":24,"dff":4096,"BS":32,"haveBundle":true,"ompMaxThreads":24,"scaleBits":59,"normEpsOn":true,"setupMs":50581}
+{"selftest":"encdec","result":"ok","err":5.19643e-12}
+{"selftest":"rotate","result":"ok","err":6.82132e-12}
+{"selftest":"matvec","result":"ok","err":3.49848e-12}
+{"selftest":"rmsnorm","result":"fail","err":0.0310645}
+{"selftestSeeded":true,"site":"L0.tm","a":53.1272,"b":-13744.5,"iters":5,"msTest":0.000241585,"normEps":1e-05}
+{"selftest":"rmsnormSeeded","result":"ok","err":2.12802e-09}
+{"selftest":"levelMismatch","gap":1,"aLvl":0,"bLvl":1,"alignOnlyErr":3.62821e-12,"mismatchedAddErr":4.10794e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":5,"aLvl":0,"bLvl":5,"alignOnlyErr":3.51441e-12,"mismatchedAddErr":4.32564e-12,"result":"ok"}
+{"selftest":"levelMismatch","gap":22,"aLvl":0,"bLvl":22,"alignOnlyErr":3.3164e-12,"mismatchedAddErr":4.82075e-12,"result":"ok"}
+{"selftest":"bootstrap","result":"ok","err":0.00104685}
+{"selftestSummary":true,"hardFail":0,"softFail":1,"peakVramGB":44.7294}
+RC=4 (4 = T6 soft-fail; ignored)
+total 49675872
+drwxr-xr-x 2 root root         163 Sep 19 14:07 .
+drwxr-xr-x 5 root root        4096 Sep 19 14:07 ..
+-rw-r--r-- 1 root root        2866 Sep 19 14:07 cryptocontext.bin
+-rw-r--r-- 1 root root         363 Sep 19 14:07 cryptocontext.bin.dev
+-rw-r--r-- 1 root root   352339004 Sep 19 14:07 evalmult.bin
+-rw-r--r-- 1 root root 50383599452 Sep 19 14:07 evalrot.bin
+-rw-r--r-- 1 root root    88086142 Sep 19 14:07 public.key
+-rw-r--r-- 1 root root    44044536 Sep 19 14:07 secret.key

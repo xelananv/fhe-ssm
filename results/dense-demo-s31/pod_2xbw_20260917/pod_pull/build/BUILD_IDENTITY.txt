@@ -1,0 +1,47 @@
+BUILD_IDENTITY 2026-09-17T22:14:49Z (rebuilt after pod-fix 0b8ee68)
+binary /root/fhe-main-demo/build-demo/gpu_real_model
+binary_sha256 4c677720b4e3fcb317b02cb027b887caf4034430b1cf9eeed1a2890b5e25674f
+binary_x /root/fhe-main-demo/build-demo/gpu_real_model_x
+binary_x_sha256 a6778d2b4429105e87f83b916a867e8f86d172cf7c3231f052a673353dbe0da5 (rebuilt 2026-09-18T07:20:11Z with FHE_SSM_X2_ZERO_WRAP)
+fideslib_commit fa972864ae8d624e77d3ac6ad31a1d40ef1c4d0c
+fideslib_a_gnu_lto_sections 0
+nvcc Build cuda_12.9.r12.9/compiler.36037853_0
+cuda_arch 120
+repo_commit 613ab4c1d678decae6757b4f027a10601e9e4522 dirty=25
+flag --dump-rot-indices 3
+flag --store-file 2
+flag --vram-trace 1
+flag evalrot.part 2
+flag --periodic-encode 1
+flag --no-norm-eps 1
+flag --canonical-carry 1
+flag seeded.bin 2
+flag --sync-timers 1
+flag_x --deferred-scan 
+flag_x --pt-cache 
+flag_x --drop-wv 
+flag_x --reply-limbs 
+flag_x --deferred-scan 3
+flag_x --pt-cache 2
+flag_x --drop-wv 2
+flag_x --reply-limbs 2
+flag_x --u-drop-level 4
+flag_x --rsqrt-iters-sidecar 5
+flag_x --deferred-scan 3
+flag_x --pt-cache 2
+flag_x --drop-wv 2
+flag_x --reply-limbs 2
+flag_x --u-drop-level 4
+flag_x --rsqrt-iters-sidecar 5
+flag_x --deferred-scan 3
+flag_x --pt-cache 2
+flag_x --drop-wv 2
+flag_x --reply-limbs 2
+flag_x --u-drop-level 4
+flag_x --rsqrt-iters-sidecar 5
+flag_x --deferred-scan 3
+flag_x --pt-cache 2
+flag_x --drop-wv 2
+flag_x --reply-limbs 2
+flag_x --u-drop-level 4
+flag_x --rsqrt-iters-sidecar 5

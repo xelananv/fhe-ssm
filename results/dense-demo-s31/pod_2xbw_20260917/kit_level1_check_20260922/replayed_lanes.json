@@ -1,0 +1,2246 @@
+[
+ {
+  "lane": 0,
+  "prompt": "A triangle is a shape with three",
+  "replayed_ids": [
+   7123,
+   15,
+   187
+  ],
+  "recorded_ids": [
+   7123,
+   15,
+   187
+  ],
+  "recorded_generated_lanes": [
+   7123,
+   15,
+   187
+  ],
+  "replayed_text": " sides.\n",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 1,
+  "prompt": "The three states of matter are solid, liquid, and",
+  "replayed_ids": [
+   3678,
+   15,
+   187
+  ],
+  "recorded_ids": [
+   3678,
+   15,
+   187
+  ],
+  "recorded_generated_lanes": [
+   3678,
+   15,
+   187
+  ],
+  "replayed_text": " gas.\n",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 2,
+  "prompt": "A noun is a word that names a",
+  "replayed_ids": [
+   1436,
+   13,
+   1659,
+   13,
+   2181,
+   13,
+   390,
+   2934
+  ],
+  "recorded_ids": [
+   1436,
+   13,
+   1659,
+   13,
+   2181,
+   13,
+   390,
+   2934
+  ],
+  "recorded_generated_lanes": [
+   1436,
+   13,
+   1659,
+   13,
+   2181,
+   13,
+   390,
+   2934
+  ],
+  "replayed_text": " person, place, thing, or idea",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 3,
+  "prompt": "A dictionary is a book that lists",
+  "replayed_ids": [
+   3000,
+   275,
+   247,
+   1798,
+   3448,
+   15,
+   187
+  ],
+  "recorded_ids": [
+   3000,
+   275,
+   247,
+   1798,
+   3448,
+   15,
+   187
+  ],
+  "recorded_generated_lanes": [
+   3000,
+   275,
+   247,
+   1798,
+   3448,
+   15,
+   187
+  ],
+  "replayed_text": " words in a particular language.\n",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 4,
+  "prompt": "The heart is an organ that pumps",
+  "replayed_ids": [
+   2614,
+   4768,
+   253,
+   2133,
+   15,
+   733,
+   310,
+   4441
+  ],
+  "recorded_ids": [
+   2614,
+   4768,
+   253,
+   2133,
+   15,
+   733,
+   310,
+   4441
+  ],
+  "recorded_generated_lanes": [
+   2614,
+   4768,
+   253,
+   2133,
+   15,
+   733,
+   310,
+   4441
+  ],
+  "replayed_text": " blood throughout the body. It is located",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 5,
+  "prompt": "Photosynthesis is the process by which plants",
+  "replayed_ids": [
+   6455,
+   23993,
+   715,
+   5793,
+   2341,
+   15,
+   380,
+   1232
+  ],
+  "recorded_ids": [
+   6455,
+   23993,
+   715,
+   5793,
+   2341,
+   15,
+   380,
+   1232
+  ],
+  "recorded_generated_lanes": [
+   6455,
+   23993,
+   715,
+   5793,
+   2341,
+   15,
+   380,
+   1232
+  ],
+  "replayed_text": " convert sunlight into chemical energy. The process",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 6,
+  "prompt": "Oxygen is a gas that is essential for",
+  "replayed_ids": [
+   1495,
+   15,
+   733,
+   310,
+   247,
+   3295,
+   1417,
+   13
+  ],
+  "recorded_ids": [
+   1495,
+   15,
+   733,
+   310,
+   247,
+   3295,
+   1417,
+   13
+  ],
+  "recorded_generated_lanes": [
+   1495,
+   15,
+   733,
+   310,
+   247,
+   3295,
+   1417,
+   13
+  ],
+  "replayed_text": " life. It is a colorless,",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 7,
+  "prompt": "The first ten numbers are one, two, three,",
+  "replayed_ids": [
+   1740,
+   13,
+   2620,
+   13,
+   2800,
+   13,
+   5093,
+   13
+  ],
+  "recorded_ids": [
+   1740,
+   13,
+   2620,
+   13,
+   2800,
+   13,
+   5093,
+   13
+  ],
+  "recorded_generated_lanes": [
+   1740,
+   13,
+   2620,
+   13,
+   2800,
+   13,
+   5093,
+   13
+  ],
+  "replayed_text": " four, five, six, seven,",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 8,
+  "prompt": "The letters of the alphabet begin with A, B,",
+  "replayed_ids": [
+   330,
+   13,
+   399,
+   13,
+   444,
+   13,
+   401,
+   13
+  ],
+  "recorded_ids": [
+   330,
+   13,
+   399,
+   13,
+   444,
+   13,
+   401,
+   13
+  ],
+  "recorded_generated_lanes": [
+   330,
+   13,
+   399,
+   13,
+   444,
+   13,
+   401,
+   13
+  ],
+  "replayed_text": " C, D, E, F,",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 9,
+  "prompt": "The four seasons are spring, summer,",
+  "replayed_ids": [
+   2965,
+   13,
+   285,
+   8986,
+   15,
+   380,
+   12396,
+   403
+  ],
+  "recorded_ids": [
+   2965,
+   13,
+   285,
+   8986,
+   15,
+   380,
+   12396,
+   403
+  ],
+  "recorded_generated_lanes": [
+   2965,
+   13,
+   285,
+   8986,
+   15,
+   380,
+   12396,
+   403
+  ],
+  "replayed_text": " fall, and winter. The seasons are",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 10,
+  "prompt": "Isaac Newton formulated the laws of",
+  "replayed_ids": [
+   3200,
+   275,
+   1668,
+   2597,
+   15,
+   187
+  ],
+  "recorded_ids": [
+   3200,
+   275,
+   1668,
+   2597,
+   15,
+   187
+  ],
+  "recorded_generated_lanes": [
+   3200,
+   275,
+   1668,
+   2597,
+   15,
+   187
+  ],
+  "replayed_text": " motion in 1687.\n",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 11,
+  "prompt": "The printing press was invented by Johannes",
+  "replayed_ids": [
+   443,
+   10284,
+   4978,
+   275,
+   1638,
+   1235,
+   15,
+   733
+  ],
+  "recorded_ids": [
+   443,
+   10284,
+   4978,
+   275,
+   1638,
+   1235,
+   15,
+   733
+  ],
+  "recorded_generated_lanes": [
+   443,
+   10284,
+   4978,
+   275,
+   1638,
+   1235,
+   15,
+   733
+  ],
+  "replayed_text": " Gutenberg in 1450. It",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 12,
+  "prompt": "A computer program is a sequence of",
+  "replayed_ids": [
+   7997,
+   326,
+   476,
+   320,
+   11407,
+   407,
+   247,
+   4382
+  ],
+  "recorded_ids": [
+   7997,
+   326,
+   476,
+   320,
+   11407,
+   407,
+   247,
+   4382
+  ],
+  "recorded_generated_lanes": [
+   7997,
+   326,
+   476,
+   320,
+   11407,
+   407,
+   247,
+   4382
+  ],
+  "replayed_text": " instructions that can be executed by a computer",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 13,
+  "prompt": "Biology is the natural science that",
+  "replayed_ids": [
+   13330,
+   342,
+   253,
+   2605,
+   13,
+   1159,
+   13,
+   285
+  ],
+  "recorded_ids": [
+   13330,
+   342,
+   253,
+   2605,
+   13,
+   1159,
+   13,
+   285
+  ],
+  "recorded_generated_lanes": [
+   13330,
+   342,
+   253,
+   2605,
+   13,
+   1159,
+   13,
+   285
+  ],
+  "replayed_text": " deals with the structure, function, and",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 14,
+  "prompt": "The Second World War ended in",
+  "replayed_ids": [
+   18824,
+   13,
+   285,
+   253,
+   1986,
+   14726,
+   369,
+   4232
+  ],
+  "recorded_ids": [
+   18824,
+   13,
+   285,
+   253,
+   1986,
+   14726,
+   369,
+   4232
+  ],
+  "recorded_generated_lanes": [
+   18824,
+   13,
+   285,
+   253,
+   1986,
+   14726,
+   369,
+   4232
+  ],
+  "replayed_text": " 1945, and the United Nations was established",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 15,
+  "prompt": "The largest animal on Earth is the blue",
+  "replayed_ids": [
+   35105,
+   13,
+   534,
+   476,
+   1756,
+   281,
+   320,
+   689
+  ],
+  "recorded_ids": [
+   35105,
+   13,
+   534,
+   476,
+   1756,
+   281,
+   320,
+   689
+  ],
+  "recorded_generated_lanes": [
+   35105,
+   13,
+   534,
+   476,
+   1756,
+   281,
+   320,
+   689
+  ],
+  "replayed_text": " whale, which can grow to be over",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 16,
+  "prompt": "Albert Einstein is famous for his theory of",
+  "replayed_ids": [
+   39241,
+   13,
+   534,
+   3054,
+   326,
+   253,
+   3885,
+   273
+  ],
+  "recorded_ids": [
+   39241,
+   13,
+   534,
+   3054,
+   326,
+   253,
+   3885,
+   273
+  ],
+  "recorded_generated_lanes": [
+   39241,
+   13,
+   534,
+   3054,
+   326,
+   253,
+   3885,
+   273
+  ],
+  "replayed_text": " relativity, which states that the speed of",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 17,
+  "prompt": "The Eiffel Tower is located in the city of",
+  "replayed_ids": [
+   7785,
+   13,
+   6181,
+   15,
+   733,
+   310,
+   253,
+   10086
+  ],
+  "recorded_ids": [
+   7785,
+   13,
+   6181,
+   15,
+   733,
+   310,
+   253,
+   10086
+  ],
+  "recorded_generated_lanes": [
+   7785,
+   13,
+   6181,
+   15,
+   733,
+   310,
+   253,
+   10086
+  ],
+  "replayed_text": " Paris, France. It is the tall",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 18,
+  "prompt": "Step one: preheat the oven to",
+  "replayed_ids": [
+   16176,
+   3272,
+   39,
+   15,
+   187
+  ],
+  "recorded_ids": [
+   16176,
+   3272,
+   39,
+   15,
+   187
+  ],
+  "recorded_generated_lanes": [
+   16176,
+   3272,
+   39,
+   15,
+   187
+  ],
+  "replayed_text": " 350\u00b0F.\n",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 19,
+  "prompt": "Water is a chemical compound made of hydrogen and",
+  "replayed_ids": [
+   7768,
+   15,
+   10205,
+   310,
+   247,
+   5558,
+   387,
+   2316
+  ],
+  "recorded_ids": [
+   7768,
+   15,
+   10205,
+   310,
+   247,
+   5558,
+   387,
+   2316
+  ],
+  "recorded_generated_lanes": [
+   7768,
+   15,
+   10205,
+   310,
+   247,
+   5558,
+   387,
+   2316
+  ],
+  "replayed_text": " oxygen. Water is a liquid at room",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 20,
+  "prompt": "The Earth is the third planet from the",
+  "replayed_ids": [
+   4146,
+   13,
+   285,
+   253,
+   1273,
+   432,
+   253,
+   4146
+  ],
+  "recorded_ids": [
+   4146,
+   13,
+   285,
+   253,
+   1273,
+   432,
+   253,
+   4146
+  ],
+  "recorded_generated_lanes": [
+   4146,
+   13,
+   285,
+   253,
+   1273,
+   432,
+   253,
+   4146
+  ],
+  "replayed_text": " Sun, and the second from the Sun",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 21,
+  "prompt": "The planets of the solar system are Mercury, Venus,",
+  "replayed_ids": [
+   7565,
+   13,
+   13648,
+   13,
+   34434,
+   13,
+   38876,
+   13
+  ],
+  "recorded_ids": [
+   7565,
+   13,
+   13648,
+   13,
+   34434,
+   13,
+   38876,
+   13
+  ],
+  "recorded_generated_lanes": [
+   7565,
+   13,
+   13648,
+   13,
+   34434,
+   13,
+   38876,
+   13
+  ],
+  "replayed_text": " Earth, Mars, Jupiter, Saturn,",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 22,
+  "prompt": "The months of the year are January, February,",
+  "replayed_ids": [
+   3919,
+   13,
+   4162,
+   13,
+   4163,
+   13,
+   4223,
+   13
+  ],
+  "recorded_ids": [
+   3919,
+   13,
+   4162,
+   13,
+   4163,
+   13,
+   4223,
+   13
+  ],
+  "recorded_generated_lanes": [
+   3919,
+   13,
+   4162,
+   13,
+   4163,
+   13,
+   4223,
+   13
+  ],
+  "replayed_text": " March, April, July, August,",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 23,
+  "prompt": "Mount Everest is the highest mountain in the",
+  "replayed_ids": [
+   1533,
+   13,
+   387,
+   854,
+   13,
+   26,
+   2385,
+   17249
+  ],
+  "recorded_ids": [
+   1533,
+   13,
+   387,
+   854,
+   13,
+   26,
+   2385,
+   17249
+  ],
+  "recorded_generated_lanes": [
+   1533,
+   13,
+   387,
+   854,
+   13,
+   26,
+   2385,
+   17249
+  ],
+  "replayed_text": " world, at 8,948 meters",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 24,
+  "prompt": "The Amazon is the largest river in",
+  "replayed_ids": [
+   253,
+   1533,
+   13,
+   285,
+   253,
+   1533,
+   434,
+   6253
+  ],
+  "recorded_ids": [
+   253,
+   1533,
+   13,
+   285,
+   253,
+   1533,
+   434,
+   6253
+  ],
+  "recorded_generated_lanes": [
+   253,
+   1533,
+   13,
+   285,
+   253,
+   1533,
+   434,
+   6253
+  ],
+  "replayed_text": " the world, and the world's largest",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 25,
+  "prompt": "Leonardo da Vinci painted the Mona",
+  "replayed_ids": [
+   22707,
+   275,
+   1638,
+   3583,
+   15,
+   187
+  ],
+  "recorded_ids": [
+   22707,
+   275,
+   1638,
+   3583,
+   15,
+   187
+  ],
+  "recorded_generated_lanes": [
+   22707,
+   275,
+   1638,
+   3583,
+   15,
+   187
+  ],
+  "replayed_text": " Lisa in 1452.\n",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 26,
+  "prompt": "The recipe calls for two cups of flour and",
+  "replayed_ids": [
+   767,
+   15107,
+   273,
+   1824,
+   15,
+   5733,
+   253,
+   12274
+  ],
+  "recorded_ids": [
+   767,
+   15107,
+   273,
+   1824,
+   15,
+   5733,
+   253,
+   12274
+  ],
+  "recorded_generated_lanes": [
+   767,
+   15107,
+   273,
+   1824,
+   15,
+   5733,
+   253,
+   12274
+  ],
+  "replayed_text": " two cups of water. Add the flour",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 27,
+  "prompt": "The history of cryptography begins with",
+  "replayed_ids": [
+   253,
+   3688,
+   273,
+   253,
+   806,
+   8542,
+   10105,
+   5576
+  ],
+  "recorded_ids": [
+   253,
+   3688,
+   273,
+   253,
+   806,
+   8542,
+   10105,
+   5576
+  ],
+  "recorded_generated_lanes": [
+   253,
+   3688,
+   273,
+   253,
+   806,
+   8542,
+   10105,
+   5576
+  ],
+  "replayed_text": " the invention of the first practical cryptographic",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 28,
+  "prompt": "The Great Wall of China was built",
+  "replayed_ids": [
+   275,
+   253,
+   3563,
+   655,
+   394,
+   5331,
+   281,
+   4017
+  ],
+  "recorded_ids": [
+   275,
+   253,
+   3563,
+   655,
+   394,
+   5331,
+   281,
+   4017
+  ],
+  "recorded_generated_lanes": [
+   275,
+   253,
+   3563,
+   655,
+   394,
+   5331,
+   281,
+   4017
+  ],
+  "replayed_text": " in the late 19th century to protect",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 29,
+  "prompt": "The mitochondria is the powerhouse of",
+  "replayed_ids": [
+   253,
+   894,
+   13,
+   285,
+   352,
+   310,
+   5506,
+   323
+  ],
+  "recorded_ids": [
+   253,
+   894,
+   13,
+   285,
+   352,
+   310,
+   5506,
+   323
+  ],
+  "recorded_generated_lanes": [
+   253,
+   894,
+   13,
+   285,
+   352,
+   310,
+   5506,
+   323
+  ],
+  "replayed_text": " the cell, and it is responsible for",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 30,
+  "prompt": "William Shakespeare wrote many famous plays including",
+  "replayed_ids": [
+   253,
+   26183,
+   297,
+   6368,
+   380,
+   7612,
+   22442,
+   273
+  ],
+  "recorded_ids": [
+   253,
+   26183,
+   297,
+   6368,
+   380,
+   7612,
+   22442,
+   273
+  ],
+  "recorded_generated_lanes": [
+   253,
+   26183,
+   297,
+   6368,
+   380,
+   7612,
+   22442,
+   273
+  ],
+  "replayed_text": " the tragicomedy The Merchant of",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 31,
+  "prompt": "The moon orbits the earth once every",
+  "replayed_ids": [
+   2164,
+   3038,
+   13,
+   594,
+   253,
+   12334,
+   310,
+   1900
+  ],
+  "recorded_ids": [
+   2164,
+   3038,
+   13,
+   594,
+   253,
+   12334,
+   310,
+   1900
+  ],
+  "recorded_generated_lanes": [
+   2164,
+   3038,
+   13,
+   594,
+   253,
+   12334,
+   310,
+   1900
+  ],
+  "replayed_text": " 24 hours, so the moon is always",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 32,
+  "prompt": "The Roman Empire reached its greatest extent",
+  "replayed_ids": [
+   1309,
+   253,
+   19485,
+   273,
+   48088,
+   313,
+   2350,
+   1638
+  ],
+  "recorded_ids": [
+   1309,
+   253,
+   19485,
+   273,
+   48088,
+   313,
+   2350,
+   1638
+  ],
+  "recorded_generated_lanes": [
+   1309,
+   253,
+   19485,
+   273,
+   48088,
+   313,
+   2350,
+   1638
+  ],
+  "replayed_text": " during the reign of Augustus (AD 14",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 33,
+  "prompt": "Machine learning is a field of study",
+  "replayed_ids": [
+   326,
+   310,
+   9086,
+   25537,
+   15,
+   187
+  ],
+  "recorded_ids": [
+   326,
+   310,
+   9086,
+   25537,
+   15,
+   187
+  ],
+  "recorded_generated_lanes": [
+   326,
+   310,
+   9086,
+   25537,
+   15,
+   187
+  ],
+  "replayed_text": " that is rapidly evolving.\n",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 34,
+  "prompt": "Climate change is caused primarily by",
+  "replayed_ids": [
+   1966,
+   4712,
+   13,
+   285,
+   253,
+   954,
+   1774,
+   2847
+  ],
+  "recorded_ids": [
+   1966,
+   4712,
+   13,
+   285,
+   253,
+   954,
+   1774,
+   2847
+  ],
+  "recorded_generated_lanes": [
+   1966,
+   4712,
+   13,
+   285,
+   253,
+   954,
+   1774,
+   2847
+  ],
+  "replayed_text": " human activities, and the most important cause",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 35,
+  "prompt": "The internet was originally developed as a",
+  "replayed_ids": [
+   2097,
+   273,
+   9628,
+   1491,
+   13,
+   533,
+   352,
+   556
+  ],
+  "recorded_ids": [
+   2097,
+   273,
+   9628,
+   1491,
+   13,
+   533,
+   352,
+   556
+  ],
+  "recorded_generated_lanes": [
+   2097,
+   273,
+   9628,
+   1491,
+   13,
+   533,
+   352,
+   556
+  ],
+  "replayed_text": " means of sharing information, but it has",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 36,
+  "prompt": "Genetics determines many traits including eye",
+  "replayed_ids": [
+   3295,
+   13,
+   4707,
+   3295,
+   13,
+   5130,
+   3295,
+   13
+  ],
+  "recorded_ids": [
+   3295,
+   13,
+   4707,
+   3295,
+   13,
+   5130,
+   3295,
+   13
+  ],
+  "recorded_generated_lanes": [
+   3295,
+   13,
+   4707,
+   3295,
+   13,
+   5130,
+   3295,
+   13
+  ],
+  "replayed_text": " color, hair color, eye color,",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 37,
+  "prompt": "Psychology studies the human mind and",
+  "replayed_ids": [
+   3879,
+   15,
+   733,
+   310,
+   253,
+   5859,
+   273,
+   253
+  ],
+  "recorded_ids": [
+   3879,
+   15,
+   733,
+   310,
+   253,
+   5859,
+   273,
+   253
+  ],
+  "recorded_generated_lanes": [
+   3879,
+   15,
+   733,
+   310,
+   253,
+   5859,
+   273,
+   253
+  ],
+  "replayed_text": " behavior. It is the science of the",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 38,
+  "prompt": "Engineering combines mathematics and physics to",
+  "replayed_ids": [
+   8415,
+   3237,
+   15,
+   37349,
+   897,
+   23065,
+   281,
+   2216
+  ],
+  "recorded_ids": [
+   8415,
+   3237,
+   15,
+   37349,
+   897,
+   23065,
+   281,
+   2216
+  ],
+  "recorded_generated_lanes": [
+   8415,
+   3237,
+   15,
+   37349,
+   897,
+   23065,
+   281,
+   2216
+  ],
+  "replayed_text": " solve problems. Engineers use mathematics to design",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 39,
+  "prompt": "The scientists discovered a new species of",
+  "replayed_ids": [
+   6150,
+   271,
+   358,
+   531,
+   13,
+   534,
+   597,
+   4907
+  ],
+  "recorded_ids": [
+   6150,
+   271,
+   358,
+   531,
+   13,
+   534,
+   597,
+   4907
+  ],
+  "recorded_generated_lanes": [
+   6150,
+   271,
+   358,
+   531,
+   13,
+   534,
+   597,
+   4907
+  ],
+  "replayed_text": " sea anemone, which they named",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 40,
+  "prompt": "The castle stood on a hill overlooking",
+  "replayed_ids": [
+   253,
+   6150,
+   13,
+   285,
+   369,
+   13750,
+   407,
+   247
+  ],
+  "recorded_ids": [
+   253,
+   6150,
+   13,
+   285,
+   369,
+   13750,
+   407,
+   247
+  ],
+  "recorded_generated_lanes": [
+   253,
+   6150,
+   13,
+   285,
+   369,
+   13750,
+   407,
+   247
+  ],
+  "replayed_text": " the sea, and was surrounded by a",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 41,
+  "prompt": "The forest was home to many species",
+  "replayed_ids": [
+   273,
+   5074,
+   13,
+   1690,
+   253,
+   10864,
+   268,
+   7447
+  ],
+  "recorded_ids": [
+   273,
+   5074,
+   13,
+   1690,
+   253,
+   10864,
+   268,
+   7447
+  ],
+  "recorded_generated_lanes": [
+   273,
+   5074,
+   13,
+   1690,
+   253,
+   10864,
+   268,
+   7447
+  ],
+  "replayed_text": " of animals, including the giant panda",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 42,
+  "prompt": "The train departed from the station at",
+  "replayed_ids": [
+   818,
+   27,
+   1229,
+   268,
+   15,
+   78,
+   15,
+   285
+  ],
+  "recorded_ids": [
+   818,
+   27,
+   1229,
+   268,
+   15,
+   78,
+   15,
+   285
+  ],
+  "recorded_generated_lanes": [
+   818,
+   27,
+   1229,
+   268,
+   15,
+   78,
+   15,
+   285
+  ],
+  "replayed_text": " 7:30 p.m. and",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 43,
+  "prompt": "The spacecraft landed safely on the surface",
+  "replayed_ids": [
+   273,
+   13648,
+   327,
+   4163,
+   577,
+   13,
+   14828,
+   13
+  ],
+  "recorded_ids": [
+   273,
+   13648,
+   327,
+   4163,
+   577,
+   13,
+   14828,
+   13
+  ],
+  "recorded_generated_lanes": [
+   273,
+   13648,
+   327,
+   4163,
+   577,
+   13,
+   14828,
+   13
+  ],
+  "replayed_text": " of Mars on July 4, 1976,",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 44,
+  "prompt": "The storm caused widespread damage across the",
+  "replayed_ids": [
+   2919,
+   13,
+   342,
+   253,
+   9065,
+   4723,
+   12952,
+   275
+  ],
+  "recorded_ids": [
+   2919,
+   13,
+   342,
+   253,
+   9065,
+   4723,
+   12952,
+   275
+  ],
+  "recorded_generated_lanes": [
+   2919,
+   13,
+   342,
+   253,
+   9065,
+   4723,
+   12952,
+   275
+  ],
+  "replayed_text": " region, with the worst damage occurring in",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 45,
+  "prompt": "The doctor examined the patient and concluded",
+  "replayed_ids": [
+   326,
+   253,
+   3110,
+   574,
+   247,
+   3998,
+   4502,
+   15
+  ],
+  "recorded_ids": [
+   326,
+   253,
+   3110,
+   574,
+   247,
+   3998,
+   4502,
+   15
+  ],
+  "recorded_generated_lanes": [
+   326,
+   253,
+   3110,
+   574,
+   247,
+   3998,
+   4502,
+   15
+  ],
+  "replayed_text": " that the patient had a brain tumor.",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 46,
+  "prompt": "The chef prepared a meal using fresh",
+  "replayed_ids": [
+   12696,
+   13,
+   285,
+   253,
+   11484,
+   369,
+   5608,
+   275
+  ],
+  "recorded_ids": [
+   12696,
+   13,
+   285,
+   253,
+   11484,
+   369,
+   5608,
+   275
+  ],
+  "recorded_generated_lanes": [
+   12696,
+   13,
+   285,
+   253,
+   11484,
+   369,
+   5608,
+   275
+  ],
+  "replayed_text": " ingredients, and the meal was served in",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 47,
+  "prompt": "The industrial revolution transformed society by introducing",
+  "replayed_ids": [
+   747,
+   10296,
+   13,
+   824,
+   347,
+   253,
+   15401,
+   3948
+  ],
+  "recorded_ids": [
+   747,
+   10296,
+   13,
+   824,
+   347,
+   253,
+   15401,
+   3948
+  ],
+  "recorded_generated_lanes": [
+   747,
+   10296,
+   13,
+   824,
+   347,
+   253,
+   15401,
+   3948
+  ],
+  "replayed_text": " new technologies, such as the steam engine",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 48,
+  "prompt": "The library contained thousands of ancient books",
+  "replayed_ids": [
+   13,
+   1690,
+   253,
+   2987,
+   273,
+   35274,
+   13,
+   36353
+  ],
+  "recorded_ids": [
+   13,
+   1690,
+   253,
+   2987,
+   273,
+   35274,
+   13,
+   36353
+  ],
+  "recorded_generated_lanes": [
+   13,
+   1690,
+   253,
+   2987,
+   273,
+   35274,
+   13,
+   36353
+  ],
+  "replayed_text": ", including the works of Aristotle, Plato",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 49,
+  "prompt": "The languages of Europe belong to several",
+  "replayed_ids": [
+   5870,
+   13,
+   253,
+   954,
+   9129,
+   273,
+   534,
+   403
+  ],
+  "recorded_ids": [
+   5870,
+   13,
+   253,
+   954,
+   9129,
+   273,
+   534,
+   403
+  ],
+  "recorded_generated_lanes": [
+   5870,
+   13,
+   253,
+   954,
+   9129,
+   273,
+   534,
+   403
+  ],
+  "replayed_text": " families, the most ancient of which are",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 50,
+  "prompt": "The factory produced thousands of cars every",
+  "replayed_ids": [
+   807,
+   13,
+   285,
+   253,
+   13250,
+   369,
+   253,
+   6253
+  ],
+  "recorded_ids": [
+   807,
+   13,
+   285,
+   253,
+   13250,
+   369,
+   253,
+   6253
+  ],
+  "recorded_generated_lanes": [
+   807,
+   13,
+   285,
+   253,
+   13250,
+   369,
+   253,
+   6253
+  ],
+  "replayed_text": " year, and the factory was the largest",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 51,
+  "prompt": "The bridge across the river was constructed",
+  "replayed_ids": [
+   275,
+   253,
+   2393,
+   17437,
+   84,
+   13,
+   285,
+   253
+  ],
+  "recorded_ids": [
+   275,
+   253,
+   2393,
+   17437,
+   84,
+   13,
+   285,
+   253
+  ],
+  "recorded_generated_lanes": [
+   275,
+   253,
+   2393,
+   17437,
+   84,
+   13,
+   285,
+   253
+  ],
+  "replayed_text": " in the early 1930s, and the",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 52,
+  "prompt": "The economy of the country depends on",
+  "replayed_ids": [
+   253,
+   3275,
+   273,
+   2739,
+   296,
+   25428,
+   13,
+   285
+  ],
+  "recorded_ids": [
+   253,
+   3275,
+   273,
+   2739,
+   296,
+   25428,
+   13,
+   285
+  ],
+  "recorded_generated_lanes": [
+   253,
+   3275,
+   273,
+   2739,
+   296,
+   25428,
+   13,
+   285
+  ],
+  "replayed_text": " the production of foodstuffs, and",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 53,
+  "prompt": "The president of the United States is",
+  "replayed_ids": [
+   253,
+   24555,
+   17747,
+   273,
+   253,
+   12360,
+   5621,
+   273
+  ],
+  "recorded_ids": [
+   253,
+   24555,
+   17747,
+   273,
+   253,
+   12360,
+   5621,
+   273
+  ],
+  "recorded_generated_lanes": [
+   253,
+   24555,
+   17747,
+   273,
+   253,
+   12360,
+   5621,
+   273
+  ],
+  "replayed_text": " the supreme commander of the armed forces of",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 54,
+  "prompt": "Photography was invented in the early",
+  "replayed_ids": [
+   655,
+   394,
+   5331,
+   13,
+   285,
+   253,
+   806,
+   31769
+  ],
+  "recorded_ids": [
+   655,
+   394,
+   5331,
+   13,
+   285,
+   253,
+   806,
+   31769
+  ],
+  "recorded_generated_lanes": [
+   655,
+   394,
+   5331,
+   13,
+   285,
+   253,
+   806,
+   31769
+  ],
+  "replayed_text": " 19th century, and the first photographic",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 55,
+  "prompt": "The senator proposed a new law regarding",
+  "replayed_ids": [
+   253,
+   897,
+   273,
+   253,
+   4400,
+   7563,
+   13,
+   534
+  ],
+  "recorded_ids": [
+   253,
+   897,
+   273,
+   253,
+   4400,
+   7563,
+   13,
+   534
+  ],
+  "recorded_generated_lanes": [
+   253,
+   897,
+   273,
+   253,
+   4400,
+   7563,
+   13,
+   534
+  ],
+  "replayed_text": " the use of the federal budget, which",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 56,
+  "prompt": "The newspaper reported that the election results",
+  "replayed_ids": [
+   497,
+   346,
+   635,
+   31623,
+   3,
+   285,
+   326,
+   253
+  ],
+  "recorded_ids": [
+   497,
+   346,
+   635,
+   31623,
+   3,
+   285,
+   326,
+   253
+  ],
+  "recorded_generated_lanes": [
+   497,
+   346,
+   635,
+   31623,
+   3,
+   285,
+   326,
+   253
+  ],
+  "replayed_text": " were \"very disappointing\" and that the",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 57,
+  "prompt": "The judge ruled that the evidence was",
+  "replayed_ids": [
+   4209,
+   281,
+   35171,
+   253,
+   10145,
+   273,
+   253,
+   6617
+  ],
+  "recorded_ids": [
+   4209,
+   281,
+   35171,
+   253,
+   10145,
+   273,
+   253,
+   6617
+  ],
+  "recorded_generated_lanes": [
+   4209,
+   281,
+   35171,
+   253,
+   10145,
+   273,
+   253,
+   6617
+  ],
+  "replayed_text": " sufficient to convict the accused of the crime",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 58,
+  "prompt": "The company announced record profits this quarter",
+  "replayed_ids": [
+   13,
+   342,
+   247,
+   2036,
+   11528,
+   273,
+   370,
+   18
+  ],
+  "recorded_ids": [
+   13,
+   342,
+   247,
+   2036,
+   11528,
+   273,
+   370,
+   18
+  ],
+  "recorded_generated_lanes": [
+   13,
+   342,
+   247,
+   2036,
+   11528,
+   273,
+   370,
+   18
+  ],
+  "replayed_text": ", with a net profit of $1",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 59,
+  "prompt": "The teacher assigned homework covering the entire",
+  "replayed_ids": [
+   2282,
+   15,
+   380,
+   3484,
+   497,
+   1677,
+   247,
+   1618
+  ],
+  "recorded_ids": [
+   2282,
+   15,
+   380,
+   3484,
+   497,
+   1677,
+   247,
+   1618
+  ],
+  "recorded_generated_lanes": [
+   2282,
+   15,
+   380,
+   3484,
+   497,
+   1677,
+   247,
+   1618
+  ],
+  "replayed_text": " course. The students were given a list",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 60,
+  "prompt": "The pilot announced that the flight would",
+  "replayed_ids": [
+   320,
+   13444,
+   1919,
+   253,
+   1735,
+   1388,
+   13,
+   285
+  ],
+  "recorded_ids": [
+   320,
+   13444,
+   1919,
+   253,
+   1735,
+   1388,
+   13,
+   285
+  ],
+  "recorded_generated_lanes": [
+   320,
+   13444,
+   1919,
+   253,
+   1735,
+   1388,
+   13,
+   285
+  ],
+  "replayed_text": " be delayed until the next day, and",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 61,
+  "prompt": "The committee voted to approve the new",
+  "replayed_ids": [
+   1569,
+   13,
+   534,
+   369,
+   7012,
+   407,
+   253,
+   3995
+  ],
+  "recorded_ids": [
+   1569,
+   13,
+   534,
+   369,
+   7012,
+   407,
+   253,
+   3995
+  ],
+  "recorded_generated_lanes": [
+   1569,
+   13,
+   534,
+   369,
+   7012,
+   407,
+   253,
+   3995
+  ],
+  "replayed_text": " law, which was approved by the House",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 62,
+  "prompt": "The novelist spent years writing her latest",
+  "replayed_ids": [
+   4460,
+   13,
+   380,
+   3995,
+   273,
+   253,
+   2101,
+   343
+  ],
+  "recorded_ids": [
+   4460,
+   13,
+   380,
+   3995,
+   273,
+   253,
+   2101,
+   343
+  ],
+  "recorded_generated_lanes": [
+   4460,
+   13,
+   380,
+   3995,
+   273,
+   253,
+   2101,
+   343
+  ],
+  "replayed_text": " novel, The House of the Spir",
+  "identical_to_recorded": true
+ },
+ {
+  "lane": 63,
+  "prompt": "In the beginning of the twentieth century",
+  "replayed_ids": [
+   13,
+   253,
+   806,
+   2201,
+   3434,
+   281,
+   1263,
+   253
+  ],
+  "recorded_ids": [
+   13,
+   253,
+   806,
+   2201,
+   3434,
+   281,
+   1263,
+   253
+  ],
+  "recorded_generated_lanes": [
+   13,
+   253,
+   806,
+   2201,
+   3434,
+   281,
+   1263,
+   253
+  ],
+  "replayed_text": ", the first major effort to study the",
+  "identical_to_recorded": true
+ }
+]

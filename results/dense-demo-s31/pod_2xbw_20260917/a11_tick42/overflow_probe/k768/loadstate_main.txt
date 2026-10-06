@@ -1,0 +1,10 @@
+start 2026-09-18T16:17:22Z
+853ce9cd6d6c75adf1a6410ec9f082baccf07d1dbe98d014aaff4ed5b57ccff5  harness/build/boot_overflow_probe_k768
+c760781be72bd1af6427617c75d22cfd2c0117626651c652fd82a01007a626d0  harness/boot_overflow_probe.cpp
+f96529cc99c9ebb38903d3015fd72c349b05d21a99d3eea7125a5e48e0e6693c  vendor/install-k768/lib/libOPENFHEpke.1.5.1.dylib
+f8cc9ff0b19c6226aa163e359cbcfb1f9ae5ee976174975f4d9f2cc649b9ed8a  vendor/install-k768/lib/libOPENFHEcore.1.5.1.dylib
+{"availGB":5.93,"totalGB":16.00,"swapUsedMB":1953,"compressorGB":1.94,"heavyProcs":0,"heavyFootprintGB":0.00}
+19:17  up 11 days, 13:45, 1 user, load averages: 1.27 1.62 1.58
+end 2026-09-18T16:35:37Z
+{"availGB":5.98,"totalGB":16.00,"swapUsedMB":1953,"compressorGB":2.09,"heavyProcs":0,"heavyFootprintGB":0.00}
+19:35  up 11 days, 14:04, 1 user, load averages: 3.29 2.63 2.25

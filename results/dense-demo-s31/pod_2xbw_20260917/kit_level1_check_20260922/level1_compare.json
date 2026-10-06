@@ -1,0 +1,153 @@
+{
+ "ticks": [
+  {
+   "tick": 0,
+   "resp_max_rel_vs_recorded": 0.000622932400290224,
+   "req_max_rel_vs_recorded": 8.275622409830682e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 0,
+   "picks_recorded": 0
+  },
+  {
+   "tick": 1,
+   "resp_max_rel_vs_recorded": 0.00046810557375412,
+   "req_max_rel_vs_recorded": 9.376681668073108e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 0,
+   "picks_recorded": 0
+  },
+  {
+   "tick": 2,
+   "resp_max_rel_vs_recorded": 0.00038739179667020166,
+   "req_max_rel_vs_recorded": 1.0422245548716326e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 0,
+   "picks_recorded": 0
+  },
+  {
+   "tick": 3,
+   "resp_max_rel_vs_recorded": 0.0018548516178001893,
+   "req_max_rel_vs_recorded": 9.759846404378363e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 0,
+   "picks_recorded": 0
+  },
+  {
+   "tick": 4,
+   "resp_max_rel_vs_recorded": 0.000911271227632635,
+   "req_max_rel_vs_recorded": 9.247632098131545e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 0,
+   "picks_recorded": 0
+  },
+  {
+   "tick": 5,
+   "resp_max_rel_vs_recorded": 0.000841158800079162,
+   "req_max_rel_vs_recorded": 1.0037946298925743e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 1,
+   "picks_recorded": 1
+  },
+  {
+   "tick": 6,
+   "resp_max_rel_vs_recorded": 0.0007066324797019785,
+   "req_max_rel_vs_recorded": 9.064766454328186e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 46,
+   "picks_recorded": 46
+  },
+  {
+   "tick": 7,
+   "resp_max_rel_vs_recorded": 0.0006955472151737764,
+   "req_max_rel_vs_recorded": 1.115512403263085e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 52,
+   "picks_recorded": 52
+  },
+  {
+   "tick": 8,
+   "resp_max_rel_vs_recorded": 0.000580273313569344,
+   "req_max_rel_vs_recorded": 9.351756521651365e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 58,
+   "picks_recorded": 58
+  },
+  {
+   "tick": 9,
+   "resp_max_rel_vs_recorded": 0.0009323298329255964,
+   "req_max_rel_vs_recorded": 9.012980650394426e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 58,
+   "picks_recorded": 58
+  },
+  {
+   "tick": 10,
+   "resp_max_rel_vs_recorded": 0.0007623577536872749,
+   "req_max_rel_vs_recorded": 8.575496089003799e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 63,
+   "picks_recorded": 63
+  },
+  {
+   "tick": 11,
+   "resp_max_rel_vs_recorded": 0.0007640803022591242,
+   "req_max_rel_vs_recorded": 1.183823334035492e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 63,
+   "picks_recorded": 63
+  },
+  {
+   "tick": 12,
+   "resp_max_rel_vs_recorded": 0.0007372560019887147,
+   "req_max_rel_vs_recorded": 1.0890028049586341e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 60,
+   "picks_recorded": 60
+  },
+  {
+   "tick": 13,
+   "resp_max_rel_vs_recorded": 0.0008957668368149843,
+   "req_max_rel_vs_recorded": 1.0155357399158614e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 57,
+   "picks_recorded": 57
+  },
+  {
+   "tick": 14,
+   "resp_max_rel_vs_recorded": 0.0007921937226453471,
+   "req_max_rel_vs_recorded": 1.1261093365297661e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 15,
+   "picks_recorded": 15
+  },
+  {
+   "tick": 15,
+   "resp_max_rel_vs_recorded": 0.0010819522937427503,
+   "req_max_rel_vs_recorded": 9.575527665050098e-12,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 10,
+   "picks_recorded": 10
+  },
+  {
+   "tick": 16,
+   "resp_max_rel_vs_recorded": 0.0012963365901578752,
+   "req_max_rel_vs_recorded": 1.2118777720558785e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 5,
+   "picks_recorded": 5
+  },
+  {
+   "tick": 17,
+   "resp_max_rel_vs_recorded": 0.0012512819777280289,
+   "req_max_rel_vs_recorded": 1.0034920920482322e-11,
+   "req_vs_embedding_max_rel": 0.0,
+   "picks_matched": 4,
+   "picks_recorded": 4
+  }
+ ],
+ "resp_max_rel": 0.0018548516178001893,
+ "req_max_rel": 1.2118777720558785e-11,
+ "token_matches": 492,
+ "token_total": 492,
+ "emb_max_rel": 0
+}

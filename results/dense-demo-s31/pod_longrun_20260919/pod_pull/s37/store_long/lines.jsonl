@@ -1,0 +1,9 @@
+{"storeLoad":false,"reason":"absent","path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin","willSaveAfterFirstPass":true}
+{"harness":"gpu_real_model","arch":"native","tag":"pbd430a","secure":true,"ringDim":131072,"slots":65536,"d":1024,"Dpad":1024,"REP":64,"L":24,"dff":4096,"BS":32,"haveBundle":true,"ompMaxThreads":24,"scaleBits":59,"normEpsOn":true,"setupMs":32490}
+{"canonicalCarry":"cold","scanLevel":19,"uLevel":19,"maxGap":38}
+{"wvCheck":true,"layer":0,"ch":0,"nonFinite":0,"maxAbsErr":1.01001e-05,"refMax":0.0324896,"relErr":0.000310872}
+{"wvCheck":true,"layer":0,"ch":1,"nonFinite":0,"maxAbsErr":1.65742e-05,"refMax":0.0521931,"relErr":0.000317555}
+{"wvCheck":true,"layer":0,"ch":2,"nonFinite":0,"maxAbsErr":1.18806e-05,"refMax":0.0272857,"relErr":0.000435415}
+{"wvCheck":true,"layer":0,"ch":3,"nonFinite":0,"maxAbsErr":9.94016e-06,"refMax":0.0279354,"relErr":0.000355827}
+{"storeSave":"begin","entries":688128,"bytes":68447895616,"freeBytes":3727372771328}
+{"storeSave":true,"path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr0112.bin","entries":688128,"dataBytes":68417617920,"ms":30355}

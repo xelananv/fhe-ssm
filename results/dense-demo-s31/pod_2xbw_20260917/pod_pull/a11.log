@@ -1,0 +1,82 @@
+09:15:13Z === A11: TICKS=64 lanes 64, flags [--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.3 8], bin /root/fhe-main-demo/build-demo/gpu_real_model_x (xbin 1), store /root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr.bin ===
+[2026-09-18T09:15:13Z] serving arm A11: ARM=A11 XBIN=1 BIN=/root/fhe-main-demo/build-demo/gpu_real_model_x LOG_RING=17 EXTRA_DEPTH=12 SECURE=1 LANES_BLOCK=1 DEVICES=0,1 EXTRA_FLAGS(server)=--canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --drop-wout 7 --drop-win 4 --newton-robust 0.3 8  STORE=/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr.bin PROMPTS=/root/src/results/dense-demo-s31/sessions/a11_prompts64_long.txt TICKS=64 KEYS_POD=/root/demo/keys_pod_r17 binary_sha256 a6778d2b4429105e87f83b916a867e8f86d172cf7c3231f052a673353dbe0da5 utc 2026-09-18T09:15:13Z 
+60 rc=1 (0 GO / 2 CONDITIONAL / 1 NO-GO; the arm's record is the table below, not this code)
+## arm serve_A11 -- 45 served ticks (asked 64)
+
+| tick | reqMsPerToken | reqMsPerTokenExBoot | reqEncPtMs | reqBoots | storeAppends | peakVramGB | failed |
+|---|---|---|---|---|---|---|---|
+| 0 | 139727 | 134837 | 0 | 528 |  | 57.7451 | False |
+| 1 | 136916 | 131950 | 0 | 480 |  | 64.7763 | False |
+| 2 | 136225 | 131361 | 0 | 480 |  | 64.7763 | False |
+| 3 | 135900 | 130899 | 0 | 480 |  | 64.8076 | False |
+| 4 | 137035 | 132030 | 0 | 480 |  | 64.8076 | False |
+| 5 | 137412 | 132257 | 0 | 480 |  | 64.8076 | False |
+| 6 | 137120 | 132006 | 0 | 480 |  | 64.8388 | False |
+| 7 | 137690 | 132449 | 0 | 480 |  | 64.8388 | False |
+| 8 | 137048 | 131869 | 0 | 480 |  | 64.8388 | False |
+| 9 | 136825 | 131767 | 0 | 480 |  | 64.8701 | False |
+| 10 | 137727 | 132499 | 0 | 480 |  | 64.8701 | False |
+| 11 | 137120 | 131917 | 0 | 480 |  | 64.9013 | False |
+| 12 | 136964 | 131804 | 0 | 480 |  | 64.9013 | False |
+| 13 | 136495 | 131253 | 0 | 480 |  | 64.9013 | False |
+| 14 | 137885 | 132553 | 0 | 480 |  | 64.9326 | False |
+| 15 | 137341 | 132134 | 0 | 480 |  | 64.9326 | False |
+| 16 | 136926 | 131676 | 0 | 480 |  | 64.9326 | False |
+| 17 | 138256 | 132842 | 0 | 480 |  | 64.9638 | False |
+| 18 | 136328 | 131121 | 0 | 480 |  | 64.9638 | False |
+| 19 | 136991 | 131773 | 0 | 480 |  | 64.9951 | False |
+| 20 | 137592 | 132082 | 0 | 480 |  | 64.9951 | False |
+| 21 | 136981 | 131565 | 0 | 480 |  | 64.9951 | False |
+| 22 | 137099 | 131671 | 0 | 480 |  | 65.0263 | False |
+| 23 | 137123 | 131745 | 0 | 480 |  | 65.0263 | False |
+| 24 | 137577 | 132094 | 0 | 480 |  | 65.0576 | False |
+| 25 | 137035 | 131597 | 0 | 480 |  | 65.0576 | False |
+| 26 | 137857 | 132360 | 0 | 480 |  | 65.0576 | False |
+| 27 | 138019 | 132521 | 0 | 480 |  | 65.0888 | False |
+| 28 | 137902 | 132267 | 0 | 480 |  | 65.0888 | False |
+| 29 | 137949 | 132347 | 0 | 480 |  | 65.0888 | False |
+| 30 | 138034 | 132402 | 0 | 480 |  | 65.1201 | False |
+| 31 | 137325 | 131886 | 0 | 480 |  | 65.1201 | False |
+| 32 | 137777 | 132224 | 0 | 480 |  | 65.1513 | False |
+| 33 | 137791 | 132293 | 0 | 480 |  | 65.1513 | False |
+| 34 | 137922 | 132353 | 0 | 480 |  | 65.1513 | False |
+| 35 | 137539 | 131961 | 0 | 480 |  | 65.1826 | False |
+| 36 | 138011 | 132429 | 0 | 480 |  | 65.1826 | False |
+| 37 | 137172 | 131539 | 0 | 480 |  | 65.1826 | False |
+| 38 | 139148 | 133383 | 0 | 480 |  | 65.2138 | False |
+| 39 | 137959 | 132312 | 0 | 480 |  | 65.2138 | False |
+| 40 | 138305 | 132756 | 0 | 480 |  | 65.2451 | False |
+| 41 | 137362 | 131715 | 0 | 480 |  | 65.2451 | False |
+| 42 | 137935 | 132407 | 0 | 480 |  | 65.2451 | False |
+| 43 | 138530 | 132898 | 0 | 480 |  | 65.2763 | False |
+| 44 | 138475 | 132831 | 0 | 480 |  | 65.2763 | False |
+
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [480])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: True identical groups [[0, 63]] disagreements []
+VERDICT rowsComplete: 2880 rows vs 45 ticks x 64 lanes = 2880
+VERDICT decFailedTicks: [42, 43, 44] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 2675/2880, relErrRms median 0.002225 worst 1; serveSec per tick [320.0, 194.0, 194.0, 192.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 192.0, 194.0, 194.0, 194.0, 194.0, 192.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 192.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0]
+SUMMARY {"boots": 21648, "storeBytes": 68417617920, "storeHits": 30965760, "storeMisses": 0, "poolBuilds": 2, "peakVramGB": 65.2763, "procPeakVramGB": -1, "periodicEncodeCount": 120, "periodicVerifyCount": 0, "periodicVerifyOk": 0, "periodicFallbackCount": 0, "ptCacheEntries": 0, "ptCacheHits": 0, "ptCacheMisses": 0, "dropsApplied": 6480, "dropsSkippedDeeper": 0, "rsqrtItersSum": 170, "canonBoots": 2208, "failed": false, "harnessSha256": "10e23d1d2d2ce9a7"}
+line {"storeLoad":true,"path":"/root/demo/store_pbd430a_r17_xd12_lanesblock_canon_nr.bin","entries":688128,"dead":336,"dataBytes":68417617920,"ms":35095,"verifySamplesPerPrefix":2}
+line {"canonicalCarry":"cold","scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+line {"canonicalCarry":"tick","boots":48,"scanLevel":19,"uLevel":19,"maxGap":38}
+11:51:57Z A11 rc=0
+VERDICT enc0From: 0 (first tick from which reqEncPtMs stays 0; the plan's s2b wants 0 encodes from tick 1 -- from tick 0 on a pre-built store)
+VERDICT bootsConst: True (ticks 1..: [480])
+VERDICT failedReqs: 0
+VERDICT lanesIdentical: True identical groups [[0, 63]] disagreements []
+VERDICT rowsComplete: 2880 rows vs 45 ticks x 64 lanes = 2880
+VERDICT decFailedTicks: [42, 43, 44] (client decode failed: 'approximation error is too high' = the reply is noise-dominated)
+VERDICT fidelity: top1 2675/2880, relErrRms median 0.002225 worst 1; serveSec per tick [320.0, 194.0, 194.0, 192.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 192.0, 194.0, 194.0, 194.0, 194.0, 192.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 194.0, 19
+11:51:57Z A11_DONE

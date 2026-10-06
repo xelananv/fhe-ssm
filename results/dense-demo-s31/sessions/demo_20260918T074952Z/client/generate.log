@@ -1,0 +1,205 @@
+{"macPreflight": "ok", "serveDirClean": true, "serverStateful": true, "transport": "ssh", "serverPid": 1132192, "serverArgv": "/root/fhe-main-demo/build-demo/gpu_real_model_x --tag pbd430a --bundle-dir /root/src/ml-eval/artifacts --device 0 --log-ring 17 --secure --level-budget 3 3 --ms-norm 5.5 --enc-threads 24 --boot-floor 3 --matvec-margin 4 --extra-depth 12 --canonical-carry --periodic-encode --drop-wv 7 --drop-wkr 4 --", "serverServeDir": "/root/demo/serve", "serverNextReq": 0, "serverServed": 0, "mock": false, "secretOnServerHost": false}
+$REPO/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+== tick 0 (64 prompting, 0 generating, 0 retired) ==
+  [rcp] put req.0.0 88.1 MB in 21.5 s (6 streams, 4.10 MB/s)
+  [tick 0] remote wait: one ssh (markers + wait + meta), timeout 7200 s
+  [remote-wait] resp.0: 60 s, server alive
+  [remote-wait] resp.0: 120 s, server alive
+  [remote-wait] resp.0: 180 s, server alive
+  [remote-wait] resp.0: 240 s, server alive
+  [rcp] get resp.0.0 10.5 MB in 30.5 s (6 streams, 0.34 MB/s)
+  lane 0: ..."A triangle is a shape with three"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a"
+  lane 3: ..."A dictionary is a book that lists"
+== tick 1 (64 prompting, 0 generating, 0 retired) ==
+  [rcp] put req.1.0 88.1 MB in 22.5 s (6 streams, 3.91 MB/s)
+  [tick 1] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.0.*
+  [remote-wait] resp.1: 60 s, server alive
+  [remote-wait] resp.1: 120 s, server alive
+  [remote-wait] resp.1: 180 s, server alive
+  [rcp] get resp.1.0 10.5 MB in 24.0 s (6 streams, 0.44 MB/s)
+  lane 0: ..."A triangle is a shape with three"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a"
+  lane 3: ..."A dictionary is a book that lists"
+== tick 2 (64 prompting, 0 generating, 0 retired) ==
+  [rcp] put req.2.0 88.1 MB in 23.9 s (6 streams, 3.69 MB/s)
+  [tick 2] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.1.*
+  [remote-wait] resp.2: 60 s, server alive
+  [remote-wait] resp.2: 120 s, server alive
+  [remote-wait] resp.2: 180 s, server alive
+  [rcp] get resp.2.0 10.5 MB in 27.5 s (6 streams, 0.38 MB/s)
+  lane 0: ..."A triangle is a shape with three"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a"
+  lane 3: ..."A dictionary is a book that lists"
+== tick 3 (64 prompting, 0 generating, 0 retired) ==
+  [rcp] put req.3.0 88.1 MB in 36.4 s (6 streams, 2.42 MB/s)
+  [tick 3] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.2.*
+  [remote-wait] resp.3: 60 s, server alive
+  [remote-wait] resp.3: 120 s, server alive
+  [remote-wait] resp.3: 180 s, server alive
+  [rcp] get resp.3.0 10.5 MB in 35.1 s (6 streams, 0.30 MB/s)
+  lane 0: ..."A triangle is a shape with three"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a"
+  lane 3: ..."A dictionary is a book that lists"
+== tick 4 (64 prompting, 0 generating, 0 retired) ==
+  [rcp] put req.4.0 88.1 MB in 40.8 s (6 streams, 2.16 MB/s)
+  [tick 4] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.3.*
+  [remote-wait] resp.4: 60 s, server alive
+  [remote-wait] resp.4: 120 s, server alive
+  [remote-wait] resp.4: 180 s, server alive
+  [rcp] get resp.4.0 10.5 MB in 32.7 s (6 streams, 0.32 MB/s)
+  lane 0: ..."A triangle is a shape with three"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a"
+  lane 3: ..."A dictionary is a book that lists"
+== tick 5 (64 prompting, 0 generating, 0 retired) ==
+  [rcp] put req.5.0 88.1 MB in 42.8 s (6 streams, 2.06 MB/s)
+  [tick 5] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.4.*
+  [remote-wait] resp.5: 60 s, server alive
+  [remote-wait] resp.5: 120 s, server alive
+  [remote-wait] resp.5: 180 s, server alive
+  [rcp] get resp.5.0 10.5 MB in 31.5 s (6 streams, 0.33 MB/s)
+  lane 0: ..."A triangle is a shape with three"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a"
+  lane 3: ..."A dictionary is a book that lists"
+== tick 6 (63 prompting, 1 generating, 0 retired) ==
+  [rcp] put req.6.0 88.1 MB in 31.8 s (6 streams, 2.77 MB/s)
+  [tick 6] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.5.*
+  [remote-wait] resp.6: 60 s, server alive
+  [remote-wait] resp.6: 120 s, server alive
+  [remote-wait] resp.6: 180 s, server alive
+  [rcp] get resp.6.0 10.5 MB in 31.9 s (6 streams, 0.33 MB/s)
+  lane 0: ..."A triangle is a shape with three sides"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a"
+  lane 3: ..."A dictionary is a book that lists words"
+== tick 7 (18 prompting, 46 generating, 0 retired) ==
+  [rcp] put req.7.0 88.1 MB in 31.9 s (6 streams, 2.77 MB/s)
+  [tick 7] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.6.*
+  [remote-wait] resp.7: 60 s, server alive
+  [remote-wait] resp.7: 120 s, server alive
+  [remote-wait] resp.7: 180 s, server alive
+  [rcp] get resp.7.0 10.5 MB in 31.5 s (6 streams, 0.33 MB/s)
+  lane 0: ..."A triangle is a shape with three sides."
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a person"
+  lane 3: ..."A dictionary is a book that lists words in"
+== tick 8 (12 prompting, 52 generating, 0 retired) ==
+  [rcp] put req.8.0 88.1 MB in 37.6 s (6 streams, 2.34 MB/s)
+  [tick 8] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.7.*
+  [remote-wait] resp.8: 60 s, server alive
+  [remote-wait] resp.8: 120 s, server alive
+  [remote-wait] resp.8: 180 s, server alive
+  [rcp] get resp.8.0 10.5 MB in 31.0 s (6 streams, 0.34 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a person,"
+  lane 3: ..."A dictionary is a book that lists words in a"
+== tick 9 (6 prompting, 57 generating, 1 retired) ==
+  [rcp] put req.9.0 88.1 MB in 32.1 s (6 streams, 2.74 MB/s)
+  [tick 9] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.8.*
+  [remote-wait] resp.9: 60 s, server alive
+  [remote-wait] resp.9: 120 s, server alive
+  [remote-wait] resp.9: 180 s, server alive
+  [rcp] get resp.9.0 10.5 MB in 27.3 s (6 streams, 0.38 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and"
+  lane 2: ..."A noun is a word that names a person, place"
+  lane 3: ..."A dictionary is a book that lists words in a particular"
+== tick 10 (5 prompting, 58 generating, 1 retired) ==
+  [rcp] put req.10.0 88.1 MB in 34.5 s (6 streams, 2.55 MB/s)
+  [tick 10] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.9.*
+  [remote-wait] resp.10: 60 s, server alive
+  [remote-wait] resp.10: 120 s, server alive
+  [remote-wait] resp.10: 180 s, server alive
+  [rcp] get resp.10.0 10.5 MB in 33.5 s (6 streams, 0.31 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas"
+  lane 2: ..."A noun is a word that names a person, place,"
+  lane 3: ..."A dictionary is a book that lists words in a particular language"
+== tick 11 (0 prompting, 63 generating, 1 retired) ==
+  [rcp] put req.11.0 88.1 MB in 38.2 s (6 streams, 2.30 MB/s)
+  [tick 11] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.10.*
+  [remote-wait] resp.11: 60 s, server alive
+  [remote-wait] resp.11: 120 s, server alive
+  [remote-wait] resp.11: 180 s, server alive
+  [rcp] get resp.11.0 10.5 MB in 31.7 s (6 streams, 0.33 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas."
+  lane 2: ..."A noun is a word that names a person, place, thing"
+  lane 3: ..."A dictionary is a book that lists words in a particular language."
+== tick 12 (0 prompting, 60 generating, 4 retired) ==
+  [rcp] put req.12.0 88.1 MB in 41.6 s (6 streams, 2.12 MB/s)
+  [tick 12] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.11.*
+  [remote-wait] resp.12: 60 s, server alive
+  [remote-wait] resp.12: 120 s, server alive
+  [remote-wait] resp.12: 180 s, server alive
+  [rcp] get resp.12.0 10.5 MB in 21.6 s (6 streams, 0.48 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas.\n"
+  lane 2: ..."A noun is a word that names a person, place, thing,"
+  lane 3: ..."A dictionary is a book that lists words in a particular language.\n"
+== tick 13 (0 prompting, 57 generating, 7 retired) ==
+  [rcp] put req.13.0 88.1 MB in 45.2 s (6 streams, 1.95 MB/s)
+  [tick 13] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.12.*
+  [remote-wait] resp.13: 60 s, server alive
+  [remote-wait] resp.13: 120 s, server alive
+  [remote-wait] resp.13: 180 s, server alive
+  [rcp] get resp.13.0 10.5 MB in 30.1 s (6 streams, 0.35 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas.\n"
+  lane 2: ..." noun is a word that names a person, place, thing, or"
+  lane 3: ..."A dictionary is a book that lists words in a particular language.\n"
+== tick 14 (0 prompting, 15 generating, 49 retired) ==
+  [rcp] put req.14.0 88.1 MB in 40.6 s (6 streams, 2.17 MB/s)
+  [tick 14] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.13.*
+  [remote-wait] resp.14: 60 s, server alive
+  [remote-wait] resp.14: 120 s, server alive
+  [remote-wait] resp.14: 180 s, server alive
+  [rcp] get resp.14.0 10.5 MB in 28.5 s (6 streams, 0.37 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas.\n"
+  lane 2: ..." is a word that names a person, place, thing, or idea"
+  lane 3: ..."A dictionary is a book that lists words in a particular language.\n"
+== tick 15 (0 prompting, 10 generating, 54 retired) ==
+  [rcp] put req.15.0 88.1 MB in 44.6 s (6 streams, 1.97 MB/s)
+  [tick 15] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.14.*
+  [remote-wait] resp.15: 60 s, server alive
+  [remote-wait] resp.15: 120 s, server alive
+  [remote-wait] resp.15: 180 s, server alive
+  [rcp] get resp.15.0 10.5 MB in 22.8 s (6 streams, 0.46 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas.\n"
+  lane 2: ..." is a word that names a person, place, thing, or idea"
+  lane 3: ..."A dictionary is a book that lists words in a particular language.\n"
+== tick 16 (0 prompting, 5 generating, 59 retired) ==
+  [rcp] put req.16.0 88.1 MB in 72.4 s (6 streams, 1.22 MB/s)
+  [tick 16] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.15.*
+warning: ssh transport failure during the remote wait (attempt 1/5); retrying with conditional markers
+  [remote-wait] resp.16: 60 s, server alive
+  [rcp] get resp.16.0 10.5 MB in 18.5 s (6 streams, 0.57 MB/s)
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 7eb73e05-00cc-4775-8bc0-09ecd822c138)')' thrown while requesting HEAD https://huggingface.co/RWKV/rwkv-4-169m-pile/resolve/main/tokenizer_config.json
+Retrying in 1s [Retry 1/5].
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas.\n"
+  lane 2: ..." is a word that names a person, place, thing, or idea"
+  lane 3: ..."A dictionary is a book that lists words in a particular language.\n"
+== tick 17 (0 prompting, 4 generating, 60 retired) ==
+  [rcp] put req.17.0 88.1 MB in 24.4 s (6 streams, 3.61 MB/s)
+  [tick 17] remote wait: one ssh (markers + wait + meta), timeout 7200 s, rm resp.16.*
+  [remote-wait] resp.17: 60 s, server alive
+  [remote-wait] resp.17: 120 s, server alive
+  [remote-wait] resp.17: 180 s, server alive
+  [rcp] get resp.17.0 10.5 MB in 25.5 s (6 streams, 0.41 MB/s)
+  lane 0: ..."A triangle is a shape with three sides.\n"
+  lane 1: ..."The three states of matter are solid, liquid, and gas.\n"
+  lane 2: ..." is a word that names a person, place, thing, or idea"
+  lane 3: ..."A dictionary is a book that lists words in a particular language.\n"
+== all lanes retired; stopping ==
+{"lanesDone": true, "ticks": 18, "generatedPerLane": [3, 3, 8, 7, 8, 8, 8, 8, 8, 8, 6, 8, 8, 8, 8, 8, 8, 8, 5, 8, 8, 8, 8, 8, 8, 6, 8, 8, 8, 8, 8, 8, 8, 6, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8], "retired": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true], "stubTokenizer": false}

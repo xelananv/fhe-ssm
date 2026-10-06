@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code or these records, please cite the repository."
+title: "fhe-ssm: a recurrent language model served under CKKS fully homomorphic encryption with free-running generation"
+authors:
+  - family-names: Ananyev
+    given-names: Alexander
+    email: xelananv@protonmail.com
+date-released: 2026-09-22
+license: MIT
+repository-code: "https://github.com/xelananv/fhe-ssm"

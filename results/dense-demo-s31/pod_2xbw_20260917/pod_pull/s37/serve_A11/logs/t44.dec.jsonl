@@ -1,0 +1,4 @@
+FIDESLIB_USE_MEMCPY_PEER=0, set to: 0
+{"x8Levers":true,"dropWv":7,"dropWkr":4,"dropWout":7,"dropWin":4,"rsqrtSidecar":"","baseline":"stock"}
+{"schedLevers":true,"schedule":"stock","pfEntry":"loop","shareBabies":false,"newtonDepth2":false,"poolLevels":2,"stockPath":true}
+{"fatal":"dec-out failed","what":"/root/fhe-main-demo/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. "}

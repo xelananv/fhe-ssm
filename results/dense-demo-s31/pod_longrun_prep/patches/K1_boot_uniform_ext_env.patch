@@ -1,0 +1,52 @@
+diff --git a/src/CKKS/openfhe-interface/RawCiphertext.cu b/src/CKKS/openfhe-interface/RawCiphertext.cu
+index aa89402..2d8c24b 100644
+--- a/src/CKKS/openfhe-interface/RawCiphertext.cu
++++ b/src/CKKS/openfhe-interface/RawCiphertext.cu
+@@ -8,6 +8,9 @@
+ #include "Math.cuh"
+ #include <bit>
+ #include <cassert>
++#include <cstdlib>
++#include <cstring>
++#include <iostream>
+ using namespace lbcrypto;
+ 
+ /**
+@@ -579,6 +582,37 @@ FIDESlib::CKKS::RawParams FIDESlib::CKKS::GetRawParams(lbcrypto::CryptoContext<l
+ 			result.bootK			 = std::dynamic_pointer_cast<lbcrypto::FHECKKSRNS>(cc->GetScheme()->m_FHE)->K_UNIFORM; // lbcrypto::FHECKKSRNS::K_UNIFORM;
+ 			result.doubleAngleIts	 = lbcrypto::FHECKKSRNS::R_UNIFORM;
+ 			result.sparse_encaps	 = false;
++			// Opt-in, default OFF: FIDESLIB_BOOT_UNIFORM_EXT selects OpenFHE's extended table for a dense ternary secret
++			// (g_coefficientsUniformExt, degree 118, K_UNIFORMEXT = 768) instead of g_coefficientsUniform (degree 88, K = 512).
++			// Both degrees sit in the same GetDepthByDegree bucket (60..119 -> 8) and use the same R_UNIFORM double-angle
++			// iterations, so the context, the keys and the level budget (api EvalBootstrapSetup's modall) do not change;
++			// Bootstrap.cu reads the K of the pre-scaling 1/(K*N) from bootK. One line says which table is active.
++			//   =1      the table with ONE scalar 1/(768*N). ElemForEvalMult rounds that scalar to an integer multiple of 1/SF; 768 is
++			//           not a power of two, so the rounding is a relative scale error of the sine's input (+9.5e-11 at N = 2^17 against
++			//           -2.1e-11 for 512, arithmetic; measured on OpenFHE's CPU bootstrap at N = 2^13 as an error linear in each
++			//           coefficient's overflow, slope within 1 % of that arithmetic).
++			//   =split  768 = 3 * 2^8: the 3 is folded into the CoeffsToSlots plaintexts by the OpenFHE build this library links
++			//           (patch O1: scaleEnc = pre / 3, reads this same variable) and the scalar here is 1/(256*N), a power of two, as
++			//           FIDESlib's SPARSE path already does with its whole K. Only if that OpenFHE build carries O1 (macro below);
++			//           otherwise the CoeffsToSlots plaintexts are NOT scaled and this falls back to =1, and says so.
++			const char* bootExtEnv		 = std::getenv("FIDESLIB_BOOT_UNIFORM_EXT");
++			const bool bootExtSplitAsked = bootExtEnv != nullptr && std::strcmp(bootExtEnv, "split") == 0;
++			const bool bootExt			 = bootExtEnv != nullptr && (std::strcmp(bootExtEnv, "1") == 0 || bootExtSplitAsked);
++#ifdef OPENFHE_FHESSM_BOOT_UNIFORM_SPLIT_ENV
++			const bool bootExtSplit = bootExtSplitAsked;
++#else
++			const bool bootExtSplit = false;
++#endif
++			const uint32_t bootTableK = bootExt ? static_cast<uint32_t>(lbcrypto::FHECKKSRNS::K_UNIFORMEXT) : static_cast<uint32_t>(lbcrypto::FHECKKSRNS::K_UNIFORM);
++			if (bootExt) {
++				result.coefficientsCheby = lbcrypto::FHECKKSRNS::g_coefficientsUniformExt;
++				result.bootK			 = bootExtSplit ? bootTableK / 3 : bootTableK;
++			}
++			std::cout << "{\"fideslibBootTable\":\"" << (bootExt ? "g_coefficientsUniformExt" : "g_coefficientsUniform")
++					  << "\",\"tableK\":" << bootTableK << ",\"bootK\":" << result.bootK
++					  << ",\"scaleEncOddPart\":" << (bootExtSplit ? 3 : 1) << ",\"doubleAngleIts\":" << result.doubleAngleIts
++					  << ",\"chebyDegree\":" << (result.coefficientsCheby.size() - 1) << ",\"envBootUniformExt\":\"" << (bootExtEnv ? bootExtEnv : "")
++					  << "\",\"splitAskedButOpenfheLacksO1\":" << ((bootExtSplitAsked && !bootExtSplit) ? "true" : "false") << "}" << std::endl;
+ 		} else if (boot_conf == FIDESlib::UNIFORM_2) {
+ 			result.coefficientsCheby = { 2.207266599864877165693144e-01,
+ 				-2.682587999577537660883531e-03,

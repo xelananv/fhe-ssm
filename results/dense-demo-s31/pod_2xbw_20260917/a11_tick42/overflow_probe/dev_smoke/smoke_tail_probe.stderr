@@ -1,0 +1,1 @@
+tools/memguard.sh 4 harness/build/overflow_tail_probe --log-ring 12 --cts 100  2.80s user 0.13s system 82% cpu 3.550 total

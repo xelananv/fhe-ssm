@@ -1,0 +1,36 @@
+start 2026-09-18T13:34:11Z
+d5d78ed9667c28ca2bee2766e6fbb9b0d027b9724529bf347319f00bcf8dc689  harness/build/overflow_dist_dump
+ded7526b4f2bce54caa0083d15bf98891221edaf4975a84e7fc4fd09bf9c0911  harness/overflow_dist_dump.cpp
+{"availGB":5.58,"totalGB":16.00,"swapUsedMB":1600,"compressorGB":2.93,"heavyProcs":0,"heavyFootprintGB":0.00}
+16:34  up 11 days, 11:02, 1 user, load averages: 2.43 2.77 2.73
+dump exit=0 2026-09-18T13:34:18Z
+stats exit=0 2026-09-18T13:34:29Z
+dump-ext start 2026-09-18T13:36:20Z
+{"availGB":5.39,"totalGB":16.00,"swapUsedMB":1600,"compressorGB":2.76,"heavyProcs":0,"heavyFootprintGB":0.00}
+dump-ext exit=0 2026-09-18T13:36:24Z
+stats exit=0 2026-09-18T13:36:25Z
+stats-ext exit=0 2026-09-18T13:36:26Z
+stats exit=0 2026-09-18T13:37:36Z
+stats-ext exit=0 2026-09-18T13:37:37Z
+stats exit=0 2026-09-18T13:40:04Z
+stats-ext exit=0 2026-09-18T13:40:05Z
+stats exit=0 2026-09-18T13:41:16Z
+stats-ext exit=0 2026-09-18T13:41:18Z
+clean 2026-09-18T13:41:28Z
+ls: $SCRATCH/overflow_dist: No such file or directory
+ls: $SCRATCH/overflow_dist_ext: No such file or directory
+--- second pass 2026-09-18T14:18:58Z: re-dump to regenerate the tables with the corrected sampling-variance formula
+start 2026-09-18T14:18:58Z
+d5d78ed9667c28ca2bee2766e6fbb9b0d027b9724529bf347319f00bcf8dc689  harness/build/overflow_dist_dump
+ded7526b4f2bce54caa0083d15bf98891221edaf4975a84e7fc4fd09bf9c0911  harness/overflow_dist_dump.cpp
+{"availGB":5.77,"totalGB":16.00,"swapUsedMB":1993,"compressorGB":2.90,"heavyProcs":0,"heavyFootprintGB":0.00}
+17:18  up 11 days, 11:47, 1 user, load averages: 2.38 2.99 3.23
+dump exit=0 2026-09-18T14:19:04Z
+dump-ext start 2026-09-18T14:19:04Z
+{"availGB":5.74,"totalGB":16.00,"swapUsedMB":1993,"compressorGB":2.90,"heavyProcs":0,"heavyFootprintGB":0.00}
+dump-ext exit=0 2026-09-18T14:19:08Z
+stats exit=0 2026-09-18T14:19:09Z
+stats-ext exit=0 2026-09-18T14:19:10Z
+clean 2026-09-18T14:19:10Z
+ls: $SCRATCH/overflow_dist: No such file or directory
+ls: $SCRATCH/overflow_dist_ext: No such file or directory
