@@ -1,0 +1,98 @@
+{
+ "seed": 11,
+ "prompts": {
+  "a": [
+   6011,
+   75,
+   388,
+   5783,
+   285,
+   15752,
+   427,
+   4962,
+   3995,
+   3872,
+   9506,
+   36822,
+   5015,
+   2512,
+   380
+  ],
+  "c": [
+   273,
+   1107,
+   274,
+   9969,
+   6253,
+   448,
+   27762,
+   313,
+   8917,
+   353,
+   29988,
+   767,
+   1756,
+   14357,
+   3761
+  ],
+  "b": [
+   3738,
+   3576,
+   369,
+   3340,
+   12654,
+   2175,
+   21069,
+   642,
+   432,
+   390,
+   1754,
+   4148,
+   367,
+   13,
+   380,
+   310,
+   1039,
+   20687,
+   10438,
+   274,
+   850,
+   327,
+   1107,
+   253,
+   7200,
+   34,
+   7130,
+   49009,
+   22714,
+   2822,
+   6566
+  ]
+ },
+ "docs": {
+  "A": {
+   "shard": "$HOME/.cache/huggingface/hub/datasets--HuggingFaceTB--smollm-corpus/snapshots/3ba9d605774198c5868892d7a8deda78031a781f/fineweb-edu-dedup/train-00000-of-00234.parquet",
+   "row": 3,
+   "id": "<urn:uuid:a69aabbc-f529-4d67-843a-a5c3cb4e8fe0>",
+   "tokens_in_document": 1295,
+   "tokenizer": "$HOME/.cache/huggingface/hub/models--EleutherAI--pythia-410m/snapshots/9879c9b5f8bea9051dcb0e68dff21493d67e9d4f/tokenizer.json",
+   "sha256": "04e0b675b263ee5429fd697c97ac2fcce61672fec9afdf63bb7dd66448a418a1"
+  },
+  "B": {
+   "shard": "$HOME/.cache/huggingface/hub/datasets--HuggingFaceTB--smollm-corpus/snapshots/3ba9d605774198c5868892d7a8deda78031a781f/fineweb-edu-dedup/train-00000-of-00234.parquet",
+   "row": 4,
+   "id": "<urn:uuid:f7082439-68e9-45b6-a427-4600dceaf5e3>",
+   "tokens_in_document": 928,
+   "tokenizer": "$HOME/.cache/huggingface/hub/models--EleutherAI--pythia-410m/snapshots/9879c9b5f8bea9051dcb0e68dff21493d67e9d4f/tokenizer.json",
+   "sha256": "84f69cfec58102de58af887b8292090cb2a3faea58ea4ad828715a623c4b84a8"
+  },
+  "C": {
+   "shard": "$HOME/.cache/huggingface/hub/datasets--HuggingFaceTB--smollm-corpus/snapshots/3ba9d605774198c5868892d7a8deda78031a781f/fineweb-edu-dedup/train-00000-of-00234.parquet",
+   "row": 5,
+   "id": "<urn:uuid:9c71b6db-6728-48b5-96b5-05fbc0b5bb4f>",
+   "tokens_in_document": 373,
+   "tokenizer": "$HOME/.cache/huggingface/hub/models--EleutherAI--pythia-410m/snapshots/9879c9b5f8bea9051dcb0e68dff21493d67e9d4f/tokenizer.json",
+   "sha256": "0c253508dc082a5b76593e885790217e0635c2b56664f79bd358cccb5d7fa4eb"
+  }
+ }
+}

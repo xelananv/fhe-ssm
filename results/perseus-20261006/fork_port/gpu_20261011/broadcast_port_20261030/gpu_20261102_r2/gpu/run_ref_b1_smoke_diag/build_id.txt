@@ -1,0 +1,1 @@
+commit=3afbfdf3 dirty=0 pc_so=009427e7463beeca nvcc= arch=? load=1.27 2.89 3.07

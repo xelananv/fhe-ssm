@@ -1,0 +1,6 @@
+[plan] out=bootstrap_placements/plan_rwkv7_k8_filled_best_pob2 bts_level=28 max_level=50 unit=2 table_measured=True err_target=0.01
+[plan] [block_0] (capture-derived)
+[plan] erased 53 reactive auto_bootstrap(s); 24 deliberate fixed point(s) kept
+[plan] feasible after 10 cut pass(es); 20 refresh(es) placed
+[plan] feasible after 11 cut pass(es); 21 refresh(es) placed
+[plan] vetoed 1 hint(s) predicted to fire past absolute level 50; the cut covers them instead

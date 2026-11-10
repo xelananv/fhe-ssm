@@ -1,0 +1,918 @@
+[rwkv7 11:51:00] capture -> /root/out_pod3/f2_01b/cap_rwkv7 (FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44)
+[capture] token 0 out level 28 in 11.6 s
+[capture] token 1 out level 28 in 22.0 s
+[capture] wrote /root/out_pod3/f2_01b/cap_rwkv7 (12 blocks + tail) in 64.0 s
+[rwkv7 11:52:06] capture: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields)
+[rwkv7 11:52:06] plan /root/out_pod3/f2_01b/cap_rwkv7 -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 43 steps
+  planned in 49 s: 13 stages, 497 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:38@26 block_1:42@26 block_2:41@26 block_3:42@26 block_4:42@26 block_5:40@26 block_6:44@26 block_7:40@26 block_8:41@26 block_9:42@26 block_10:42@26 block_11:42@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_best
+[rwkv7 11:52:56] plan: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 11:52:56] keyspec decode -> /root/out_pod3/f2_01b/keys_decode_best/keyspec.json
+[keyspec] /root/out_pod3/f2_01b/keys_decode_best/keyspec.json: 43 rotation steps; session request present
+[rwkv7 11:53:21] keyspec: done
+[rwkv7 11:53:21] keygen decode (the client role) -> /root/out_pod3/f2_01b/keys_decode_best/keys.pckb
+{"keygen": {"bytes": 8894170107.0, "ccmm_bytes": 0.0, "ccmm_s": 3.6e-07, "keys": 103.0, "ksk_bytes": 8846961264.0, "ksk_s": 8.506926726, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.233670907, "pk_s": 0.012358446, "spru_s": 1.3e-07, "total_s": 8.770746163, "wall_s": 8.8, "info": {"bytes": 8894170107, "entries": {"pcmm": 1, "public_key": 1, "ksk": 103}, "bytes_by_kind": {"pcmm":
+[rwkv7 11:53:30] keygen: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 11:53:30] run: 64 tokens after the prefix, ids 261,6699,62532,61885,332,22168,52965,4706
+{"kind": "token", "mode": "decode", "seconds": 9.4469, "issue_s": 9.2652, "reply_level": 28, "pos": 1, "token": 6699, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0017461525121422962, 
+{"kind": "token", "mode": "decode", "seconds": 9.4854, "issue_s": 0.035, "reply_level": 28, "pos": 2, "token": 62532, "top1_fhe": 21286, "top1_poly": 21286, "top1_agree": true, "logits_relErrRms": 0.0010336144710077688, 
+{"kind": "token", "mode": "decode", "seconds": 9.5361, "issue_s": 0.0529, "reply_level": 28, "pos": 3, "token": 61885, "top1_fhe": 32227, "top1_poly": 32227, "top1_agree": true, "logits_relErrRms": 0.0012732705425879066,
+{"kind": "token", "mode": "decode", "seconds": 9.5616, "issue_s": 0.0397, "reply_level": 28, "pos": 4, "token": 332, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.0010067728472890032, "
+{"kind": "token", "mode": "decode", "seconds": 9.5969, "issue_s": 0.0486, "reply_level": 28, "pos": 5, "token": 22168, "top1_fhe": 32324, "top1_poly": 32324, "top1_agree": true, "logits_relErrRms": 0.0009912072519082224,
+{"kind": "token", "mode": "decode", "seconds": 9.6148, "issue_s": 0.0445, "reply_level": 28, "pos": 6, "token": 52965, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.0018501524662438943, "
+{"kind": "token", "mode": "decode", "seconds": 9.6334, "issue_s": 0.0427, "reply_level": 28, "pos": 7, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0013674679040999972, 
+{"kind": "token", "mode": "decode", "seconds": 9.665, "issue_s": 0.0569, "reply_level": 28, "pos": 8, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0018398916006068043, 
+{"kind": "token", "mode": "decode", "seconds": 9.6647, "issue_s": 0.0415, "reply_level": 28, "pos": 9, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.001680978287512495, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.6721, "issue_s": 0.0376, "reply_level": 28, "pos": 10, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.0017592485663735005, "
+{"kind": "token", "mode": "decode", "seconds": 9.6927, "issue_s": 0.0544, "reply_level": 28, "pos": 11, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0010286162897219795, 
+{"kind": "token", "mode": "decode", "seconds": 9.6993, "issue_s": 0.0457, "reply_level": 28, "pos": 12, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0015028535938211639,
+{"kind": "token", "mode": "decode", "seconds": 9.7155, "issue_s": 0.0546, "reply_level": 28, "pos": 13, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0009016041236960394
+{"kind": "token", "mode": "decode", "seconds": 9.7256, "issue_s": 0.0587, "reply_level": 28, "pos": 14, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.0011513125814667353, 
+{"kind": "token", "mode": "decode", "seconds": 9.7339, "issue_s": 0.0603, "reply_level": 28, "pos": 15, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.001094718171148672, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7311, "issue_s": 0.0477, "reply_level": 28, "pos": 16, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0014583578158263778,
+{"kind": "token", "mode": "decode", "seconds": 9.7397, "issue_s": 0.0537, "reply_level": 28, "pos": 17, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.002884030014923875,
+{"kind": "token", "mode": "decode", "seconds": 9.7328, "issue_s": 0.0446, "reply_level": 28, "pos": 18, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0018208034676501764, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7372, "issue_s": 0.0468, "reply_level": 28, "pos": 19, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.001027931434619336, "
+{"kind": "token", "mode": "decode", "seconds": 9.7454, "issue_s": 0.055, "reply_level": 28, "pos": 20, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.0018071958084048885, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7533, "issue_s": 0.0615, "reply_level": 28, "pos": 21, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.0016442645707663657, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7425, "issue_s": 0.0445, "reply_level": 28, "pos": 22, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.001396499101748056, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7403, "issue_s": 0.0387, "reply_level": 28, "pos": 23, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.0016112189982156367,
+{"kind": "token", "mode": "decode", "seconds": 9.7599, "issue_s": 0.0597, "reply_level": 28, "pos": 24, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.001787871516622883,
+{"kind": "token", "mode": "decode", "seconds": 9.7464, "issue_s": 0.041, "reply_level": 28, "pos": 25, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0022257490576603573, "
+{"kind": "token", "mode": "decode", "seconds": 9.7524, "issue_s": 0.057, "reply_level": 28, "pos": 26, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0020686128688763086, 
+{"kind": "token", "mode": "decode", "seconds": 9.7478, "issue_s": 0.045, "reply_level": 28, "pos": 27, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.002471972091269714, 
+{"kind": "token", "mode": "decode", "seconds": 9.751, "issue_s": 0.0448, "reply_level": 28, "pos": 28, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0021767526688459713,
+{"kind": "token", "mode": "decode", "seconds": 9.7602, "issue_s": 0.0578, "reply_level": 28, "pos": 29, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0018662155864922582
+{"kind": "token", "mode": "decode", "seconds": 9.759, "issue_s": 0.0548, "reply_level": 28, "pos": 30, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.002777111836547965, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7528, "issue_s": 0.0499, "reply_level": 28, "pos": 31, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.0030676560150508297, "
+{"kind": "token", "mode": "decode", "seconds": 9.7609, "issue_s": 0.0552, "reply_level": 28, "pos": 32, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.00300630707922991, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7574, "issue_s": 0.0452, "reply_level": 28, "pos": 33, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0033750034602269712,
+{"kind": "token", "mode": "decode", "seconds": 9.7514, "issue_s": 0.0394, "reply_level": 28, "pos": 34, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0021241500664740095
+{"kind": "token", "mode": "decode", "seconds": 9.7571, "issue_s": 0.0518, "reply_level": 28, "pos": 35, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.004429592968017255, "
+{"kind": "token", "mode": "decode", "seconds": 9.7691, "issue_s": 0.0578, "reply_level": 28, "pos": 36, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.002502295463914397, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7499, "issue_s": 0.0407, "reply_level": 28, "pos": 37, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0031203866405793614,
+{"kind": "token", "mode": "decode", "seconds": 9.7622, "issue_s": 0.0499, "reply_level": 28, "pos": 38, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.0020618114186023648
+{"kind": "token", "mode": "decode", "seconds": 9.7608, "issue_s": 0.0519, "reply_level": 28, "pos": 39, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0031299962796673634, "h
+{"kind": "summary", "tokens": 39, "prompt_ids": [6699, 62532, 61885, 332, 22168, 52965, 4706], "generated_ids": [22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634], "top1_agree": 39, "top1_agree_prefill": 0, "poly_sites_out_of_range_tokens": [], "prefilled_tokens": 0, "prefill_chunk": 0, "prefill_passes": 0, "prefill_seconds_per_token": null, "logits_relErrRms_max": 0.004429592968017255, "logits_relErrRms_median": 0.0018071958084048885, "hidden_relErrRms_vs_mirror_max": 0.015793785481440007, "seconds_per_token_median": 9.7403, "seconds_per_token_after_first": 9.710989473684212, "setup_s": 35.0, "wall_s": 537.4, "planned_stats": "{'runs': 520, 'host_us': 18412977.820999954, 'launch_us': 9414719.548000015, 'captures': 13, 'replays': 507, 'eager': 0, 'capture_ms': 1856.053093, 'invalidations': 0, 'pairs': (22, 0), 'fused': 1344, 'stc_evictions': 0, 'stc_misses': 53, 'stc_slots': 160, 'stc_keys': [[0, 20, 53617498], [0, 20, 53486148], [0, 20, 53844006], [0, 6, 85486148], [0, 6, 82617498], [0, 6, 82486148], [0, 20, 53835172], [0, 20, 53951450], [0, 6, 85920488], [0, 20, 53920488], [0, 6, 78920488], [0, 20, 53647004], [0, 6, 81617498], [0, 6, 80617498], [0, 6, 80486148], [0, 6, 83617498], [0, 6, 83486148], [0, 6, 83920488], [0, 6, 84920488], [0, 20, 53608679], [0, 6, 80920488], [0, 6, 84835172], [0, 6, 80844006], [0, 6, 81835172], [0, 6, 83835172], [0, 6, 84617498], [0, 6, 82835172], [0, 6, 83647004], [0, 6, 79920488], [0, 6, 82647004], [0, 6, 81647004], [0, 6, 81920488], [0, 6, 81486148], [0, 6, 80647004], [0, 20, 53899043], [0, 6, 81899043], [0, 6, 82899043], [0, 6, 80899043], [0, 6, 83899043], [0, 6, 82920488], [0, 6, 80835172], [0, 6, 81951450], [0, 6, 79951450], [0, 6, 79486148], [0, 6, 78486148], [0, 6, 78617498], [0, 6, 78899043], [0, 6, 77617498], [0, 6, 77899043], [0, 6, 75617498], [0, 6, 75899043], [0, 6, 76617498], [0, 6, 76899043]], 'bound': 13, 'group_bytes': 1032192, 'slab': 95}"}
+[rwkv7 12:02:29] run: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 12:02:30] run: 64 tokens after the prefix, ids 261,1136,22590,51310,4706,56529,56537,45,54830,64996
+{"kind": "token", "mode": "decode", "seconds": 9.6008, "issue_s": 9.416, "reply_level": 28, "pos": 1, "token": 1136, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0013907292322769835, "
+{"kind": "token", "mode": "decode", "seconds": 9.6401, "issue_s": 0.0423, "reply_level": 28, "pos": 2, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.00142404607313134, "
+{"kind": "token", "mode": "decode", "seconds": 9.6644, "issue_s": 0.0441, "reply_level": 28, "pos": 3, "token": 51310, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.000880466495260615, "h
+{"kind": "token", "mode": "decode", "seconds": 9.6757, "issue_s": 0.0381, "reply_level": 28, "pos": 4, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0012262020317989884, 
+{"kind": "token", "mode": "decode", "seconds": 9.708, "issue_s": 0.0558, "reply_level": 28, "pos": 5, "token": 56529, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.0015186676432745988, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7102, "issue_s": 0.0386, "reply_level": 28, "pos": 6, "token": 56537, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.0013394840073936755, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7278, "issue_s": 0.0497, "reply_level": 28, "pos": 7, "token": 45, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.001751443430991454, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7257, "issue_s": 0.0429, "reply_level": 28, "pos": 8, "token": 54830, "top1_fhe": 29784, "top1_poly": 29784, "top1_agree": true, "logits_relErrRms": 0.001703642965317448, 
+{"kind": "token", "mode": "decode", "seconds": 9.7378, "issue_s": 0.0449, "reply_level": 28, "pos": 9, "token": 64996, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0015713554542304254, "
+{"kind": "token", "mode": "decode", "seconds": 9.734, "issue_s": 0.0368, "reply_level": 28, "pos": 10, "token": 4600, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0017308029775837059, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7452, "issue_s": 0.0498, "reply_level": 28, "pos": 11, "token": 332, "top1_fhe": 62293, "top1_poly": 62293, "top1_agree": true, "logits_relErrRms": 0.0011891845432826808, 
+{"kind": "token", "mode": "decode", "seconds": 9.7489, "issue_s": 0.0459, "reply_level": 28, "pos": 12, "token": 62293, "top1_fhe": 30405, "top1_poly": 30405, "top1_agree": true, "logits_relErrRms": 0.0014140455659022201
+{"kind": "token", "mode": "decode", "seconds": 9.7433, "issue_s": 0.0391, "reply_level": 28, "pos": 13, "token": 30405, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.001580830694440025, "
+{"kind": "token", "mode": "decode", "seconds": 9.7595, "issue_s": 0.0566, "reply_level": 28, "pos": 14, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.002052882724473437, 
+{"kind": "token", "mode": "decode", "seconds": 9.7555, "issue_s": 0.0488, "reply_level": 28, "pos": 15, "token": 22590, "top1_fhe": 50199, "top1_poly": 50199, "top1_agree": true, "logits_relErrRms": 0.002435050757944411,
+{"kind": "token", "mode": "decode", "seconds": 9.7534, "issue_s": 0.0418, "reply_level": 28, "pos": 16, "token": 50199, "top1_fhe": 46, "top1_poly": 46, "top1_agree": true, "logits_relErrRms": 0.0016355087642276245, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7541, "issue_s": 0.0418, "reply_level": 28, "pos": 17, "token": 46, "top1_fhe": 54358, "top1_poly": 54358, "top1_agree": true, "logits_relErrRms": 0.0021595205815324726, "
+{"kind": "token", "mode": "decode", "seconds": 9.7508, "issue_s": 0.0432, "reply_level": 28, "pos": 18, "token": 54358, "top1_fhe": 40213, "top1_poly": 40213, "top1_agree": true, "logits_relErrRms": 0.0017057243807912716
+{"kind": "token", "mode": "decode", "seconds": 9.7642, "issue_s": 0.0578, "reply_level": 28, "pos": 19, "token": 40213, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.0026136785029887543, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.763, "issue_s": 0.0557, "reply_level": 28, "pos": 20, "token": 47, "top1_fhe": 20996, "top1_poly": 20996, "top1_agree": true, "logits_relErrRms": 0.0016240310131608944, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7572, "issue_s": 0.0535, "reply_level": 28, "pos": 21, "token": 20996, "top1_fhe": 54830, "top1_poly": 54830, "top1_agree": true, "logits_relErrRms": 0.0017283246310836563
+{"kind": "token", "mode": "decode", "seconds": 9.7598, "issue_s": 0.0587, "reply_level": 28, "pos": 22, "token": 54830, "top1_fhe": 64996, "top1_poly": 64996, "top1_agree": true, "logits_relErrRms": 0.0014693387593828337
+{"kind": "token", "mode": "decode", "seconds": 9.7513, "issue_s": 0.0429, "reply_level": 28, "pos": 23, "token": 64996, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.0022391477244758555, 
+{"kind": "token", "mode": "decode", "seconds": 9.7534, "issue_s": 0.0457, "reply_level": 28, "pos": 24, "token": 4706, "top1_fhe": 50199, "top1_poly": 50199, "top1_agree": true, "logits_relErrRms": 0.0020619344611810687,
+{"kind": "token", "mode": "decode", "seconds": 9.7652, "issue_s": 0.0567, "reply_level": 28, "pos": 25, "token": 50199, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.002835535768196316, "
+{"kind": "token", "mode": "decode", "seconds": 9.754, "issue_s": 0.0448, "reply_level": 28, "pos": 26, "token": 4600, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0015840294487431419, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7607, "issue_s": 0.0478, "reply_level": 28, "pos": 27, "token": 332, "top1_fhe": 32386, "top1_poly": 32386, "top1_agree": true, "logits_relErrRms": 0.0015216287994301093, 
+{"kind": "token", "mode": "decode", "seconds": 9.7553, "issue_s": 0.037, "reply_level": 28, "pos": 28, "token": 32386, "top1_fhe": 59513, "top1_poly": 59513, "top1_agree": true, "logits_relErrRms": 0.0013020188755280605,
+{"kind": "token", "mode": "decode", "seconds": 9.7619, "issue_s": 0.051, "reply_level": 28, "pos": 29, "token": 59513, "top1_fhe": 39941, "top1_poly": 39941, "top1_agree": true, "logits_relErrRms": 0.002098952268583498, 
+{"kind": "token", "mode": "decode", "seconds": 9.7575, "issue_s": 0.0513, "reply_level": 28, "pos": 30, "token": 39941, "top1_fhe": 30917, "top1_poly": 30917, "top1_agree": true, "logits_relErrRms": 0.002154254623876267,
+{"kind": "token", "mode": "decode", "seconds": 9.7583, "issue_s": 0.0429, "reply_level": 28, "pos": 31, "token": 30917, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0035144857146845827
+{"kind": "token", "mode": "decode", "seconds": 9.7585, "issue_s": 0.042, "reply_level": 28, "pos": 32, "token": 22590, "top1_fhe": 64996, "top1_poly": 64996, "top1_agree": true, "logits_relErrRms": 0.0018873499007518914,
+{"kind": "token", "mode": "decode", "seconds": 9.7549, "issue_s": 0.0389, "reply_level": 28, "pos": 33, "token": 64996, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.0017803006810222378, 
+{"kind": "token", "mode": "decode", "seconds": 9.7636, "issue_s": 0.0462, "reply_level": 28, "pos": 34, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.002319282306900199, 
+{"kind": "token", "mode": "decode", "seconds": 9.7554, "issue_s": 0.04, "reply_level": 28, "pos": 35, "token": 22590, "top1_fhe": 50199, "top1_poly": 50199, "top1_agree": true, "logits_relErrRms": 0.0018895613636452785, 
+{"kind": "token", "mode": "decode", "seconds": 9.7625, "issue_s": 0.0454, "reply_level": 28, "pos": 36, "token": 50199, "top1_fhe": 46, "top1_poly": 46, "top1_agree": true, "logits_relErrRms": 0.002739042710669603, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7594, "issue_s": 0.039, "reply_level": 28, "pos": 37, "token": 46, "top1_fhe": 54358, "top1_poly": 54358, "top1_agree": true, "logits_relErrRms": 0.0022922283195522643, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7602, "issue_s": 0.036, "reply_level": 28, "pos": 38, "token": 54358, "top1_fhe": 40213, "top1_poly": 40213, "top1_agree": true, "logits_relErrRms": 0.002839017781688987, 
+{"kind": "token", "mode": "decode", "seconds": 9.7685, "issue_s": 0.0513, "reply_level": 28, "pos": 39, "token": 40213, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.0022351219253971604, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7587, "issue_s": 0.0369, "reply_level": 28, "pos": 40, "token": 47, "top1_fhe": 20996, "top1_poly": 20996, "top1_agree": true, "logits_relErrRms": 0.0016874923844906293, "
+{"kind": "token", "mode": "decode", "seconds": 9.7721, "issue_s": 0.0499, "reply_level": 28, "pos": 41, "token": 20996, "top1_fhe": 54830, "top1_poly": 54830, "top1_agree": true, "logits_relErrRms": 0.0018561543954828462
+{"kind": "summary", "tokens": 41, "prompt_ids": [1136, 22590, 51310, 4706, 56529, 56537, 45, 54830, 64996], "generated_ids": [4600, 332, 62293, 30405, 4706, 22590, 50199, 46, 54358, 40213, 47, 20996, 54830, 64996, 4706, 50199, 4600, 332, 32386, 59513, 39941, 30917, 22590, 64996, 4706, 22590, 50199, 46, 54358, 40213, 47, 20996], "top1_agree": 41, "top1_agree_prefill": 0, "poly_sites_out_of_range_tokens": [], "prefilled_tokens": 0, "prefill_chunk": 0, "prefill_passes": 0, "prefill_seconds_per_token": null, "logits_relErrRms_max": 0.0035144857146845827, "logits_relErrRms_median": 0.0017308029775837059, "hidden_relErrRms_vs_mirror_max": 0.010623210474709176, "seconds_per_token_median": 9.7553, "seconds_per_token_after_first": 9.74525, "setup_s": 35.4, "wall_s": 565.0, "planned_stats": "{'runs': 546, 'host_us': 18681355.72499998, 'launch_us': 9555683.200000014, 'captures': 13, 'replays': 533, 'eager': 0, 'capture_ms': 1861.871293, 'invalidations': 0, 'pairs': (22, 0), 'fused': 1344, 'stc_evictions': 0, 'stc_misses': 53, 'stc_slots': 160, 'stc_keys': [[0, 20, 53617498], [0, 20, 53486148], [0, 20, 53844006], [0, 6, 85486148], [0, 6, 82617498], [0, 6, 82486148], [0, 20, 53835172], [0, 20, 53951450], [0, 6, 85920488], [0, 20, 53920488], [0, 6, 78920488], [0, 20, 53647004], [0, 6, 81617498], [0, 6, 80617498], [0, 6, 80486148], [0, 6, 83617498], [0, 6, 83486148], [0, 6, 83920488], [0, 6, 84920488], [0, 20, 53608679], [0, 6, 80920488], [0, 6, 84835172], [0, 6, 80844006], [0, 6, 81835172], [0, 6, 83835172], [0, 6, 84617498], [0, 6, 82835172], [0, 6, 83647004], [0, 6, 79920488], [0, 6, 82647004], [0, 6, 81647004], [0, 6, 81920488], [0, 6, 81486148], [0, 6, 80647004], [0, 20, 53899043], [0, 6, 81899043], [0, 6, 82899043], [0, 6, 80899043], [0, 6, 83899043], [0, 6, 82920488], [0, 6, 80835172], [0, 6, 81951450], [0, 6, 79951450], [0, 6, 79486148], [0, 6, 78486148], [0, 6, 78617498], [0, 6, 78899043], [0, 6, 77617498], [0, 6, 77899043], [0, 6, 75617498], [0, 6, 75899043], [0, 6, 76617498], [0, 6, 76899043]], 'bound': 13, 'group_bytes': 1032192, 'slab': 95}"}
+[rwkv7 12:11:56] run: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 12:11:56] run: 64 tokens after the prefix, ids 261,24281,59,300,32004,39623,286,46784,116,21700,285,51514,47,20063,31466,4491,3485,46784,116,30510,64,43965,32487,22590,46685,47,261,5585,41693,59
+{"kind": "token", "mode": "decode", "seconds": 9.607, "issue_s": 9.4223, "reply_level": 28, "pos": 1, "token": 24281, "top1_fhe": 59, "top1_poly": 59, "top1_agree": true, "logits_relErrRms": 0.0019751061220429633, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.648, "issue_s": 0.0415, "reply_level": 28, "pos": 2, "token": 59, "top1_fhe": 33, "top1_poly": 33, "top1_agree": true, "logits_relErrRms": 0.0008972852289238836, "hidden_r
+{"kind": "token", "mode": "decode", "seconds": 9.6812, "issue_s": 0.0531, "reply_level": 28, "pos": 3, "token": 300, "top1_fhe": 59, "top1_poly": 59, "top1_agree": true, "logits_relErrRms": 0.001731766254883328, "hidden_
+{"kind": "token", "mode": "decode", "seconds": 9.7015, "issue_s": 0.0547, "reply_level": 28, "pos": 4, "token": 32004, "top1_fhe": 41741, "top1_poly": 41741, "top1_agree": true, "logits_relErrRms": 0.0016300269754431097,
+{"kind": "token", "mode": "decode", "seconds": 9.7092, "issue_s": 0.0552, "reply_level": 28, "pos": 5, "token": 39623, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0010856195554198825, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7092, "issue_s": 0.0382, "reply_level": 28, "pos": 6, "token": 286, "top1_fhe": 39218, "top1_poly": 39218, "top1_agree": true, "logits_relErrRms": 0.0011554505163786765, "
+{"kind": "token", "mode": "decode", "seconds": 9.7281, "issue_s": 0.0538, "reply_level": 28, "pos": 7, "token": 46784, "top1_fhe": 116, "top1_poly": 116, "top1_agree": true, "logits_relErrRms": 0.001076938975603665, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7445, "issue_s": 0.0601, "reply_level": 28, "pos": 8, "token": 116, "top1_fhe": 21700, "top1_poly": 21700, "top1_agree": true, "logits_relErrRms": 0.0010940371038314547, "
+{"kind": "token", "mode": "decode", "seconds": 9.7286, "issue_s": 0.0417, "reply_level": 28, "pos": 9, "token": 21700, "top1_fhe": 271, "top1_poly": 271, "top1_agree": true, "logits_relErrRms": 0.0011710595831043499, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7427, "issue_s": 0.057, "reply_level": 28, "pos": 10, "token": 285, "top1_fhe": 51514, "top1_poly": 51514, "top1_agree": true, "logits_relErrRms": 0.0012554797110310603, "
+{"kind": "token", "mode": "decode", "seconds": 9.7472, "issue_s": 0.0547, "reply_level": 28, "pos": 11, "token": 51514, "top1_fhe": 30719, "top1_poly": 30719, "top1_agree": true, "logits_relErrRms": 0.00137708534881545, 
+{"kind": "token", "mode": "decode", "seconds": 9.7435, "issue_s": 0.0389, "reply_level": 28, "pos": 12, "token": 47, "top1_fhe": 20063, "top1_poly": 20063, "top1_agree": true, "logits_relErrRms": 0.0018553356313534422, "
+{"kind": "token", "mode": "decode", "seconds": 9.7442, "issue_s": 0.0399, "reply_level": 28, "pos": 13, "token": 20063, "top1_fhe": 31466, "top1_poly": 31466, "top1_agree": true, "logits_relErrRms": 0.0005415329976464421
+{"kind": "token", "mode": "decode", "seconds": 9.7477, "issue_s": 0.0411, "reply_level": 28, "pos": 14, "token": 31466, "top1_fhe": 32475, "top1_poly": 32475, "top1_agree": true, "logits_relErrRms": 0.0012722208890421848
+{"kind": "token", "mode": "decode", "seconds": 9.7555, "issue_s": 0.0499, "reply_level": 28, "pos": 15, "token": 4491, "top1_fhe": 32232, "top1_poly": 32232, "top1_agree": true, "logits_relErrRms": 0.001767384682050472, 
+{"kind": "token", "mode": "decode", "seconds": 9.7491, "issue_s": 0.038, "reply_level": 28, "pos": 16, "token": 3485, "top1_fhe": 46784, "top1_poly": 46784, "top1_agree": true, "logits_relErrRms": 0.002521743055101658, "
+{"kind": "token", "mode": "decode", "seconds": 9.7514, "issue_s": 0.04, "reply_level": 28, "pos": 17, "token": 46784, "top1_fhe": 116, "top1_poly": 116, "top1_agree": true, "logits_relErrRms": 0.0015001405561911707, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7541, "issue_s": 0.0429, "reply_level": 28, "pos": 18, "token": 116, "top1_fhe": 30510, "top1_poly": 30510, "top1_agree": true, "logits_relErrRms": 0.0014673157264354863, 
+{"kind": "token", "mode": "decode", "seconds": 9.7535, "issue_s": 0.0449, "reply_level": 28, "pos": 19, "token": 30510, "top1_fhe": 64, "top1_poly": 64, "top1_agree": true, "logits_relErrRms": 0.001956693027467614, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7532, "issue_s": 0.0419, "reply_level": 28, "pos": 20, "token": 64, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.00165887308369299, "hidden
+{"kind": "token", "mode": "decode", "seconds": 9.7594, "issue_s": 0.0455, "reply_level": 28, "pos": 21, "token": 43965, "top1_fhe": 4423, "top1_poly": 4423, "top1_agree": true, "logits_relErrRms": 0.002996269976041219, "
+{"kind": "token", "mode": "decode", "seconds": 9.7583, "issue_s": 0.0426, "reply_level": 28, "pos": 22, "token": 32487, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.004344482229881004, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7678, "issue_s": 0.0579, "reply_level": 28, "pos": 23, "token": 22590, "top1_fhe": 22532, "top1_poly": 22532, "top1_agree": true, "logits_relErrRms": 0.003344565452728304,
+{"kind": "token", "mode": "decode", "seconds": 9.7567, "issue_s": 0.0422, "reply_level": 28, "pos": 24, "token": 46685, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.002222834052319245, "
+{"kind": "token", "mode": "decode", "seconds": 9.7559, "issue_s": 0.0397, "reply_level": 28, "pos": 25, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.0018508648070800768, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7564, "issue_s": 0.0385, "reply_level": 28, "pos": 26, "token": 261, "top1_fhe": 5585, "top1_poly": 5585, "top1_agree": true, "logits_relErrRms": 0.0006344180482999705, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7617, "issue_s": 0.0435, "reply_level": 28, "pos": 27, "token": 5585, "top1_fhe": 41693, "top1_poly": 41693, "top1_agree": true, "logits_relErrRms": 0.0010293977264457473,
+{"kind": "token", "mode": "decode", "seconds": 9.7698, "issue_s": 0.0488, "reply_level": 28, "pos": 28, "token": 41693, "top1_fhe": 59, "top1_poly": 59, "top1_agree": true, "logits_relErrRms": 0.0010127938602961073, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.766, "issue_s": 0.0487, "reply_level": 28, "pos": 29, "token": 59, "top1_fhe": 20282, "top1_poly": 20282, "top1_agree": true, "logits_relErrRms": 0.0029743182156561827, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7627, "issue_s": 0.0456, "reply_level": 28, "pos": 30, "token": 20282, "top1_fhe": 460, "top1_poly": 460, "top1_agree": true, "logits_relErrRms": 0.0024543029322823713, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7593, "issue_s": 0.049, "reply_level": 28, "pos": 31, "token": 460, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0029157636072951053, "
+{"kind": "token", "mode": "decode", "seconds": 9.7662, "issue_s": 0.0496, "reply_level": 28, "pos": 32, "token": 38499, "top1_fhe": 59251, "top1_poly": 59251, "top1_agree": true, "logits_relErrRms": 0.0019296263500694095
+{"kind": "token", "mode": "decode", "seconds": 9.7732, "issue_s": 0.0554, "reply_level": 28, "pos": 33, "token": 59251, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.002716746196723473,
+{"kind": "token", "mode": "decode", "seconds": 9.7598, "issue_s": 0.0377, "reply_level": 28, "pos": 34, "token": 22590, "top1_fhe": 30510, "top1_poly": 30510, "top1_agree": true, "logits_relErrRms": 0.0029766719753391672
+{"kind": "token", "mode": "decode", "seconds": 9.7698, "issue_s": 0.0499, "reply_level": 28, "pos": 35, "token": 30510, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.0024461935859182906, 
+{"kind": "token", "mode": "decode", "seconds": 9.7596, "issue_s": 0.0403, "reply_level": 28, "pos": 36, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0038728598743232516,
+{"kind": "token", "mode": "decode", "seconds": 9.761, "issue_s": 0.0436, "reply_level": 28, "pos": 37, "token": 22590, "top1_fhe": 46784, "top1_poly": 46784, "top1_agree": true, "logits_relErrRms": 0.004028985077774426, 
+{"kind": "token", "mode": "decode", "seconds": 9.764, "issue_s": 0.0468, "reply_level": 28, "pos": 38, "token": 46784, "top1_fhe": 116, "top1_poly": 116, "top1_agree": true, "logits_relErrRms": 0.0036703737337368723, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7611, "issue_s": 0.0407, "reply_level": 28, "pos": 39, "token": 116, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.003891284603457819, "hidden
+{"kind": "token", "mode": "decode", "seconds": 9.7734, "issue_s": 0.0528, "reply_level": 28, "pos": 40, "token": 47, "top1_fhe": 11, "top1_poly": 11, "top1_agree": true, "logits_relErrRms": 0.0042588285171136315, "hidden
+{"kind": "token", "mode": "decode", "seconds": 9.7728, "issue_s": 0.0576, "reply_level": 28, "pos": 41, "token": 11, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.004773756527122565, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7569, "issue_s": 0.0419, "reply_level": 28, "pos": 42, "token": 6699, "top1_fhe": 30510, "top1_poly": 30510, "top1_agree": true, "logits_relErrRms": 0.003686177054161801, 
+{"kind": "token", "mode": "decode", "seconds": 9.766, "issue_s": 0.0514, "reply_level": 28, "pos": 43, "token": 30510, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.0023827576807126786, "
+{"kind": "token", "mode": "decode", "seconds": 9.7679, "issue_s": 0.0576, "reply_level": 28, "pos": 44, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.003758784123924151, 
+{"kind": "token", "mode": "decode", "seconds": 9.7714, "issue_s": 0.0535, "reply_level": 28, "pos": 45, "token": 22590, "top1_fhe": 46784, "top1_poly": 46784, "top1_agree": true, "logits_relErrRms": 0.0038734427690290496
+{"kind": "token", "mode": "decode", "seconds": 9.7744, "issue_s": 0.0547, "reply_level": 28, "pos": 46, "token": 46784, "top1_fhe": 116, "top1_poly": 116, "top1_agree": true, "logits_relErrRms": 0.0023057247879071712, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7663, "issue_s": 0.0415, "reply_level": 28, "pos": 47, "token": 116, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0031551810581582516, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7699, "issue_s": 0.0475, "reply_level": 28, "pos": 48, "token": 4600, "top1_fhe": 59, "top1_poly": 59, "top1_agree": true, "logits_relErrRms": 0.006111546919794645, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7739, "issue_s": 0.0562, "reply_level": 28, "pos": 49, "token": 59, "top1_fhe": 11, "top1_poly": 11, "top1_agree": true, "logits_relErrRms": 0.003659814751097451, "hidden_
+{"kind": "token", "mode": "decode", "seconds": 9.7728, "issue_s": 0.0604, "reply_level": 28, "pos": 50, "token": 11, "top1_fhe": 52, "top1_poly": 52, "top1_agree": true, "logits_relErrRms": 0.005196522293743726, "hidden_
+{"kind": "token", "mode": "decode", "seconds": 9.7619, "issue_s": 0.04, "reply_level": 28, "pos": 51, "token": 52, "top1_fhe": 46784, "top1_poly": 46784, "top1_agree": true, "logits_relErrRms": 0.005612912377722159, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7667, "issue_s": 0.0455, "reply_level": 28, "pos": 52, "token": 46784, "top1_fhe": 116, "top1_poly": 116, "top1_agree": true, "logits_relErrRms": 0.0017316851751201941, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7685, "issue_s": 0.0506, "reply_level": 28, "pos": 53, "token": 116, "top1_fhe": 277, "top1_poly": 277, "top1_agree": true, "logits_relErrRms": 0.001967411030269802, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7678, "issue_s": 0.0466, "reply_level": 28, "pos": 54, "token": 277, "top1_fhe": 271, "top1_poly": 271, "top1_agree": true, "logits_relErrRms": 0.005332559603577996, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7638, "issue_s": 0.0414, "reply_level": 28, "pos": 55, "token": 271, "top1_fhe": 51, "top1_poly": 51, "top1_agree": true, "logits_relErrRms": 0.005161305116002266, "hidden
+{"kind": "token", "mode": "decode", "seconds": 9.7611, "issue_s": 0.0426, "reply_level": 28, "pos": 56, "token": 51, "top1_fhe": 296, "top1_poly": 296, "top1_agree": true, "logits_relErrRms": 0.0017908292698574973, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7649, "issue_s": 0.0475, "reply_level": 28, "pos": 57, "token": 296, "top1_fhe": 271, "top1_poly": 271, "top1_agree": true, "logits_relErrRms": 0.005192149088571108, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7593, "issue_s": 0.0427, "reply_level": 28, "pos": 58, "token": 271, "top1_fhe": 55, "top1_poly": 55, "top1_agree": true, "logits_relErrRms": 0.0036276280508057935, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7599, "issue_s": 0.0419, "reply_level": 28, "pos": 59, "token": 55, "top1_fhe": 11, "top1_poly": 11, "top1_agree": true, "logits_relErrRms": 0.002180594264966391, "hidden_
+{"kind": "token", "mode": "decode", "seconds": 9.7783, "issue_s": 0.0574, "reply_level": 28, "pos": 60, "token": 11, "top1_fhe": 6340, "top1_poly": 6340, "top1_agree": true, "logits_relErrRms": 0.0036114816119546538, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7723, "issue_s": 0.0479, "reply_level": 28, "pos": 61, "token": 6340, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.002568928074163107, "hidde
+{"kind": "summary", "tokens": 61, "prompt_ids": [24281, 59, 300, 32004, 39623, 286, 46784, 116, 21700, 285, 51514, 47, 20063, 31466, 4491, 3485, 46784, 116, 30510, 64, 43965, 32487, 22590, 46685, 47, 261, 5585, 41693, 59], "generated_ids": [20282, 460, 38499, 59251, 22590, 30510, 4706, 22590, 46784, 116, 47, 11, 6699, 30510, 4706, 22590, 46784, 116, 4600, 59, 11, 52, 46784, 116, 277, 271, 51, 296, 271, 55, 11, 6340], "top1_agree": 61, "top1_agree_prefill": 0, "poly_sites_out_of_range_tokens": [], "prefilled_tokens": 0, "prefill_chunk": 0, "prefill_passes": 0, "prefill_seconds_per_token": null, "logits_relErrRms_max": 0.006111546919794645, "logits_relErrRms_median": 0.0023827576807126786, "hidden_relErrRms_vs_mirror_max": 0.03400617466797051, "seconds_per_token_median": 9.7599, "seconds_per_token_after_first": 9.754521666666667, "setup_s": 34.6, "wall_s": 812.4, "planned_stats": "{'runs': 806, 'host_us': 18795417.446999963, 'launch_us': 9662540.346999986, 'captures': 13, 'replays': 793, 'eager': 0, 'capture_ms': 1879.0707340000001, 'invalidations': 0, 'pairs': (22, 0), 'fused': 1344, 'stc_evictions': 0, 'stc_misses': 53, 'stc_slots': 160, 'stc_keys': [[0, 20, 53617498], [0, 20, 53486148], [0, 20, 53844006], [0, 6, 85486148], [0, 6, 82617498], [0, 6, 82486148], [0, 20, 53835172], [0, 20, 53951450], [0, 6, 85920488], [0, 20, 53920488], [0, 6, 78920488], [0, 20, 53647004], [0, 6, 81617498], [0, 6, 80617498], [0, 6, 80486148], [0, 6, 83617498], [0, 6, 83486148], [0, 6, 83920488], [0, 6, 84920488], [0, 20, 53608679], [0, 6, 80920488], [0, 6, 84835172], [0, 6, 80844006], [0, 6, 81835172], [0, 6, 83835172], [0, 6, 84617498], [0, 6, 82835172], [0, 6, 83647004], [0, 6, 79920488], [0, 6, 82647004], [0, 6, 81647004], [0, 6, 81920488], [0, 6, 81486148], [0, 6, 80647004], [0, 20, 53899043], [0, 6, 81899043], [0, 6, 82899043], [0, 6, 80899043], [0, 6, 83899043], [0, 6, 82920488], [0, 6, 80835172], [0, 6, 81951450], [0, 6, 79951450], [0, 6, 79486148], [0, 6, 78486148], [0, 6, 78617498], [0, 6, 78899043], [0, 6, 77617498], [0, 6, 77899043], [0, 6, 75617498], [0, 6, 75899043], [0, 6, 76617498], [0, 6, 76899043]], 'bound': 13, 'group_bytes': 1032192, 'slab': 95}"}
+[rwkv7 12:25:30] run: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields)
+[rwkv7 12:25:31] capture_pf T=32 -> /root/out_pod3/f2_01b/cap_rwkv7_pf32
+[capture] pass 0 out level 28 in 28.0 s
+[capture] pass 1 out level 28 in 118.2 s
+[capture] wrote /root/out_pod3/f2_01b/cap_rwkv7_pf32 (12 blocks + tail) in 147.4 s
+[rwkv7 12:27:59] capture_pf: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields)
+[rwkv7 12:27:59] plan /root/out_pod3/f2_01b/cap_rwkv7_pf32 -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_pf32_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 44 steps
+  planned in 1811 s: 13 stages, 1226 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:65@26 block_1:88@26 block_2:75@26 block_3:106@26 block_4:107@26 block_5:134@26 block_6:135@26 block_7:74@26 block_8:106@26 block_9:107@26 block_10:84@26 block_11:144@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_pf32_best
+[rwkv7 12:58:11] plan_pf: done
+decode kv regs [0, 1, 2, 3] prefill kv regs [0, 1, 2, 3] prefill out regs [6, 7] total 8 prefill inputs [('anon_2211', 26, 1), ('block_0.cache.xa-lvl=26', 26, 2), ('block_0.cache.s0-lvl=26', 26, 2), ('block_0.cache.s1-lvl=26', 26, 2), ('block_0.cache.xf-lvl=26', 26, 2)]
+1 passed, 7 deselected in 20.08s
+[rwkv7 12:58:32] pfcheck: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 12:58:32] keyspec pf -> /root/out_pod3/f2_01b/keys_pf32_best/keyspec.json
+[keyspec] /root/out_pod3/f2_01b/keys_pf32_best/keyspec.json: 43 rotation steps; session request present
+[rwkv7 13:00:19] keyspec: done
+[rwkv7 13:00:19] keygen pf (the client role) -> /root/out_pod3/f2_01b/keys_pf32_best/keys.pckb
+{"keygen": {"bytes": 8980880511.0, "ccmm_bytes": 0.0, "ccmm_s": 1.6e-07, "keys": 104.0, "ksk_bytes": 8933671440.0, "ksk_s": 8.435967828, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.226397931, "pk_s": 0.012186089, "spru_s": 1.2e-07, "total_s": 8.691656695, "wall_s": 8.7, "info": {"bytes": 8980880511, "entries": {"pcmm": 1, "public_key": 1, "ksk": 104}, "bytes_by_kind": {"pcmm":
+[rwkv7 13:00:28] keygen: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 13:00:29] run_pf: T=32, 122 prompt tokens after the prefix + 32 generated, ids 261,1589,31059,46418,21835,59600,52051,4596,47381,49310,4706,4419,30191,47,20996,46685,4706,52595,4596,22590,52331,4600,38848,4423,22590,45231,48,35442,111,46685,4706,22590,62293,51576,47,3918,4600,22590,46934,48,41072,46685,275,91,42,32227,61854,22590,46685,4706,59600,45,57271,56087,60572,21265,22590,57271,56395,4706,4419,51576,4596,39920,4706,21902,56855,21265,55732,62404,47,20023,39934,30259,21273,22752,4811,51695,22590,46685,4706,52595,4596,4419,30191,64,37208,2076,21265,52310,116,21286,30135,38848,4423,22590,39146,8371,47,1336,22590,37815,4706,45231,46685,21265,31382,46685,45,56089,21413,4435,61678,4423,31172,26495,45,21897,24842,21265,31172,26465,47
+{"kind": "warmup", "seconds": 10.747}
+{"kind": "warmup", "prefill_chunk": 32, "seconds": 29.085}
+{"kind": "prefill", "pass": 0, "T": 32, "seconds": 24.4072, "seconds_per_token": 0.7627, "reply_level": 28}
+{"kind": "prefill", "pass": 1, "T": 32, "seconds": 24.2292, "seconds_per_token": 0.7572, "reply_level": 28}
+{"kind": "prefill", "pass": 2, "T": 32, "seconds": 24.2002, "seconds_per_token": 0.7563, "reply_level": 28}
+{"kind": "summary", "tokens": 154, "prompt_ids": [1589, 31059, 46418, 21835, 59600, 52051, 4596, 47381, 49310, 4706, 4419, 30191, 47, 20996, 46685, 4706, 52595, 4596, 22590, 52331, 4600, 38848, 4423, 22590, 45231, 48, 35442, 111, 46685, 4706, 22590, 62293, 51576, 47, 3918, 4600, 22590, 46934, 48, 41072, 46685, 275, 91, 42, 32227, 61854, 22590, 46685, 4706, 59600, 45, 57271, 56087, 60572, 21265, 22590, 57271, 56395, 4706, 4419, 51576, 4596, 39920, 4706, 21902, 56855, 21265, 55732, 62404, 47, 20023, 39934, 30259, 21273, 22752, 4811, 51695, 22590, 46685, 4706, 52595, 4596, 4419, 30191, 64, 37208, 2076, 21265, 52310, 116, 21286, 30135, 38848, 4423, 22590, 39146, 8371, 47, 1336, 22590, 37815, 4706, 45231, 46685, 21265, 31382, 46685, 45, 56089, 21413, 4435, 61678, 4423, 31172, 26495, 45, 21897, 24842, 21265, 31172, 26465, 47], "generated_ids": [20996, 31172, 26495, 4706, 4419, 51576, 21286, 22
+[rwkv7 13:19:39] run_pf: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 13:19:40] run_pf: T=32, 128 prompt tokens after the prefix + 32 generated, ids 261,1130,22226,4600,52157,21700,21902,45098,61822,32230,4601,4600,4423,37837,3460,19825,7028,49789,293,50572,4706,56335,52693,56089,4596,47289,32343,47,54814,7874,293,300,51272,4715,59994,4596,40186,4858,21816,22590,51258,64254,4706,45874,21265,4217,45,59644,56089,4811,22681,47,50210,59,300,21096,25660,4600,38046,47,3918,61619,275,40454,45,1507,2155,45,28928,21643,580,21265,4601,460,59751,4715,55615,275,23935,38543,48,24831,45,32321,22001,48,33391,42,21286,51874,4596,47289,32343,45,37563,4600,19825,7028,49789,47,29631,34643,31581,59644,60350,4811,38046,340,47,102,47,20924,34368,45,37904,45,45506,45,63247,4811,22681,22590,50779,4715,36489,4600,54814,7874,47
+{"kind": "warmup", "seconds": 11.791}
+{"kind": "warmup", "prefill_chunk": 32, "seconds": 30.25}
+{"kind": "prefill", "pass": 0, "T": 32, "seconds": 24.5673, "seconds_per_token": 0.7677, "reply_level": 28}
+{"kind": "prefill", "pass": 1, "T": 32, "seconds": 24.2761, "seconds_per_token": 0.7586, "reply_level": 28}
+{"kind": "prefill", "pass": 2, "T": 32, "seconds": 24.238, "seconds_per_token": 0.7574, "reply_level": 28}
+{"kind": "prefill", "pass": 3, "T": 32, "seconds": 24.2355, "seconds_per_token": 0.7574, "reply_level": 28}
+{"kind": "summary", "tokens": 160, "prompt_ids": [1130, 22226, 4600, 52157, 21700, 21902, 45098, 61822, 32230, 4601, 4600, 4423, 37837, 3460, 19825, 7028, 49789, 293, 50572, 4706, 56335, 52693, 56089, 4596, 47289, 32343, 47, 54814, 7874, 293, 300, 51272, 4715, 59994, 4596, 40186, 4858, 21816, 22590, 51258, 64254, 4706, 45874, 21265, 4217, 45, 59644, 56089, 4811, 22681, 47, 50210, 59, 300, 21096, 25660, 4600, 38046, 47, 3918, 61619, 275, 40454, 45, 1507, 2155, 45, 28928, 21643, 580, 21265, 4601, 460, 59751, 4715, 55615, 275, 23935, 38543, 48, 24831, 45, 32321, 22001, 48, 33391, 42, 21286, 51874, 4596, 47289, 32343, 45, 37563, 4600, 19825, 7028, 49789, 47, 29631, 34643, 31581, 59644, 60350, 4811, 38046, 340, 47, 102, 47, 20924, 34368, 45, 37904, 45, 45506, 45, 63247, 4811, 22681, 22590, 50779, 4715, 36489, 4600, 54814, 7874, 47], "generated_ids": [11, 6699, 37599, 61822, 4600, 22187, 332, 
+[rwkv7 13:35:25] run_pf: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 13:35:25] run_pf: T=32, 116 prompt tokens after the prefix + 32 generated, ids 261,6699,20645,1841,102,31883,22748,38499,61885,4596,3493,629,4450,37765,26684,7761,2195,50171,55067,40085,56452,46249,30917,29446,28309,4218,34911,37372,59017,47,3918,22748,22590,53023,55778,4706,22226,4706,44828,28309,31456,116,308,7021,2220,116,32227,21994,62532,4811,31324,21700,22590,62367,59926,31883,47,308,7021,2220,116,21800,4419,21859,53064,32227,28309,40189,4712,22226,32011,21400,37850,4712,22590,39193,47,3918,28309,31296,4692,39193,31456,4596,22590,39737,47487,45,21265,62532,55616,4601,22748,51018,308,7021,2220,116,22748,52613,53140,30575,21400,47671,60136,45,332,47535,32227,62676,21994,32229,4811,20645,1841,102,47
+{"kind": "warmup", "seconds": 10.795}
+{"kind": "warmup", "prefill_chunk": 32, "seconds": 29.294}
+{"kind": "prefill", "pass": 0, "T": 32, "seconds": 24.5771, "seconds_per_token": 0.768, "reply_level": 28}
+{"kind": "prefill", "pass": 1, "T": 32, "seconds": 24.2762, "seconds_per_token": 0.7586, "reply_level": 28}
+{"kind": "prefill", "pass": 2, "T": 32, "seconds": 24.2295, "seconds_per_token": 0.7572, "reply_level": 28}
+{"kind": "summary", "tokens": 148, "prompt_ids": [6699, 20645, 1841, 102, 31883, 22748, 38499, 61885, 4596, 3493, 629, 4450, 37765, 26684, 7761, 2195, 50171, 55067, 40085, 56452, 46249, 30917, 29446, 28309, 4218, 34911, 37372, 59017, 47, 3918, 22748, 22590, 53023, 55778, 4706, 22226, 4706, 44828, 28309, 31456, 116, 308, 7021, 2220, 116, 32227, 21994, 62532, 4811, 31324, 21700, 22590, 62367, 59926, 31883, 47, 308, 7021, 2220, 116, 21800, 4419, 21859, 53064, 32227, 28309, 40189, 4712, 22226, 32011, 21400, 37850, 4712, 22590, 39193, 47, 3918, 28309, 31296, 4692, 39193, 31456, 4596, 22590, 39737, 47487, 45, 21265, 62532, 55616, 4601, 22748, 51018, 308, 7021, 2220, 116, 22748, 52613, 53140, 30575, 21400, 47671, 60136, 45, 332, 47535, 32227, 62676, 21994, 32229, 4811, 20645, 1841, 102, 47], "generated_ids": [11, 6699, 20645, 1841, 102, 31883, 4600, 332, 31883, 4706, 60136, 32227, 21286, 31351,
+[rwkv7 13:53:31] run_pf: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 13:53:31] run_pf: T=32, 123 prompt tokens after the prefix + 32 generated, ids 261,23670,25316,108,50171,116,275,24911,58831,43996,2243,61509,44005,45,334,47,55034,3491,638,22897,55034,3493,45,3491,715,42,22748,4419,49941,46,53414,47324,47037,1857,45,22232,8831,45,47818,21265,47398,8148,47,36250,56146,30917,52926,45,4569,45283,332,46413,4706,22590,59055,7919,56678,45,51822,31539,21700,21823,30583,26151,22232,8831,122,21265,21878,7912,2255,37716,8061,7503,53371,47,3878,39826,4423,332,46456,51336,46,49131,4811,39710,49214,9820,59165,32227,47302,21532,22187,31059,22590,64451,55686,4811,56292,4423,63627,54830,55748,47,29344,55199,7500,30135,38547,4601,31048,4811,51025,32227,32139,332,38629,22232,8831,21795,30259,332,39710,47
+{"kind": "warmup", "seconds": 10.784}
+{"kind": "warmup", "prefill_chunk": 32, "seconds": 29.291}
+{"kind": "prefill", "pass": 0, "T": 32, "seconds": 24.5677, "seconds_per_token": 0.7677, "reply_level": 28}
+{"kind": "prefill", "pass": 1, "T": 32, "seconds": 24.2662, "seconds_per_token": 0.7583, "reply_level": 28}
+{"kind": "prefill", "pass": 2, "T": 32, "seconds": 24.2093, "seconds_per_token": 0.7565, "reply_level": 28}
+{"kind": "summary", "tokens": 155, "prompt_ids": [23670, 25316, 108, 50171, 116, 275, 24911, 58831, 43996, 2243, 61509, 44005, 45, 334, 47, 55034, 3491, 638, 22897, 55034, 3493, 45, 3491, 715, 42, 22748, 4419, 49941, 46, 53414, 47324, 47037, 1857, 45, 22232, 8831, 45, 47818, 21265, 47398, 8148, 47, 36250, 56146, 30917, 52926, 45, 4569, 45283, 332, 46413, 4706, 22590, 59055, 7919, 56678, 45, 51822, 31539, 21700, 21823, 30583, 26151, 22232, 8831, 122, 21265, 21878, 7912, 2255, 37716, 8061, 7503, 53371, 47, 3878, 39826, 4423, 332, 46456, 51336, 46, 49131, 4811, 39710, 49214, 9820, 59165, 32227, 47302, 21532, 22187, 31059, 22590, 64451, 55686, 4811, 56292, 4423, 63627, 54830, 55748, 47, 29344, 55199, 7500, 30135, 38547, 4601, 31048, 4811, 51025, 32227, 32139, 332, 38629, 22232, 8831, 21795, 30259, 332, 39710, 47], "generated_ids": [261, 23670, 25316, 108, 50171, 116, 22748, 30320, 4596, 2051
+[rwkv7 14:13:06] run_pf: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields)
+[rwkv7 14:13:06] capture_b K=32 carry=lane -> /root/out_pod3/f2_01b/cap_rwkv7_k32
+[capture] token 0 out level 28 in 27.2 s
+[capture] token 1 out level 28 in 112.9 s
+[capture] wrote /root/out_pod3/f2_01b/cap_rwkv7_k32 (12 blocks + tail) in 141.2 s
+[rwkv7 14:15:28] capture_b: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields)
+[rwkv7 14:15:28] plan /root/out_pod3/f2_01b/cap_rwkv7_k32 -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k32_best_pob2 (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 43 steps
+  planned in 699 s: 13 stages, 1235 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:100@26 block_1:103@26 block_2:103@26 block_3:103@26 block_4:104@26 block_5:102@26 block_6:103@26 block_7:102@26 block_8:103@26 block_9:103@26 block_10:104@26 block_11:104@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k32_best_pob2
+[rwkv7 14:27:08] plan_b: done
+batched kv ['s0c0', 's0c1', 's0c2', 's0c3', 's1c0', 's1c1', 's1c2', 's1c3', 'xa', 'xf'] inputs [('anon_2207', 26, 1), ('block_0.cache.xa-lvl=26', 26, 2), ('block_0.cache.s0c0-lvl=26', 26, 2), ('block_0.cache.s1c0-lvl=26', 26, 2)]
+1 passed, 14 deselected in 16.58s
+[rwkv7 14:27:25] bcheck: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields + plan md5)
+[rwkv7 14:27:25] keyspec b -> /root/out_pod3/f2_01b/keys_b_k32_best_pob2/keyspec.json
+[keyspec] /root/out_pod3/f2_01b/keys_b_k32_best_pob2/keyspec.json: 43 rotation steps; session request present
+[rwkv7 14:28:52] keyspec: done
+[rwkv7 14:28:52] keygen b (the client role) -> /root/out_pod3/f2_01b/keys_b_k32_best_pob2/keys.pckb
+{"keygen": {"bytes": 8894170136.0, "ccmm_bytes": 0.0, "ccmm_s": 9e-08, "keys": 103.0, "ksk_bytes": 8846961264.0, "ksk_s": 8.217026369, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.226841848, "pk_s": 0.013411005, "spru_s": 1.2e-07, "total_s": 8.474427798, "wall_s": 8.5, "info": {"bytes": 8894170136, "entries": {"pcmm": 1, "public_key": 1, "ksk": 103}, "bytes_by_kind": {"pcmm": 1
+[rwkv7 14:29:01] keygen: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields + plan md5)
+[rwkv7 14:29:01] batch: K=32 carry=lane, prompts /root/perseus-rwkv7-final/tools/rwkv7/batch_prompts.txt, 32 generated each, pool 1024
+{"kind": "warmup", "seconds": 31.205}
+{"kind": "pass", "pass": 0, "seconds": 27.382, "issue_s": 26.2486, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 1, "seconds": 27.5604, "issue_s": 11.451, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 2, "seconds": 27.6976, "issue_s": 11.5122, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 3, "seconds": 27.7989, "issue_s": 11.5577, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 4, "seconds": 27.8373, "issue_s": 11.5741, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 5, "seconds": 27.8817, "issue_s": 11.593, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 6, "seconds": 27.9092, "issue_s": 11.6099, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 7, "seconds": 27.9192, "issue_s": 11.6114, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 8, "seconds": 27.9484, "issue_s": 11.6272, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 9, "seconds": 27.9532, "issue_s": 11.6281, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 10, "seconds": 27.9674, "issue_s": 11.6362, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 11, "seconds": 27.9649, "issue_s": 11.6362, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 12, "seconds": 27.9581, "issue_s": 11.628, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 13, "seconds": 27.9568, "issue_s": 11.627, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 14, "seconds": 27.9789, "issue_s": 11.6454, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 15, "seconds": 27.9752, "issue_s": 11.6441, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 16, "seconds": 27.9759, "issue_s": 11.6397, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 17, "seconds": 27.9772, "issue_s": 11.6392, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 18, "seconds": 27.9894, "issue_s": 11.6437, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 19, "seconds": 27.9787, "issue_s": 11.6383, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 20, "seconds": 27.9876, "issue_s": 11.6466, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 21, "seconds": 27.9803, "issue_s": 11.6365, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 22, "seconds": 27.9801, "issue_s": 11.6388, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 23, "seconds": 27.9737, "issue_s": 11.6295, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 24, "seconds": 27.9968, "issue_s": 11.6462, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 25, "seconds": 27.985, "issue_s": 11.6449, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 26, "seconds": 27.9883, "issue_s": 11.6457, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 27, "seconds": 27.983, "issue_s": 11.6424, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 28, "seconds": 27.9833, "issue_s": 11.6421, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 29, "seconds": 27.9919, "issue_s": 11.6457, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 30, "seconds": 27.9872, "issue_s": 11.6423, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 31, "seconds": 27.9869, "issue_s": 11.6438, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 32, "seconds": 27.9831, "issue_s": 11.6377, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 33, "seconds": 27.9877, "issue_s": 11.6373, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 34, "seconds": 27.977, "issue_s": 11.6362, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 35, "seconds": 27.9861, "issue_s": 11.6427, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 36, "seconds": 27.9868, "issue_s": 11.6428, "reply_level": 28, "active": 31}
+{"kind": "pass", "pass": 37, "seconds": 27.9903, "issue_s": 11.6492, "reply_level": 28, "active": 27}
+{"kind": "pass", "pass": 38, "seconds": 27.9799, "issue_s": 11.6403, "reply_level": 28, "active": 22}
+{"kind": "pass", "pass": 39, "seconds": 27.9991, "issue_s": 11.6441, "reply_level": 28, "active": 15}
+{"kind": "pass", "pass": 40, "seconds": 28.0076, "issue_s": 11.6487, "reply_level": 28, "active": 11}
+{"kind": "pass", "pass": 41, "seconds": 28.0109, "issue_s": 11.6514, "reply_level": 28, "active": 8}
+{"kind": "pass", "pass": 42, "seconds": 28.0206, "issue_s": 11.6605, "reply_level": 28, "active": 7}
+{"kind": "pass", "pass": 43, "seconds": 28.0281, "issue_s": 11.6585, "reply_level": 28, "active": 6}
+{"kind": "pass", "pass": 44, "seconds": 28.0437, "issue_s": 11.6666, "reply_level": 28, "active": 5}
+{"kind": "pass", "pass": 45, "seconds": 28.0527, "issue_s": 11.6723, "reply_level": 28, "active": 4}
+{"kind": "pass", "pass": 46, "seconds": 28.0716, "issue_s": 11.6834, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 47, "seconds": 28.0701, "issue_s": 11.6787, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 48, "seconds": 28.0668, "issue_s": 11.6816, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 49, "seconds": 28.0615, "issue_s": 11.6734, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 50, "seconds": 28.0623, "issue_s": 11.6716, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 51, "seconds": 28.0654, "issue_s": 11.675, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 52, "seconds": 28.0783, "issue_s": 11.6788, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 53, "seconds": 28.0768, "issue_s": 11.6837, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 54, "seconds": 28.0803, "issue_s": 11.6885, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 55, "seconds": 28.0729, "issue_s": 11.6809, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 56, "seconds": 28.0711, "issue_s": 11.6784, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 57, "seconds": 28.0587, "issue_s": 11.6724, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 58, "seconds": 28.0618, "issue_s": 11.6786, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 59, "seconds": 28.0593, "issue_s": 11.6752, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 60, "seconds": 28.0687, "issue_s": 11.681, "reply_level": 28, "active": 1}
+{"kind": "summary", "batch": 32, "passes": 61, "tokens": 1306, "top1_agree": 1303, "top1_agree_per_conv": [39, 40, 61, 49, 45, 42, 40, 37, 46, 40, 39, 37, 41, 39, 43, 41, 39, 46, 38, 37, 36, 38, 39, 39, 38, 44, 37, 36, 40, 38, 39, 40], "tokens_per_conv": [39, 41, 61, 49, 45, 42, 40, 37, 46, 40, 39, 37, 41, 39, 43, 41, 39, 46, 38, 37, 36, 38, 39, 39, 38, 44, 38, 37, 40, 38, 39, 40], "prompt_ids": [[6699, 62532, 61885, 332, 22168, 52965, 4706], [1136, 22590, 51310, 4706, 56529, 56537, 45, 54830, 64996], [24281, 59, 300, 32004, 39623, 286, 46784, 116, 21700, 285, 51514, 47, 20063, 31466, 4491, 3485, 46784, 116, 30510, 64, 43965, 32487, 22590, 46685, 47, 261, 5585, 41693, 59], [6699, 304, 25740, 109, 39990, 4600, 4596, 22590, 30449, 4706, 37138, 45, 40186, 4600, 22590, 51128, 4706], [23977, 32350, 332, 32251, 45, 4596, 332, 39720, 53287, 4450, 22590, 22446, 45], [6699, 31461, 59829, 39941, 4811, 57083, 32465, 51323, 31878, 4600], [40666, 54438, 4600, 22590, 52571, 4450, 40186, 46836], [6699, 51128, 4706, 36854, 4600], [24281, 59, 59028, 269, 25515, 52265, 35, 31162, 44317, 47, 261, 5585, 41693, 59], [6699, 51929, 4706, 22590, 37272, 44253, 45286, 32487], [33573, 30306, 116, 4424, 332, 
+[rwkv7 15:07:18] batch: done
+[rwkv7 15:07:18] capture -> /root/out_pod3/f2_01b/cap_rwkv7_filled (FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44)
+[capture] token 0 out level 28 in 10.4 s
+[capture] token 1 out level 28 in 19.3 s
+[capture] wrote /root/out_pod3/f2_01b/cap_rwkv7_filled (12 blocks + tail) in 53.1 s
+[rwkv7 15:08:12] capture: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 15:08:12] plan /root/out_pod3/f2_01b/cap_rwkv7_filled -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_filled_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 37 steps
+  planned in 35 s: 13 stages, 471 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:37@26 block_1:40@26 block_2:39@26 block_3:39@26 block_4:40@26 block_5:38@26 block_6:41@26 block_7:38@26 block_8:39@26 block_9:39@26 block_10:40@26 block_11:40@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_filled_best
+[rwkv7 15:08:47] plan: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 15:08:47] capture_b K=32 carry=lane -> /root/out_pod3/f2_01b/cap_rwkv7_k32_filled
+[capture] token 0 out level 28 in 19.4 s
+[capture] token 1 out level 28 in 71.1 s
+[capture] wrote /root/out_pod3/f2_01b/cap_rwkv7_k32_filled (12 blocks + tail) in 91.7 s
+[rwkv7 15:10:20] capture_b: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32_filled: consistent (10 fields)
+[rwkv7 15:10:20] plan /root/out_pod3/f2_01b/cap_rwkv7_k32_filled -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k32_filled_best_pob2 (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 37 steps
+  planned in 371 s: 13 stages, 851 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:68@26 block_1:71@26 block_2:71@26 block_3:71@26 block_4:72@26 block_5:70@26 block_6:71@26 block_7:70@26 block_8:71@26 block_9:71@26 block_10:72@26 block_11:72@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k32_filled_best_pob2
+[rwkv7 15:16:32] plan_b: done
+batched kv ['s0c0', 's0c1', 's0c2', 's0c3', 'xa', 'xf'] inputs [('anon_1899', 26, 1), ('block_0.cache.xa-lvl=26', 26, 2), ('block_0.cache.s0c0-lvl=26', 26, 2), ('block_0.cache.s0c1-lvl=26', 26, 2)]
+1 passed, 14 deselected in 13.78s
+[rwkv7 15:16:46] bcheck: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32_filled: consistent (10 fields + plan md5)
+[rwkv7 15:16:46] keyspec b -> /root/out_pod3/f2_01b/keys_b_k32_filled_best_pob2/keyspec.json
+[keyspec] /root/out_pod3/f2_01b/keys_b_k32_filled_best_pob2/keyspec.json: 37 rotation steps; session request present
+[rwkv7 15:17:43] keyspec: done
+[rwkv7 15:17:43] keygen b (the client role) -> /root/out_pod3/f2_01b/keys_b_k32_filled_best_pob2/keys.pckb
+{"keygen": {"bytes": 8634038900.0, "ccmm_bytes": 0.0, "ccmm_s": 8e-08, "keys": 100.0, "ksk_bytes": 8586830736.0, "ksk_s": 8.02389431, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.225717948, "pk_s": 0.012511657, "spru_s": 2.8e-07, "total_s": 8.278341133, "wall_s": 8.3, "info": {"bytes": 8634038900, "entries": {"pcmm": 1, "public_key": 1, "ksk": 100}, "bytes_by_kind": {"pcmm": 18
+[rwkv7 15:17:52] keygen: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32_filled: consistent (10 fields + plan md5)
+[rwkv7 15:17:52] batch: K=32 carry=lane, prompts /root/perseus-rwkv7-final/tools/rwkv7/batch_prompts.txt, 32 generated each, pool 1024
+{"kind": "warmup", "seconds": 21.624}
+{"kind": "pass", "pass": 0, "seconds": 18.8946, "issue_s": 18.2899, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 1, "seconds": 18.9975, "issue_s": 0.0391, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 2, "seconds": 19.0925, "issue_s": 0.0552, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 3, "seconds": 19.1477, "issue_s": 0.0446, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 4, "seconds": 19.2094, "issue_s": 0.0626, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 5, "seconds": 19.2374, "issue_s": 0.0515, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 6, "seconds": 19.2639, "issue_s": 0.0489, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 7, "seconds": 19.2748, "issue_s": 0.0452, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 8, "seconds": 19.2937, "issue_s": 0.0508, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 9, "seconds": 19.3048, "issue_s": 0.0463, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 10, "seconds": 19.3213, "issue_s": 0.0431, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 11, "seconds": 19.3303, "issue_s": 0.0429, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 12, "seconds": 19.3409, "issue_s": 0.0477, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 13, "seconds": 19.3518, "issue_s": 0.0487, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 14, "seconds": 19.3526, "issue_s": 0.0599, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 15, "seconds": 19.3548, "issue_s": 0.0517, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 16, "seconds": 19.3501, "issue_s": 0.046, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 17, "seconds": 19.3541, "issue_s": 0.0489, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 18, "seconds": 19.3557, "issue_s": 0.0447, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 19, "seconds": 19.3573, "issue_s": 0.0395, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 20, "seconds": 19.3678, "issue_s": 0.0617, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 21, "seconds": 19.3565, "issue_s": 0.0491, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 22, "seconds": 19.3512, "issue_s": 0.041, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 23, "seconds": 19.3719, "issue_s": 0.0529, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 24, "seconds": 19.3809, "issue_s": 0.0639, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 25, "seconds": 19.3596, "issue_s": 0.0462, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 26, "seconds": 19.3669, "issue_s": 0.0455, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 27, "seconds": 19.3658, "issue_s": 0.0485, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 28, "seconds": 19.3639, "issue_s": 0.0532, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 29, "seconds": 19.3576, "issue_s": 0.0492, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 30, "seconds": 19.352, "issue_s": 0.0497, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 31, "seconds": 19.362, "issue_s": 0.0505, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 32, "seconds": 19.3491, "issue_s": 0.0413, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 33, "seconds": 19.3579, "issue_s": 0.0446, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 34, "seconds": 19.3614, "issue_s": 0.0515, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 35, "seconds": 19.3665, "issue_s": 0.0492, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 36, "seconds": 19.3576, "issue_s": 0.0455, "reply_level": 28, "active": 31}
+{"kind": "pass", "pass": 37, "seconds": 19.3521, "issue_s": 0.0483, "reply_level": 28, "active": 27}
+{"kind": "pass", "pass": 38, "seconds": 19.3652, "issue_s": 0.05, "reply_level": 28, "active": 22}
+{"kind": "pass", "pass": 39, "seconds": 19.3694, "issue_s": 0.0442, "reply_level": 28, "active": 15}
+{"kind": "pass", "pass": 40, "seconds": 19.3768, "issue_s": 0.0427, "reply_level": 28, "active": 11}
+{"kind": "pass", "pass": 41, "seconds": 19.3873, "issue_s": 0.0471, "reply_level": 28, "active": 8}
+{"kind": "pass", "pass": 42, "seconds": 19.394, "issue_s": 0.0446, "reply_level": 28, "active": 7}
+{"kind": "pass", "pass": 43, "seconds": 19.4013, "issue_s": 0.0479, "reply_level": 28, "active": 6}
+{"kind": "pass", "pass": 44, "seconds": 19.4025, "issue_s": 0.0485, "reply_level": 28, "active": 5}
+{"kind": "pass", "pass": 45, "seconds": 19.4122, "issue_s": 0.0513, "reply_level": 28, "active": 4}
+{"kind": "pass", "pass": 46, "seconds": 19.4131, "issue_s": 0.0401, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 47, "seconds": 19.4484, "issue_s": 0.0642, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 48, "seconds": 19.424, "issue_s": 0.0457, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 49, "seconds": 19.4309, "issue_s": 0.0495, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 50, "seconds": 19.4203, "issue_s": 0.0422, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 51, "seconds": 19.4163, "issue_s": 0.0411, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 52, "seconds": 19.4254, "issue_s": 0.0451, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 53, "seconds": 19.4262, "issue_s": 0.0431, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 54, "seconds": 19.4302, "issue_s": 0.0537, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 55, "seconds": 19.4442, "issue_s": 0.0597, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 56, "seconds": 19.4357, "issue_s": 0.0485, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 57, "seconds": 19.444, "issue_s": 0.0536, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 58, "seconds": 19.4317, "issue_s": 0.0415, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 59, "seconds": 19.4456, "issue_s": 0.0589, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 60, "seconds": 19.4404, "issue_s": 0.0523, "reply_level": 28, "active": 1}
+{"kind": "summary", "batch": 32, "passes": 61, "tokens": 1306, "top1_agree": 1300, "top1_agree_per_conv": [39, 40, 61, 49, 45, 42, 40, 37, 46, 40, 38, 36, 41, 39, 43, 41, 39, 46, 38, 37, 36, 38, 39, 39, 38, 44, 37, 36, 40, 38, 39, 39], "tokens_per_conv": [39, 41, 61, 49, 45, 42, 40, 37, 46, 40, 39, 37, 41, 39, 43, 41, 39, 46, 38, 37, 36, 38, 39, 39, 38, 44, 38, 37, 40, 38, 39, 40], "prompt_ids": [[6699, 62532, 61885, 332, 22168, 52965, 4706], [1136, 22590, 51310, 4706, 56529, 56537, 45, 54830, 64996], [24281, 59, 300, 32004, 39623, 286, 46784, 116, 21700, 285, 51514, 47, 20063, 31466, 4491, 3485, 46784, 116, 30510, 64, 43965, 32487, 22590, 46685, 47, 261, 5585, 41693, 59], [6699, 304, 25740, 109, 39990, 4600, 4596, 22590, 30449, 4706, 37138, 45, 40186, 4600, 22590, 51128, 4706], [23977, 32350, 332, 32251, 45, 4596, 332, 39720, 53287, 4450, 22590, 22446, 45], [6699, 31461, 59829, 39941, 4811, 57083, 32465, 51323, 31878, 4600], [40666, 54438, 4600, 22590, 52571, 4450, 40186, 46836], [6699, 51128, 4706, 36854, 4600], [24281, 59, 59028, 269, 25515, 52265, 35, 31162, 44317, 47, 261, 5585, 41693, 59], [6699, 51929, 4706, 22590, 37272, 44253, 45286, 32487], [33573, 30306, 116, 4424, 332, 
+[rwkv7 15:45:34] batch: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+[rwkv7 15:45:34] keyspec decode -> /root/out_pod3/f2_01b/keys_decode_filled_best/keyspec.json
+[keyspec] /root/out_pod3/f2_01b/keys_decode_filled_best/keyspec.json: 37 rotation steps; session request present
+[rwkv7 15:45:56] keyspec: done
+[rwkv7 15:45:56] keygen decode (the client role) -> /root/out_pod3/f2_01b/keys_decode_filled_best/keys.pckb
+{"keygen": {"bytes": 8634038880.0, "ccmm_bytes": 0.0, "ccmm_s": 1.5e-07, "keys": 100.0, "ksk_bytes": 8586830736.0, "ksk_s": 8.127060657, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.226214718, "pk_s": 0.012726257, "spru_s": 1.2e-07, "total_s": 8.383123522, "wall_s": 8.4, "info": {"bytes": 8634038880, "entries": {"pcmm": 1, "public_key": 1, "ksk": 100}, "bytes_by_kind": {"pcmm":
+[rwkv7 15:46:04] keygen: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+[rwkv7 15:46:05] run: 64 tokens after the prefix, ids 261,6699,62532,61885,332,22168,52965,4706
+{"kind": "token", "mode": "decode", "seconds": 9.2378, "issue_s": 9.0696, "reply_level": 28, "pos": 1, "token": 6699, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0014128911339434252, 
+{"kind": "token", "mode": "decode", "seconds": 9.2839, "issue_s": 0.0438, "reply_level": 28, "pos": 2, "token": 62532, "top1_fhe": 21286, "top1_poly": 21286, "top1_agree": true, "logits_relErrRms": 0.000595875946952635, 
+{"kind": "token", "mode": "decode", "seconds": 9.3193, "issue_s": 0.0467, "reply_level": 28, "pos": 3, "token": 61885, "top1_fhe": 32227, "top1_poly": 32227, "top1_agree": true, "logits_relErrRms": 0.0019027741924893577,
+{"kind": "token", "mode": "decode", "seconds": 9.3306, "issue_s": 0.0379, "reply_level": 28, "pos": 4, "token": 332, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.0011870336952059049, "
+{"kind": "token", "mode": "decode", "seconds": 9.3594, "issue_s": 0.0432, "reply_level": 28, "pos": 5, "token": 22168, "top1_fhe": 32324, "top1_poly": 32324, "top1_agree": true, "logits_relErrRms": 0.0018512255164872512,
+{"kind": "token", "mode": "decode", "seconds": 9.3803, "issue_s": 0.0463, "reply_level": 28, "pos": 6, "token": 52965, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.0023102141018805453, "
+{"kind": "token", "mode": "decode", "seconds": 9.3863, "issue_s": 0.0389, "reply_level": 28, "pos": 7, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0020084988239719628, 
+{"kind": "token", "mode": "decode", "seconds": 9.3991, "issue_s": 0.045, "reply_level": 28, "pos": 8, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.002788022792747737, "
+{"kind": "token", "mode": "decode", "seconds": 9.4267, "issue_s": 0.0626, "reply_level": 28, "pos": 9, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.0031842015954485527, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.4157, "issue_s": 0.0425, "reply_level": 28, "pos": 10, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.005392922694618657, "h
+{"kind": "token", "mode": "decode", "seconds": 9.4281, "issue_s": 0.0484, "reply_level": 28, "pos": 11, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0015302011657919942, 
+{"kind": "token", "mode": "decode", "seconds": 9.4395, "issue_s": 0.0542, "reply_level": 28, "pos": 12, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.001537129726947812, 
+{"kind": "token", "mode": "decode", "seconds": 9.4312, "issue_s": 0.0396, "reply_level": 28, "pos": 13, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0028588287305593477
+{"kind": "token", "mode": "decode", "seconds": 9.4399, "issue_s": 0.0448, "reply_level": 28, "pos": 14, "token": 38499, "top1_fhe": 32251, "top1_poly": 4811, "top1_agree": false, "logits_relErrRms": 0.006431360792774225,
+{"kind": "token", "mode": "decode", "seconds": 9.4453, "issue_s": 0.0453, "reply_level": 28, "pos": 15, "token": 32251, "top1_fhe": 32227, "top1_poly": 32227, "top1_agree": true, "logits_relErrRms": 0.009587662505847026,
+{"kind": "token", "mode": "decode", "seconds": 9.4394, "issue_s": 0.0415, "reply_level": 28, "pos": 16, "token": 32227, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.01038403403177575, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.4503, "issue_s": 0.0477, "reply_level": 28, "pos": 17, "token": 332, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.009706449407646908, "
+{"kind": "token", "mode": "decode", "seconds": 9.4554, "issue_s": 0.0515, "reply_level": 28, "pos": 18, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.009707243455541362,
+{"kind": "token", "mode": "decode", "seconds": 9.4451, "issue_s": 0.0424, "reply_level": 28, "pos": 19, "token": 52965, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.011110199812600188, "
+{"kind": "token", "mode": "decode", "seconds": 9.4582, "issue_s": 0.0534, "reply_level": 28, "pos": 20, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.011135754022586613, 
+{"kind": "token", "mode": "decode", "seconds": 9.4496, "issue_s": 0.0406, "reply_level": 28, "pos": 21, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.013964023417539384,
+{"kind": "token", "mode": "decode", "seconds": 9.4563, "issue_s": 0.0463, "reply_level": 28, "pos": 22, "token": 38588, "top1_fhe": 21800, "top1_poly": 21800, "top1_agree": true, "logits_relErrRms": 0.016569777074379927,
+{"kind": "token", "mode": "decode", "seconds": 9.448, "issue_s": 0.0388, "reply_level": 28, "pos": 23, "token": 21800, "top1_fhe": 30259, "top1_poly": 30259, "top1_agree": true, "logits_relErrRms": 0.006950855072143676, 
+{"kind": "token", "mode": "decode", "seconds": 9.4521, "issue_s": 0.0427, "reply_level": 28, "pos": 24, "token": 30259, "top1_fhe": 61885, "top1_poly": 61885, "top1_agree": true, "logits_relErrRms": 0.004454832344502524,
+{"kind": "token", "mode": "decode", "seconds": 9.4675, "issue_s": 0.0525, "reply_level": 28, "pos": 25, "token": 61885, "top1_fhe": 4596, "top1_poly": 4596, "top1_agree": true, "logits_relErrRms": 0.008189623657582426, "
+{"kind": "token", "mode": "decode", "seconds": 9.4581, "issue_s": 0.0444, "reply_level": 28, "pos": 26, "token": 4596, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.013925832131039026, 
+{"kind": "token", "mode": "decode", "seconds": 9.4616, "issue_s": 0.046, "reply_level": 28, "pos": 27, "token": 22590, "top1_fhe": 40213, "top1_poly": 40213, "top1_agree": true, "logits_relErrRms": 0.012750380594701743, 
+{"kind": "token", "mode": "decode", "seconds": 9.4638, "issue_s": 0.0517, "reply_level": 28, "pos": 28, "token": 40213, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.009053564221109263, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.454, "issue_s": 0.0424, "reply_level": 28, "pos": 29, "token": 47, "top1_fhe": 20996, "top1_poly": 20996, "top1_agree": true, "logits_relErrRms": 0.020342686231348963, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.4562, "issue_s": 0.0382, "reply_level": 28, "pos": 30, "token": 20996, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.020171126025948286,
+{"kind": "token", "mode": "decode", "seconds": 9.4583, "issue_s": 0.0374, "reply_level": 28, "pos": 31, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.02014455731163376, 
+{"kind": "token", "mode": "decode", "seconds": 9.4633, "issue_s": 0.0424, "reply_level": 28, "pos": 32, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.008985937476481905, "
+{"kind": "token", "mode": "decode", "seconds": 9.466, "issue_s": 0.0412, "reply_level": 28, "pos": 33, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.008703952042064582, "
+{"kind": "token", "mode": "decode", "seconds": 9.4628, "issue_s": 0.0419, "reply_level": 28, "pos": 34, "token": 39095, "top1_fhe": 4423, "top1_poly": 4423, "top1_agree": true, "logits_relErrRms": 0.024586421558701027, "
+{"kind": "token", "mode": "decode", "seconds": 9.4615, "issue_s": 0.0412, "reply_level": 28, "pos": 35, "token": 4423, "top1_fhe": 269, "top1_poly": 269, "top1_agree": true, "logits_relErrRms": 0.030128018860649447, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.454, "issue_s": 0.0378, "reply_level": 28, "pos": 36, "token": 269, "top1_fhe": 91, "top1_poly": 839, "top1_agree": false, "logits_relErrRms": 0.042847546436344544, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.4556, "issue_s": 0.0424, "reply_level": 28, "pos": 37, "token": 91, "top1_fhe": 2328, "top1_poly": 2328, "top1_agree": true, "logits_relErrRms": 0.005840791893364035, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.4579, "issue_s": 0.0408, "reply_level": 28, "pos": 38, "token": 2328, "top1_fhe": 1737, "top1_poly": 1737, "top1_agree": true, "logits_relErrRms": 0.006281180830956302, "h
+{"kind": "token", "mode": "decode", "seconds": 9.4532, "issue_s": 0.0402, "reply_level": 28, "pos": 39, "token": 1737, "top1_fhe": 2059, "top1_poly": 2059, "top1_agree": true, "logits_relErrRms": 0.00444441345497518, "hi
+{"kind": "summary", "tokens": 39, "prompt_ids": [6699, 62532, 61885, 332, 22168, 52965, 4706], "generated_ids": [22590, 38588, 45, 40186, 4600, 22590, 38499, 32251, 32227, 332, 22168, 52965, 4706, 22590, 38588, 21800, 30259, 61885, 4596, 22590, 40213, 47, 20996, 22168, 52965, 4600, 39095, 4423, 269, 91, 2328, 1737], "top1_agree": 37, "top1_agree_prefill": 0, "poly_sites_out_of_range_tokens": [], "prefilled_tokens": 0, "prefill_chunk": 0, "prefill_passes": 0, "prefill_seconds_per_token": null, "logits_relErrRms_max": 0.042847546436344544, "logits_relErrRms_median": 0.008189623657582426, "hidden_relErrRms_vs_mirror_max": 0.08855959160831713, "seconds_per_token_median": 9.4503, "seconds_per_token_after_first": 9.43246052631579, "setup_s": 31.7, "wall_s": 502.1, "planned_stats": "{'runs': 520, 'host_us': 17971970.690999955, 'launch_us': 9173416.437000008, 'captures': 13, 'replays': 507, 'eager': 0, 'capture_ms': 1720.818824, 'invalidations': 0, 'pairs': (14, 0), 'fused': 672, 'stc_evictions': 0, 'stc_misses': 53, 'stc_slots': 160, 'stc_keys': [[0, 20, 53617498], [0, 20, 53486148], [0, 6, 85486148], [0, 6, 82617498], [0, 6, 82486148], [0, 20, 53835172], [0, 20, 53844006], [0, 20, 53951450], [0, 6, 85920488], [0, 20, 54081227], [0, 6, 78920488], [0, 20, 53647004], [0, 6, 81617498], [0, 6, 80617498], [0, 6, 80486148], [0, 6, 83617498], [0, 6, 83486148], [0, 6, 83920488], [0, 6, 84920488], [0, 6, 80920488], [0, 6, 84835172], [0, 6, 80844006], [0, 6, 81835172], [0, 6, 83835172], [0, 6, 84617498], [0, 6, 82835172], [0, 6, 83647004], [0, 6, 79920488], [0, 6, 82647004], [0, 6, 81647004], [0, 6, 81920488], [0, 6, 81486148], [0, 6, 80647004], [0, 20, 53899043], [0, 6, 81899043], [0, 6, 82899043], [0, 6, 80899043], [0, 6, 83899043], [0, 6, 82920488], [0, 6, 80835172], [0, 6, 81951450], [0, 6, 79951450], [0, 6, 79486148], [0, 6, 78486148], [0, 6, 78617498], [0, 6, 78899043], [0, 6, 77617498], [0, 6, 77899043], [0, 6, 75617498], [0, 6, 75899043], [0, 6, 76617498], [0, 6, 76899043], [0, 20, 53608679]], 'bound': 13, 'group_bytes': 881664, 'slab': 91}"}
+[rwkv7 15:54:28] run: done
+serve registers 18 programs 7 join ins ['b0nxa', 'b0nxf', 'b0xa', 'b0xf'] mask slots [('join/keep', 28), ('join/m', 28)]
+1 passed, 10 deselected in 36.72s
+[rwkv7 15:55:05] scheck: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields)
+[rwkv7 15:55:05] capture: reusing /root/out_pod3/f2_01b/cap_rwkv7
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 15:55:06] plan: reusing /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_best
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields)
+[rwkv7 15:55:06] capture_pf: reusing /root/out_pod3/f2_01b/cap_rwkv7_pf32
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 15:55:06] plan: reusing /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_pf32_best
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields)
+[rwkv7 15:55:06] capture_b K=4 carry=lane -> /root/out_pod3/f2_01b/cap_rwkv7_k4
+[capture] token 0 out level 28 in 12.6 s
+[capture] token 1 out level 28 in 29.9 s
+[capture] wrote /root/out_pod3/f2_01b/cap_rwkv7_k4 (12 blocks + tail) in 43.6 s
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k4: consistent (10 fields)
+[rwkv7 15:55:50] plan /root/out_pod3/f2_01b/cap_rwkv7_k4 -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k4_best_pob2 (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 44 steps
+  planned in 92 s: 13 stages, 572 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:44@26 block_1:48@26 block_2:47@26 block_3:48@26 block_4:48@26 block_5:47@26 block_6:48@26 block_7:47@26 block_8:48@26 block_9:48@26 block_10:49@26 block_11:49@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k4_best_pob2
+[rwkv7 15:57:22] capture_j K=4 -> /root/out_pod3/f2_01b/cap_rwkv7_join_k4
+[capture] join tick 1: 24 carries out at level 26
+[capture] wrote the join capture /root/out_pod3/f2_01b/cap_rwkv7_join_k4 (12 blocks, K = 4) in 2.0 s
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: consistent (5 fields)
+[rwkv7 15:57:25] plan /root/out_pod3/f2_01b/cap_rwkv7_join_k4 -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_join_k4_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 1 block plans with the capture's Config; plan_rot_steps.json: 0 steps
+  planned in 0 s: 1 stages, 24 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:24@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_join_k4_best
+[rwkv7 15:57:26] keys: inproc (INSECURE: the session holds the secret; recorded insecure-inproc)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k4: consistent (10 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: consistent (5 fields + plan md5)
+[rwkv7 15:57:26] serve: K=4 T=32, arrivals /root/perseus-rwkv7-final/tools/rwkv7/serve_arrivals.txt, 8 generated each, pool 256
+[rwkv7 15:59:42] the run died of SIGKILL (rc 137): host out-of-memory at setup? (/root/out_pod3/f2_01b/serve_k4_pf32_best_pob2.log)
+[rwkv7 15:59:42] STOP: serve failed (/root/out_pod3/f2_01b/serve_k4_pf32_best_pob2.log)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 15:59:43] run: 64 tokens after the prefix, ids 261,6699,62532,61885,332,22168,52965,4706
+{"kind": "token", "mode": "decode", "seconds": 9.4331, "issue_s": 9.2526, "reply_level": 28, "pos": 1, "token": 6699, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0015241637232120014, 
+{"kind": "token", "mode": "decode", "seconds": 9.4833, "issue_s": 0.0439, "reply_level": 28, "pos": 2, "token": 62532, "top1_fhe": 21286, "top1_poly": 21286, "top1_agree": true, "logits_relErrRms": 0.0007719832621079222,
+{"kind": "token", "mode": "decode", "seconds": 9.5128, "issue_s": 0.0347, "reply_level": 28, "pos": 3, "token": 61885, "top1_fhe": 32227, "top1_poly": 32227, "top1_agree": true, "logits_relErrRms": 0.0011613928494491942,
+{"kind": "token", "mode": "decode", "seconds": 9.5608, "issue_s": 0.0503, "reply_level": 28, "pos": 4, "token": 332, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.00085619531259661, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.578, "issue_s": 0.0413, "reply_level": 28, "pos": 5, "token": 22168, "top1_fhe": 32324, "top1_poly": 32324, "top1_agree": true, "logits_relErrRms": 0.0009638453189021314, 
+{"kind": "token", "mode": "decode", "seconds": 9.6045, "issue_s": 0.0447, "reply_level": 28, "pos": 6, "token": 52965, "top1_fhe": 4706, "top1_poly": 4706, "top1_agree": true, "logits_relErrRms": 0.0014612764146131126, "
+{"kind": "token", "mode": "decode", "seconds": 9.6231, "issue_s": 0.0415, "reply_level": 28, "pos": 7, "token": 4706, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0013126669309432564, 
+{"kind": "token", "mode": "decode", "seconds": 9.6447, "issue_s": 0.0426, "reply_level": 28, "pos": 8, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0015100231736771882,
+{"kind": "token", "mode": "decode", "seconds": 9.6658, "issue_s": 0.0476, "reply_level": 28, "pos": 9, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.0012953110975389248, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.6733, "issue_s": 0.0416, "reply_level": 28, "pos": 10, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.0019658643276159564, "
+{"kind": "token", "mode": "decode", "seconds": 9.6866, "issue_s": 0.0424, "reply_level": 28, "pos": 11, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0009395175605387423, 
+{"kind": "token", "mode": "decode", "seconds": 9.6944, "issue_s": 0.0393, "reply_level": 28, "pos": 12, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0013086550346490227,
+{"kind": "token", "mode": "decode", "seconds": 9.7044, "issue_s": 0.039, "reply_level": 28, "pos": 13, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0008674824707863181,
+{"kind": "token", "mode": "decode", "seconds": 9.7109, "issue_s": 0.0386, "reply_level": 28, "pos": 14, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.0011733357895393638, 
+{"kind": "token", "mode": "decode", "seconds": 9.7257, "issue_s": 0.0475, "reply_level": 28, "pos": 15, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.0009250811380288125, "
+{"kind": "token", "mode": "decode", "seconds": 9.7311, "issue_s": 0.0443, "reply_level": 28, "pos": 16, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0016169886684318708,
+{"kind": "token", "mode": "decode", "seconds": 9.7334, "issue_s": 0.0424, "reply_level": 28, "pos": 17, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.002272180438924939,
+{"kind": "token", "mode": "decode", "seconds": 9.7386, "issue_s": 0.0463, "reply_level": 28, "pos": 18, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0017748182783289927, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7417, "issue_s": 0.0484, "reply_level": 28, "pos": 19, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0010980385332981168, 
+{"kind": "token", "mode": "decode", "seconds": 9.7525, "issue_s": 0.0554, "reply_level": 28, "pos": 20, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.0017475647272027015, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7522, "issue_s": 0.044, "reply_level": 28, "pos": 21, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.0015298326683217739, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7536, "issue_s": 0.0444, "reply_level": 28, "pos": 22, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.001289230279264077, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7593, "issue_s": 0.048, "reply_level": 28, "pos": 23, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.0017016048655623772, 
+{"kind": "token", "mode": "decode", "seconds": 9.7652, "issue_s": 0.0513, "reply_level": 28, "pos": 24, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.0018285801707539847
+{"kind": "token", "mode": "decode", "seconds": 9.7652, "issue_s": 0.0503, "reply_level": 28, "pos": 25, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.002301076419246496, "
+{"kind": "token", "mode": "decode", "seconds": 9.7605, "issue_s": 0.0466, "reply_level": 28, "pos": 26, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.001704522685634594, 
+{"kind": "token", "mode": "decode", "seconds": 9.7695, "issue_s": 0.049, "reply_level": 28, "pos": 27, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.002265068378221515, 
+{"kind": "token", "mode": "decode", "seconds": 9.7707, "issue_s": 0.0501, "reply_level": 28, "pos": 28, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0021451539991955647
+{"kind": "token", "mode": "decode", "seconds": 9.7612, "issue_s": 0.049, "reply_level": 28, "pos": 29, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0016506939406397076,
+{"kind": "token", "mode": "decode", "seconds": 9.759, "issue_s": 0.044, "reply_level": 28, "pos": 30, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.002398366398412568, "hidden
+{"kind": "token", "mode": "decode", "seconds": 9.7574, "issue_s": 0.0423, "reply_level": 28, "pos": 31, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.0029829747546400503, "
+{"kind": "token", "mode": "decode", "seconds": 9.7664, "issue_s": 0.0485, "reply_level": 28, "pos": 32, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.002967170459144549, "
+{"kind": "token", "mode": "decode", "seconds": 9.77, "issue_s": 0.0505, "reply_level": 28, "pos": 33, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0031986406548724844, "
+{"kind": "token", "mode": "decode", "seconds": 9.7617, "issue_s": 0.0421, "reply_level": 28, "pos": 34, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.002023721902687193,
+{"kind": "token", "mode": "decode", "seconds": 9.7675, "issue_s": 0.0506, "reply_level": 28, "pos": 35, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.003149459037645707, "
+{"kind": "token", "mode": "decode", "seconds": 9.7589, "issue_s": 0.0384, "reply_level": 28, "pos": 36, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.002493948291492368, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7639, "issue_s": 0.0426, "reply_level": 28, "pos": 37, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0020714682594478884,
+{"kind": "token", "mode": "decode", "seconds": 9.7702, "issue_s": 0.0551, "reply_level": 28, "pos": 38, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.0018719184067858211
+{"kind": "token", "mode": "decode", "seconds": 9.7763, "issue_s": 0.0595, "reply_level": 28, "pos": 39, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0025455957652479127, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7675, "issue_s": 0.0487, "reply_level": 28, "pos": 40, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0014826624659997902, 
+{"kind": "token", "mode": "decode", "seconds": 9.7703, "issue_s": 0.048, "reply_level": 28, "pos": 41, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.0028766376958410606, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7622, "issue_s": 0.0395, "reply_level": 28, "pos": 42, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.00309923441668197, "hidden
+{"kind": "token", "mode": "decode", "seconds": 9.7651, "issue_s": 0.0409, "reply_level": 28, "pos": 43, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.0018683857045272655, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7792, "issue_s": 0.0565, "reply_level": 28, "pos": 44, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.002434889264046103, 
+{"kind": "token", "mode": "decode", "seconds": 9.7743, "issue_s": 0.0492, "reply_level": 28, "pos": 45, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.0020904950732288682
+{"kind": "token", "mode": "decode", "seconds": 9.7697, "issue_s": 0.0439, "reply_level": 28, "pos": 46, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0028503226050118056, 
+{"kind": "token", "mode": "decode", "seconds": 9.7679, "issue_s": 0.0412, "reply_level": 28, "pos": 47, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0027746439206956888,
+{"kind": "token", "mode": "decode", "seconds": 9.7751, "issue_s": 0.0463, "reply_level": 28, "pos": 48, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.004454774307714878,
+{"kind": "token", "mode": "decode", "seconds": 9.7692, "issue_s": 0.0423, "reply_level": 28, "pos": 49, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.006040442225847479,
+{"kind": "token", "mode": "decode", "seconds": 9.7715, "issue_s": 0.0453, "reply_level": 28, "pos": 50, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.003128896520387702,
+{"kind": "token", "mode": "decode", "seconds": 9.7693, "issue_s": 0.0424, "reply_level": 28, "pos": 51, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.004416320241850519, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7686, "issue_s": 0.043, "reply_level": 28, "pos": 52, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.003388434314097029, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7678, "issue_s": 0.0437, "reply_level": 28, "pos": 53, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.001995508550060655, "
+{"kind": "token", "mode": "decode", "seconds": 9.7588, "issue_s": 0.035, "reply_level": 28, "pos": 54, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0035482376025097345, 
+{"kind": "token", "mode": "decode", "seconds": 9.7669, "issue_s": 0.0449, "reply_level": 28, "pos": 55, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.0013638982373086474
+{"kind": "token", "mode": "decode", "seconds": 9.7674, "issue_s": 0.0483, "reply_level": 28, "pos": 56, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.0022124840497488086, 
+{"kind": "token", "mode": "decode", "seconds": 9.766, "issue_s": 0.0418, "reply_level": 28, "pos": 57, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.002579186815188796, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7677, "issue_s": 0.0465, "reply_level": 28, "pos": 58, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.001256503632637861, 
+{"kind": "token", "mode": "decode", "seconds": 9.7715, "issue_s": 0.0422, "reply_level": 28, "pos": 59, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.0010139245816516032
+{"kind": "token", "mode": "decode", "seconds": 9.7797, "issue_s": 0.0507, "reply_level": 28, "pos": 60, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0014355046757733173, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7727, "issue_s": 0.0434, "reply_level": 28, "pos": 61, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0013820808103214613, 
+{"kind": "token", "mode": "decode", "seconds": 9.7635, "issue_s": 0.0358, "reply_level": 28, "pos": 62, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.0023831813609603942, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7688, "issue_s": 0.0413, "reply_level": 28, "pos": 63, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.003968074411956964, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7739, "issue_s": 0.0475, "reply_level": 28, "pos": 64, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.0021394788547194855, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7706, "issue_s": 0.0445, "reply_level": 28, "pos": 65, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.0032599622531928464,
+{"kind": "token", "mode": "decode", "seconds": 9.7704, "issue_s": 0.0391, "reply_level": 28, "pos": 66, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.0046500596501534005
+{"kind": "token", "mode": "decode", "seconds": 9.7746, "issue_s": 0.0457, "reply_level": 28, "pos": 67, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.005041383994744988, "
+{"kind": "token", "mode": "decode", "seconds": 9.7657, "issue_s": 0.0399, "reply_level": 28, "pos": 68, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.008526736986252564, 
+{"kind": "token", "mode": "decode", "seconds": 9.7699, "issue_s": 0.0414, "reply_level": 28, "pos": 69, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.01568309678821263, 
+{"kind": "token", "mode": "decode", "seconds": 9.7749, "issue_s": 0.044, "reply_level": 28, "pos": 70, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.012602712043216746, 
+{"kind": "token", "mode": "decode", "seconds": 9.7824, "issue_s": 0.055, "reply_level": 28, "pos": 71, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.015487752358235346, 
+{"kind": "token", "mode": "decode", "seconds": 9.7766, "issue_s": 0.049, "reply_level": 28, "pos": 72, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.016704685270352255, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7717, "issue_s": 0.0442, "reply_level": 28, "pos": 73, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.010230120971918694, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7769, "issue_s": 0.0505, "reply_level": 28, "pos": 74, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0032076467445151377, 
+{"kind": "token", "mode": "decode", "seconds": 9.7649, "issue_s": 0.039, "reply_level": 28, "pos": 75, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0061700823842864745, 
+{"kind": "token", "mode": "decode", "seconds": 9.7819, "issue_s": 0.0576, "reply_level": 28, "pos": 76, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.004878658141067596,
+{"kind": "token", "mode": "decode", "seconds": 9.7832, "issue_s": 0.0523, "reply_level": 28, "pos": 77, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.0030590212153394788, 
+{"kind": "token", "mode": "decode", "seconds": 9.774, "issue_s": 0.0458, "reply_level": 28, "pos": 78, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.0043933523172294845, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7684, "issue_s": 0.0403, "reply_level": 28, "pos": 79, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0013838433315281919,
+{"kind": "token", "mode": "decode", "seconds": 9.7726, "issue_s": 0.0483, "reply_level": 28, "pos": 80, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.0012575413182964862
+{"kind": "token", "mode": "decode", "seconds": 9.7722, "issue_s": 0.0469, "reply_level": 28, "pos": 81, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0020761187530950057, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7638, "issue_s": 0.0429, "reply_level": 28, "pos": 82, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0017355284129066868, 
+{"kind": "token", "mode": "decode", "seconds": 9.7649, "issue_s": 0.0421, "reply_level": 28, "pos": 83, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.001776741457514128, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7583, "issue_s": 0.0373, "reply_level": 28, "pos": 84, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.004299286477982428, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.76, "issue_s": 0.0421, "reply_level": 28, "pos": 85, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.002432501952493212, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7616, "issue_s": 0.0417, "reply_level": 28, "pos": 86, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.003352927444207399, 
+{"kind": "token", "mode": "decode", "seconds": 9.7565, "issue_s": 0.0382, "reply_level": 28, "pos": 87, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.011337843453878798,
+{"kind": "token", "mode": "decode", "seconds": 9.7662, "issue_s": 0.046, "reply_level": 28, "pos": 88, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.017224313790424543, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7669, "issue_s": 0.0432, "reply_level": 28, "pos": 89, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.013566038601030705, 
+{"kind": "token", "mode": "decode", "seconds": 9.7798, "issue_s": 0.0572, "reply_level": 28, "pos": 90, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.010456070315082807,
+{"kind": "token", "mode": "decode", "seconds": 9.7712, "issue_s": 0.0438, "reply_level": 28, "pos": 91, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.005204435073970229,
+{"kind": "token", "mode": "decode", "seconds": 9.7674, "issue_s": 0.0425, "reply_level": 28, "pos": 92, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.006931124203468125,
+{"kind": "token", "mode": "decode", "seconds": 9.7618, "issue_s": 0.0399, "reply_level": 28, "pos": 93, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.005337623433044278, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7704, "issue_s": 0.044, "reply_level": 28, "pos": 94, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.005128159107393065, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7722, "issue_s": 0.045, "reply_level": 28, "pos": 95, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0015829626384115223, "
+{"kind": "token", "mode": "decode", "seconds": 9.7683, "issue_s": 0.0432, "reply_level": 28, "pos": 96, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0020754844320311433,
+{"kind": "token", "mode": "decode", "seconds": 9.7703, "issue_s": 0.0446, "reply_level": 28, "pos": 97, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.002918565254473174,
+{"kind": "token", "mode": "decode", "seconds": 9.7687, "issue_s": 0.0428, "reply_level": 28, "pos": 98, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.0040393295679874396, 
+{"kind": "token", "mode": "decode", "seconds": 9.7822, "issue_s": 0.057, "reply_level": 28, "pos": 99, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.0021573860111681917, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7685, "issue_s": 0.0435, "reply_level": 28, "pos": 100, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.000986518969475258,
+{"kind": "token", "mode": "decode", "seconds": 9.7672, "issue_s": 0.0409, "reply_level": 28, "pos": 101, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.001547028937229529
+{"kind": "token", "mode": "decode", "seconds": 9.7708, "issue_s": 0.0414, "reply_level": 28, "pos": 102, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0024685342124669656, "
+{"kind": "token", "mode": "decode", "seconds": 9.7862, "issue_s": 0.0609, "reply_level": 28, "pos": 103, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0018963658671351884,
+{"kind": "token", "mode": "decode", "seconds": 9.7734, "issue_s": 0.0483, "reply_level": 28, "pos": 104, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.0020209887134543295, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7711, "issue_s": 0.0441, "reply_level": 28, "pos": 105, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.00589713792740593, "hidde
+{"kind": "token", "mode": "decode", "seconds": 9.7807, "issue_s": 0.0518, "reply_level": 28, "pos": 106, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.002964564405485417, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7831, "issue_s": 0.0561, "reply_level": 28, "pos": 107, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.006131942027096337,
+{"kind": "token", "mode": "decode", "seconds": 9.7704, "issue_s": 0.0408, "reply_level": 28, "pos": 108, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.010085557082050146
+{"kind": "token", "mode": "decode", "seconds": 9.7662, "issue_s": 0.0362, "reply_level": 28, "pos": 109, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.007196867223033495, 
+{"kind": "token", "mode": "decode", "seconds": 9.7773, "issue_s": 0.0448, "reply_level": 28, "pos": 110, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.004173311008709115,
+{"kind": "token", "mode": "decode", "seconds": 9.7679, "issue_s": 0.0381, "reply_level": 28, "pos": 111, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.003310466139364644
+{"kind": "token", "mode": "decode", "seconds": 9.7685, "issue_s": 0.04, "reply_level": 28, "pos": 112, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0028275124230085413,
+{"kind": "token", "mode": "decode", "seconds": 9.7698, "issue_s": 0.0417, "reply_level": 28, "pos": 113, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.003078448226873929
+{"kind": "token", "mode": "decode", "seconds": 9.7721, "issue_s": 0.0389, "reply_level": 28, "pos": 114, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.00267479027502315, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.782, "issue_s": 0.0463, "reply_level": 28, "pos": 115, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.0020735097022625184, "
+{"kind": "token", "mode": "decode", "seconds": 9.7758, "issue_s": 0.0419, "reply_level": 28, "pos": 116, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0019419678066986523,
+{"kind": "token", "mode": "decode", "seconds": 9.7679, "issue_s": 0.0352, "reply_level": 28, "pos": 117, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0018133562219741334
+{"kind": "token", "mode": "decode", "seconds": 9.7768, "issue_s": 0.0428, "reply_level": 28, "pos": 118, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.001739664340895168
+{"kind": "token", "mode": "decode", "seconds": 9.7731, "issue_s": 0.0446, "reply_level": 28, "pos": 119, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.0035585477662749042,
+{"kind": "token", "mode": "decode", "seconds": 9.7714, "issue_s": 0.0417, "reply_level": 28, "pos": 120, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.0018628216039855705, 
+{"kind": "token", "mode": "decode", "seconds": 9.7898, "issue_s": 0.0623, "reply_level": 28, "pos": 121, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0013334510840474088
+{"kind": "token", "mode": "decode", "seconds": 9.7744, "issue_s": 0.0439, "reply_level": 28, "pos": 122, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.002187753756964247
+{"kind": "token", "mode": "decode", "seconds": 9.7709, "issue_s": 0.0417, "reply_level": 28, "pos": 123, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.0026443485976704907, "
+{"kind": "token", "mode": "decode", "seconds": 9.7746, "issue_s": 0.042, "reply_level": 28, "pos": 124, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0020144129144371607, 
+{"kind": "token", "mode": "decode", "seconds": 9.7686, "issue_s": 0.0377, "reply_level": 28, "pos": 125, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.002555574366241872, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7706, "issue_s": 0.0397, "reply_level": 28, "pos": 126, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.006887391380677613, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7795, "issue_s": 0.0511, "reply_level": 28, "pos": 127, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.0032027080821308736, "
+{"kind": "token", "mode": "decode", "seconds": 9.7691, "issue_s": 0.0393, "reply_level": 28, "pos": 128, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.00895227739257905, 
+{"kind": "token", "mode": "decode", "seconds": 9.7802, "issue_s": 0.0472, "reply_level": 28, "pos": 129, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.006265740184727224
+{"kind": "token", "mode": "decode", "seconds": 9.7736, "issue_s": 0.042, "reply_level": 28, "pos": 130, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0025344037533484563, 
+{"kind": "token", "mode": "decode", "seconds": 9.7691, "issue_s": 0.038, "reply_level": 28, "pos": 131, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0016138311591503023,
+{"kind": "token", "mode": "decode", "seconds": 9.7656, "issue_s": 0.0341, "reply_level": 28, "pos": 132, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.001997847678522344
+{"kind": "token", "mode": "decode", "seconds": 9.7689, "issue_s": 0.0407, "reply_level": 28, "pos": 133, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.001512431405350175
+{"kind": "token", "mode": "decode", "seconds": 9.7661, "issue_s": 0.0434, "reply_level": 28, "pos": 134, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.002093766588021772
+{"kind": "token", "mode": "decode", "seconds": 9.7684, "issue_s": 0.0421, "reply_level": 28, "pos": 135, "token": 38588, "top1_fhe": 45, "top1_poly": 45, "top1_agree": true, "logits_relErrRms": 0.0030294826481154715, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.767, "issue_s": 0.0422, "reply_level": 28, "pos": 136, "token": 45, "top1_fhe": 40186, "top1_poly": 40186, "top1_agree": true, "logits_relErrRms": 0.002168830565703675, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7679, "issue_s": 0.0423, "reply_level": 28, "pos": 137, "token": 40186, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0028323923037725366,
+{"kind": "token", "mode": "decode", "seconds": 9.774, "issue_s": 0.0497, "reply_level": 28, "pos": 138, "token": 4600, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.0019687213120718316,
+{"kind": "token", "mode": "decode", "seconds": 9.7637, "issue_s": 0.0394, "reply_level": 28, "pos": 139, "token": 22590, "top1_fhe": 38499, "top1_poly": 38499, "top1_agree": true, "logits_relErrRms": 0.002132471248629354
+{"kind": "token", "mode": "decode", "seconds": 9.7663, "issue_s": 0.0401, "reply_level": 28, "pos": 140, "token": 38499, "top1_fhe": 4811, "top1_poly": 4811, "top1_agree": true, "logits_relErrRms": 0.0034279415337886993,
+{"kind": "token", "mode": "decode", "seconds": 9.7748, "issue_s": 0.0518, "reply_level": 28, "pos": 141, "token": 4811, "top1_fhe": 4435, "top1_poly": 4435, "top1_agree": true, "logits_relErrRms": 0.0024623584586624774, 
+{"kind": "token", "mode": "decode", "seconds": 9.7662, "issue_s": 0.0403, "reply_level": 28, "pos": 142, "token": 4435, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.0018386053013549055
+{"kind": "token", "mode": "decode", "seconds": 9.7774, "issue_s": 0.0545, "reply_level": 28, "pos": 143, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.003069621547510282
+{"kind": "token", "mode": "decode", "seconds": 9.7763, "issue_s": 0.0502, "reply_level": 28, "pos": 144, "token": 37634, "top1_fhe": 332, "top1_poly": 332, "top1_agree": true, "logits_relErrRms": 0.003715801921473109, "h
+{"kind": "token", "mode": "decode", "seconds": 9.7663, "issue_s": 0.0405, "reply_level": 28, "pos": 145, "token": 332, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.0024738058942859733,
+{"kind": "token", "mode": "decode", "seconds": 9.7744, "issue_s": 0.0476, "reply_level": 28, "pos": 146, "token": 38588, "top1_fhe": 47, "top1_poly": 47, "top1_agree": true, "logits_relErrRms": 0.002250420317212507, "hid
+{"kind": "token", "mode": "decode", "seconds": 9.7664, "issue_s": 0.0408, "reply_level": 28, "pos": 147, "token": 47, "top1_fhe": 261, "top1_poly": 261, "top1_agree": true, "logits_relErrRms": 0.005169151686380166, "hidd
+{"kind": "token", "mode": "decode", "seconds": 9.7658, "issue_s": 0.044, "reply_level": 28, "pos": 148, "token": 261, "top1_fhe": 6699, "top1_poly": 6699, "top1_agree": true, "logits_relErrRms": 0.004098708444107402, "hi
+{"kind": "token", "mode": "decode", "seconds": 9.7733, "issue_s": 0.0476, "reply_level": 28, "pos": 149, "token": 6699, "top1_fhe": 22168, "top1_poly": 22168, "top1_agree": true, "logits_relErrRms": 0.010112942633742903,
+{"kind": "token", "mode": "decode", "seconds": 9.7738, "issue_s": 0.0545, "reply_level": 28, "pos": 150, "token": 22168, "top1_fhe": 52965, "top1_poly": 52965, "top1_agree": true, "logits_relErrRms": 0.004060998683810988
+{"kind": "token", "mode": "decode", "seconds": 9.7742, "issue_s": 0.0463, "reply_level": 28, "pos": 151, "token": 52965, "top1_fhe": 4600, "top1_poly": 4600, "top1_agree": true, "logits_relErrRms": 0.0021558913638132435,
+{"kind": "token", "mode": "decode", "seconds": 9.765, "issue_s": 0.0356, "reply_level": 28, "pos": 152, "token": 4600, "top1_fhe": 39095, "top1_poly": 39095, "top1_agree": true, "logits_relErrRms": 0.001554363442810417, 
+{"kind": "token", "mode": "decode", "seconds": 9.7754, "issue_s": 0.0463, "reply_level": 28, "pos": 153, "token": 39095, "top1_fhe": 37634, "top1_poly": 37634, "top1_agree": true, "logits_relErrRms": 0.002251479104494392
+{"kind": "token", "mode": "decode", "seconds": 9.7738, "issue_s": 0.0455, "reply_level": 28, "pos": 154, "token": 37634, "top1_fhe": 22590, "top1_poly": 22590, "top1_agree": true, "logits_relErrRms": 0.001502296369085398
+{"kind": "token", "mode": "decode", "seconds": 9.7726, "issue_s": 0.0466, "reply_level": 28, "pos": 155, "token": 22590, "top1_fhe": 38588, "top1_poly": 38588, "top1_agree": true, "logits_relErrRms": 0.001771712411443719
+{"kind": "summary", "tokens": 155, "prompt_ids": [6699, 62532, 61885, 332, 22168, 52965, 4706], "generated_ids": [22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590, 38588, 45, 40186, 4600, 22590, 38499, 4811, 4435, 39095, 37634, 332, 38588, 47, 261, 6699, 22168, 52965, 4600, 39095, 37634, 22590], "top1_agree": 155, "top1_agree_prefill": 0, "poly_sites_out_of_range_tokens": [], "prefilled_tokens": 0, "prefill_chunk": 0, "prefill_passes": 0, "prefill_seconds_per_token": null, "logits_relErrRms_max": 0.017224313790424543, "logits_relErrRms_median": 0.0023831813609603942, "hidden_relErrRms_vs_mirror_max": 0.02593723463941341, "seconds_per_token_median": 9.7686, "seconds_per_token_after_first": 9.756587662337662, "setup_s": 36.0, "wall_s": 1923.2, "planned_stats": "{'runs': 2028, 'host_us': 18767382.978999972, 'launch_us': 9771715.284000002, 'captures': 13, 'replays': 2015, 'eager': 0, 'capture_ms': 1752.6765040000003, 'invalidations': 0, 'pairs': (22, 0), 'fused': 1344, 'stc_evictions': 0, 'stc_misses': 53, 'stc_slots': 160, 'stc_keys': [[0, 20, 53617498], [0, 20, 53486148], [0, 20, 53844006], [0, 6, 85486148], [0, 6, 82617498], [0, 6, 82486148], [0, 20, 53835172], [0, 20, 53951450], [0, 6, 85920488], [0, 20, 53920488], [0, 6, 78920488], [0, 20, 53647004], [0, 6, 81617498], [0, 6, 80617498], [0, 6, 80486148], [0, 6, 83617498], [0, 6, 83486148], [0, 6, 83920488], [0, 6, 84920488], [0, 20, 53608679], [0, 6, 80920488], [0, 6, 84835172], [0, 6, 80844006], [0, 6, 81835172], [0, 6, 83835172], [0, 6, 84617498], [0, 6, 82835172], [0, 6, 83647004], [0, 6, 79920488], [0, 6, 82647004], [0, 6, 81647004], [0, 6, 81920488], [0, 6, 81486148], [0, 6, 80647004], [0, 20, 53899043], [0, 6, 81899043], [0, 6, 82899043], [0, 6, 80899043], [0, 6, 83899043], [0, 6, 82920488], [0, 6, 80835172], [0, 6, 81951450], [0, 6, 79951450], [0, 6, 79486148], [0, 6, 78486148], [0, 6, 78617498], [0, 6, 78899043], [0, 6, 77617498], [0, 6, 77899043], [0, 6, 75617498], [0, 6, 75899043], [0, 6, 76617498], [0, 6, 76899043]], 'bound': 13, 'group_bytes': 1032192, 'slab': 95}"}
+[rwkv7 16:31:48] run: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields + plan md5)
+[rwkv7 16:32:21] batch: K=32 carry=lane, prompts /root/perseus-rwkv7-final/tools/rwkv7/batch_prompts.txt, 32 generated each, pool 1024
+{"kind": "warmup", "seconds": 30.844}
+{"kind": "pass", "pass": 0, "seconds": 27.5145, "issue_s": 26.3755, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 1, "seconds": 27.6708, "issue_s": 11.5012, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 2, "seconds": 27.766, "issue_s": 11.5408, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 3, "seconds": 27.828, "issue_s": 11.5724, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 4, "seconds": 27.8831, "issue_s": 11.6011, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 5, "seconds": 27.8981, "issue_s": 11.6051, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 6, "seconds": 27.9146, "issue_s": 11.6115, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 7, "seconds": 27.9335, "issue_s": 11.6209, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 8, "seconds": 27.9258, "issue_s": 11.6205, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 9, "seconds": 27.931, "issue_s": 11.6187, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 10, "seconds": 27.9388, "issue_s": 11.6188, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 11, "seconds": 27.934, "issue_s": 11.6179, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 12, "seconds": 27.9446, "issue_s": 11.6236, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 13, "seconds": 27.9475, "issue_s": 11.6239, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 14, "seconds": 27.9328, "issue_s": 11.6189, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 15, "seconds": 27.9275, "issue_s": 11.6154, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 16, "seconds": 27.941, "issue_s": 11.62, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 17, "seconds": 27.9476, "issue_s": 11.6289, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 18, "seconds": 27.9418, "issue_s": 11.6216, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 19, "seconds": 27.9557, "issue_s": 11.632, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 20, "seconds": 27.9454, "issue_s": 11.6254, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 21, "seconds": 27.9446, "issue_s": 11.626, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 22, "seconds": 27.9499, "issue_s": 11.6387, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 23, "seconds": 27.9432, "issue_s": 11.6236, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 24, "seconds": 27.9447, "issue_s": 11.6206, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 25, "seconds": 27.9539, "issue_s": 11.63, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 26, "seconds": 27.9589, "issue_s": 11.6298, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 27, "seconds": 27.9592, "issue_s": 11.635, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 28, "seconds": 27.9633, "issue_s": 11.6331, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 29, "seconds": 27.9445, "issue_s": 11.6228, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 30, "seconds": 27.9508, "issue_s": 11.6269, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 31, "seconds": 27.9538, "issue_s": 11.626, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 32, "seconds": 27.9703, "issue_s": 11.6408, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 33, "seconds": 27.9446, "issue_s": 11.6211, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 34, "seconds": 27.9558, "issue_s": 11.6219, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 35, "seconds": 27.962, "issue_s": 11.6277, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 36, "seconds": 27.9715, "issue_s": 11.637, "reply_level": 28, "active": 31}
+{"kind": "pass", "pass": 37, "seconds": 27.9759, "issue_s": 11.6423, "reply_level": 28, "active": 27}
+{"kind": "pass", "pass": 38, "seconds": 27.9769, "issue_s": 11.6411, "reply_level": 28, "active": 22}
+{"kind": "pass", "pass": 39, "seconds": 27.9772, "issue_s": 11.6429, "reply_level": 28, "active": 15}
+{"kind": "pass", "pass": 40, "seconds": 27.985, "issue_s": 11.6415, "reply_level": 28, "active": 11}
+{"kind": "pass", "pass": 41, "seconds": 27.9935, "issue_s": 11.6436, "reply_level": 28, "active": 8}
+{"kind": "pass", "pass": 42, "seconds": 28.0101, "issue_s": 11.6581, "reply_level": 28, "active": 7}
+{"kind": "pass", "pass": 43, "seconds": 28.0107, "issue_s": 11.6529, "reply_level": 28, "active": 6}
+{"kind": "pass", "pass": 44, "seconds": 28.0135, "issue_s": 11.6527, "reply_level": 28, "active": 5}
+{"kind": "pass", "pass": 45, "seconds": 28.0321, "issue_s": 11.6664, "reply_level": 28, "active": 4}
+{"kind": "pass", "pass": 46, "seconds": 28.038, "issue_s": 11.6659, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 47, "seconds": 28.04, "issue_s": 11.669, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 48, "seconds": 28.0416, "issue_s": 11.6624, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 49, "seconds": 28.0416, "issue_s": 11.6698, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 50, "seconds": 28.0453, "issue_s": 11.6651, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 51, "seconds": 28.0495, "issue_s": 11.6702, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 52, "seconds": 28.0542, "issue_s": 11.6765, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 53, "seconds": 28.0404, "issue_s": 11.6625, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 54, "seconds": 28.0517, "issue_s": 11.6725, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 55, "seconds": 28.0528, "issue_s": 11.6731, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 56, "seconds": 28.0448, "issue_s": 11.6671, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 57, "seconds": 28.0497, "issue_s": 11.6696, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 58, "seconds": 28.0628, "issue_s": 11.6778, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 59, "seconds": 28.0571, "issue_s": 11.671, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 60, "seconds": 28.037, "issue_s": 11.6624, "reply_level": 28, "active": 1}
+{"kind": "summary", "batch": 32, "passes": 61, "tokens": 1306, "top1_agree": 1303, "top1_agree_per_conv": [39, 40, 61, 49, 45, 42, 40, 37, 46, 40, 39, 36, 41, 39, 43, 41, 39, 46, 38, 37, 36, 38, 39, 39, 38, 44, 38, 36, 40, 38, 39, 40], "tokens_per_conv": [39, 41, 61, 49, 45, 42, 40, 37, 46, 40, 39, 37, 41, 39, 43, 41, 39, 46, 38, 37, 36, 38, 39, 39, 38, 44, 38, 37, 40, 38, 39, 40], "prompt_ids": [[6699, 62532, 61885, 332, 22168, 52965, 4706], [1136, 22590, 51310, 4706, 56529, 56537, 45, 54830, 64996], [24281, 59, 300, 32004, 39623, 286, 46784, 116, 21700, 285, 51514, 47, 20063, 31466, 4491, 3485, 46784, 116, 30510, 64, 43965, 32487, 22590, 46685, 47, 261, 5585, 41693, 59], [6699, 304, 25740, 109, 39990, 4600, 4596, 22590, 30449, 4706, 37138, 45, 40186, 4600, 22590, 51128, 4706], [23977, 32350, 332, 32251, 45, 4596, 332, 39720, 53287, 4450, 22590, 22446, 45], [6699, 31461, 59829, 39941, 4811, 57083, 32465, 51323, 31878, 4600], [40666, 54438, 4600, 22590, 52571, 4450, 40186, 46836], [6699, 51128, 4706, 36854, 4600], [24281, 59, 59028, 269, 25515, 52265, 35, 31162, 44317, 47, 261, 5585, 41693, 59], [6699, 51929, 4706, 22590, 37272, 44253, 45286, 32487], [33573, 30306, 116, 4424, 332, 
+[rwkv7 17:10:57] batch: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields)
+[rwkv7 17:10:57] plan /root/out_pod3/f2_01b/cap_rwkv7_k32 -> /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k32_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 43 steps
+  planned in 672 s: 13 stages, 1424 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:100@26 block_1:166@26 block_2:103@26 block_3:103@26 block_4:104@26 block_5:165@26 block_6:103@26 block_7:102@26 block_8:103@26 block_9:103@26 block_10:104@26 block_11:167@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k32_best
+[rwkv7 17:22:10] plan_b: done
+batched kv ['s0c0', 's0c1', 's0c2', 's0c3', 's1c0', 's1c1', 's1c2', 's1c3', 'xa', 'xf'] inputs [('anon_2207', 26, 1), ('block_0.cache.xa-lvl=26', 26, 2), ('block_0.cache.s0c0-lvl=26', 26, 2), ('block_0.cache.s1c0-lvl=26', 26, 2)]
+1 passed, 14 deselected in 2.93s
+[rwkv7 17:22:13] bcheck: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields + plan md5)
+[rwkv7 17:22:13] keyspec b -> /root/out_pod3/f2_01b/keys_b_k32_best/keyspec.json
+[keyspec] /root/out_pod3/f2_01b/keys_b_k32_best/keyspec.json: 43 rotation steps; session request present
+[rwkv7 17:23:40] keyspec: done
+[rwkv7 17:23:40] keygen b (the client role) -> /root/out_pod3/f2_01b/keys_b_k32_best/keys.pckb
+{"keygen": {"bytes": 8894170134.0, "ccmm_bytes": 0.0, "ccmm_s": 1.6e-07, "keys": 103.0, "ksk_bytes": 8846961264.0, "ksk_s": 8.249138003, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.227637169, "pk_s": 0.013263089, "spru_s": 6e-08, "total_s": 8.506061019, "wall_s": 8.5, "info": {"bytes": 8894170134, "entries": {"pcmm": 1, "public_key": 1, "ksk": 103}, "bytes_by_kind": {"pcmm": 1
+[rwkv7 17:23:48] keygen: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields + plan md5)
+[rwkv7 17:23:49] batch: K=32 carry=lane, prompts /root/perseus-rwkv7-final/tools/rwkv7/batch_prompts.txt, 32 generated each, pool 1024
+serve registers 18 programs 7 join ins ['b0nxa', 'b0nxf', 'b0xa', 'b0xf'] mask slots [('join/keep', 28), ('join/m', 28)]
+1 passed, 10 deselected in 8.54s
+[rwkv7 17:43:47] scheck: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields)
+[rwkv7 17:43:47] capture: reusing /root/out_pod3/f2_01b/cap_rwkv7
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 17:43:47] plan: reusing /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_best
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields)
+[rwkv7 17:43:47] capture_pf: reusing /root/out_pod3/f2_01b/cap_rwkv7_pf32
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 17:43:47] plan: reusing /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_pf32_best
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k4: consistent (10 fields)
+[rwkv7 17:43:47] capture_b: reusing /root/out_pod3/f2_01b/cap_rwkv7_k4
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k4: consistent (10 fields + plan md5)
+[rwkv7 17:43:47] plan: reusing /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_k4_best_pob2
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: consistent (5 fields)
+[rwkv7 17:43:47] capture_j: reusing /root/out_pod3/f2_01b/cap_rwkv7_join_k4
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: consistent (5 fields + plan md5)
+[rwkv7 17:43:47] plan: reusing /root/out_pod3/f2_01b/bootstrap_placements/plan_rwkv7_join_k4_best
+[rwkv7 17:43:47] keys: inproc (INSECURE: the session holds the secret; recorded insecure-inproc)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k4: consistent (10 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_join_k4: consistent (5 fields + plan md5)
+[rwkv7 17:43:48] serve: K=4 T=32, arrivals /root/perseus-rwkv7-final/tools/rwkv7/serve_arrivals.txt, 8 generated each, pool 256
+{"kind": "warmup", "seconds": 53.218}
+{"kind": "prefill", "conv": 0, "lane": 0, "at_pass": 0, "chunk": 0, "T": 32, "seconds": 29.7654}
+{"kind": "join", "conv": 0, "lane": 0, "at_pass": 0, "seconds": 0.0029}
+{"kind": "join", "conv": 1, "lane": 1, "at_pass": 0, "seconds": 0.0029}
+{"kind": "join", "conv": 2, "lane": 2, "at_pass": 0, "seconds": 0.0028}
+{"kind": "pass", "pass": 0, "seconds": 15.0908, "active": 3, "lanes": [0, 1, 2, null]}
+{"kind": "prefill", "conv": 3, "lane": 3, "at_pass": 1, "chunk": 0, "T": 32, "seconds": 29.595}
+{"kind": "join", "conv": 3, "lane": 3, "at_pass": 1, "seconds": 0.0028}
+{"kind": "pass", "pass": 1, "seconds": 14.5728, "active": 4, "lanes": [0, 1, 2, 3]}
+{"kind": "pass", "pass": 2, "seconds": 14.171, "active": 4, "lanes": [0, 1, 2, 3]}
+{"kind": "pass", "pass": 3, "seconds": 14.2099, "active": 4, "lanes": [0, 1, 2, 3]}
+{"kind": "pass", "pass": 4, "seconds": 14.1801, "active": 4, "lanes": [0, 1, 2, 3]}
+{"kind": "pass", "pass": 5, "seconds": 14.2083, "active": 4, "lanes": [0, 1, 2, 3]}
+{"kind": "pass", "pass": 6, "seconds": 14.1647, "active": 4, "lanes": [0, 1, 2, 3]}
+{"kind": "pass", "pass": 7, "seconds": 14.1667, "active": 4, "lanes": [0, 1, 2, 3]}
+{"kind": "join", "conv": 4, "lane": 0, "at_pass": 8, "seconds": 0.0028}
+{"kind": "join", "conv": 5, "lane": 1, "at_pass": 8, "seconds": 0.0029}
+{"kind": "prefill", "conv": 6, "lane": 2, "at_pass": 8, "chunk": 0, "T": 32, "seconds": 29.9905}
+{"kind": "join", "conv": 6, "lane": 2, "at_pass": 8, "seconds": 0.0027}
+{"kind": "pass", "pass": 8, "seconds": 14.5921, "active": 4, "lanes": [4, 5, 6, 3]}
+{"kind": "join", "conv": 7, "lane": 3, "at_pass": 9, "seconds": 0.0029}
+{"kind": "pass", "pass": 9, "seconds": 14.5928, "active": 4, "lanes": [4, 5, 6, 7]}
+{"kind": "pass", "pass": 10, "seconds": 14.1813, "active": 4, "lanes": [4, 5, 6, 7]}
+{"kind": "pass", "pass": 11, "seconds": 14.1839, "active": 4, "lanes": [4, 5, 6, 7]}
+{"kind": "pass", "pass": 12, "seconds": 14.2049, "active": 4, "lanes": [4, 5, 6, 7]}
+{"kind": "pass", "pass": 13, "seconds": 14.1796, "active": 4, "lanes": [4, 5, 6, 7]}
+{"kind": "pass", "pass": 14, "seconds": 14.1849, "active": 4, "lanes": [4, 5, 6, 7]}
+{"kind": "pass", "pass": 15, "seconds": 14.1518, "active": 4, "lanes": [4, 5, 6, 7]}
+{"kind": "leave", "lanes": [0, 1, 2], "at_pass": 16, "seconds": 0.009}
+{"kind": "pass", "pass": 16, "seconds": 14.5668, "active": 1, "lanes": [null, null, null, 7]}
+{"kind": "summary", "batch": 4, "prefill_chunk": 32, "conversations": 8, "tokens": 248, "top1_agree": 245, "top1_agree_per_conv": [53, 13, 36, 45, 21, 16, 48, 13], "tokens_per_conv": [53, 13, 37, 45, 21, 16, 50, 13], "lanes": [[0, 0, 0, 0, 7], [1, 1, 0, 0, 7], [2, 2, 0, 0, 7], [3, 3, 1, 1, 8], [4, 0, 2, 8, 15], [5, 1, 4, 8, 15], [6, 2, 6, 8, 15], [7, 3, 9, 9, 16]], "generated_ids": [[22590, 32190, 7513, 60572, 4596, 22590, 40213, 45], [37470, 47, 3918, 4600, 22590, 51128, 4706, 22590], [20282, 460, 38499, 59251, 22590, 30510, 4706, 22590], [21286, 38547, 4596, 22590, 46421, 47, 11, 40666], [39934, 38917, 332, 22068, 39095, 29165, 47, 3878], [22590, 55830, 4706, 50028, 4450, 22590, 44801, 4596], [4600, 30666, 4424, 332, 38940, 63919, 47, 261], [332, 52593, 45, 32139, 4423, 30732, 45, 31424]], "poly_sites_out_of_range_tokens": [], "logits_relErrRms_max": 0.005925680417396729, "logits_relErrRms_median": 0.0020861997066018807, "hidden_relErrRms_vs_mirror_max": 0.02204648089203382, "passes": 17, "seconds_per_pass_median": 14.1849, "active_lanes_mean": 3.764705882352941, "prefill_passes": 3, "prefill_seconds_median": 29.7654, "decode_steps": 88, "decode_seconds_median": 11.91105, "joins": 8, "join_seconds_median": 0.00285, "leave_runs": 1, "leave_seconds_median": 0.009, "loop_s": 1412.0, "generated_tokens": 64, "aggregate_generated_tokens_per_s": 0.0453, "aggregate_tokens_per_s": 0.1756, "setup_s": 159.1, "wall_s": 1634.2, "planned_stats": "{'runs': 1454, 'host_us': 90231380.582000
+[rwkv7 18:11:07] s: done
+capture_check /root/out_pod3/f2_01b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_01b/cap_rwkv7_k32: consistent (10 fields + plan md5)
+[rwkv7 19:01:12] batch: K=32 carry=lane, prompts /root/perseus-rwkv7-final/tools/rwkv7/batch_prompts.txt, 32 generated each, pool 160
+{"kind": "warmup", "seconds": 30.752}
+{"kind": "pass", "pass": 0, "seconds": 27.3836, "issue_s": 26.2499, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 1, "seconds": 27.5645, "issue_s": 11.4577, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 2, "seconds": 27.7119, "issue_s": 11.5207, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 3, "seconds": 27.7982, "issue_s": 11.556, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 4, "seconds": 27.8475, "issue_s": 11.5826, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 5, "seconds": 27.8823, "issue_s": 11.6012, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 6, "seconds": 27.9152, "issue_s": 11.6133, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 7, "seconds": 27.9381, "issue_s": 11.6221, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 8, "seconds": 27.9397, "issue_s": 11.6181, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 9, "seconds": 27.9454, "issue_s": 11.6257, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 10, "seconds": 27.9583, "issue_s": 11.6307, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 11, "seconds": 27.964, "issue_s": 11.6352, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 12, "seconds": 27.9653, "issue_s": 11.6323, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 13, "seconds": 27.9648, "issue_s": 11.6324, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 14, "seconds": 27.9677, "issue_s": 11.633, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 15, "seconds": 27.9652, "issue_s": 11.6301, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 16, "seconds": 27.9732, "issue_s": 11.6349, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 17, "seconds": 27.9793, "issue_s": 11.6413, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 18, "seconds": 27.975, "issue_s": 11.6347, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 19, "seconds": 27.9745, "issue_s": 11.6385, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 20, "seconds": 27.9844, "issue_s": 11.6424, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 21, "seconds": 27.9828, "issue_s": 11.6386, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 22, "seconds": 27.9888, "issue_s": 11.6493, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 23, "seconds": 27.9742, "issue_s": 11.6351, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 24, "seconds": 27.9764, "issue_s": 11.6414, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 25, "seconds": 27.982, "issue_s": 11.6392, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 26, "seconds": 28.0068, "issue_s": 11.6533, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 27, "seconds": 28.0049, "issue_s": 11.66, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 28, "seconds": 27.9976, "issue_s": 11.6519, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 29, "seconds": 28.0042, "issue_s": 11.6525, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 30, "seconds": 28.0009, "issue_s": 11.6483, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 31, "seconds": 28.0158, "issue_s": 11.6634, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 32, "seconds": 28.008, "issue_s": 11.658, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 33, "seconds": 28.0047, "issue_s": 11.6439, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 34, "seconds": 28.0198, "issue_s": 11.6605, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 35, "seconds": 28.0116, "issue_s": 11.6548, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 36, "seconds": 28.0066, "issue_s": 11.651, "reply_level": 28, "active": 31}
+{"kind": "pass", "pass": 37, "seconds": 28.0139, "issue_s": 11.6493, "reply_level": 28, "active": 27}
+{"kind": "pass", "pass": 38, "seconds": 28.025, "issue_s": 11.6561, "reply_level": 28, "active": 22}
+{"kind": "pass", "pass": 39, "seconds": 28.031, "issue_s": 11.66, "reply_level": 28, "active": 15}
+{"kind": "pass", "pass": 40, "seconds": 28.0467, "issue_s": 11.6733, "reply_level": 28, "active": 11}
+{"kind": "pass", "pass": 41, "seconds": 28.0593, "issue_s": 11.6776, "reply_level": 28, "active": 8}
+{"kind": "pass", "pass": 42, "seconds": 28.0703, "issue_s": 11.6825, "reply_level": 28, "active": 7}
+{"kind": "pass", "pass": 43, "seconds": 28.0649, "issue_s": 11.6798, "reply_level": 28, "active": 6}
+{"kind": "pass", "pass": 44, "seconds": 28.0658, "issue_s": 11.677, "reply_level": 28, "active": 5}
+{"kind": "pass", "pass": 45, "seconds": 28.0862, "issue_s": 11.6886, "reply_level": 28, "active": 4}
+{"kind": "pass", "pass": 46, "seconds": 28.0873, "issue_s": 11.6854, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 47, "seconds": 28.1074, "issue_s": 11.6971, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 48, "seconds": 28.0987, "issue_s": 11.6928, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 49, "seconds": 28.1026, "issue_s": 11.6952, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 50, "seconds": 28.0981, "issue_s": 11.6884, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 51, "seconds": 28.1192, "issue_s": 11.7091, "reply_level": 28, "active": 1}
+[rwkv7 19:34:38] STOP: batch failed (/root/out_pod3/f2_01b/batch_k32_best_pob2_lean.log)

@@ -1,0 +1,12 @@
+286849 tokens, feed=poly, unclamped
+kind                tok_out      frac conv_out  nonfin                    range                     seen worst
+att.a_sigmoid           368  1.28e-03        0 1695744 [     -71.7,      55.8] [     -62.3,      45.7] 0.0728x width at blocks.5.att.a_sigmoid
+att.decay               368  1.28e-03        0 1695744 [     -45.7,      51.8] [ -5.47e+14,  1.26e+14] 9.14e+12x width at blocks.5.att.decay
+att.g_sigmoid           368  1.28e-03        0  282624 [     -28.1,      23.2] [     -30.1,      22.5] 0.0403x width at blocks.5.att.g_sigmoid
+att.gn_rsqrt            370  1.29e-03      368   30912 [  4.12e-12,  2.81e+03] [  6.03e-11,       322] 3.08e-07x width at blocks.10.att.gn_rsqrt
+att.kk_rsqrt            368  1.28e-03      368   26496 [  0.000986,  2.37e+03] [   0.00986,       237] 0x width at None
+att.v_sigmoid           368  1.28e-03        0 1695744 [     -49.3,      73.3] [     -42.4,      64.1] 0.074x width at blocks.5.att.v_sigmoid
+att.w_tanh              368  1.28e-03        0  141312 [     -52.1,      62.6] [     -44.1,      53.1] 0.107x width at blocks.5.att.w_tanh
+ffn.relu2               369  1.29e-03        0 7913472 [     -20.4,      16.4] [     -16.5,      13.6] 9.01e-05x width at blocks.9.ffn.relu2
+ln1.rsqrt               368  1.28e-03      368    2208 [  0.000846,       413] [   0.00836,      40.7] 0x width at None
+ln2.rsqrt               368  1.28e-03      368    2576 [  0.000687,       411] [   0.00687,      41.8] 0x width at None

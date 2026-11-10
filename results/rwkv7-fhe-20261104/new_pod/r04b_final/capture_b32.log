@@ -1,0 +1,4 @@
+[capture] shifts (calib) for 287 linears in 0.0 s
+[capture] token 0 out level 28 in 67.1 s
+[capture] token 1 out level 28 in 224.8 s
+[capture] wrote /root/out_pod3/r04b_final/cap_rwkv7_b32 (24 blocks + tail) in 299.8 s

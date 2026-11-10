@@ -1,0 +1,3279 @@
+{
+ "driver": "perseus.examples.fhe_ssm.run_planned",
+ "mode": "run",
+ "build_id": {
+  "python": "3.12.3",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+  "commit": "50666f6f",
+  "dirty": 0,
+  "pc_so": "5bbae5e8d2c91ef7",
+  "pc_device_classes": [
+   "Session",
+   "Program",
+   "KeySource",
+   "Client",
+   "PtStore"
+  ],
+  "arch": null
+ },
+ "plan": {
+  "dir": "/root/out_best/gpu/bootstrap_placements/plan_pcmm24",
+  "axes": "LANDING=high PAIR=0 PLACER=mincut ILP_OBJECTIVE=count SPARSE_SLOTS=512,1 HARD_ENV_CAP=1 SPARSE_B_K=",
+  "recipe": "MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1",
+  "runtime": "FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48",
+  "planner": "70bf381 (python/perseus/plan's last commit)",
+  "tool": "tools/fhe_ssm/make_plan.sh (one planner pass over every stage: python/perseus/plan/run_bootstrap_all_blocks.sh)",
+  "stamp": {
+   "chain": {
+    "chain": "n32",
+    "composite_degree": 2
+   },
+   "bts": {
+    "auto_bts_level": 44,
+    "raise_drop": "512:1",
+    "stc_first": 2,
+    "stc_first_cf": 13,
+    "stc_first_routes": [
+     "dense"
+    ]
+   },
+   "quirks": {
+    "fake_bts_out": 32,
+    "fakecap_landings": "0:32,1:14,256:22,512:24"
+   }
+  }
+ },
+ "capture": {
+  "plan_graph": "$REPO/results/perseus-20261006/fork_port/gpu_20261011/speedrun_port_20261027/runs_E/cap_pcmm24_high",
+  "plan_md5": "d67559a3d0eb2b4440528b14c32993f9",
+  "capture": "/root/out_best/gpu/cap_high__linear_pcmm_pcmm_wbits_24",
+  "md5": "d67559a3d0eb2b4440528b14c32993f9",
+  "checked": true
+ },
+ "argv": [
+  "--weights",
+  "/root/data/pbd430a_weights.npz",
+  "--seeds",
+  "/root/data/pbd430a_seeds.json",
+  "--config",
+  "/root/data/pbd430a_config.json",
+  "--levels",
+  "preset",
+  "--plan",
+  "/root/out_best/gpu/bootstrap_placements/plan_pcmm24",
+  "--ticks",
+  "6",
+  "--profile",
+  "--profile-every",
+  "2",
+  "--keys",
+  "inproc",
+  "--linear",
+  "pcmm",
+  "--pcmm-wbits",
+  "24",
+  "--capture",
+  "/root/out_best/gpu/cap_high__linear_pcmm_pcmm_wbits_24",
+  "--pcmm-cf",
+  "8",
+  "--pcmm-cf-table",
+  "/root/cf/t_mildall.json",
+  "--stc-cache",
+  "160",
+  "--out",
+  "/root/out_best/gpu/run_pcmm24_ctlD/record.json"
+ ],
+ "flags": {
+  "weights": "/root/data/pbd430a_weights.npz",
+  "seeds": "/root/data/pbd430a_seeds.json",
+  "config": "/root/data/pbd430a_config.json",
+  "blocks": null,
+  "logn": 16,
+  "levels": "preset",
+  "limit": null,
+  "bts_out": null,
+  "unit": 2,
+  "layout": "filled",
+  "payload": "pairs",
+  "pair_route": "split",
+  "scales": "shipped",
+  "conversations": null,
+  "newton_form": "perseus",
+  "newton_sites": "served",
+  "pack_stats": "off",
+  "linear": "pcmm",
+  "pcmm_wbits": 24,
+  "diag_hint": 1,
+  "lane_mix": "off",
+  "ms_norm_k": 5.5,
+  "newton_frac": 0.1,
+  "newton_min_iters": 12,
+  "no_carry": false,
+  "streams": 1,
+  "pass_kernels": "off",
+  "plan": "/root/out_best/gpu/bootstrap_placements/plan_pcmm24",
+  "capture": "/root/out_best/gpu/cap_high__linear_pcmm_pcmm_wbits_24",
+  "ticks": 6,
+  "scenario": null,
+  "lane_config": null,
+  "tokens": null,
+  "free_run": false,
+  "seed": 7,
+  "schedule": "program",
+  "diag_source": "values",
+  "profile": true,
+  "profile_every": 2,
+  "mirror": false,
+  "no_warmup": false,
+  "no_graphs": false,
+  "out": "/root/out_best/gpu/run_pcmm24_ctlD/record.json",
+  "work_dir": null,
+  "keys": "inproc",
+  "insecure_test_keys": false,
+  "keyspec": null,
+  "keygen": null,
+  "keyspec_file": null,
+  "threads": 8,
+  "prepare_only": false,
+  "lean": false,
+  "ref_token": 1,
+  "probe": 2,
+  "pt_rows": 28,
+  "stc_cache": 160,
+  "pool": 16,
+  "pcmm_cf": 8,
+  "pcmm_cf_table": "/root/cf/t_mildall.json",
+  "diag_batch": null,
+  "diag_perturb": null,
+  "diag_probe": 0,
+  "pt_budget_gb": 40.0
+ },
+ "environment": {
+  "AUTO_BTS_LEVEL": "44",
+  "CUDA_HOME": "/usr/local/cuda-13.2",
+  "CUDA_VISIBLE_DEVICES": "0",
+  "FIDESLIB_BTS_RAISE_DROP": "512:1",
+  "FIDESLIB_BTS_STC_FIRST": "2",
+  "FIDESLIB_BTS_STC_FIRST_CF": "13",
+  "FIDESLIB_BTS_STC_FIRST_ROUTES": "dense",
+  "LADDER_RADIX_BITS": "0"
+ },
+ "model": {
+  "weights": {
+   "path": "/root/data/pbd430a_weights.npz",
+   "sha256": "3ec3f1d8b9b71e7eee38055a7621213991c6417a89576f1c02590963293e784b"
+  },
+  "seeds": {
+   "path": "/root/data/pbd430a_seeds.json",
+   "sha256": "d63288181655ebbb5370a16be4b59d7bd6745fcf98bf8ca14e1ca15ec51245b7"
+  },
+  "config": {
+   "path": "/root/data/pbd430a_config.json",
+   "sha256": "1829d34eeddbbfc4ce023a43d828085c6e71a2a941e7da8aa17790544b770ba7"
+  }
+ },
+ "axes": {
+  "newton_form": "perseus",
+  "newton_sites": "served",
+  "pack_stats": "off",
+  "linear": "pcmm",
+  "diag_hint": 1,
+  "pcmm_wbits": 24,
+  "lane_mix": "off",
+  "pass_kernels": "off"
+ },
+ "diag_source": "values",
+ "levels": {
+  "limit": 44,
+  "bts_out": 32,
+  "unit": 2,
+  "scales": "shipped"
+ },
+ "conversations": 64,
+ "capacity": 64,
+ "pass_kernels": "off",
+ "pass_list": null,
+ "key_needs": {
+  "slots": 32768,
+  "d": 1024,
+  "capacity": 64,
+  "rotation_steps": [
+   1,
+   32,
+   64,
+   96,
+   128,
+   160,
+   192,
+   224,
+   256,
+   288,
+   320,
+   352,
+   384,
+   416,
+   448,
+   480,
+   512,
+   544,
+   576,
+   608,
+   640,
+   672,
+   704,
+   736,
+   768,
+   800,
+   832,
+   864,
+   896,
+   928,
+   960,
+   992,
+   1024,
+   2048,
+   3072,
+   4096,
+   5120,
+   6144,
+   7168,
+   8192,
+   9216,
+   10240,
+   11264,
+   12288,
+   13312,
+   14336,
+   15360,
+   16384,
+   17408,
+   18432,
+   19456,
+   20480,
+   21504,
+   22528,
+   23552,
+   24576,
+   25600,
+   26624,
+   27648,
+   28672,
+   29696,
+   30720,
+   31744,
+   32767
+  ],
+  "n_rotation_steps": 64,
+  "conjugation": true,
+  "pcmm_t": [
+   32
+  ],
+  "linear": "pcmm"
+ },
+ "keys": {
+  "mode": "insecure-inproc",
+  "bundle": null,
+  "client_secret": false
+ },
+ "perseus_head": "50666f6fe2a46ff7f920c1f1aa26fbc52c122f56",
+ "tokens": "random (seed 7)",
+ "scales_file": {
+  "path": "/root/perseus/python/perseus/examples/fhe_ssm/scales_pbd430a.json",
+  "sha256": "96e69e29236cc9ed3380e636f48d1ec815b68202980b425ba034653dfc418415"
+ },
+ "pcmm_cf_table": {
+  "path": "/root/cf/t_mildall.json",
+  "sha256": "f2630892ab4c863647ed70b601c238ca6145e508a24125218771f3868393bbac",
+  "cf": {
+   "b0.wk": 7,
+   "b0.wout": 7,
+   "b0.wv": 7,
+   "b1.wk": 7,
+   "b1.wout": 7,
+   "b1.wv": 7,
+   "b2.wk": 7,
+   "b2.wout": 7,
+   "b2.wv": 7,
+   "b3.wk": 7,
+   "b3.wout": 7,
+   "b3.wv": 7,
+   "b4.wk": 7,
+   "b4.wout": 7,
+   "b4.wv": 7,
+   "b5.wk": 7,
+   "b5.wout": 7,
+   "b5.wv": 7,
+   "b6.wk": 7,
+   "b6.wout": 7,
+   "b6.wv": 7,
+   "b7.wk": 7,
+   "b7.wout": 7,
+   "b7.wv": 7,
+   "b8.wk": 7,
+   "b8.wout": 7,
+   "b8.wv": 7,
+   "b9.wk": 7,
+   "b9.wout": 7,
+   "b9.wv": 7,
+   "b10.wk": 7,
+   "b10.wout": 7,
+   "b10.wv": 7,
+   "b11.wk": 7,
+   "b11.wout": 7,
+   "b11.wv": 7,
+   "b12.wk": 7,
+   "b12.wout": 7,
+   "b12.wv": 7,
+   "b13.wk": 7,
+   "b13.wout": 7,
+   "b13.wv": 7,
+   "b14.wk": 7,
+   "b14.wout": 7,
+   "b14.wv": 7,
+   "b15.wk": 7,
+   "b15.wout": 7,
+   "b15.wv": 7,
+   "b16.wk": 7,
+   "b16.wout": 7,
+   "b16.wv": 7,
+   "b17.wk": 7,
+   "b17.wout": 7,
+   "b17.wv": 7,
+   "b18.wk": 7,
+   "b18.wout": 7,
+   "b18.wv": 7,
+   "b19.wk": 7,
+   "b19.wout": 7,
+   "b19.wv": 7,
+   "b20.wk": 7,
+   "b20.wout": 7,
+   "b20.wv": 7,
+   "b21.wk": 7,
+   "b21.wout": 7,
+   "b21.wv": 7,
+   "b22.wk": 7,
+   "b22.wout": 7,
+   "b22.wv": 7,
+   "b23.wk": 7,
+   "b23.wout": 7,
+   "b23.wv": 7
+  },
+  "session": {
+   "applied": {
+    "b0.wk": 7,
+    "b0.wout": 7,
+    "b0.wv": 7,
+    "b1.wk": 7,
+    "b1.wout": 7,
+    "b1.wv": 7,
+    "b2.wk": 7,
+    "b2.wout": 7,
+    "b2.wv": 7,
+    "b3.wk": 7,
+    "b3.wout": 7,
+    "b3.wv": 7,
+    "b4.wk": 7,
+    "b4.wout": 7,
+    "b4.wv": 7,
+    "b5.wk": 7,
+    "b5.wout": 7,
+    "b5.wv": 7,
+    "b6.wk": 7,
+    "b6.wout": 7,
+    "b6.wv": 7,
+    "b7.wk": 7,
+    "b7.wout": 7,
+    "b7.wv": 7,
+    "b8.wk": 7,
+    "b8.wout": 7,
+    "b8.wv": 7,
+    "b9.wk": 7,
+    "b9.wout": 7,
+    "b9.wv": 7,
+    "b10.wk": 7,
+    "b10.wout": 7,
+    "b10.wv": 7,
+    "b11.wk": 7,
+    "b11.wout": 7,
+    "b11.wv": 7,
+    "b12.wk": 7,
+    "b12.wout": 7,
+    "b12.wv": 7,
+    "b13.wk": 7,
+    "b13.wout": 7,
+    "b13.wv": 7,
+    "b14.wk": 7,
+    "b14.wout": 7,
+    "b14.wv": 7,
+    "b15.wk": 7,
+    "b15.wout": 7,
+    "b15.wv": 7,
+    "b16.wk": 7,
+    "b16.wout": 7,
+    "b16.wv": 7,
+    "b17.wk": 7,
+    "b17.wout": 7,
+    "b17.wv": 7,
+    "b18.wk": 7,
+    "b18.wout": 7,
+    "b18.wv": 7,
+    "b19.wk": 7,
+    "b19.wout": 7,
+    "b19.wv": 7,
+    "b20.wk": 7,
+    "b20.wout": 7,
+    "b20.wv": 7,
+    "b21.wk": 7,
+    "b21.wout": 7,
+    "b21.wv": 7,
+    "b22.wk": 7,
+    "b22.wout": 7,
+    "b22.wv": 7,
+    "b23.wk": 7,
+    "b23.wout": 7,
+    "b23.wv": 7
+   },
+   "fallback": [
+    "b0.win",
+    "b0.wr",
+    "b1.win",
+    "b1.wr",
+    "b10.win",
+    "b10.wr",
+    "b11.win",
+    "b11.wr",
+    "b12.win",
+    "b12.wr",
+    "b13.win",
+    "b13.wr",
+    "b14.win",
+    "b14.wr",
+    "b15.win",
+    "b15.wr",
+    "b16.win",
+    "b16.wr",
+    "b17.win",
+    "b17.wr",
+    "b18.win",
+    "b18.wr",
+    "b19.win",
+    "b19.wr",
+    "b2.win",
+    "b2.wr",
+    "b20.win",
+    "b20.wr",
+    "b21.win",
+    "b21.wr",
+    "b22.win",
+    "b22.wr",
+    "b23.win",
+    "b23.wr",
+    "b3.win",
+    "b3.wr",
+    "b4.win",
+    "b4.wr",
+    "b5.win",
+    "b5.wr",
+    "b6.win",
+    "b6.wr",
+    "b7.win",
+    "b7.wr",
+    "b8.win",
+    "b8.wr",
+    "b9.win",
+    "b9.wr"
+   ],
+   "ignored": [],
+   "pcmm_cf": 8
+  }
+ },
+ "prepare": {
+  "compiled_by": "device",
+  "schedule": "program",
+  "conversations": 64,
+  "programs": {
+   "block_0": {
+    "n_ops": 662,
+    "n_launches": 623,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     463470592,
+     33
+    ]
+   },
+   "block_1": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_2": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_3": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_4": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_5": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_6": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_7": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_8": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_9": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_10": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_11": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_12": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_13": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_14": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_15": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_16": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_17": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_18": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_19": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_20": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_21": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_22": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_23": {
+    "n_ops": 662,
+    "n_launches": 624,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     22,
+     {
+      "1": 22
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       2
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     440401920,
+     31
+    ]
+   },
+   "block_24": {
+    "n_ops": 215,
+    "n_launches": 215,
+    "n_bootstraps": 10,
+    "bts_batches": [
+     8,
+     10,
+     {
+      "1": 10
+     },
+     {
+      "Sparse(512)": [
+       10,
+       10
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     0,
+     0
+    ],
+    "check": [
+     173,
+     []
+    ],
+    "mem": [
+     94371840,
+     6
+    ]
+   }
+  },
+  "refreshes_planned": 538,
+  "check_errors": {},
+  "registers": 73,
+  "dynamic_steps": {},
+  "static_stream": true,
+  "carried": {
+   "0": [
+    "block_0.cache.n_prev-lvl=26",
+    "block_0.cache.s-lvl=26"
+   ],
+   "1": [
+    "block_1.cache.n_prev-lvl=26",
+    "block_1.cache.s-lvl=26"
+   ],
+   "2": [
+    "block_2.cache.n_prev-lvl=26",
+    "block_2.cache.s-lvl=26"
+   ],
+   "3": [
+    "block_3.cache.n_prev-lvl=26",
+    "block_3.cache.s-lvl=26"
+   ],
+   "4": [
+    "block_4.cache.n_prev-lvl=26",
+    "block_4.cache.s-lvl=26"
+   ],
+   "5": [
+    "block_5.cache.n_prev-lvl=26",
+    "block_5.cache.s-lvl=26"
+   ],
+   "6": [
+    "block_6.cache.n_prev-lvl=26",
+    "block_6.cache.s-lvl=26"
+   ],
+   "7": [
+    "block_7.cache.n_prev-lvl=26",
+    "block_7.cache.s-lvl=26"
+   ],
+   "8": [
+    "block_8.cache.n_prev-lvl=26",
+    "block_8.cache.s-lvl=26"
+   ],
+   "9": [
+    "block_9.cache.n_prev-lvl=26",
+    "block_9.cache.s-lvl=26"
+   ],
+   "10": [
+    "block_10.cache.n_prev-lvl=26",
+    "block_10.cache.s-lvl=26"
+   ],
+   "11": [
+    "block_11.cache.n_prev-lvl=26",
+    "block_11.cache.s-lvl=26"
+   ],
+   "12": [
+    "block_12.cache.n_prev-lvl=26",
+    "block_12.cache.s-lvl=26"
+   ],
+   "13": [
+    "block_13.cache.n_prev-lvl=26",
+    "block_13.cache.s-lvl=26"
+   ],
+   "14": [
+    "block_14.cache.n_prev-lvl=26",
+    "block_14.cache.s-lvl=26"
+   ],
+   "15": [
+    "block_15.cache.n_prev-lvl=26",
+    "block_15.cache.s-lvl=26"
+   ],
+   "16": [
+    "block_16.cache.n_prev-lvl=26",
+    "block_16.cache.s-lvl=26"
+   ],
+   "17": [
+    "block_17.cache.n_prev-lvl=26",
+    "block_17.cache.s-lvl=26"
+   ],
+   "18": [
+    "block_18.cache.n_prev-lvl=26",
+    "block_18.cache.s-lvl=26"
+   ],
+   "19": [
+    "block_19.cache.n_prev-lvl=26",
+    "block_19.cache.s-lvl=26"
+   ],
+   "20": [
+    "block_20.cache.n_prev-lvl=26",
+    "block_20.cache.s-lvl=26"
+   ],
+   "21": [
+    "block_21.cache.n_prev-lvl=26",
+    "block_21.cache.s-lvl=26"
+   ],
+   "22": [
+    "block_22.cache.n_prev-lvl=26",
+    "block_22.cache.s-lvl=26"
+   ],
+   "23": [
+    "block_23.cache.n_prev-lvl=26",
+    "block_23.cache.s-lvl=26"
+   ],
+   "24": []
+  },
+  "plaintexts": {
+   "plaintexts": 1633,
+   "rows": 28,
+   "bytes": 11986272256,
+   "pass_refs": 0,
+   "static_refs": 1633,
+   "by_alias": {
+    "slots": 889,
+    "pass": 0,
+    "static": 889,
+    "pass_ids": 0,
+    "bytes": 6525288448
+   },
+   "reserved": "by_alias"
+  },
+  "diag_source": "values",
+  "sums": {
+   "diag": 0,
+   "stream": 0,
+   "diag_terms": {},
+   "stream_terms": {},
+   "per_program": {
+    "block_0": 0,
+    "block_1": 0,
+    "block_2": 0,
+    "block_3": 0,
+    "block_4": 0,
+    "block_5": 0,
+    "block_6": 0,
+    "block_7": 0,
+    "block_8": 0,
+    "block_9": 0,
+    "block_10": 0,
+    "block_11": 0,
+    "block_12": 0,
+    "block_13": 0,
+    "block_14": 0,
+    "block_15": 0,
+    "block_16": 0,
+    "block_17": 0,
+    "block_18": 0,
+    "block_19": 0,
+    "block_20": 0,
+    "block_21": 0,
+    "block_22": 0,
+    "block_23": 0,
+    "block_24": 0
+   }
+  },
+  "prepare_s": 46.2,
+  "rotation_steps": [
+   -1,
+   1,
+   32,
+   64,
+   128,
+   256,
+   512,
+   1024,
+   2048,
+   4096,
+   8192,
+   16384
+  ],
+  "pass_kernels": false,
+  "pcmm": {
+   "declared": [
+    "b0.win",
+    "b0.wout",
+    "b0.wk",
+    "b0.wr",
+    "b0.wv",
+    "b1.win",
+    "b1.wout",
+    "b1.wk",
+    "b1.wr",
+    "b1.wv",
+    "b2.win",
+    "b2.wout",
+    "b2.wk",
+    "b2.wr",
+    "b2.wv",
+    "b3.win",
+    "b3.wout",
+    "b3.wk",
+    "b3.wr",
+    "b3.wv",
+    "b4.win",
+    "b4.wout",
+    "b4.wk",
+    "b4.wr",
+    "b4.wv",
+    "b5.win",
+    "b5.wout",
+    "b5.wk",
+    "b5.wr",
+    "b5.wv",
+    "b6.win",
+    "b6.wout",
+    "b6.wk",
+    "b6.wr",
+    "b6.wv",
+    "b7.win",
+    "b7.wout",
+    "b7.wk",
+    "b7.wr",
+    "b7.wv",
+    "b8.win",
+    "b8.wout",
+    "b8.wk",
+    "b8.wr",
+    "b8.wv",
+    "b9.win",
+    "b9.wout",
+    "b9.wk",
+    "b9.wr",
+    "b9.wv",
+    "b10.win",
+    "b10.wout",
+    "b10.wk",
+    "b10.wr",
+    "b10.wv",
+    "b11.win",
+    "b11.wout",
+    "b11.wk",
+    "b11.wr",
+    "b11.wv",
+    "b12.win",
+    "b12.wout",
+    "b12.wk",
+    "b12.wr",
+    "b12.wv",
+    "b13.win",
+    "b13.wout",
+    "b13.wk",
+    "b13.wr",
+    "b13.wv",
+    "b14.win",
+    "b14.wout",
+    "b14.wk",
+    "b14.wr",
+    "b14.wv",
+    "b15.win",
+    "b15.wout",
+    "b15.wk",
+    "b15.wr",
+    "b15.wv",
+    "b16.win",
+    "b16.wout",
+    "b16.wk",
+    "b16.wr",
+    "b16.wv",
+    "b17.win",
+    "b17.wout",
+    "b17.wk",
+    "b17.wr",
+    "b17.wv",
+    "b18.win",
+    "b18.wout",
+    "b18.wk",
+    "b18.wr",
+    "b18.wv",
+    "b19.win",
+    "b19.wout",
+    "b19.wk",
+    "b19.wr",
+    "b19.wv",
+    "b20.win",
+    "b20.wout",
+    "b20.wk",
+    "b20.wr",
+    "b20.wv",
+    "b21.win",
+    "b21.wout",
+    "b21.wk",
+    "b21.wr",
+    "b21.wv",
+    "b22.win",
+    "b22.wout",
+    "b22.wk",
+    "b22.wr",
+    "b22.wv",
+    "b23.win",
+    "b23.wout",
+    "b23.wk",
+    "b23.wr",
+    "b23.wv"
+   ],
+   "linears": 120,
+   "finishes": 264
+  }
+ },
+ "setup": {
+  "total_s": 40.2,
+  "prepare_s": 46.2,
+  "session_s": 9.438439917,
+  "keygen_s": 1.69291097,
+  "mem_report": "context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 504.0 MB, ks.plans 4.0 MB, keys 6535.2 MB, keygen 31.5 MB, ks.groups 0.0 MB, ks.regen_a 189.0 MB, ops 164.5 MB, rescale 253.5 MB, pt_store 5367.5 MB, encode 3.5 MB, encrypt 0.0 MB, decrypt 9.0 MB, keys.secret 31.5 MB, bts.dense 4328.2 MB, bts.stc_first 32835.6 MB, bts.sparse 945.0 MB, bts.sparse 827.2 MB, bts.route 0.0 MB, bts.work 4032.0 MB, replay.slab 1449.0 MB, replay.regs 1015.0 MB, replay.groups 0.6 MB, pcmm 1343.6 MB, pcmm.weights 1008.0 MB, pcmm.cts 252.0 MB, replay.side 2709.0 MB, ops 164.5 MB, rescale 253.5 MB, slack 256.0 MB, total 67096.4 MB",
+  "mem_free_bytes": 31009079296,
+  "mem_total_bytes": 101973491712,
+  "rotation_keys": [
+   12,
+   12
+  ],
+  "registers": 73,
+  "pcmm_uploaded": [
+   "b0.win",
+   "b0.wout",
+   "b0.wk",
+   "b0.wr",
+   "b0.wv",
+   "b1.win",
+   "b1.wout",
+   "b1.wk",
+   "b1.wr",
+   "b1.wv",
+   "b2.win",
+   "b2.wout",
+   "b2.wk",
+   "b2.wr",
+   "b2.wv",
+   "b3.win",
+   "b3.wout",
+   "b3.wk",
+   "b3.wr",
+   "b3.wv",
+   "b4.win",
+   "b4.wout",
+   "b4.wk",
+   "b4.wr",
+   "b4.wv",
+   "b5.win",
+   "b5.wout",
+   "b5.wk",
+   "b5.wr",
+   "b5.wv",
+   "b6.win",
+   "b6.wout",
+   "b6.wk",
+   "b6.wr",
+   "b6.wv",
+   "b7.win",
+   "b7.wout",
+   "b7.wk",
+   "b7.wr",
+   "b7.wv",
+   "b8.win",
+   "b8.wout",
+   "b8.wk",
+   "b8.wr",
+   "b8.wv",
+   "b9.win",
+   "b9.wout",
+   "b9.wk",
+   "b9.wr",
+   "b9.wv",
+   "b10.win",
+   "b10.wout",
+   "b10.wk",
+   "b10.wr",
+   "b10.wv",
+   "b11.win",
+   "b11.wout",
+   "b11.wk",
+   "b11.wr",
+   "b11.wv",
+   "b12.win",
+   "b12.wout",
+   "b12.wk",
+   "b12.wr",
+   "b12.wv",
+   "b13.win",
+   "b13.wout",
+   "b13.wk",
+   "b13.wr",
+   "b13.wv",
+   "b14.win",
+   "b14.wout",
+   "b14.wk",
+   "b14.wr",
+   "b14.wv",
+   "b15.win",
+   "b15.wout",
+   "b15.wk",
+   "b15.wr",
+   "b15.wv",
+   "b16.win",
+   "b16.wout",
+   "b16.wk",
+   "b16.wr",
+   "b16.wv",
+   "b17.win",
+   "b17.wout",
+   "b17.wk",
+   "b17.wr",
+   "b17.wv",
+   "b18.win",
+   "b18.wout",
+   "b18.wk",
+   "b18.wr",
+   "b18.wv",
+   "b19.win",
+   "b19.wout",
+   "b19.wk",
+   "b19.wr",
+   "b19.wv",
+   "b20.win",
+   "b20.wout",
+   "b20.wk",
+   "b20.wr",
+   "b20.wv",
+   "b21.win",
+   "b21.wout",
+   "b21.wk",
+   "b21.wr",
+   "b21.wv",
+   "b22.win",
+   "b22.wout",
+   "b22.wk",
+   "b22.wr",
+   "b22.wv",
+   "b23.win",
+   "b23.wout",
+   "b23.wk",
+   "b23.wr",
+   "b23.wv"
+  ],
+  "plaintexts_staged": 889,
+  "pass_masks": null,
+  "diag_tiles_uploaded": 0,
+  "diag": null,
+  "has_secret": true,
+  "profile": "a device fence after every stage on the fenced ticks: stage walls are attributions, not the production wall"
+ },
+ "ticks": [
+  {
+   "pos": 0,
+   "timed": true,
+   "seconds": 13.94,
+   "fenced": true,
+   "issue_s": 13.935,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 174364.83600000106,
+    "launch_us": 174290.92899999997,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 29465575424,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 9802.432999999999,
+     "launch_us": 9796.508,
+     "wall_s": 0.566
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 6997.726000000001,
+     "launch_us": 6993.908,
+     "wall_s": 0.57
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 6501.789,
+     "launch_us": 6499.536,
+     "wall_s": 0.5701
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 6363.029,
+     "launch_us": 6359.9980000000005,
+     "wall_s": 0.5706
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 8787.568000000001,
+     "launch_us": 8784.666,
+     "wall_s": 0.5711
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 6698.737,
+     "launch_us": 6696.33,
+     "wall_s": 0.5707
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 6569.556,
+     "launch_us": 6566.8369999999995,
+     "wall_s": 0.5715
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 7287.178,
+     "launch_us": 7284.485000000001,
+     "wall_s": 0.5718
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 8682.798999999999,
+     "launch_us": 8680.064,
+     "wall_s": 0.5712
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 6308.464,
+     "launch_us": 6305.817,
+     "wall_s": 0.5719
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 6463.593999999999,
+     "launch_us": 6460.105,
+     "wall_s": 0.5724
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 6808.6359999999995,
+     "launch_us": 6805.683,
+     "wall_s": 0.5717
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 8460.389000000001,
+     "launch_us": 8457.321,
+     "wall_s": 0.5724
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 7489.816,
+     "launch_us": 7486.983,
+     "wall_s": 0.5725
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 6699.054999999999,
+     "launch_us": 6696.012000000001,
+     "wall_s": 0.572
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 6346.502,
+     "launch_us": 6343.502,
+     "wall_s": 0.5724
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 6497.026000000001,
+     "launch_us": 6494.117,
+     "wall_s": 0.5725
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 6957.003,
+     "launch_us": 6954.363,
+     "wall_s": 0.5725
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 6454.688,
+     "launch_us": 6452.206,
+     "wall_s": 0.5732
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 6439.695,
+     "launch_us": 6436.905,
+     "wall_s": 0.573
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 7192.752,
+     "launch_us": 7189.664,
+     "wall_s": 0.5727
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 6342.039,
+     "launch_us": 6339.148,
+     "wall_s": 0.5735
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 8338.712,
+     "launch_us": 8336.034000000001,
+     "wall_s": 0.5734
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 7745.011,
+     "launch_us": 7742.025,
+     "wall_s": 0.573
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 2130.639,
+     "launch_us": 2128.712,
+     "wall_s": 0.1616
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.0022508062461052687,
+   "relErrRms_vs_exact_worst_conversation": 0.007289655999573694,
+   "logits_relErrRms_vs_exact": 0.0011008544352726199,
+   "top1_agree_vs_exact": 0.984375
+  },
+  {
+   "pos": 1,
+   "timed": true,
+   "seconds": 13.989,
+   "fenced": false,
+   "issue_s": 0.06,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2544.799000000581,
+    "launch_us": 2503.436000000016,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 29465575424,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 94.80900000000001,
+     "launch_us": 89.49900000000001,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 87.07600000000001,
+     "launch_us": 84.994,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 83.575,
+     "launch_us": 82.299,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 84.853,
+     "launch_us": 83.319,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 92.111,
+     "launch_us": 90.854,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 93.459,
+     "launch_us": 92.217,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 92.039,
+     "launch_us": 90.633,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 91.243,
+     "launch_us": 89.82700000000001,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 90.896,
+     "launch_us": 89.724,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 91.943,
+     "launch_us": 90.658,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 92.114,
+     "launch_us": 90.468,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 94.997,
+     "launch_us": 93.488,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 93.961,
+     "launch_us": 92.05499999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 92.098,
+     "launch_us": 90.747,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 94.253,
+     "launch_us": 92.516,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 89.719,
+     "launch_us": 88.334,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 92.548,
+     "launch_us": 90.736,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 114.43900000000001,
+     "launch_us": 112.575,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 151.529,
+     "launch_us": 150.138,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 144.182,
+     "launch_us": 142.76100000000002,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 141.62800000000001,
+     "launch_us": 139.91,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 144.06,
+     "launch_us": 142.65099999999998,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 141.864,
+     "launch_us": 140.191,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 133.10199999999998,
+     "launch_us": 131.415,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 22.301,
+     "launch_us": 21.427,
+     "issue_s": 0.0
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.003244027000380972,
+   "relErrRms_vs_exact_worst_conversation": 0.009467538489459552,
+   "logits_relErrRms_vs_exact": 0.0017603754313891672,
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pos": 2,
+   "timed": true,
+   "seconds": 14.029,
+   "fenced": true,
+   "issue_s": 14.024,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2312.866999996826,
+    "launch_us": 2262.2309999999707,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 29465575424,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 117.553,
+     "launch_us": 111.80199999999999,
+     "wall_s": 0.569
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 95.852,
+     "launch_us": 92.181,
+     "wall_s": 0.5743
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 89.01899999999999,
+     "launch_us": 86.35,
+     "wall_s": 0.5746
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 84.269,
+     "launch_us": 82.869,
+     "wall_s": 0.5751
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 93.05499999999999,
+     "launch_us": 91.098,
+     "wall_s": 0.5749
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 92.82,
+     "launch_us": 91.224,
+     "wall_s": 0.5749
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 95.039,
+     "launch_us": 93.293,
+     "wall_s": 0.5751
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 95.237,
+     "launch_us": 93.558,
+     "wall_s": 0.5753
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 94.601,
+     "launch_us": 92.818,
+     "wall_s": 0.5753
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 97.558,
+     "launch_us": 95.823,
+     "wall_s": 0.5754
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 95.301,
+     "launch_us": 93.676,
+     "wall_s": 0.5755
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 95.61999999999999,
+     "launch_us": 93.70899999999999,
+     "wall_s": 0.5757
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 92.88799999999999,
+     "launch_us": 90.72,
+     "wall_s": 0.5758
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 94.802,
+     "launch_us": 92.913,
+     "wall_s": 0.5759
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 95.46900000000001,
+     "launch_us": 93.85600000000001,
+     "wall_s": 0.5759
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 93.12,
+     "launch_us": 91.444,
+     "wall_s": 0.5764
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 94.17999999999999,
+     "launch_us": 91.465,
+     "wall_s": 0.576
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 95.054,
+     "launch_us": 93.248,
+     "wall_s": 0.5762
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 99.411,
+     "launch_us": 97.661,
+     "wall_s": 0.5763
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 93.459,
+     "launch_us": 91.819,
+     "wall_s": 0.5763
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 95.83,
+     "launch_us": 94.277,
+     "wall_s": 0.5764
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 95.884,
+     "launch_us": 94.283,
+     "wall_s": 0.5765
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 93.434,
+     "launch_us": 91.934,
+     "wall_s": 0.5766
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 99.133,
+     "launch_us": 97.327,
+     "wall_s": 0.5766
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 24.279,
+     "launch_us": 22.883000000000003,
+     "wall_s": 0.1618
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.0035210895289452425,
+   "relErrRms_vs_exact_worst_conversation": 0.008525372429589223,
+   "logits_relErrRms_vs_exact": 0.0016896114068717263,
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pos": 3,
+   "timed": true,
+   "seconds": 14.065,
+   "fenced": false,
+   "issue_s": 0.061,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2693.406999995932,
+    "launch_us": 2650.5439999999944,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 29465575424,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 100.05199999999999,
+     "launch_us": 95.11800000000001,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 84.68900000000001,
+     "launch_us": 83.075,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 84.588,
+     "launch_us": 82.787,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 84.25800000000001,
+     "launch_us": 82.699,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 94.2,
+     "launch_us": 92.277,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 91.884,
+     "launch_us": 90.30399999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 93.51700000000001,
+     "launch_us": 92.036,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 91.987,
+     "launch_us": 90.07,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 93.77000000000001,
+     "launch_us": 92.442,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 97.01400000000001,
+     "launch_us": 95.872,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 93.76599999999999,
+     "launch_us": 92.112,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 94.894,
+     "launch_us": 93.589,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 91.262,
+     "launch_us": 89.721,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 92.52,
+     "launch_us": 91.053,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 92.283,
+     "launch_us": 90.77499999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 120.927,
+     "launch_us": 119.592,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 143.842,
+     "launch_us": 141.98999999999998,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 152.03300000000002,
+     "launch_us": 149.917,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 144.728,
+     "launch_us": 143.375,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 144.557,
+     "launch_us": 143.06799999999998,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 143.282,
+     "launch_us": 141.684,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 146.242,
+     "launch_us": 144.446,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 143.55800000000002,
+     "launch_us": 142.087,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 146.63600000000002,
+     "launch_us": 144.876,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 26.918,
+     "launch_us": 25.579,
+     "issue_s": 0.0
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.003887533857382008,
+   "relErrRms_vs_exact_worst_conversation": 0.00849435570063036,
+   "logits_relErrRms_vs_exact": 0.0022690962748687206,
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pos": 4,
+   "timed": true,
+   "seconds": 14.096,
+   "fenced": true,
+   "issue_s": 14.091,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2304.9399999938905,
+    "launch_us": 2254.1650000000373,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 29465575424,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 100.411,
+     "launch_us": 94.744,
+     "wall_s": 0.5713
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 90.61800000000001,
+     "launch_us": 87.867,
+     "wall_s": 0.5769
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 94.054,
+     "launch_us": 91.969,
+     "wall_s": 0.5772
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 86.458,
+     "launch_us": 84.646,
+     "wall_s": 0.5774
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 99.08600000000001,
+     "launch_us": 96.687,
+     "wall_s": 0.5776
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 98.62700000000001,
+     "launch_us": 96.264,
+     "wall_s": 0.5775
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 96.538,
+     "launch_us": 94.42599999999999,
+     "wall_s": 0.5777
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 95.065,
+     "launch_us": 93.194,
+     "wall_s": 0.5778
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 95.569,
+     "launch_us": 93.571,
+     "wall_s": 0.578
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 95.45100000000001,
+     "launch_us": 94.0,
+     "wall_s": 0.578
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 96.313,
+     "launch_us": 94.47,
+     "wall_s": 0.578
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 96.25699999999999,
+     "launch_us": 94.33900000000001,
+     "wall_s": 0.5781
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 94.177,
+     "launch_us": 92.265,
+     "wall_s": 0.5785
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 94.389,
+     "launch_us": 92.587,
+     "wall_s": 0.5782
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 100.098,
+     "launch_us": 98.12299999999999,
+     "wall_s": 0.5784
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 93.739,
+     "launch_us": 92.16399999999999,
+     "wall_s": 0.5784
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 94.216,
+     "launch_us": 92.262,
+     "wall_s": 0.5785
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 94.41499999999999,
+     "launch_us": 92.782,
+     "wall_s": 0.5784
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 94.97699999999999,
+     "launch_us": 93.066,
+     "wall_s": 0.5786
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 93.997,
+     "launch_us": 92.532,
+     "wall_s": 0.5787
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 95.258,
+     "launch_us": 93.581,
+     "wall_s": 0.5787
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 94.065,
+     "launch_us": 92.301,
+     "wall_s": 0.5788
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 92.235,
+     "launch_us": 90.4,
+     "wall_s": 0.5788
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 94.952,
+     "launch_us": 93.178,
+     "wall_s": 0.5789
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 23.975,
+     "launch_us": 22.747,
+     "wall_s": 0.1626
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.003836533103571017,
+   "relErrRms_vs_exact_worst_conversation": 0.010042729161805318,
+   "logits_relErrRms_vs_exact": 0.0023875075176946247,
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pos": 5,
+   "timed": true,
+   "seconds": 14.11,
+   "fenced": false,
+   "issue_s": 0.06,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 5532.836000001058,
+    "launch_us": 5488.856999999989,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 29465575424,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 110.448,
+     "launch_us": 103.757,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 106.88199999999999,
+     "launch_us": 104.961,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 101.927,
+     "launch_us": 100.339,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 95.884,
+     "launch_us": 94.164,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 140.773,
+     "launch_us": 139.023,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 94.286,
+     "launch_us": 92.905,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 93.298,
+     "launch_us": 91.45700000000001,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 92.786,
+     "launch_us": 91.05799999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 94.455,
+     "launch_us": 93.164,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 93.369,
+     "launch_us": 92.127,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 93.235,
+     "launch_us": 91.819,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 93.324,
+     "launch_us": 91.551,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 91.143,
+     "launch_us": 89.211,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 91.531,
+     "launch_us": 89.94200000000001,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 90.608,
+     "launch_us": 89.03500000000001,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 91.176,
+     "launch_us": 89.976,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 91.664,
+     "launch_us": 90.171,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 92.186,
+     "launch_us": 90.492,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 3097.152,
+     "launch_us": 3095.617,
+     "issue_s": 0.0031
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 143.976,
+     "launch_us": 142.555,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 144.25,
+     "launch_us": 142.78,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 145.63799999999998,
+     "launch_us": 144.011,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 128.185,
+     "launch_us": 126.642,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 92.174,
+     "launch_us": 90.788,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 22.486,
+     "launch_us": 21.311999999999998,
+     "issue_s": 0.0
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.003945037995561231,
+   "relErrRms_vs_exact_worst_conversation": 0.009633292216081318,
+   "logits_relErrRms_vs_exact": 0.0023697200651670784,
+   "top1_agree_vs_exact": 0.984375
+  }
+ ],
+ "warmup": {
+  "pos": 0,
+  "timed": false,
+  "seconds": 15.919,
+  "fenced": true,
+  "issue_s": 15.913,
+  "served": "ccccccccccccccccccccccccc",
+  "out_level": 40,
+  "refreshes_planned": 538,
+  "counters": {
+   "runs": 25,
+   "host_us": 13139348.816,
+   "launch_us": 0.0,
+   "captures": 25,
+   "replays": 0,
+   "eager": 0,
+   "capture_ms": 2757.3057660000004,
+   "invalidations": 0,
+   "pairs": [
+    0,
+    0
+   ],
+   "fused": 24,
+   "stc_evictions": 0,
+   "stc_misses": 19
+  },
+  "mem_free_bytes": 29465575424,
+  "stages": [
+   {
+    "block": 0,
+    "served": "captured",
+    "host_us": 542926.3979999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6249
+   },
+   {
+    "block": 1,
+    "served": "captured",
+    "host_us": 543507.692,
+    "launch_us": 0.0,
+    "wall_s": 0.6264
+   },
+   {
+    "block": 2,
+    "served": "captured",
+    "host_us": 539815.183,
+    "launch_us": 0.0,
+    "wall_s": 0.6209
+   },
+   {
+    "block": 3,
+    "served": "captured",
+    "host_us": 539878.2250000001,
+    "launch_us": 0.0,
+    "wall_s": 0.6212
+   },
+   {
+    "block": 4,
+    "served": "captured",
+    "host_us": 541679.28,
+    "launch_us": 0.0,
+    "wall_s": 0.6581
+   },
+   {
+    "block": 5,
+    "served": "captured",
+    "host_us": 541116.9099999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6584
+   },
+   {
+    "block": 6,
+    "served": "captured",
+    "host_us": 540322.7579999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6594
+   },
+   {
+    "block": 7,
+    "served": "captured",
+    "host_us": 540445.3849999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6577
+   },
+   {
+    "block": 8,
+    "served": "captured",
+    "host_us": 540581.114,
+    "launch_us": 0.0,
+    "wall_s": 0.6606
+   },
+   {
+    "block": 9,
+    "served": "captured",
+    "host_us": 540727.92,
+    "launch_us": 0.0,
+    "wall_s": 0.6595
+   },
+   {
+    "block": 10,
+    "served": "captured",
+    "host_us": 540970.157,
+    "launch_us": 0.0,
+    "wall_s": 0.6589
+   },
+   {
+    "block": 11,
+    "served": "captured",
+    "host_us": 540922.554,
+    "launch_us": 0.0,
+    "wall_s": 0.6594
+   },
+   {
+    "block": 12,
+    "served": "captured",
+    "host_us": 541223.549,
+    "launch_us": 0.0,
+    "wall_s": 0.661
+   },
+   {
+    "block": 13,
+    "served": "captured",
+    "host_us": 541302.722,
+    "launch_us": 0.0,
+    "wall_s": 0.6602
+   },
+   {
+    "block": 14,
+    "served": "captured",
+    "host_us": 541491.34,
+    "launch_us": 0.0,
+    "wall_s": 0.66
+   },
+   {
+    "block": 15,
+    "served": "captured",
+    "host_us": 542429.823,
+    "launch_us": 0.0,
+    "wall_s": 0.6622
+   },
+   {
+    "block": 16,
+    "served": "captured",
+    "host_us": 541606.704,
+    "launch_us": 0.0,
+    "wall_s": 0.6644
+   },
+   {
+    "block": 17,
+    "served": "captured",
+    "host_us": 541775.162,
+    "launch_us": 0.0,
+    "wall_s": 0.6605
+   },
+   {
+    "block": 18,
+    "served": "captured",
+    "host_us": 542545.661,
+    "launch_us": 0.0,
+    "wall_s": 0.6626
+   },
+   {
+    "block": 19,
+    "served": "captured",
+    "host_us": 541975.331,
+    "launch_us": 0.0,
+    "wall_s": 0.6637
+   },
+   {
+    "block": 20,
+    "served": "captured",
+    "host_us": 542136.552,
+    "launch_us": 0.0,
+    "wall_s": 0.663
+   },
+   {
+    "block": 21,
+    "served": "captured",
+    "host_us": 544803.419,
+    "launch_us": 0.0,
+    "wall_s": 0.6661
+   },
+   {
+    "block": 22,
+    "served": "captured",
+    "host_us": 542228.1599999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6642
+   },
+   {
+    "block": 23,
+    "served": "captured",
+    "host_us": 542419.082,
+    "launch_us": 0.0,
+    "wall_s": 0.6665
+   },
+   {
+    "block": 24,
+    "served": "captured",
+    "host_us": 140517.73500000002,
+    "launch_us": 0.0,
+    "wall_s": 0.1792
+   }
+  ],
+  "diag": null,
+  "relErrRms_vs_exact": 0.0024725183765485284,
+  "relErrRms_vs_exact_worst_conversation": 0.008366986281838547,
+  "logits_relErrRms_vs_exact": 0.0011118407543269167,
+  "top1_agree_vs_exact": 0.96875,
+  "note": "untimed, random public tokens, from zero state; captures the CUDA graphs"
+ }
+}

@@ -100,3 +100,93 @@ from the pulled records by the scripts in [results/dense-demo-s31/pod_longrun_20
   and [spec_decode/prompt_select_longrun.py](../spec_decode/prompt_select_longrun.py) run it on a laptop.
 - The level-trace replayer ([results/theory/run_all.sh](../results/theory/run_all.sh)) counts the bootstraps of a configuration
   from its level chain, without any cryptography.
+
+## 7. The November path: one card, the Perseus runtime
+
+Both ports live on the fork [github.com/xelananv/perseus](https://github.com/xelananv/perseus): branch `fhe-ssm-speedrun` for the
+405M model, branch `fhe-ssm-rwkv7-any` for RWKV-7. Each branch's example README (`python/perseus/examples/fhe_ssm/README.md`,
+`python/perseus/examples/rwkv7/README.md`) is the reference for every flag; this section gives the order in which the recorded
+runs were produced. Perseus itself is under the Business Source License 1.1: any commercial use of the contributed files as part of
+Perseus requires prior written permission from Alessandro Zirilli or Davide Marincione under that license; on their own the files
+carry the MIT license.
+
+| | recorded box |
+|---|---|
+| 405M runs | 1× RTX PRO 6000 Blackwell Workstation Edition (97,887 MiB), driver 595.84, CUDA 13.2, 20 host cores |
+| RWKV-7 runs | 1× RTX PRO 6000 Blackwell Workstation (600 W, 97,887 MiB), CUDA 13.2, 32 host cores, 186 GB of host RAM |
+
+Every run goes through the same four steps:
+
+1. **Capture.** The model runs one step on the CPU twin, which records the operation graph of every stage. No GPU is needed.
+2. **Plan.** The planner places the refreshes on the captured graph and writes a plan directory.
+3. **Keys.** `keyspec` turns the plan's needs into a key request; `keygen` plays the client role, samples a secret and writes the
+   bundle (`keys.pckb`) with `client_secret.bin` beside it. Skip this step only for an in-process timing run (`KEYS=inproc`: the
+   session samples and holds the secret, and the record says `insecure-inproc`).
+4. **Run.** The session opens from the bundle (`KEYS=bundle`), compiles the stream against the plan, captures CUDA graphs on an
+   untimed warm-up step and runs the timed steps, scoring each against the plaintext reference.
+
+### 7.1 The 405M model (`tools/fhe_ssm/run_gpu.sh`, branch `fhe-ssm-speedrun`)
+
+```bash
+# on the box, the fork checked out at /root/perseus; DATA holds pbd430a_weights.npz, pbd430a_seeds.json, pbd430a_config.json
+export DATA=/root/data PROFILE_EVERY=2
+bash tools/fhe_ssm/run_gpu.sh box                 # record the box: GPU, driver, nvcc, RAM, disk, load, commit
+bash tools/fhe_ssm/run_gpu.sh build               # uv venv + editable install + maturin develop --release
+bash tools/fhe_ssm/run_gpu.sh verify              # _pc loads, the CPU compile check, the CPU test suites
+bash tools/fhe_ssm/run_gpu.sh arms                # the configurations ("arms") and what each sets
+bash tools/fhe_ssm/run_gpu.sh capture cfg-best-em && bash tools/fhe_ssm/run_gpu.sh plan cfg-best-em
+# the publication run: client bundle, the three-document scenario as a lane configuration
+LANE_CONFIG=own.passes.json bash tools/fhe_ssm/run_gpu.sh keyspec cfg-best-em
+bash tools/fhe_ssm/run_gpu.sh keygen cfg-best-em
+KEYS=bundle FHE_SSM_KEYS=$OUT/keys_cfg-best-em LANE_CONFIG=own.passes.json \
+  RUN_EXTRA="--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table t_mildall.json" bash tools/fhe_ssm/run_gpu.sh run cfg-best-em
+# the 148-step free run: in-process keys, the screened prompts of the first run
+bash tools/fhe_ssm/run_gpu.sh capture best && bash tools/fhe_ssm/run_gpu.sh plan best
+KEYS=inproc TICKS=148 RUN_EXTRA="--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table t_mildall.json --tokens serve_LONG_tokens.json --free-run" \
+  bash tools/fhe_ssm/run_gpu.sh run best
+```
+
+- The lane configuration of the three-document scenario is [own.passes.json](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/cfgs_best/own.passes.json).
+- `t_mildall.json` is the per-site correction-factor table: 7 for the `wk`, `wout` and `wv` products of every block, 8 for every
+  other PCMM product.
+- `--stc-cache 160` sizes the bootstrap stage cache for the whole model; below it a whole-model run fails in its warm-up.
+- Each run writes `record.json` (build identity, plan, key mode, every pass with its seconds, fenced flag, errors and top-1)
+  beside `run.log` and an `nvidia-smi` sample. Quote unfenced passes.
+
+### 7.2 RWKV-7 (`tools/rwkv7/run_box.sh`, branch `fhe-ssm-rwkv7-any`)
+
+```bash
+# the recorded environment: the best levers, client bundles, the stage cache at 160, 32 generated tokens
+export LEVERS=best KEYS=bundle STC_CACHE=160 B_GENERATE=32 PF_GENERATE=32
+bash tools/rwkv7/run_box.sh build
+# decode: capture, plan, keys (KEYMODE = decode | pf | b), then the run
+bash tools/rwkv7/run_box.sh capture && bash tools/rwkv7/run_box.sh plan
+KEYMODE=decode bash tools/rwkv7/run_box.sh keyspec && KEYMODE=decode bash tools/rwkv7/run_box.sh keygen
+TEXT=$'\n\nThe scientists discovered a new species of' TOKENS=64 RUN_EXTRA="--generate 32" RUN_TAG=P1 bash tools/rwkv7/run_box.sh run
+# prefill, T = 32 per pass
+bash tools/rwkv7/run_box.sh capture_pf && bash tools/rwkv7/run_box.sh plan_pf && bash tools/rwkv7/run_box.sh pfcheck
+KEYMODE=pf bash tools/rwkv7/run_box.sh keyspec && KEYMODE=pf bash tools/rwkv7/run_box.sh keygen
+PF_TEXT=... PF_TOKENS=... POOL_PF=256 bash tools/rwkv7/run_box.sh run_pf
+# 32 conversations, filled layout, no refresh inside a conversation's state work (PLANOPT=b2)
+export LAYOUT=filled PLANOPT=b2 B_K=32
+bash tools/rwkv7/run_box.sh capture_b && bash tools/rwkv7/run_box.sh plan_b && bash tools/rwkv7/run_box.sh bcheck
+KEYMODE=b bash tools/rwkv7/run_box.sh keyspec && KEYMODE=b bash tools/rwkv7/run_box.sh keygen
+RWKV7_SHED_TWIN=1 RWKV7_LEAN_PREFIX=1 bash tools/rwkv7/run_box.sh batch
+# continuous batching (in-process keys), 8 conversations from tools/rwkv7/serve_arrivals.txt
+B_K=4 bash tools/rwkv7/run_box.sh scheck && B_K=4 KEYS=inproc S_GENERATE=8 POOL_S=256 bash tools/rwkv7/run_box.sh s
+```
+
+- The 0.4B runs set the checkpoint and its coefficients (`PTH`, `COEFFS`), and both memory flags.
+- `RWKV7_SHED_TWIN=1` cuts the CPU twin's host memory (149,520 → 26,425 MiB at 0.1B, 32 conversations);
+  `RWKV7_LEAN_PREFIX=1` shares one encryption of the public prefix state (device 90,905 → 63,689 MiB). Neither changes a
+  compiled program. Without the host flag a 32-conversation or prefill session needs roughly 150–180 GB of host RAM.
+- `tools/rwkv7/size_pipeline.sh <checkpoint.pth> <tag>` runs any `RWKV-x070-World-*` size from calibration through the fit, the
+  scans and the gate; it stops before any capture when the gate fails (the 1.5B did).
+- Each run writes a `.jsonl`: a header (keys, `has_secret`, `input_encryption`, `params_hash`), one line per token or pass, and a
+  summary. The headers carry no build stamp: record the checkout beside every run.
+
+### 7.3 Without a GPU
+
+Both ports run on Perseus's numpy fake with the runtime's level rules, and their CPU test suites run on a laptop
+(`python -m pytest python/perseus/examples/fhe_ssm/tests`, `python -m pytest python/perseus/examples/rwkv7/tests`). The capture
+and plan steps need no GPU either; the plans of the recorded runs were cut on the CPU.

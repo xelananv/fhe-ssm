@@ -1,0 +1,2 @@
+{"blocks": 1, "kw": {}, "params_bytes": 462544896, "twin_extra_bytes": 113770496, "twin_pcmm_Wd_bytes": 75497472, "n_linears": 11, "mirror_extra_bytes": 115867648, "C": 768, "emb_bytes": 201326592}
+{"blocks": 2, "kw": {}, "params_bytes": 522823680, "twin_extra_bytes": 226754560, "twin_pcmm_Wd_bytes": 157286400, "n_linears": 23, "mirror_extra_bytes": 230948864, "C": 768, "emb_bytes": 201326592}

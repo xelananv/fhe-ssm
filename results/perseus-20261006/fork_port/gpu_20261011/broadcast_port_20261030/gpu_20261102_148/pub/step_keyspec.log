@@ -1,0 +1,3 @@
+[run_gpu 20:19:31] keyspec cfg-best-em: perseus.examples.fhe_ssm.run_planned --plan /root/out_best/gpu/bootstrap_placements/plan_cfg-best-em --keyspec /root/out_best/gpu/keys_cfg-best-em/keyspec.json --newton-form depth2 --newton-sites per-site --pack-stats halves --linear pcmm --pcmm-wbits 24 --pass-kernels on --schedule siblings --lane-config /root/out_best/gpu/cfgs_best/own.passes.json --capture /root/out_best/gpu/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on
+[run_gpu 20:21:23] keyspec cfg-best-em: exit 0; /root/out_best/gpu/keys_cfg-best-em/keyspec.json
+[planned] prepared (device): 25 programs from token 1's stream, 0 dynamic steps, 73 registers, stream static, 48.7 s

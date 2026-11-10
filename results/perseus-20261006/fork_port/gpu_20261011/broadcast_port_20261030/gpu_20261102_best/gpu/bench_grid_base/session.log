@@ -1,0 +1,1 @@
+[run_gpu 16:51:08] bench: /root/out_best/gpu/bench_grid_base/bench_bts.txt (set PLAN_BTS_MS from it for ILP_OBJECTIVE=ms); commit=50666f6f dirty=0 pc_so=5bbae5e8d2c91ef7 nvcc=13.2 arch=120 load=1.47 0.48 0.65

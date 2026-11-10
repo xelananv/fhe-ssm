@@ -1,0 +1,3 @@
+{"draw":0,"main_s":{"n":65536,"plus":21742,"minus":22008,"zero":21786},"encaps_s_sparse":{"n":65536,"plus":14,"minus":18,"zero":65504},"pcmm_s1":{"n":4096,"plus":1324,"minus":1397,"zero":1375}}
+{"draw":1,"main_s":{"n":65536,"plus":21853,"minus":21950,"zero":21733},"encaps_s_sparse":{"n":65536,"plus":13,"minus":19,"zero":65504},"pcmm_s1":{"n":4096,"plus":1366,"minus":1380,"zero":1350}}
+{"draw":2,"main_s":{"n":65536,"plus":21676,"minus":22182,"zero":21678},"encaps_s_sparse":{"n":65536,"plus":15,"minus":17,"zero":65504},"pcmm_s1":{"n":4096,"plus":1344,"minus":1373,"zero":1379}}

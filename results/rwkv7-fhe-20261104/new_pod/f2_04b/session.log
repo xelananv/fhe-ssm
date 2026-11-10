@@ -1,0 +1,317 @@
+[rwkv7 18:11:07] capture -> /root/out_pod3/f2_04b/cap_rwkv7 (FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44)
+[capture] token 0 out level 28 in 36.8 s
+[capture] token 1 out level 28 in 42.0 s
+[capture] wrote /root/out_pod3/f2_04b/cap_rwkv7 (24 blocks + tail) in 156.1 s
+[rwkv7 18:13:44] capture: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields)
+[rwkv7 18:13:45] plan /root/out_pod3/f2_04b/cap_rwkv7 -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 25 block plans with the capture's Config; plan_rot_steps.json: 43 steps
+  planned in 56 s: 25 stages, 1011 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:38@26 block_1:40@26 block_2:40@26 block_3:40@26 block_4:41@26 block_5:41@26 block_6:45@26 block_7:43@26 block_8:43@26 block_9:42@26 block_10:42@26 block_11:42@26 block_12:46@26 block_13:42@26 block_14:41@26 block_15:43@26 block_16:42@26 block_17:43@26 block_18:43@26 block_19:41@26 block_20:42@26 block_21:43@26 block_22:43@26 block_23:44@26 block_24:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_best
+[rwkv7 18:14:41] plan: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields)
+[rwkv7 18:14:42] capture_pf T=32 -> /root/out_pod3/f2_04b/cap_rwkv7_pf32
+[capture] pass 0 out level 28 in 66.8 s
+[capture] pass 1 out level 28 in 230.1 s
+[capture] wrote /root/out_pod3/f2_04b/cap_rwkv7_pf32 (24 blocks + tail) in 304.4 s
+[rwkv7 18:19:47] capture_pf: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32: consistent (9 fields)
+[rwkv7 18:19:47] plan /root/out_pod3/f2_04b/cap_rwkv7_pf32 -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_pf32_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 25 block plans with the capture's Config; plan_rot_steps.json: 44 steps
+  planned in 2472 s: 25 stages, 2430 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:91@26 block_1:136@26 block_2:74@26 block_3:135@26 block_4:74@26 block_5:139@26 block_6:107@26 block_7:89@26 block_8:108@26 block_9:106@26 block_10:73@26 block_11:88@26 block_12:108@26 block_13:106@26 block_14:106@26 block_15:74@26 block_16:88@26 block_17:77@26 block_18:101@26 block_19:136@26 block_20:85@26 block_21:148@26 block_22:90@26 block_23:90@26 block_24:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_pf32_best
+[rwkv7 19:01:02] plan_pf: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 19:01:02] keyspec pf -> /root/out_pod3/f2_04b/keys_pf32_best/keyspec.json
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields)
+[rwkv7 19:34:38] capture: reusing /root/out_pod3/f2_04b/cap_rwkv7
+[rwkv7 19:34:38] capture: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields + plan md5)
+[rwkv7 19:34:39] plan: reusing /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_best
+[rwkv7 19:34:39] plan: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32: consistent (9 fields)
+[rwkv7 19:34:39] capture_pf: reusing /root/out_pod3/f2_04b/cap_rwkv7_pf32
+[rwkv7 19:34:39] capture_pf: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 19:34:39] plan: reusing /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_pf32_best
+[rwkv7 19:34:39] plan_pf: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 19:34:39] keyspec pf -> /root/out_pod3/f2_04b/keys_pf32_best/keyspec.json
+[keyspec] /root/out_pod3/f2_04b/keys_pf32_best/keyspec.json: 43 rotation steps; session request present
+[rwkv7 19:39:26] keyspec: done
+[rwkv7 19:39:26] keygen pf (the client role) -> /root/out_pod3/f2_04b/keys_pf32_best/keys.pckb
+{"keygen": {"bytes": 8980880492.0, "ccmm_bytes": 0.0, "ccmm_s": 8e-08, "keys": 104.0, "ksk_bytes": 8933671440.0, "ksk_s": 8.442050203, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.226050905, "pk_s": 0.012378445, "spru_s": 7e-08, "total_s": 8.697983988, "wall_s": 8.7, "info": {"bytes": 8980880492, "entries": {"pcmm": 1, "public_key": 1, "ksk": 104}, "bytes_by_kind": {"pcmm": 188
+[rwkv7 19:39:34] keygen: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 19:39:35] run_pf: T=32, 122 prompt tokens after the prefix + 32 generated, ids 261,1589,31059,46418,21835,59600,52051,4596,47381,49310,4706,4419,30191,47,20996,46685,4706,52595,4596,22590,52331,4600,38848,4423,22590,45231,48,35442,111,46685,4706,22590,62293,51576,47,3918,4600,22590,46934,48,41072,46685,275,91,42,32227,61854,22590,46685,4706,59600,45,57271,56087,60572,21265,22590,57271,56395,4706,4419,51576,4596,39920,4706,21902,56855,21265,55732,62404,47,20023,39934,30259,21273,22752,4811,51695,22590,46685,4706,52595,4596,4419,30191,64,37208,2076,21265,52310,116,21286,30135,38848,4423,22590,39146,8371,47,1336,22590,37815,4706,45231,46685,21265,31382,46685,45,56089,21413,4435,61678,4423,31172,26495,45,21897,24842,21265,31172,26465,47
+{"kind": "warmup", "seconds": 21.66}
+{"kind": "warmup", "prefill_chunk": 32, "seconds": 59.643}
+{"kind": "prefill", "pass": 0, "T": 32, "seconds": 49.91, "seconds_per_token": 1.5597, "reply_level": 28}
+{"kind": "prefill", "pass": 1, "T": 32, "seconds": 48.9298, "seconds_per_token": 1.5291, "reply_level": 28}
+{"kind": "prefill", "pass": 2, "T": 32, "seconds": 48.8713, "seconds_per_token": 1.5272, "reply_level": 28}
+{"kind": "summary", "tokens": 154, "prompt_ids": [1589, 31059, 46418, 21835, 59600, 52051, 4596, 47381, 49310, 4706, 4419, 30191, 47, 20996, 46685, 4706, 52595, 4596, 22590, 52331, 4600, 38848, 4423, 22590, 45231, 48, 35442, 111, 46685, 4706, 22590, 62293, 51576, 47, 3918, 4600, 22590, 46934, 48, 41072, 46685, 275, 91, 42, 32227, 61854, 22590, 46685, 4706, 59600, 45, 57271, 56087, 60572, 21265, 22590, 57271, 56395, 4706, 4419, 51576, 4596, 39920, 4706, 21902, 56855, 21265, 55732, 62404, 47, 20023, 39934, 30259, 21273, 22752, 4811, 51695, 22590, 46685, 4706, 52595, 4596, 4419, 30191, 64, 37208, 2076, 21265, 52310, 116, 21286, 30135, 38848, 4423, 22590, 39146, 8371, 47, 1336, 22590, 37815, 4706, 45231, 46685, 21265, 31382, 46685, 45, 56089, 21413, 4435, 61678, 4423, 31172, 26495, 45, 21897, 24842, 21265, 31172, 26465, 47], "generated_ids": [3917, 8426, 8485, 21286, 37769, 4706, 22590, 3193
+[rwkv7 20:22:01] run_pf: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32: consistent (9 fields + plan md5)
+[rwkv7 20:22:02] run_pf: T=32, 128 prompt tokens after the prefix + 32 generated, ids 261,1130,22226,4600,52157,21700,21902,45098,61822,32230,4601,4600,4423,37837,3460,19825,7028,49789,293,50572,4706,56335,52693,56089,4596,47289,32343,47,54814,7874,293,300,51272,4715,59994,4596,40186,4858,21816,22590,51258,64254,4706,45874,21265,4217,45,59644,56089,4811,22681,47,50210,59,300,21096,25660,4600,38046,47,3918,61619,275,40454,45,1507,2155,45,28928,21643,580,21265,4601,460,59751,4715,55615,275,23935,38543,48,24831,45,32321,22001,48,33391,42,21286,51874,4596,47289,32343,45,37563,4600,19825,7028,49789,47,29631,34643,31581,59644,60350,4811,38046,340,47,102,47,20924,34368,45,37904,45,45506,45,63247,4811,22681,22590,50779,4715,36489,4600,54814,7874,47
+{"kind": "warmup", "seconds": 21.557}
+{"kind": "warmup", "prefill_chunk": 32, "seconds": 59.417}
+{"kind": "prefill", "pass": 0, "T": 32, "seconds": 49.7607, "seconds_per_token": 1.555, "reply_level": 28}
+{"kind": "prefill", "pass": 1, "T": 32, "seconds": 48.8633, "seconds_per_token": 1.527, "reply_level": 28}
+{"kind": "prefill", "pass": 2, "T": 32, "seconds": 48.8261, "seconds_per_token": 1.5258, "reply_level": 28}
+{"kind": "prefill", "pass": 3, "T": 32, "seconds": 48.8168, "seconds_per_token": 1.5255, "reply_level": 28}
+{"kind": "summary", "tokens": 160, "prompt_ids": [1130, 22226, 4600, 52157, 21700, 21902, 45098, 61822, 32230, 4601, 4600, 4423, 37837, 3460, 19825, 7028, 49789, 293, 50572, 4706, 56335, 52693, 56089, 4596, 47289, 32343, 47, 54814, 7874, 293, 300, 51272, 4715, 59994, 4596, 40186, 4858, 21816, 22590, 51258, 64254, 4706, 45874, 21265, 4217, 45, 59644, 56089, 4811, 22681, 47, 50210, 59, 300, 21096, 25660, 4600, 38046, 47, 3918, 61619, 275, 40454, 45, 1507, 2155, 45, 28928, 21643, 580, 21265, 4601, 460, 59751, 4715, 55615, 275, 23935, 38543, 48, 24831, 45, 32321, 22001, 48, 33391, 42, 21286, 51874, 4596, 47289, 32343, 45, 37563, 4600, 19825, 7028, 49789, 47, 29631, 34643, 31581, 59644, 60350, 4811, 38046, 340, 47, 102, 47, 20924, 34368, 45, 37904, 45, 45506, 45, 63247, 4811, 22681, 22590, 50779, 4715, 36489, 4600, 54814, 7874, 47], "generated_ids": [261, 24326, 4600, 19825, 7028, 49789, 64, 
+[rwkv7 20:57:40] run_pf: done
+[rwkv7 20:57:40] capture -> /root/out_pod3/f2_04b/cap_rwkv7_filled (FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44)
+[rwkv7 20:57:50] capture -> /root/out_pod3/f2_04b/cap_rwkv7_filled (FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44)
+[capture] token 0 out level 28 in 40.6 s
+[capture] token 1 out level 28 in 44.0 s
+[capture] wrote /root/out_pod3/f2_04b/cap_rwkv7_filled (24 blocks + tail) in 182.3 s
+[rwkv7 21:00:53] capture: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 21:00:53] plan /root/out_pod3/f2_04b/cap_rwkv7_filled -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_filled_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 25 block plans with the capture's Config; plan_rot_steps.json: 37 steps
+  planned in 79 s: 25 stages, 959 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:36@26 block_1:39@26 block_2:38@26 block_3:38@26 block_4:38@26 block_5:39@26 block_6:42@26 block_7:41@26 block_8:41@26 block_9:39@26 block_10:40@26 block_11:39@26 block_12:43@26 block_13:39@26 block_14:39@26 block_15:42@26 block_16:39@26 block_17:42@26 block_18:40@26 block_19:39@26 block_20:40@26 block_21:42@26 block_22:41@26 block_23:42@26 block_24:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_filled_best
+[rwkv7 21:02:13] plan: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 21:02:13] capture_b K=32 carry=lane -> /root/out_pod3/f2_04b/cap_rwkv7_k32_filled
+[capture] token 0 out level 28 in 57.1 s
+[capture] token 1 out level 28 in 148.1 s
+[capture] wrote /root/out_pod3/f2_04b/cap_rwkv7_k32_filled (24 blocks + tail) in 213.7 s
+[rwkv7 21:05:49] capture_b: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k32_filled: consistent (10 fields)
+[rwkv7 21:05:49] plan /root/out_pod3/f2_04b/cap_rwkv7_k32_filled -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_k32_filled_best_pob2 (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 25 block plans with the capture's Config; plan_rot_steps.json: 37 steps
+  planned in 702 s: 25 stages, 1717 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:67@26 block_1:69@26 block_2:70@26 block_3:71@26 block_4:70@26 block_5:71@26 block_6:73@26 block_7:72@26 block_8:73@26 block_9:71@26 block_10:71@26 block_11:72@26 block_12:73@26 block_13:71@26 block_14:71@26 block_15:72@26 block_16:72@26 block_17:73@26 block_18:72@26 block_19:72@26 block_20:72@26 block_21:72@26 block_22:73@26 block_23:73@26 block_24:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_k32_filled_best_pob2
+[rwkv7 21:17:32] plan_b: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k32_filled: consistent (10 fields + plan md5)
+[rwkv7 21:17:33] keyspec b -> /root/out_pod3/f2_04b/keys_b_k32_filled_best_pob2/keyspec.json
+[keyspec] /root/out_pod3/f2_04b/keys_b_k32_filled_best_pob2/keyspec.json: 37 rotation steps; session request present
+[rwkv7 21:20:01] keyspec: done
+[rwkv7 21:20:01] keygen b (the client role) -> /root/out_pod3/f2_04b/keys_b_k32_filled_best_pob2/keys.pckb
+{"keygen": {"bytes": 8634038898.0, "ccmm_bytes": 0.0, "ccmm_s": 7e-08, "keys": 100.0, "ksk_bytes": 8586830736.0, "ksk_s": 7.988238637, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.226387391, "pk_s": 0.012167567, "spru_s": 7e-08, "total_s": 8.242775831, "wall_s": 8.2, "info": {"bytes": 8634038898, "entries": {"pcmm": 1, "public_key": 1, "ksk": 100}, "bytes_by_kind": {"pcmm": 188
+[rwkv7 21:20:10] keygen: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k32_filled: consistent (10 fields + plan md5)
+[rwkv7 21:20:10] batch: K=32 carry=lane, prompts /root/perseus-rwkv7-final/tools/rwkv7/batch_prompts.txt, 32 generated each, pool 160
+{"kind": "warmup", "seconds": 43.752}
+{"kind": "pass", "pass": 0, "seconds": 38.4947, "issue_s": 37.884, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 1, "seconds": 38.6964, "issue_s": 15.9586, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 2, "seconds": 38.8685, "issue_s": 16.0313, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 3, "seconds": 38.9399, "issue_s": 16.0649, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 4, "seconds": 38.9897, "issue_s": 16.0811, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 5, "seconds": 39.0129, "issue_s": 16.0908, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 6, "seconds": 39.0456, "issue_s": 16.1014, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 7, "seconds": 39.0576, "issue_s": 16.1119, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 8, "seconds": 39.0683, "issue_s": 16.122, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 9, "seconds": 39.0622, "issue_s": 16.1133, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 10, "seconds": 39.0632, "issue_s": 16.1114, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 11, "seconds": 39.0589, "issue_s": 16.1177, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 12, "seconds": 39.0696, "issue_s": 16.1243, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 13, "seconds": 39.0514, "issue_s": 16.1047, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 14, "seconds": 39.0766, "issue_s": 16.1202, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 15, "seconds": 39.0825, "issue_s": 16.1258, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 16, "seconds": 39.09, "issue_s": 16.1307, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 17, "seconds": 39.0772, "issue_s": 16.116, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 18, "seconds": 39.0726, "issue_s": 16.1176, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 19, "seconds": 39.0639, "issue_s": 16.1163, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 20, "seconds": 39.0751, "issue_s": 16.1252, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 21, "seconds": 39.0635, "issue_s": 16.1142, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 22, "seconds": 39.0568, "issue_s": 16.1122, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 23, "seconds": 39.0769, "issue_s": 16.1231, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 24, "seconds": 39.0728, "issue_s": 16.1164, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 25, "seconds": 39.0659, "issue_s": 16.1072, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 26, "seconds": 39.0804, "issue_s": 16.1222, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 27, "seconds": 39.0774, "issue_s": 16.119, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 28, "seconds": 39.1035, "issue_s": 16.1406, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 29, "seconds": 39.0664, "issue_s": 16.1183, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 30, "seconds": 39.0665, "issue_s": 16.1178, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 31, "seconds": 39.0643, "issue_s": 16.1141, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 32, "seconds": 39.0816, "issue_s": 16.1242, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 33, "seconds": 39.0917, "issue_s": 16.137, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 34, "seconds": 39.0935, "issue_s": 16.1258, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 35, "seconds": 39.0872, "issue_s": 16.1258, "reply_level": 28, "active": 32}
+{"kind": "pass", "pass": 36, "seconds": 39.092, "issue_s": 16.1227, "reply_level": 28, "active": 31}
+{"kind": "pass", "pass": 37, "seconds": 39.0967, "issue_s": 16.1303, "reply_level": 28, "active": 27}
+{"kind": "pass", "pass": 38, "seconds": 39.1045, "issue_s": 16.1305, "reply_level": 28, "active": 22}
+{"kind": "pass", "pass": 39, "seconds": 39.1267, "issue_s": 16.1447, "reply_level": 28, "active": 15}
+{"kind": "pass", "pass": 40, "seconds": 39.16, "issue_s": 16.1638, "reply_level": 28, "active": 11}
+{"kind": "pass", "pass": 41, "seconds": 39.1637, "issue_s": 16.162, "reply_level": 28, "active": 8}
+{"kind": "pass", "pass": 42, "seconds": 39.1834, "issue_s": 16.1766, "reply_level": 28, "active": 7}
+{"kind": "pass", "pass": 43, "seconds": 39.1817, "issue_s": 16.1706, "reply_level": 28, "active": 6}
+{"kind": "pass", "pass": 44, "seconds": 39.1858, "issue_s": 16.1716, "reply_level": 28, "active": 5}
+{"kind": "pass", "pass": 45, "seconds": 39.191, "issue_s": 16.1748, "reply_level": 28, "active": 4}
+{"kind": "pass", "pass": 46, "seconds": 39.2019, "issue_s": 16.1769, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 47, "seconds": 39.2027, "issue_s": 16.1839, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 48, "seconds": 39.2164, "issue_s": 16.1878, "reply_level": 28, "active": 2}
+{"kind": "pass", "pass": 49, "seconds": 39.2197, "issue_s": 16.1935, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 50, "seconds": 39.2202, "issue_s": 16.1854, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 51, "seconds": 39.2393, "issue_s": 16.1999, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 52, "seconds": 39.2247, "issue_s": 16.1904, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 53, "seconds": 39.243, "issue_s": 16.1972, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 54, "seconds": 39.2337, "issue_s": 16.1923, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 55, "seconds": 39.2394, "issue_s": 16.1981, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 56, "seconds": 39.2247, "issue_s": 16.1871, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 57, "seconds": 39.2504, "issue_s": 16.2065, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 58, "seconds": 39.2424, "issue_s": 16.1978, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 59, "seconds": 39.2545, "issue_s": 16.2073, "reply_level": 28, "active": 1}
+{"kind": "pass", "pass": 60, "seconds": 39.2362, "issue_s": 16.1989, "reply_level": 28, "active": 1}
+{"kind": "summary", "batch": 32, "passes": 61, "tokens": 1306, "top1_agree": 1302, "top1_agree_per_conv": [39, 41, 61, 49, 45, 42, 40, 36, 46, 40, 39, 37, 41, 39, 42, 41, 39, 46, 37, 37, 36, 38, 39, 39, 38, 43, 38, 37, 40, 38, 39, 40], "tokens_per_conv": [39, 41, 61, 49, 45, 42, 40, 37, 46, 40, 39, 37, 41, 39, 43, 41, 39, 46, 38, 37, 36, 38, 39, 39, 38, 44, 38, 37, 40, 38, 39, 40], "prompt_ids": [[6699, 62532, 61885, 332, 22168, 52965, 4706], [1136, 22590, 51310, 4706, 56529, 56537, 45, 54830, 64996], [24281, 59, 300, 32004, 39623, 286, 46784, 116, 21700, 285, 51514, 47, 20063, 31466, 4491, 3485, 46784, 116, 30510, 64, 43965, 32487, 22590, 46685, 47, 261, 5585, 41693, 59], [6699, 304, 25740, 109, 39990, 4600, 4596, 22590, 30449, 4706, 37138, 45, 40186, 4600, 22590, 51128, 4706], [23977, 32350, 332, 32251, 45, 4596, 332, 39720, 53287, 4450, 22590, 22446, 45], [6699, 31461, 59829, 39941, 4811, 57083, 32465, 51323, 31878, 4600], [40666, 54438, 4600, 22590, 52571, 4450, 40186, 46836], [6699, 51128, 4706, 36854, 4600], [24281, 59, 59028, 269, 25515, 52265, 35, 31162, 44317, 47, 261, 5585, 41693, 59], [6699, 51929, 4706, 22590, 37272, 44253, 45286, 32487], [33573, 30306, 116, 4424, 332, 
+[rwkv7 22:16:33] batch: done
+serve registers 14 programs 7 join ins ['b0nxa', 'b0nxf', 'b0xa', 'b0xf'] mask slots [('join/keep', 28), ('join/m', 28)]
+1 passed, 10 deselected in 330.26s (0:05:30)
+[rwkv7 22:22:04] scheck: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 22:22:04] capture: reusing /root/out_pod3/f2_04b/cap_rwkv7_filled
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+[rwkv7 22:22:04] plan: reusing /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_filled_best
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 22:22:04] capture_pf T=32 -> /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled
+[capture] pass 0 out level 28 in 52.3 s
+[capture] pass 1 out level 28 in 146.7 s
+[capture] wrote /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled (24 blocks + tail) in 206.8 s
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled: consistent (9 fields)
+[rwkv7 22:25:32] plan /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_pf32_filled_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 25 block plans with the capture's Config; plan_rot_steps.json: 38 steps
+  planned in 1323 s: 25 stages, 2237 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:121@26 block_1:102@26 block_2:59@26 block_3:102@26 block_4:59@26 block_5:104@26 block_6:89@26 block_7:119@26 block_8:90@26 block_9:88@26 block_10:92@26 block_11:90@26 block_12:90@26 block_13:88@26 block_14:88@26 block_15:93@26 block_16:90@26 block_17:62@26 block_18:85@26 block_19:103@26 block_20:70@26 block_21:113@26 block_22:119@26 block_23:120@26 block_24:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_pf32_filled_best
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k32_filled: consistent (10 fields)
+[rwkv7 22:47:37] capture_b: reusing /root/out_pod3/f2_04b/cap_rwkv7_k32_filled
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k32_filled: consistent (10 fields + plan md5)
+[rwkv7 22:47:37] plan: reusing /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_k32_filled_best_pob2
+[rwkv7 22:47:37] capture_j K=32 -> /root/out_pod3/f2_04b/cap_rwkv7_join_k32_filled
+[capture] join tick 1: 48 carries out at level 26
+[capture] wrote the join capture /root/out_pod3/f2_04b/cap_rwkv7_join_k32_filled (24 blocks, K = 32) in 3.5 s
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k32_filled: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k32_filled: consistent (5 fields)
+[rwkv7 22:47:42] plan /root/out_pod3/f2_04b/cap_rwkv7_join_k32_filled -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_join_k32_filled_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 1 block plans with the capture's Config; plan_rot_steps.json: 0 steps
+  planned in 0 s: 1 stages, 48 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:48@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_join_k32_filled_best
+[rwkv7 22:47:42] keys: inproc (INSECURE: the session holds the secret; recorded insecure-inproc)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k32_filled: consistent (10 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k32_filled: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k32_filled: consistent (5 fields + plan md5)
+[rwkv7 22:47:43] serve: K=32 T=32, arrivals /root/perseus-rwkv7-final/tools/rwkv7/serve_arrivals.txt, 8 generated each, pool 256
+[rwkv7 22:55:10] STOP: serve failed (/root/out_pod3/f2_04b/serve_k32_pf32_filled_best_pob2.log)
+serve registers 14 programs 7 join ins ['b0nxa', 'b0nxf', 'b0xa', 'b0xf'] mask slots [('join/keep', 28), ('join/m', 28)]
+1 passed, 10 deselected in 9.16s
+[rwkv7 22:55:19] scheck: done
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 22:55:19] capture: reusing /root/out_pod3/f2_04b/cap_rwkv7_filled
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+[rwkv7 22:55:19] plan: reusing /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_filled_best
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled: consistent (9 fields)
+[rwkv7 22:55:19] capture_pf: reusing /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled: consistent (9 fields + plan md5)
+[rwkv7 22:55:20] plan: reusing /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_pf32_filled_best
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields)
+[rwkv7 22:55:20] capture_b K=8 carry=lane -> /root/out_pod3/f2_04b/cap_rwkv7_k8_filled
+[capture] token 0 out level 28 in 38.4 s
+[capture] token 1 out level 28 in 62.7 s
+[capture] wrote /root/out_pod3/f2_04b/cap_rwkv7_k8_filled (24 blocks + tail) in 108.8 s
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k8_filled: consistent (10 fields)
+[rwkv7 22:57:10] plan /root/out_pod3/f2_04b/cap_rwkv7_k8_filled -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_k8_filled_best_pob2 (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1 FORBID_STEPS=.var,.mean,.qkv,tm.state.bcast,tm.state.update,tm.state.readout
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 25 block plans with the capture's Config; plan_rot_steps.json: 38 steps
+  planned in 185 s: 25 stages, 1158 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:43@26 block_1:47@26 block_2:47@26 block_3:48@26 block_4:47@26 block_5:48@26 block_6:49@26 block_7:49@26 block_8:49@26 block_9:48@26 block_10:47@26 block_11:48@26 block_12:50@26 block_13:48@26 block_14:47@26 block_15:49@26 block_16:48@26 block_17:49@26 block_18:48@26 block_19:49@26 block_20:49@26 block_21:50@26 block_22:50@26 block_23:50@26 block_24:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_k8_filled_best_pob2
+[rwkv7 23:00:16] capture_j K=8 -> /root/out_pod3/f2_04b/cap_rwkv7_join_k8_filled
+[capture] join tick 1: 48 carries out at level 26
+[capture] wrote the join capture /root/out_pod3/f2_04b/cap_rwkv7_join_k8_filled (24 blocks, K = 8) in 3.4 s
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k8_filled: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k8_filled: consistent (5 fields)
+[rwkv7 23:00:20] plan /root/out_pod3/f2_04b/cap_rwkv7_join_k8_filled -> /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_join_k8_filled_best (LANDING=high PAIR=1 RUNTIME_EXTRA=PC_EM_FUSE_RESCALE=1)
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48 PC_BTS_PAIR=1 PC_EM_FUSE_RESCALE=1
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 1 block plans with the capture's Config; plan_rot_steps.json: 0 steps
+  planned in 1 s: 1 stages, 48 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:48@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/f2_04b/bootstrap_placements/plan_rwkv7_join_k8_filled_best
+[rwkv7 23:00:21] keys: inproc (INSECURE: the session holds the secret; recorded insecure-inproc)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled: consistent (9 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_k8_filled: consistent (10 fields + plan md5)
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k8_filled: unrecorded: prefill_chunk
+capture_check /root/out_pod3/f2_04b/cap_rwkv7_join_k8_filled: consistent (5 fields + plan md5)
+[rwkv7 23:00:21] serve: K=8 T=32, arrivals /root/perseus-rwkv7-final/tools/rwkv7/serve_arrivals.txt, 8 generated each, pool 256
+{"kind": "warmup", "seconds": 106.296}
+{"kind": "prefill", "conv": 0, "lane": 0, "at_pass": 0, "chunk": 0, "T": 32, "seconds": 58.5599}
+{"kind": "join", "conv": 0, "lane": 0, "at_pass": 0, "seconds": 0.0049}
+{"kind": "join", "conv": 1, "lane": 1, "at_pass": 0, "seconds": 0.0048}
+{"kind": "join", "conv": 2, "lane": 2, "at_pass": 0, "seconds": 0.0047}
+{"kind": "pass", "pass": 0, "seconds": 32.9151, "active": 3, "lanes": [0, 1, 2, null, null, null, null, null]}
+{"kind": "prefill", "conv": 3, "lane": 3, "at_pass": 1, "chunk": 0, "T": 32, "seconds": 57.3239}
+{"kind": "join", "conv": 3, "lane": 3, "at_pass": 1, "seconds": 0.0047}
+{"kind": "pass", "pass": 1, "seconds": 31.0779, "active": 4, "lanes": [0, 1, 2, 3, null, null, null, null]}
+{"kind": "join", "conv": 4, "lane": 4, "at_pass": 2, "seconds": 0.0046}
+{"kind": "pass", "pass": 2, "seconds": 30.9638, "active": 5, "lanes": [0, 1, 2, 3, 4, null, null, null]}
+{"kind": "pass", "pass": 3, "seconds": 30.3103, "active": 5, "lanes": [0, 1, 2, 3, 4, null, null, null]}
+{"kind": "join", "conv": 5, "lane": 5, "at_pass": 4, "seconds": 0.0047}
+{"kind": "pass", "pass": 4, "seconds": 31.0686, "active": 6, "lanes": [0, 1, 2, 3, 4, 5, null, null]}
+{"kind": "pass", "pass": 5, "seconds": 30.236, "active": 6, "lanes": [0, 1, 2, 3, 4, 5, null, null]}
+{"kind": "prefill", "conv": 6, "lane": 6, "at_pass": 6, "chunk": 0, "T": 32, "seconds": 57.2869}
+{"kind": "join", "conv": 6, "lane": 6, "at_pass": 6, "seconds": 0.0046}
+{"kind": "pass", "pass": 6, "seconds": 30.8826, "active": 7, "lanes": [0, 1, 2, 3, 4, 5, 6, null]}
+{"kind": "pass", "pass": 7, "seconds": 30.2042, "active": 7, "lanes": [0, 1, 2, 3, 4, 5, 6, null]}
+{"kind": "leave", "lanes": [0, 1, 2], "at_pass": 8, "seconds": 0.0204}
+{"kind": "pass", "pass": 8, "seconds": 30.8927, "active": 4, "lanes": [null, null, null, 3, 4, 5, 6, null]}
+{"kind": "join", "conv": 7, "lane": 0, "at_pass": 9, "seconds": 0.0047}
+{"kind": "leave", "lanes": [3], "at_pass": 9, "seconds": 0.8082}
+{"kind": "pass", "pass": 9, "seconds": 30.9432, "active": 4, "lanes": [7, null, null, null, 4, 5, 6, null]}
+{"kind": "leave", "lanes": [4], "at_pass": 10, "seconds": 0.0134}
+{"kind": "pass", "pass": 10, "seconds": 30.8838, "active": 3, "lanes": [7, null, null, null, null, 5, 6, null]}
+{"kind": "pass", "pass": 11, "seconds": 30.2395, "active": 3, "lanes": [7, null, null, null, null, 5, 6, null]}
+{"kind": "leave", "lanes": [5], "at_pass": 12, "seconds": 0.0135}
+{"kind": "pass", "pass": 12, "seconds": 30.9139, "active": 2, "lanes": [7, null, null, null, null, null, 6, null]}
+{"kind": "pass", "pass": 13, "seconds": 30.1412, "active": 2, "lanes": [7, null, null, null, null, null, 6, null]}
+{"kind": "leave", "lanes": [6], "at_pass": 14, "seconds": 0.0135}
+{"kind": "pass", "pass": 14, "seconds": 30.9891, "active": 1, "lanes": [7, null, null, null, null, null, null, null]}
+{"kind": "pass", "pass": 15, "seconds": 30.2331, "active": 1, "lanes": [7, null, null, null, null, null, null, null]}
+{"kind": "pass", "pass": 16, "seconds": 30.4666, "active": 1, "lanes": [7, null, null, null, null, null, null, null]}
+{"kind": "summary", "batch": 8, "prefill_chunk": 32, "conversations": 8, "tokens": 248, "top1_agree": 247, "top1_agree_per_conv": [52, 13, 37, 45, 21, 16, 50, 13], "tokens_per_conv": [53, 13, 37, 45, 21, 16, 50, 13], "lanes": [[0, 0, 0, 0, 7], [1, 1, 0, 0, 7], [2, 2, 0, 0, 7], [3, 3, 1, 1, 8], [4, 4, 2, 2, 9], [5, 5, 4, 4, 11], [6, 6, 6, 6, 13], [7, 0, 9, 9, 16]], "generated_ids": [[22590, 32190, 7513, 60572, 4596, 37138, 21265, 22590], [37470, 45, 40186, 4600, 22590, 52095, 30449, 4596], [4255, 30858, 22249, 21835, 31466, 3485, 46784, 116], [21286, 38547, 4596, 22590, 37984, 4706, 22590, 39296], [38917, 332, 31214, 46, 34545, 1843, 40207, 39095], [22590, 56274, 4706, 22590, 30449, 4706, 29692, 4596], [4600, 332, 21365, 31458, 59516, 32226, 4596, 22590], [332, 52593, 47342, 45, 32139, 4423, 30732, 45]], "poly_sites_out_of_range_tokens": [], "logits_relErrRms_max": 0.025004109783125672, "logits_relErrRms_median": 0.0036639391278041533, "hidden_relErrRms_vs_mirror_max": 0.05682550846441514, "passes": 17, "seconds_per_pass_median": 30.8838, "active_lanes_mean": 3.764705882352941, "prefill_passes": 3, "prefill_seconds_median": 57.3239, "decode_steps": 88, "decode_seconds_median": 24.34335, "joins": 8, "join_seconds_median": 0.0047, "leave_runs": 5, "leave_seconds_median": 0.0135, "loop_s": 2894.8, "generated_tokens": 64, "aggregate_generated_tokens_per_s": 0.0221, "aggregate_tokens_per_s": 0.0857, "setup_s": 264.8, "wall_s": 3307.2, "pool": 256, "pool_free_min": [183, "batch stag
+[rwkv7 23:55:36] s: done

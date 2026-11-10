@@ -1,0 +1,28 @@
+date_utc=2026-11-02T14:47:14Z
+host=O-2389611
+Linux O-2389611 7.0.0-31-generic #31~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Aug 10 09:38:02 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+index, name, memory.total [MiB], driver_version, compute_cap
+0, NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 97887 MiB, 595.84, 12.0
+	[4mGPU0	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	0-19	0		N/A
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+CUDA_HOME=/usr/local/cuda-13.2
+               total        used        free      shared  buff/cache   available
+Mem:             188           5          64           0         119         182
+Swap:              7           0           7
+overlay         3.4T  1.3T  2.2T  37% /
+20
+0.31 0.72 0.51 1/977 24284
+/root/.local/bin/uv
+/root/.cargo/bin/cargo
+/root/.cargo/bin/rustup
+3afbfdf3f7c66438387e6ad475585a8ddfc7611d run_gpu.sh build: keep an existing .venv (uv venv refuses one), so a second build on the same box works

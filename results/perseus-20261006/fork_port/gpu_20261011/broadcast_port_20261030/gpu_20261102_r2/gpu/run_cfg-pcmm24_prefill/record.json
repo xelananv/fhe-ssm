@@ -1,0 +1,11467 @@
+{
+ "driver": "perseus.examples.fhe_ssm.run_planned",
+ "mode": "run",
+ "build_id": {
+  "python": "3.12.3",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+  "commit": "3afbfdf3",
+  "dirty": 0,
+  "pc_so": "009427e7463beeca",
+  "pc_device_classes": [
+   "Session",
+   "Program",
+   "KeySource",
+   "Client",
+   "PtStore"
+  ],
+  "arch": null
+ },
+ "plan": {
+  "dir": "/root/out_r2/gpu/bootstrap_placements/plan_cfg-pcmm24",
+  "axes": "LANDING=high PAIR=0 PLACER=mincut ILP_OBJECTIVE=count SPARSE_SLOTS=512,1 HARD_ENV_CAP=1 SPARSE_B_K=",
+  "recipe": "MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1",
+  "runtime": "FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48",
+  "planner": "bb0d1bf (python/perseus/plan's last commit)",
+  "tool": "tools/fhe_ssm/make_plan.sh (one planner pass over every stage: python/perseus/plan/run_bootstrap_all_blocks.sh)",
+  "stamp": {
+   "chain": {
+    "chain": "n32",
+    "composite_degree": 2
+   },
+   "bts": {
+    "auto_bts_level": 44,
+    "raise_drop": "512:1",
+    "stc_first": 2,
+    "stc_first_cf": 13,
+    "stc_first_routes": [
+     "dense"
+    ]
+   },
+   "quirks": {
+    "fake_bts_out": 32,
+    "fakecap_landings": "0:32,1:14,256:22,512:24"
+   }
+  }
+ },
+ "capture": {
+  "plan_graph": "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_J/cap_high__linear_pcmm_pcmm_wbits_24_pass_kernels_on",
+  "plan_md5": "e60f2166c2a7fc49a5efdc2828e7dc22",
+  "capture": "/root/out_r2/gpu/cap_high__linear_pcmm_pcmm_wbits_24_pass_kernels_on",
+  "md5": "e60f2166c2a7fc49a5efdc2828e7dc22",
+  "checked": true
+ },
+ "argv": [
+  "--weights",
+  "/root/data/pbd430a_weights.npz",
+  "--seeds",
+  "/root/data/pbd430a_seeds.json",
+  "--config",
+  "/root/data/pbd430a_config.json",
+  "--levels",
+  "preset",
+  "--plan",
+  "/root/out_r2/gpu/bootstrap_placements/plan_cfg-pcmm24",
+  "--ticks",
+  "2",
+  "--profile",
+  "--profile-every",
+  "2",
+  "--keys",
+  "inproc",
+  "--linear",
+  "pcmm",
+  "--pcmm-wbits",
+  "24",
+  "--pass-kernels",
+  "on",
+  "--scenario",
+  "prefill:320",
+  "--capture",
+  "/root/out_r2/gpu/cap_high__linear_pcmm_pcmm_wbits_24_pass_kernels_on",
+  "--stc-cache",
+  "160",
+  "--pcmm-cf",
+  "8",
+  "--out",
+  "/root/out_r2/gpu/run_cfg-pcmm24_prefill/record.json"
+ ],
+ "flags": {
+  "weights": "/root/data/pbd430a_weights.npz",
+  "seeds": "/root/data/pbd430a_seeds.json",
+  "config": "/root/data/pbd430a_config.json",
+  "blocks": null,
+  "logn": 16,
+  "levels": "preset",
+  "limit": null,
+  "bts_out": null,
+  "unit": 2,
+  "layout": "filled",
+  "payload": "pairs",
+  "pair_route": "split",
+  "scales": "shipped",
+  "conversations": null,
+  "newton_form": "perseus",
+  "newton_sites": "served",
+  "pack_stats": "off",
+  "linear": "pcmm",
+  "pcmm_wbits": 24,
+  "diag_hint": 1,
+  "lane_mix": "off",
+  "ms_norm_k": 5.5,
+  "newton_frac": 0.1,
+  "newton_min_iters": 12,
+  "no_carry": false,
+  "streams": 1,
+  "pass_kernels": "on",
+  "plan": "/root/out_r2/gpu/bootstrap_placements/plan_cfg-pcmm24",
+  "capture": "/root/out_r2/gpu/cap_high__linear_pcmm_pcmm_wbits_24_pass_kernels_on",
+  "ticks": 2,
+  "scenario": "prefill:320",
+  "lane_config": null,
+  "tokens": null,
+  "free_run": false,
+  "seed": 7,
+  "schedule": "program",
+  "diag_source": "values",
+  "profile": true,
+  "profile_every": 2,
+  "mirror": false,
+  "no_warmup": false,
+  "no_graphs": false,
+  "out": "/root/out_r2/gpu/run_cfg-pcmm24_prefill/record.json",
+  "work_dir": null,
+  "keys": "inproc",
+  "insecure_test_keys": false,
+  "keyspec": null,
+  "keygen": null,
+  "keyspec_file": null,
+  "threads": 8,
+  "prepare_only": false,
+  "lean": false,
+  "ref_token": 1,
+  "probe": 2,
+  "pt_rows": 28,
+  "stc_cache": 160,
+  "pool": 16,
+  "pcmm_cf": 8,
+  "diag_batch": null,
+  "diag_perturb": null,
+  "diag_probe": 0,
+  "pt_budget_gb": 40.0
+ },
+ "environment": {
+  "AUTO_BTS_LEVEL": "44",
+  "CUDA_HOME": "/usr/local/cuda-13.2",
+  "CUDA_VISIBLE_DEVICES": "0",
+  "FIDESLIB_BTS_RAISE_DROP": "512:1",
+  "FIDESLIB_BTS_STC_FIRST": "2",
+  "FIDESLIB_BTS_STC_FIRST_CF": "13",
+  "FIDESLIB_BTS_STC_FIRST_ROUTES": "dense",
+  "LADDER_RADIX_BITS": "0"
+ },
+ "model": {
+  "weights": {
+   "path": "/root/data/pbd430a_weights.npz",
+   "sha256": "3ec3f1d8b9b71e7eee38055a7621213991c6417a89576f1c02590963293e784b"
+  },
+  "seeds": {
+   "path": "/root/data/pbd430a_seeds.json",
+   "sha256": "d63288181655ebbb5370a16be4b59d7bd6745fcf98bf8ca14e1ca15ec51245b7"
+  },
+  "config": {
+   "path": "/root/data/pbd430a_config.json",
+   "sha256": "1829d34eeddbbfc4ce023a43d828085c6e71a2a941e7da8aa17790544b770ba7"
+  }
+ },
+ "axes": {
+  "newton_form": "perseus",
+  "newton_sites": "served",
+  "pack_stats": "off",
+  "linear": "pcmm",
+  "diag_hint": 1,
+  "pcmm_wbits": 24,
+  "lane_mix": "off",
+  "pass_kernels": "on"
+ },
+ "diag_source": "values",
+ "levels": {
+  "limit": 44,
+  "bts_out": 32,
+  "unit": 2,
+  "scales": "shipped"
+ },
+ "conversations": 64,
+ "capacity": 64,
+ "pass_kernels": "on",
+ "pass_list": {
+  "scenario": "prefill:320",
+  "lane_config": null,
+  "lane_config_sha256": null,
+  "passes": 8,
+  "configurations": 3,
+  "config_ids": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   2,
+   2,
+   2
+  ],
+  "list": [
+   {
+    "name": "prefill.0",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "fresh",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     47506,
+     31427,
+     34398,
+     45109,
+     29074,
+     38999,
+     41913,
+     11322,
+     2791,
+     15091,
+     14332,
+     43919,
+     45883,
+     264,
+     25127,
+     41288,
+     6608,
+     40074,
+     5987,
+     23526,
+     41049,
+     15235,
+     17174,
+     13998,
+     36172,
+     12814,
+     49797,
+     22377,
+     24039,
+     25367,
+     29288,
+     27828,
+     25613,
+     50050,
+     40606,
+     39852,
+     35207,
+     31281,
+     17145,
+     49721,
+     23440,
+     10825,
+     42488,
+     8054,
+     43109,
+     30796,
+     5767,
+     2209,
+     22361,
+     1793,
+     7117,
+     25887,
+     48781,
+     23439,
+     40646,
+     46112,
+     41401,
+     31635,
+     22192,
+     25848,
+     13387,
+     24981,
+     19073,
+     12444
+    ]
+   },
+   {
+    "name": "prefill.1",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     49937,
+     592,
+     4886,
+     9673,
+     48719,
+     34793,
+     44336,
+     10085,
+     36248,
+     18579,
+     24586,
+     187,
+     31048,
+     41732,
+     33368,
+     7765,
+     26837,
+     13454,
+     48512,
+     44260,
+     9363,
+     25630,
+     47247,
+     42592,
+     35592,
+     32163,
+     2117,
+     37294,
+     23806,
+     4600,
+     12291,
+     27207,
+     36540,
+     25529,
+     30817,
+     43808,
+     34491,
+     18163,
+     32340,
+     30074,
+     5441,
+     2978,
+     33190,
+     19488,
+     30082,
+     16241,
+     11345,
+     7551,
+     19184,
+     41043,
+     20160,
+     19077,
+     28928,
+     49208,
+     19720,
+     29663,
+     22096,
+     30420,
+     22408,
+     32076,
+     27509,
+     34009,
+     48103,
+     7581
+    ]
+   },
+   {
+    "name": "prefill.2",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     28237,
+     22137,
+     17998,
+     12044,
+     2627,
+     20236,
+     41536,
+     4861,
+     20417,
+     48659,
+     47836,
+     10809,
+     381,
+     33774,
+     717,
+     15104,
+     24990,
+     43945,
+     4668,
+     33294,
+     26799,
+     6617,
+     42514,
+     42487,
+     24268,
+     47509,
+     30511,
+     45446,
+     48295,
+     28643,
+     14120,
+     7313,
+     28298,
+     9676,
+     37718,
+     46652,
+     12340,
+     27769,
+     2471,
+     9077,
+     18963,
+     44447,
+     48743,
+     32256,
+     29334,
+     28642,
+     3047,
+     18918,
+     49438,
+     20661,
+     10724,
+     12040,
+     35866,
+     1913,
+     48739,
+     44053,
+     28533,
+     23516,
+     38282,
+     27533,
+     23991,
+     16197,
+     22460,
+     37774
+    ]
+   },
+   {
+    "name": "prefill.3",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     2770,
+     1266,
+     36219,
+     18712,
+     40409,
+     1525,
+     45611,
+     6178,
+     20905,
+     48625,
+     5455,
+     33070,
+     36595,
+     21529,
+     3973,
+     26332,
+     21787,
+     43882,
+     34302,
+     17305,
+     2918,
+     29678,
+     14057,
+     34373,
+     43430,
+     17869,
+     45419,
+     26098,
+     26688,
+     38474,
+     39675,
+     45710,
+     50235,
+     7594,
+     20744,
+     46929,
+     15467,
+     260,
+     28963,
+     37857,
+     37361,
+     40750,
+     32370,
+     6876,
+     42591,
+     21061,
+     42605,
+     40988,
+     48789,
+     717,
+     43548,
+     31597,
+     24401,
+     39870,
+     47874,
+     25792,
+     4397,
+     36493,
+     11596,
+     11383,
+     9698,
+     9981,
+     45750,
+     18256
+    ]
+   },
+   {
+    "name": "prefill.4",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     5337,
+     9019,
+     19848,
+     17398,
+     15593,
+     47668,
+     43568,
+     28825,
+     49594,
+     17097,
+     6916,
+     13651,
+     4489,
+     47865,
+     11009,
+     22347,
+     10165,
+     49291,
+     7946,
+     25918,
+     47790,
+     26202,
+     45195,
+     45075,
+     38610,
+     37344,
+     28990,
+     29193,
+     41798,
+     21450,
+     47549,
+     44152,
+     18823,
+     20696,
+     35917,
+     46393,
+     4852,
+     3454,
+     12474,
+     21618,
+     8181,
+     26119,
+     27214,
+     47810,
+     37495,
+     12619,
+     39542,
+     40525,
+     34180,
+     34010,
+     15586,
+     36052,
+     6777,
+     31655,
+     46308,
+     48847,
+     14992,
+     16726,
+     31121,
+     20024,
+     36757,
+     10201,
+     8495,
+     2549
+    ]
+   },
+   {
+    "name": "generate.0",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1
+    ]
+   },
+   {
+    "name": "generate.1",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1
+    ]
+   },
+   {
+    "name": "generate.2",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1,
+     -1
+    ]
+   }
+  ],
+  "resolved": [
+   {
+    "name": "prefill.0",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "fresh",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     47506,
+     31427,
+     34398,
+     45109,
+     29074,
+     38999,
+     41913,
+     11322,
+     2791,
+     15091,
+     14332,
+     43919,
+     45883,
+     264,
+     25127,
+     41288,
+     6608,
+     40074,
+     5987,
+     23526,
+     41049,
+     15235,
+     17174,
+     13998,
+     36172,
+     12814,
+     49797,
+     22377,
+     24039,
+     25367,
+     29288,
+     27828,
+     25613,
+     50050,
+     40606,
+     39852,
+     35207,
+     31281,
+     17145,
+     49721,
+     23440,
+     10825,
+     42488,
+     8054,
+     43109,
+     30796,
+     5767,
+     2209,
+     22361,
+     1793,
+     7117,
+     25887,
+     48781,
+     23439,
+     40646,
+     46112,
+     41401,
+     31635,
+     22192,
+     25848,
+     13387,
+     24981,
+     19073,
+     12444
+    ]
+   },
+   {
+    "name": "prefill.1",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     49937,
+     592,
+     4886,
+     9673,
+     48719,
+     34793,
+     44336,
+     10085,
+     36248,
+     18579,
+     24586,
+     187,
+     31048,
+     41732,
+     33368,
+     7765,
+     26837,
+     13454,
+     48512,
+     44260,
+     9363,
+     25630,
+     47247,
+     42592,
+     35592,
+     32163,
+     2117,
+     37294,
+     23806,
+     4600,
+     12291,
+     27207,
+     36540,
+     25529,
+     30817,
+     43808,
+     34491,
+     18163,
+     32340,
+     30074,
+     5441,
+     2978,
+     33190,
+     19488,
+     30082,
+     16241,
+     11345,
+     7551,
+     19184,
+     41043,
+     20160,
+     19077,
+     28928,
+     49208,
+     19720,
+     29663,
+     22096,
+     30420,
+     22408,
+     32076,
+     27509,
+     34009,
+     48103,
+     7581
+    ]
+   },
+   {
+    "name": "prefill.2",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     28237,
+     22137,
+     17998,
+     12044,
+     2627,
+     20236,
+     41536,
+     4861,
+     20417,
+     48659,
+     47836,
+     10809,
+     381,
+     33774,
+     717,
+     15104,
+     24990,
+     43945,
+     4668,
+     33294,
+     26799,
+     6617,
+     42514,
+     42487,
+     24268,
+     47509,
+     30511,
+     45446,
+     48295,
+     28643,
+     14120,
+     7313,
+     28298,
+     9676,
+     37718,
+     46652,
+     12340,
+     27769,
+     2471,
+     9077,
+     18963,
+     44447,
+     48743,
+     32256,
+     29334,
+     28642,
+     3047,
+     18918,
+     49438,
+     20661,
+     10724,
+     12040,
+     35866,
+     1913,
+     48739,
+     44053,
+     28533,
+     23516,
+     38282,
+     27533,
+     23991,
+     16197,
+     22460,
+     37774
+    ]
+   },
+   {
+    "name": "prefill.3",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     2770,
+     1266,
+     36219,
+     18712,
+     40409,
+     1525,
+     45611,
+     6178,
+     20905,
+     48625,
+     5455,
+     33070,
+     36595,
+     21529,
+     3973,
+     26332,
+     21787,
+     43882,
+     34302,
+     17305,
+     2918,
+     29678,
+     14057,
+     34373,
+     43430,
+     17869,
+     45419,
+     26098,
+     26688,
+     38474,
+     39675,
+     45710,
+     50235,
+     7594,
+     20744,
+     46929,
+     15467,
+     260,
+     28963,
+     37857,
+     37361,
+     40750,
+     32370,
+     6876,
+     42591,
+     21061,
+     42605,
+     40988,
+     48789,
+     717,
+     43548,
+     31597,
+     24401,
+     39870,
+     47874,
+     25792,
+     4397,
+     36493,
+     11596,
+     11383,
+     9698,
+     9981,
+     45750,
+     18256
+    ]
+   },
+   {
+    "name": "prefill.4",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     5337,
+     9019,
+     19848,
+     17398,
+     15593,
+     47668,
+     43568,
+     28825,
+     49594,
+     17097,
+     6916,
+     13651,
+     4489,
+     47865,
+     11009,
+     22347,
+     10165,
+     49291,
+     7946,
+     25918,
+     47790,
+     26202,
+     45195,
+     45075,
+     38610,
+     37344,
+     28990,
+     29193,
+     41798,
+     21450,
+     47549,
+     44152,
+     18823,
+     20696,
+     35917,
+     46393,
+     4852,
+     3454,
+     12474,
+     21618,
+     8181,
+     26119,
+     27214,
+     47810,
+     37495,
+     12619,
+     39542,
+     40525,
+     34180,
+     34010,
+     15586,
+     36052,
+     6777,
+     31655,
+     46308,
+     48847,
+     14992,
+     16726,
+     31121,
+     20024,
+     36757,
+     10201,
+     8495,
+     2549
+    ]
+   },
+   {
+    "name": "generate.0",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566,
+     566
+    ]
+   },
+   {
+    "name": "generate.1",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327,
+     1327
+    ]
+   },
+   {
+    "name": "generate.2",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "parked",
+      "stream": null,
+      "parked_from": 63
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14,
+     14
+    ]
+   }
+  ]
+ },
+ "key_needs": {
+  "slots": 32768,
+  "d": 1024,
+  "capacity": 64,
+  "rotation_steps": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   16,
+   24,
+   32,
+   64,
+   96,
+   128,
+   160,
+   192,
+   224,
+   256,
+   288,
+   320,
+   352,
+   384,
+   416,
+   448,
+   480,
+   512,
+   544,
+   576,
+   608,
+   640,
+   672,
+   704,
+   736,
+   768,
+   800,
+   832,
+   864,
+   896,
+   928,
+   960,
+   992,
+   1024,
+   2048,
+   3072,
+   4096,
+   5120,
+   6144,
+   7168,
+   8192,
+   9216,
+   10240,
+   11264,
+   12288,
+   13312,
+   14336,
+   15360,
+   16384,
+   17408,
+   18432,
+   19456,
+   20480,
+   21504,
+   22528,
+   23552,
+   24576,
+   25600,
+   26624,
+   27648,
+   28672,
+   29696,
+   30720,
+   31744,
+   32744,
+   32752,
+   32760,
+   32761,
+   32762,
+   32763,
+   32764,
+   32765,
+   32766,
+   32767
+  ],
+  "n_rotation_steps": 82,
+  "conjugation": true,
+  "pcmm_t": [
+   32
+  ],
+  "linear": "pcmm"
+ },
+ "keys": {
+  "mode": "insecure-inproc",
+  "bundle": null,
+  "client_secret": false
+ },
+ "perseus_head": "3afbfdf3f7c66438387e6ad475585a8ddfc7611d",
+ "tokens": "the pass list's; the probes and the warm-up random (seed 7)",
+ "scales_file": {
+  "path": "/root/perseus/python/perseus/examples/fhe_ssm/scales_pbd430a.json",
+  "sha256": "96e69e29236cc9ed3380e636f48d1ec815b68202980b425ba034653dfc418415"
+ },
+ "prepare": {
+  "compiled_by": "device",
+  "schedule": "program",
+  "conversations": 64,
+  "programs": {
+   "block_0": {
+    "n_ops": 914,
+    "n_launches": 866,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     487587840,
+     31
+    ]
+   },
+   "block_1": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_2": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_3": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_4": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_5": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_6": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_7": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_8": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_9": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_10": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_11": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_12": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_13": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_14": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_15": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_16": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_17": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_18": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_19": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_20": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_21": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_22": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_23": {
+    "n_ops": 914,
+    "n_launches": 865,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     830,
+     []
+    ],
+    "mem": [
+     457179136,
+     32
+    ]
+   },
+   "block_24": {
+    "n_ops": 215,
+    "n_launches": 215,
+    "n_bootstraps": 10,
+    "bts_batches": [
+     8,
+     10,
+     {
+      "1": 10
+     },
+     {
+      "Sparse(512)": [
+       10,
+       10
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     0,
+     0
+    ],
+    "check": [
+     173,
+     []
+    ],
+    "mem": [
+     94371840,
+     6
+    ]
+   }
+  },
+  "refreshes_planned": 538,
+  "check_errors": {},
+  "registers": 73,
+  "dynamic_steps": {},
+  "static_stream": true,
+  "carried": {
+   "0": [
+    "block_0.cache.n_prev-lvl=26",
+    "block_0.cache.s-lvl=26"
+   ],
+   "1": [
+    "block_1.cache.n_prev-lvl=26",
+    "block_1.cache.s-lvl=26"
+   ],
+   "2": [
+    "block_2.cache.n_prev-lvl=26",
+    "block_2.cache.s-lvl=26"
+   ],
+   "3": [
+    "block_3.cache.n_prev-lvl=26",
+    "block_3.cache.s-lvl=26"
+   ],
+   "4": [
+    "block_4.cache.n_prev-lvl=26",
+    "block_4.cache.s-lvl=26"
+   ],
+   "5": [
+    "block_5.cache.n_prev-lvl=26",
+    "block_5.cache.s-lvl=26"
+   ],
+   "6": [
+    "block_6.cache.n_prev-lvl=26",
+    "block_6.cache.s-lvl=26"
+   ],
+   "7": [
+    "block_7.cache.n_prev-lvl=26",
+    "block_7.cache.s-lvl=26"
+   ],
+   "8": [
+    "block_8.cache.n_prev-lvl=26",
+    "block_8.cache.s-lvl=26"
+   ],
+   "9": [
+    "block_9.cache.n_prev-lvl=26",
+    "block_9.cache.s-lvl=26"
+   ],
+   "10": [
+    "block_10.cache.n_prev-lvl=26",
+    "block_10.cache.s-lvl=26"
+   ],
+   "11": [
+    "block_11.cache.n_prev-lvl=26",
+    "block_11.cache.s-lvl=26"
+   ],
+   "12": [
+    "block_12.cache.n_prev-lvl=26",
+    "block_12.cache.s-lvl=26"
+   ],
+   "13": [
+    "block_13.cache.n_prev-lvl=26",
+    "block_13.cache.s-lvl=26"
+   ],
+   "14": [
+    "block_14.cache.n_prev-lvl=26",
+    "block_14.cache.s-lvl=26"
+   ],
+   "15": [
+    "block_15.cache.n_prev-lvl=26",
+    "block_15.cache.s-lvl=26"
+   ],
+   "16": [
+    "block_16.cache.n_prev-lvl=26",
+    "block_16.cache.s-lvl=26"
+   ],
+   "17": [
+    "block_17.cache.n_prev-lvl=26",
+    "block_17.cache.s-lvl=26"
+   ],
+   "18": [
+    "block_18.cache.n_prev-lvl=26",
+    "block_18.cache.s-lvl=26"
+   ],
+   "19": [
+    "block_19.cache.n_prev-lvl=26",
+    "block_19.cache.s-lvl=26"
+   ],
+   "20": [
+    "block_20.cache.n_prev-lvl=26",
+    "block_20.cache.s-lvl=26"
+   ],
+   "21": [
+    "block_21.cache.n_prev-lvl=26",
+    "block_21.cache.s-lvl=26"
+   ],
+   "22": [
+    "block_22.cache.n_prev-lvl=26",
+    "block_22.cache.s-lvl=26"
+   ],
+   "23": [
+    "block_23.cache.n_prev-lvl=26",
+    "block_23.cache.s-lvl=26"
+   ],
+   "24": []
+  },
+  "plaintexts": {
+   "plaintexts": 4081,
+   "rows": 28,
+   "bytes": 29954670592,
+   "pass_refs": 2544,
+   "static_refs": 1537,
+   "by_alias": {
+    "slots": 2587,
+    "pass": 1794,
+    "static": 793,
+    "pass_ids": 1761,
+    "bytes": 18988662784
+   },
+   "reserved": "by_alias"
+  },
+  "diag_source": "values",
+  "sums": {
+   "diag": 0,
+   "stream": 0,
+   "diag_terms": {},
+   "stream_terms": {},
+   "per_program": {
+    "block_0": 0,
+    "block_1": 0,
+    "block_2": 0,
+    "block_3": 0,
+    "block_4": 0,
+    "block_5": 0,
+    "block_6": 0,
+    "block_7": 0,
+    "block_8": 0,
+    "block_9": 0,
+    "block_10": 0,
+    "block_11": 0,
+    "block_12": 0,
+    "block_13": 0,
+    "block_14": 0,
+    "block_15": 0,
+    "block_16": 0,
+    "block_17": 0,
+    "block_18": 0,
+    "block_19": 0,
+    "block_20": 0,
+    "block_21": 0,
+    "block_22": 0,
+    "block_23": 0,
+    "block_24": 0
+   }
+  },
+  "prepare_s": 49.1,
+  "rotation_steps": [
+   -24,
+   -16,
+   -8,
+   -7,
+   -6,
+   -5,
+   -4,
+   -3,
+   -2,
+   -1,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   16,
+   24,
+   32,
+   64,
+   128,
+   256,
+   512,
+   1024,
+   2048,
+   4096,
+   8192,
+   16384
+  ],
+  "pass_kernels": true,
+  "pcmm": {
+   "declared": [
+    "b0.win",
+    "b0.wout",
+    "b0.wk",
+    "b0.wr",
+    "b0.wv",
+    "b1.win",
+    "b1.wout",
+    "b1.wk",
+    "b1.wr",
+    "b1.wv",
+    "b2.win",
+    "b2.wout",
+    "b2.wk",
+    "b2.wr",
+    "b2.wv",
+    "b3.win",
+    "b3.wout",
+    "b3.wk",
+    "b3.wr",
+    "b3.wv",
+    "b4.win",
+    "b4.wout",
+    "b4.wk",
+    "b4.wr",
+    "b4.wv",
+    "b5.win",
+    "b5.wout",
+    "b5.wk",
+    "b5.wr",
+    "b5.wv",
+    "b6.win",
+    "b6.wout",
+    "b6.wk",
+    "b6.wr",
+    "b6.wv",
+    "b7.win",
+    "b7.wout",
+    "b7.wk",
+    "b7.wr",
+    "b7.wv",
+    "b8.win",
+    "b8.wout",
+    "b8.wk",
+    "b8.wr",
+    "b8.wv",
+    "b9.win",
+    "b9.wout",
+    "b9.wk",
+    "b9.wr",
+    "b9.wv",
+    "b10.win",
+    "b10.wout",
+    "b10.wk",
+    "b10.wr",
+    "b10.wv",
+    "b11.win",
+    "b11.wout",
+    "b11.wk",
+    "b11.wr",
+    "b11.wv",
+    "b12.win",
+    "b12.wout",
+    "b12.wk",
+    "b12.wr",
+    "b12.wv",
+    "b13.win",
+    "b13.wout",
+    "b13.wk",
+    "b13.wr",
+    "b13.wv",
+    "b14.win",
+    "b14.wout",
+    "b14.wk",
+    "b14.wr",
+    "b14.wv",
+    "b15.win",
+    "b15.wout",
+    "b15.wk",
+    "b15.wr",
+    "b15.wv",
+    "b16.win",
+    "b16.wout",
+    "b16.wk",
+    "b16.wr",
+    "b16.wv",
+    "b17.win",
+    "b17.wout",
+    "b17.wk",
+    "b17.wr",
+    "b17.wv",
+    "b18.win",
+    "b18.wout",
+    "b18.wk",
+    "b18.wr",
+    "b18.wv",
+    "b19.win",
+    "b19.wout",
+    "b19.wk",
+    "b19.wr",
+    "b19.wv",
+    "b20.win",
+    "b20.wout",
+    "b20.wk",
+    "b20.wr",
+    "b20.wv",
+    "b21.win",
+    "b21.wout",
+    "b21.wk",
+    "b21.wr",
+    "b21.wv",
+    "b22.win",
+    "b22.wout",
+    "b22.wk",
+    "b22.wr",
+    "b22.wv",
+    "b23.win",
+    "b23.wout",
+    "b23.wk",
+    "b23.wr",
+    "b23.wv"
+   ],
+   "linears": 120,
+   "finishes": 264
+  }
+ },
+ "setup": {
+  "total_s": 45.1,
+  "prepare_s": 49.1,
+  "session_s": 10.137293932,
+  "keygen_s": 1.929094265,
+  "mem_report": "context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 504.0 MB, ks.plans 4.0 MB, keys 7279.4 MB, keygen 31.5 MB, ks.groups 0.0 MB, ks.regen_a 189.0 MB, ops 164.9 MB, rescale 253.5 MB, pt_store 16080.5 MB, encode 3.5 MB, encrypt 0.0 MB, decrypt 9.0 MB, keys.secret 31.5 MB, bts.dense 4328.2 MB, bts.stc_first 32835.6 MB, bts.sparse 945.0 MB, bts.sparse 827.2 MB, bts.route 0.0 MB, bts.work 4032.0 MB, replay.slab 1417.5 MB, replay.regs 1015.0 MB, replay.groups 1.4 MB, pcmm 1343.6 MB, pcmm.weights 1008.0 MB, pcmm.cts 252.0 MB, replay.side 2709.0 MB, ops 164.9 MB, rescale 253.5 MB, slack 256.0 MB, total 78523.7 MB",
+  "mem_free_bytes": 19028049920,
+  "mem_total_bytes": 101973491712,
+  "rotation_keys": [
+   30,
+   30
+  ],
+  "registers": 73,
+  "pcmm_uploaded": [
+   "b0.win",
+   "b0.wout",
+   "b0.wk",
+   "b0.wr",
+   "b0.wv",
+   "b1.win",
+   "b1.wout",
+   "b1.wk",
+   "b1.wr",
+   "b1.wv",
+   "b2.win",
+   "b2.wout",
+   "b2.wk",
+   "b2.wr",
+   "b2.wv",
+   "b3.win",
+   "b3.wout",
+   "b3.wk",
+   "b3.wr",
+   "b3.wv",
+   "b4.win",
+   "b4.wout",
+   "b4.wk",
+   "b4.wr",
+   "b4.wv",
+   "b5.win",
+   "b5.wout",
+   "b5.wk",
+   "b5.wr",
+   "b5.wv",
+   "b6.win",
+   "b6.wout",
+   "b6.wk",
+   "b6.wr",
+   "b6.wv",
+   "b7.win",
+   "b7.wout",
+   "b7.wk",
+   "b7.wr",
+   "b7.wv",
+   "b8.win",
+   "b8.wout",
+   "b8.wk",
+   "b8.wr",
+   "b8.wv",
+   "b9.win",
+   "b9.wout",
+   "b9.wk",
+   "b9.wr",
+   "b9.wv",
+   "b10.win",
+   "b10.wout",
+   "b10.wk",
+   "b10.wr",
+   "b10.wv",
+   "b11.win",
+   "b11.wout",
+   "b11.wk",
+   "b11.wr",
+   "b11.wv",
+   "b12.win",
+   "b12.wout",
+   "b12.wk",
+   "b12.wr",
+   "b12.wv",
+   "b13.win",
+   "b13.wout",
+   "b13.wk",
+   "b13.wr",
+   "b13.wv",
+   "b14.win",
+   "b14.wout",
+   "b14.wk",
+   "b14.wr",
+   "b14.wv",
+   "b15.win",
+   "b15.wout",
+   "b15.wk",
+   "b15.wr",
+   "b15.wv",
+   "b16.win",
+   "b16.wout",
+   "b16.wk",
+   "b16.wr",
+   "b16.wv",
+   "b17.win",
+   "b17.wout",
+   "b17.wk",
+   "b17.wr",
+   "b17.wv",
+   "b18.win",
+   "b18.wout",
+   "b18.wk",
+   "b18.wr",
+   "b18.wv",
+   "b19.win",
+   "b19.wout",
+   "b19.wk",
+   "b19.wr",
+   "b19.wv",
+   "b20.win",
+   "b20.wout",
+   "b20.wk",
+   "b20.wr",
+   "b20.wv",
+   "b21.win",
+   "b21.wout",
+   "b21.wk",
+   "b21.wr",
+   "b21.wv",
+   "b22.win",
+   "b22.wout",
+   "b22.wk",
+   "b22.wr",
+   "b22.wv",
+   "b23.win",
+   "b23.wout",
+   "b23.wk",
+   "b23.wr",
+   "b23.wv"
+  ],
+  "plaintexts_staged": 2587,
+  "pass_masks": {
+   "configurations": 3,
+   "pass_keys": 1794,
+   "seconds": 2.747,
+   "per_configuration_s": [
+    1.278,
+    1.349,
+    1.398
+   ]
+  },
+  "diag_tiles_uploaded": 0,
+  "diag": null,
+  "has_secret": true,
+  "profile": "a device fence after every stage on the fenced ticks: stage walls are attributions, not the production wall"
+ },
+ "ticks": [
+  {
+   "pass": 0,
+   "timed": true,
+   "config": "prefill.0",
+   "config_id": 0,
+   "segments": [
+    {
+     "kind": "seq",
+     "home": [
+      0,
+      64
+     ],
+     "q0": 0,
+     "entry": "fresh",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "seq L [0,64) q0 0 fresh",
+   "seconds": 13.97,
+   "fenced": true,
+   "issue_s": 13.964,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": false,
+   "staged": 0,
+   "stage_s": 0.0004,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 172334.1329999976,
+    "launch_us": 172235.58899999998,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 10122.321,
+     "launch_us": 10117.374,
+     "wall_s": 0.572
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 6592.4929999999995,
+     "launch_us": 6587.351,
+     "wall_s": 0.5716
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 8202.069,
+     "launch_us": 8197.339999999998,
+     "wall_s": 0.5714
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 6503.929999999999,
+     "launch_us": 6499.794,
+     "wall_s": 0.5715
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 7507.487999999999,
+     "launch_us": 7504.021,
+     "wall_s": 0.5717
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 6470.464000000001,
+     "launch_us": 6466.708,
+     "wall_s": 0.572
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 7454.859,
+     "launch_us": 7451.48,
+     "wall_s": 0.5719
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 6391.7119999999995,
+     "launch_us": 6387.638999999999,
+     "wall_s": 0.5724
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 7397.597,
+     "launch_us": 7392.695000000001,
+     "wall_s": 0.5725
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 6653.407,
+     "launch_us": 6649.731,
+     "wall_s": 0.5725
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 7362.239,
+     "launch_us": 7358.318,
+     "wall_s": 0.5725
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 6337.780000000001,
+     "launch_us": 6333.287,
+     "wall_s": 0.5725
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 7135.066,
+     "launch_us": 7132.09,
+     "wall_s": 0.5727
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 6315.809,
+     "launch_us": 6312.616,
+     "wall_s": 0.5733
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 7065.66,
+     "launch_us": 7061.892,
+     "wall_s": 0.5732
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 6350.2699999999995,
+     "launch_us": 6346.919000000001,
+     "wall_s": 0.5732
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 7044.293,
+     "launch_us": 7040.174,
+     "wall_s": 0.5732
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 6346.83,
+     "launch_us": 6342.7609999999995,
+     "wall_s": 0.5737
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 6977.909,
+     "launch_us": 6974.37,
+     "wall_s": 0.5735
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 8248.293,
+     "launch_us": 8243.87,
+     "wall_s": 0.5739
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 7241.504,
+     "launch_us": 7238.1,
+     "wall_s": 0.5739
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 6420.651000000001,
+     "launch_us": 6416.803,
+     "wall_s": 0.574
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 7395.038,
+     "launch_us": 7390.798,
+     "wall_s": 0.5741
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 6377.932,
+     "launch_us": 6373.775,
+     "wall_s": 0.5745
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 2418.5190000000002,
+     "launch_us": 2415.683,
+     "wall_s": 0.1608
+    }
+   ],
+   "token_values": 64,
+   "sequences": {
+    "L": 64
+   },
+   "conversations": 0,
+   "parked": 0,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.004481747533751067,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 21,
+    "relErrRms": 0.007737812582087002
+   },
+   "logits_relErrRms_vs_exact": 0.002613140632160871,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pass": 1,
+   "timed": true,
+   "config": "prefill.1",
+   "config_id": 1,
+   "segments": [
+    {
+     "kind": "seq",
+     "home": [
+      0,
+      64
+     ],
+     "q0": 0,
+     "entry": "carry",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "seq L [0,64) q0 0 carry",
+   "seconds": 14.021,
+   "fenced": false,
+   "issue_s": 0.051,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": true,
+   "staged": 96,
+   "stage_s": 0.0164,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2849.89999999851,
+    "launch_us": 2794.1699999999837,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 121.152,
+     "launch_us": 116.136,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 108.36200000000001,
+     "launch_us": 106.039,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 106.42899999999999,
+     "launch_us": 104.05799999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 107.363,
+     "launch_us": 105.667,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 104.615,
+     "launch_us": 102.797,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 103.27799999999999,
+     "launch_us": 101.549,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 98.71300000000001,
+     "launch_us": 97.282,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 98.04899999999999,
+     "launch_us": 95.809,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 102.734,
+     "launch_us": 100.71000000000001,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 96.131,
+     "launch_us": 93.90899999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 99.58000000000001,
+     "launch_us": 97.15299999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 98.601,
+     "launch_us": 96.284,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 101.82900000000001,
+     "launch_us": 100.363,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 102.38600000000001,
+     "launch_us": 100.343,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 104.482,
+     "launch_us": 101.965,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 101.533,
+     "launch_us": 99.90299999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 141.577,
+     "launch_us": 139.25900000000001,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 143.25300000000001,
+     "launch_us": 140.657,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 142.494,
+     "launch_us": 140.057,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 144.906,
+     "launch_us": 142.671,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 143.19,
+     "launch_us": 141.30100000000002,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 146.242,
+     "launch_us": 143.516,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 146.44,
+     "launch_us": 144.122,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 145.097,
+     "launch_us": 142.688,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 41.464,
+     "launch_us": 39.932,
+     "issue_s": 0.0001
+    }
+   ],
+   "token_values": 64,
+   "sequences": {
+    "L": 64
+   },
+   "conversations": 0,
+   "parked": 0,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.004282337587707048,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 4,
+    "relErrRms": 0.007410279970769567
+   },
+   "logits_relErrRms_vs_exact": 0.0036103028706925048,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pass": 2,
+   "timed": true,
+   "config": "prefill.2",
+   "config_id": 1,
+   "segments": [
+    {
+     "kind": "seq",
+     "home": [
+      0,
+      64
+     ],
+     "q0": 0,
+     "entry": "carry",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "seq L [0,64) q0 0 carry",
+   "seconds": 14.055,
+   "fenced": true,
+   "issue_s": 14.05,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": false,
+   "staged": 0,
+   "stage_s": 0.0005,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2581.2219999954104,
+    "launch_us": 2517.795000000013,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 159.156,
+     "launch_us": 153.261,
+     "wall_s": 0.5749
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 110.043,
+     "launch_us": 106.536,
+     "wall_s": 0.5753
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 113.261,
+     "launch_us": 110.28599999999999,
+     "wall_s": 0.5755
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 109.361,
+     "launch_us": 107.295,
+     "wall_s": 0.5755
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 109.634,
+     "launch_us": 107.07000000000001,
+     "wall_s": 0.5759
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 111.728,
+     "launch_us": 108.658,
+     "wall_s": 0.576
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 102.31299999999999,
+     "launch_us": 100.086,
+     "wall_s": 0.5761
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 102.433,
+     "launch_us": 100.345,
+     "wall_s": 0.5763
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 102.384,
+     "launch_us": 99.834,
+     "wall_s": 0.5763
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 102.128,
+     "launch_us": 100.105,
+     "wall_s": 0.5764
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 99.405,
+     "launch_us": 96.65299999999999,
+     "wall_s": 0.5765
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 106.23,
+     "launch_us": 102.372,
+     "wall_s": 0.5766
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 99.58699999999999,
+     "launch_us": 97.867,
+     "wall_s": 0.5767
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 101.009,
+     "launch_us": 99.301,
+     "wall_s": 0.5768
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 106.71900000000001,
+     "launch_us": 103.882,
+     "wall_s": 0.5769
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 105.333,
+     "launch_us": 103.49300000000001,
+     "wall_s": 0.577
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 99.98899999999999,
+     "launch_us": 97.53099999999999,
+     "wall_s": 0.577
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 98.15,
+     "launch_us": 95.812,
+     "wall_s": 0.5773
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 103.655,
+     "launch_us": 101.616,
+     "wall_s": 0.5772
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 101.701,
+     "launch_us": 99.323,
+     "wall_s": 0.5772
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 102.57000000000001,
+     "launch_us": 100.572,
+     "wall_s": 0.5773
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 99.919,
+     "launch_us": 97.884,
+     "wall_s": 0.5772
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 98.046,
+     "launch_us": 95.776,
+     "wall_s": 0.5773
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 103.007,
+     "launch_us": 100.54400000000001,
+     "wall_s": 0.5775
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 33.461,
+     "launch_us": 31.693,
+     "wall_s": 0.1616
+    }
+   ],
+   "token_values": 64,
+   "sequences": {
+    "L": 64
+   },
+   "conversations": 0,
+   "parked": 0,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.004499286839613274,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 32,
+    "relErrRms": 0.007014761891003384
+   },
+   "logits_relErrRms_vs_exact": 0.0038719536567364448,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pass": 3,
+   "timed": true,
+   "config": "prefill.3",
+   "config_id": 1,
+   "segments": [
+    {
+     "kind": "seq",
+     "home": [
+      0,
+      64
+     ],
+     "q0": 0,
+     "entry": "carry",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "seq L [0,64) q0 0 carry",
+   "seconds": 14.081,
+   "fenced": false,
+   "issue_s": 0.051,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": false,
+   "staged": 0,
+   "stage_s": 0.0004,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2850.032999996096,
+    "launch_us": 2794.100999999966,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 163.972,
+     "launch_us": 157.971,
+     "issue_s": 0.0003
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 141.45100000000002,
+     "launch_us": 139.049,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 125.404,
+     "launch_us": 122.93199999999999,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 109.922,
+     "launch_us": 107.743,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 108.042,
+     "launch_us": 105.892,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 105.531,
+     "launch_us": 103.677,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 105.617,
+     "launch_us": 104.116,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 103.345,
+     "launch_us": 101.172,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 97.771,
+     "launch_us": 95.67699999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 100.491,
+     "launch_us": 98.228,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 94.42099999999999,
+     "launch_us": 92.50999999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 100.927,
+     "launch_us": 98.739,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 102.16300000000001,
+     "launch_us": 99.99499999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 100.562,
+     "launch_us": 99.008,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 105.783,
+     "launch_us": 103.563,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 101.41600000000001,
+     "launch_us": 99.801,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 103.398,
+     "launch_us": 100.854,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 101.395,
+     "launch_us": 98.882,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 129.15800000000002,
+     "launch_us": 127.40399999999998,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 139.657,
+     "launch_us": 138.028,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 138.93,
+     "launch_us": 136.73499999999999,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 141.86599999999999,
+     "launch_us": 139.89499999999998,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 144.81699999999998,
+     "launch_us": 142.636,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 144.074,
+     "launch_us": 141.405,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 39.919999999999995,
+     "launch_us": 38.189,
+     "issue_s": 0.0
+    }
+   ],
+   "token_values": 64,
+   "sequences": {
+    "L": 64
+   },
+   "conversations": 0,
+   "parked": 0,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.004410913659613469,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 12,
+    "relErrRms": 0.009264872675031122
+   },
+   "logits_relErrRms_vs_exact": 0.003859224384834135,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pass": 4,
+   "timed": true,
+   "config": "prefill.4",
+   "config_id": 1,
+   "segments": [
+    {
+     "kind": "seq",
+     "home": [
+      0,
+      64
+     ],
+     "q0": 0,
+     "entry": "carry",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "seq L [0,64) q0 0 carry",
+   "seconds": 14.123,
+   "fenced": true,
+   "issue_s": 14.117,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": false,
+   "staged": 0,
+   "stage_s": 0.0004,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2602.326000003144,
+    "launch_us": 2537.8030000000435,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 157.933,
+     "launch_us": 152.477,
+     "wall_s": 0.5774
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 108.83,
+     "launch_us": 104.923,
+     "wall_s": 0.5783
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 108.646,
+     "launch_us": 105.995,
+     "wall_s": 0.5781
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 111.91799999999999,
+     "launch_us": 109.972,
+     "wall_s": 0.5783
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 112.275,
+     "launch_us": 108.2,
+     "wall_s": 0.5782
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 108.60300000000001,
+     "launch_us": 106.274,
+     "wall_s": 0.5785
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 101.83099999999999,
+     "launch_us": 99.943,
+     "wall_s": 0.5786
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 103.63,
+     "launch_us": 100.95899999999999,
+     "wall_s": 0.5788
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 101.67500000000001,
+     "launch_us": 99.491,
+     "wall_s": 0.5788
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 104.524,
+     "launch_us": 102.373,
+     "wall_s": 0.5789
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 99.565,
+     "launch_us": 96.934,
+     "wall_s": 0.579
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 102.865,
+     "launch_us": 100.05099999999999,
+     "wall_s": 0.579
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 99.551,
+     "launch_us": 97.39999999999999,
+     "wall_s": 0.5792
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 102.941,
+     "launch_us": 100.95100000000001,
+     "wall_s": 0.5795
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 106.547,
+     "launch_us": 103.67899999999999,
+     "wall_s": 0.5793
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 104.277,
+     "launch_us": 102.101,
+     "wall_s": 0.5793
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 103.99,
+     "launch_us": 101.69800000000001,
+     "wall_s": 0.5792
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 108.788,
+     "launch_us": 105.905,
+     "wall_s": 0.5794
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 105.473,
+     "launch_us": 103.29400000000001,
+     "wall_s": 0.5793
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 103.11099999999999,
+     "launch_us": 100.284,
+     "wall_s": 0.5794
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 102.434,
+     "launch_us": 100.8,
+     "wall_s": 0.5794
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 102.884,
+     "launch_us": 101.074,
+     "wall_s": 0.5795
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 105.454,
+     "launch_us": 102.95599999999999,
+     "wall_s": 0.5797
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 101.383,
+     "launch_us": 98.936,
+     "wall_s": 0.5797
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 33.198,
+     "launch_us": 31.133000000000003,
+     "wall_s": 0.1623
+    }
+   ],
+   "token_values": 64,
+   "sequences": {
+    "L": 64
+   },
+   "conversations": 0,
+   "parked": 0,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.004631743457722875,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 10,
+    "relErrRms": 0.008878102498989493
+   },
+   "logits_relErrRms_vs_exact": 0.0036443917738969104,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pass": 5,
+   "timed": true,
+   "config": "generate.0",
+   "config_id": 2,
+   "segments": [
+    {
+     "kind": "conv",
+     "home": [
+      0,
+      1
+     ],
+     "q0": 0,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      1,
+      2
+     ],
+     "q0": 1,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      2,
+      3
+     ],
+     "q0": 2,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      3,
+      4
+     ],
+     "q0": 3,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      4,
+      5
+     ],
+     "q0": 4,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      5,
+      6
+     ],
+     "q0": 5,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      6,
+      7
+     ],
+     "q0": 6,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      7,
+      8
+     ],
+     "q0": 7,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      8,
+      9
+     ],
+     "q0": 8,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      9,
+      10
+     ],
+     "q0": 9,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      10,
+      11
+     ],
+     "q0": 10,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      11,
+      12
+     ],
+     "q0": 11,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      12,
+      13
+     ],
+     "q0": 12,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      13,
+      14
+     ],
+     "q0": 13,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      14,
+      15
+     ],
+     "q0": 14,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      15,
+      16
+     ],
+     "q0": 15,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      16,
+      17
+     ],
+     "q0": 16,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      17,
+      18
+     ],
+     "q0": 17,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      18,
+      19
+     ],
+     "q0": 18,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      19,
+      20
+     ],
+     "q0": 19,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      20,
+      21
+     ],
+     "q0": 20,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      21,
+      22
+     ],
+     "q0": 21,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      22,
+      23
+     ],
+     "q0": 22,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      23,
+      24
+     ],
+     "q0": 23,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      24,
+      25
+     ],
+     "q0": 24,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      25,
+      26
+     ],
+     "q0": 25,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      26,
+      27
+     ],
+     "q0": 26,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      27,
+      28
+     ],
+     "q0": 27,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      28,
+      29
+     ],
+     "q0": 28,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      29,
+      30
+     ],
+     "q0": 29,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      30,
+      31
+     ],
+     "q0": 30,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      31,
+      32
+     ],
+     "q0": 31,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      32,
+      33
+     ],
+     "q0": 32,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      33,
+      34
+     ],
+     "q0": 33,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      34,
+      35
+     ],
+     "q0": 34,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      35,
+      36
+     ],
+     "q0": 35,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      36,
+      37
+     ],
+     "q0": 36,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      37,
+      38
+     ],
+     "q0": 37,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      38,
+      39
+     ],
+     "q0": 38,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      39,
+      40
+     ],
+     "q0": 39,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      40,
+      41
+     ],
+     "q0": 40,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      41,
+      42
+     ],
+     "q0": 41,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      42,
+      43
+     ],
+     "q0": 42,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      43,
+      44
+     ],
+     "q0": 43,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      44,
+      45
+     ],
+     "q0": 44,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      45,
+      46
+     ],
+     "q0": 45,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      46,
+      47
+     ],
+     "q0": 46,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      47,
+      48
+     ],
+     "q0": 47,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      48,
+      49
+     ],
+     "q0": 48,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      49,
+      50
+     ],
+     "q0": 49,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      50,
+      51
+     ],
+     "q0": 50,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      51,
+      52
+     ],
+     "q0": 51,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      52,
+      53
+     ],
+     "q0": 52,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      53,
+      54
+     ],
+     "q0": 53,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      54,
+      55
+     ],
+     "q0": 54,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      55,
+      56
+     ],
+     "q0": 55,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      56,
+      57
+     ],
+     "q0": 56,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      57,
+      58
+     ],
+     "q0": 57,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      58,
+      59
+     ],
+     "q0": 58,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      59,
+      60
+     ],
+     "q0": 59,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      60,
+      61
+     ],
+     "q0": 60,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      61,
+      62
+     ],
+     "q0": 61,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      62,
+      63
+     ],
+     "q0": 62,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      63,
+      64
+     ],
+     "q0": 63,
+     "entry": "carry",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "conv carry x1; conv parked x63",
+   "seconds": 14.573,
+   "fenced": false,
+   "issue_s": 0.017,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": true,
+   "staged": 1794,
+   "stage_s": 0.4816,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2992.498999994248,
+    "launch_us": 2924.8310000000056,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 143.584,
+     "launch_us": 137.334,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 130.133,
+     "launch_us": 126.41400000000002,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 127.99799999999999,
+     "launch_us": 125.13,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 133.656,
+     "launch_us": 131.78300000000002,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 128.24099999999999,
+     "launch_us": 125.371,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 124.49999999999999,
+     "launch_us": 122.206,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 118.75999999999999,
+     "launch_us": 116.637,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 119.821,
+     "launch_us": 117.44200000000001,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 121.25,
+     "launch_us": 118.543,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 120.67699999999999,
+     "launch_us": 117.348,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 122.304,
+     "launch_us": 119.876,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 118.06099999999999,
+     "launch_us": 115.591,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 124.07799999999999,
+     "launch_us": 121.036,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 114.31599999999999,
+     "launch_us": 112.459,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 118.449,
+     "launch_us": 116.05499999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 119.324,
+     "launch_us": 116.761,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 120.875,
+     "launch_us": 118.00500000000001,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 121.313,
+     "launch_us": 118.66000000000001,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 121.54,
+     "launch_us": 119.094,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 124.04599999999999,
+     "launch_us": 121.07000000000001,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 119.103,
+     "launch_us": 116.681,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 121.306,
+     "launch_us": 119.161,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 120.19,
+     "launch_us": 117.378,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 122.60799999999999,
+     "launch_us": 119.753,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 36.366,
+     "launch_us": 35.043000000000006,
+     "issue_s": 0.0
+    }
+   ],
+   "token_values": 1,
+   "sequences": {},
+   "conversations": 1,
+   "parked": 63,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.0031389891372882836,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 63,
+    "relErrRms": 0.0031389891372882836
+   },
+   "logits_relErrRms_vs_exact": 0.0013703864717711641,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pass": 6,
+   "timed": true,
+   "config": "generate.1",
+   "config_id": 2,
+   "segments": [
+    {
+     "kind": "conv",
+     "home": [
+      0,
+      1
+     ],
+     "q0": 0,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      1,
+      2
+     ],
+     "q0": 1,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      2,
+      3
+     ],
+     "q0": 2,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      3,
+      4
+     ],
+     "q0": 3,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      4,
+      5
+     ],
+     "q0": 4,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      5,
+      6
+     ],
+     "q0": 5,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      6,
+      7
+     ],
+     "q0": 6,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      7,
+      8
+     ],
+     "q0": 7,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      8,
+      9
+     ],
+     "q0": 8,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      9,
+      10
+     ],
+     "q0": 9,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      10,
+      11
+     ],
+     "q0": 10,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      11,
+      12
+     ],
+     "q0": 11,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      12,
+      13
+     ],
+     "q0": 12,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      13,
+      14
+     ],
+     "q0": 13,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      14,
+      15
+     ],
+     "q0": 14,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      15,
+      16
+     ],
+     "q0": 15,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      16,
+      17
+     ],
+     "q0": 16,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      17,
+      18
+     ],
+     "q0": 17,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      18,
+      19
+     ],
+     "q0": 18,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      19,
+      20
+     ],
+     "q0": 19,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      20,
+      21
+     ],
+     "q0": 20,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      21,
+      22
+     ],
+     "q0": 21,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      22,
+      23
+     ],
+     "q0": 22,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      23,
+      24
+     ],
+     "q0": 23,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      24,
+      25
+     ],
+     "q0": 24,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      25,
+      26
+     ],
+     "q0": 25,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      26,
+      27
+     ],
+     "q0": 26,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      27,
+      28
+     ],
+     "q0": 27,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      28,
+      29
+     ],
+     "q0": 28,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      29,
+      30
+     ],
+     "q0": 29,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      30,
+      31
+     ],
+     "q0": 30,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      31,
+      32
+     ],
+     "q0": 31,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      32,
+      33
+     ],
+     "q0": 32,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      33,
+      34
+     ],
+     "q0": 33,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      34,
+      35
+     ],
+     "q0": 34,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      35,
+      36
+     ],
+     "q0": 35,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      36,
+      37
+     ],
+     "q0": 36,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      37,
+      38
+     ],
+     "q0": 37,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      38,
+      39
+     ],
+     "q0": 38,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      39,
+      40
+     ],
+     "q0": 39,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      40,
+      41
+     ],
+     "q0": 40,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      41,
+      42
+     ],
+     "q0": 41,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      42,
+      43
+     ],
+     "q0": 42,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      43,
+      44
+     ],
+     "q0": 43,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      44,
+      45
+     ],
+     "q0": 44,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      45,
+      46
+     ],
+     "q0": 45,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      46,
+      47
+     ],
+     "q0": 46,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      47,
+      48
+     ],
+     "q0": 47,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      48,
+      49
+     ],
+     "q0": 48,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      49,
+      50
+     ],
+     "q0": 49,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      50,
+      51
+     ],
+     "q0": 50,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      51,
+      52
+     ],
+     "q0": 51,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      52,
+      53
+     ],
+     "q0": 52,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      53,
+      54
+     ],
+     "q0": 53,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      54,
+      55
+     ],
+     "q0": 54,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      55,
+      56
+     ],
+     "q0": 55,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      56,
+      57
+     ],
+     "q0": 56,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      57,
+      58
+     ],
+     "q0": 57,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      58,
+      59
+     ],
+     "q0": 58,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      59,
+      60
+     ],
+     "q0": 59,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      60,
+      61
+     ],
+     "q0": 60,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      61,
+      62
+     ],
+     "q0": 61,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      62,
+      63
+     ],
+     "q0": 62,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      63,
+      64
+     ],
+     "q0": 63,
+     "entry": "carry",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "conv carry x1; conv parked x63",
+   "seconds": 14.147,
+   "fenced": true,
+   "issue_s": 14.141,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": false,
+   "staged": 0,
+   "stage_s": 0.0004,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2555.457000002265,
+    "launch_us": 2493.2919999999867,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 156.803,
+     "launch_us": 150.975,
+     "wall_s": 0.5783
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 111.437,
+     "launch_us": 108.08500000000001,
+     "wall_s": 0.579
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 110.58200000000001,
+     "launch_us": 107.396,
+     "wall_s": 0.5793
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 105.895,
+     "launch_us": 103.714,
+     "wall_s": 0.5796
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 109.412,
+     "launch_us": 106.78999999999999,
+     "wall_s": 0.5797
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 104.664,
+     "launch_us": 101.94,
+     "wall_s": 0.5798
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 101.989,
+     "launch_us": 100.066,
+     "wall_s": 0.5798
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 101.965,
+     "launch_us": 99.445,
+     "wall_s": 0.5802
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 101.321,
+     "launch_us": 99.289,
+     "wall_s": 0.5799
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 99.471,
+     "launch_us": 97.594,
+     "wall_s": 0.5801
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 96.17099999999999,
+     "launch_us": 94.088,
+     "wall_s": 0.5801
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 98.145,
+     "launch_us": 95.77900000000001,
+     "wall_s": 0.5802
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 99.701,
+     "launch_us": 97.473,
+     "wall_s": 0.5802
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 101.061,
+     "launch_us": 99.399,
+     "wall_s": 0.5803
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 103.062,
+     "launch_us": 99.89500000000001,
+     "wall_s": 0.5804
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 101.965,
+     "launch_us": 99.74199999999999,
+     "wall_s": 0.5805
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 103.26400000000001,
+     "launch_us": 100.833,
+     "wall_s": 0.5805
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 101.145,
+     "launch_us": 98.655,
+     "wall_s": 0.5806
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 102.173,
+     "launch_us": 100.493,
+     "wall_s": 0.5806
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 102.36999999999999,
+     "launch_us": 100.02,
+     "wall_s": 0.5811
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 101.127,
+     "launch_us": 98.998,
+     "wall_s": 0.5806
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 101.97200000000001,
+     "launch_us": 99.83800000000001,
+     "wall_s": 0.5807
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 100.989,
+     "launch_us": 98.44300000000001,
+     "wall_s": 0.5808
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 105.336,
+     "launch_us": 102.885,
+     "wall_s": 0.5809
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 33.437,
+     "launch_us": 31.457,
+     "wall_s": 0.1627
+    }
+   ],
+   "token_values": 1,
+   "sequences": {},
+   "conversations": 1,
+   "parked": 63,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.0030669638007725223,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 63,
+    "relErrRms": 0.0030669638007725223
+   },
+   "logits_relErrRms_vs_exact": 0.004147078778566234,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  },
+  {
+   "pass": 7,
+   "timed": true,
+   "config": "generate.2",
+   "config_id": 2,
+   "segments": [
+    {
+     "kind": "conv",
+     "home": [
+      0,
+      1
+     ],
+     "q0": 0,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      1,
+      2
+     ],
+     "q0": 1,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      2,
+      3
+     ],
+     "q0": 2,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      3,
+      4
+     ],
+     "q0": 3,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      4,
+      5
+     ],
+     "q0": 4,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      5,
+      6
+     ],
+     "q0": 5,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      6,
+      7
+     ],
+     "q0": 6,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      7,
+      8
+     ],
+     "q0": 7,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      8,
+      9
+     ],
+     "q0": 8,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      9,
+      10
+     ],
+     "q0": 9,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      10,
+      11
+     ],
+     "q0": 10,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      11,
+      12
+     ],
+     "q0": 11,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      12,
+      13
+     ],
+     "q0": 12,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      13,
+      14
+     ],
+     "q0": 13,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      14,
+      15
+     ],
+     "q0": 14,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      15,
+      16
+     ],
+     "q0": 15,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      16,
+      17
+     ],
+     "q0": 16,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      17,
+      18
+     ],
+     "q0": 17,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      18,
+      19
+     ],
+     "q0": 18,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      19,
+      20
+     ],
+     "q0": 19,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      20,
+      21
+     ],
+     "q0": 20,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      21,
+      22
+     ],
+     "q0": 21,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      22,
+      23
+     ],
+     "q0": 22,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      23,
+      24
+     ],
+     "q0": 23,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      24,
+      25
+     ],
+     "q0": 24,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      25,
+      26
+     ],
+     "q0": 25,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      26,
+      27
+     ],
+     "q0": 26,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      27,
+      28
+     ],
+     "q0": 27,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      28,
+      29
+     ],
+     "q0": 28,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      29,
+      30
+     ],
+     "q0": 29,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      30,
+      31
+     ],
+     "q0": 30,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      31,
+      32
+     ],
+     "q0": 31,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      32,
+      33
+     ],
+     "q0": 32,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      33,
+      34
+     ],
+     "q0": 33,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      34,
+      35
+     ],
+     "q0": 34,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      35,
+      36
+     ],
+     "q0": 35,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      36,
+      37
+     ],
+     "q0": 36,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      37,
+      38
+     ],
+     "q0": 37,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      38,
+      39
+     ],
+     "q0": 38,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      39,
+      40
+     ],
+     "q0": 39,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      40,
+      41
+     ],
+     "q0": 40,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      41,
+      42
+     ],
+     "q0": 41,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      42,
+      43
+     ],
+     "q0": 42,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      43,
+      44
+     ],
+     "q0": 43,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      44,
+      45
+     ],
+     "q0": 44,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      45,
+      46
+     ],
+     "q0": 45,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      46,
+      47
+     ],
+     "q0": 46,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      47,
+      48
+     ],
+     "q0": 47,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      48,
+      49
+     ],
+     "q0": 48,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      49,
+      50
+     ],
+     "q0": 49,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      50,
+      51
+     ],
+     "q0": 50,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      51,
+      52
+     ],
+     "q0": 51,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      52,
+      53
+     ],
+     "q0": 52,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      53,
+      54
+     ],
+     "q0": 53,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      54,
+      55
+     ],
+     "q0": 54,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      55,
+      56
+     ],
+     "q0": 55,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      56,
+      57
+     ],
+     "q0": 56,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      57,
+      58
+     ],
+     "q0": 57,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      58,
+      59
+     ],
+     "q0": 58,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      59,
+      60
+     ],
+     "q0": 59,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      60,
+      61
+     ],
+     "q0": 60,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      61,
+      62
+     ],
+     "q0": 61,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      62,
+      63
+     ],
+     "q0": 62,
+     "entry": "parked",
+     "stream": null,
+     "parked_from": 63
+    },
+    {
+     "kind": "conv",
+     "home": [
+      63,
+      64
+     ],
+     "q0": 63,
+     "entry": "carry",
+     "stream": "L",
+     "parked_from": null
+    }
+   ],
+   "describe": "conv carry x1; conv parked x63",
+   "seconds": 14.17,
+   "fenced": false,
+   "issue_s": 0.066,
+   "served": "rrrrrrrrrrrrrrrrrrrrrrrrr",
+   "restaged": false,
+   "staged": 0,
+   "stage_s": 0.0005,
+   "masks_s": 0.0,
+   "out_level": 40,
+   "refreshes_planned": 538,
+   "counters": {
+    "runs": 25,
+    "host_us": 2772.4170000012964,
+    "launch_us": 2716.6459999999206,
+    "captures": 0,
+    "replays": 25,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 17482448896,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 160.66,
+     "launch_us": 154.797,
+     "issue_s": 0.0003
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 144.6,
+     "launch_us": 141.906,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 2,
+     "served": "replayed",
+     "host_us": 142.896,
+     "launch_us": 140.554,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 3,
+     "served": "replayed",
+     "host_us": 105.956,
+     "launch_us": 104.012,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 4,
+     "served": "replayed",
+     "host_us": 104.66000000000001,
+     "launch_us": 102.39999999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 5,
+     "served": "replayed",
+     "host_us": 102.661,
+     "launch_us": 100.137,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 6,
+     "served": "replayed",
+     "host_us": 101.871,
+     "launch_us": 100.129,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 7,
+     "served": "replayed",
+     "host_us": 100.674,
+     "launch_us": 98.088,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 8,
+     "served": "replayed",
+     "host_us": 97.035,
+     "launch_us": 95.31599999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 9,
+     "served": "replayed",
+     "host_us": 100.135,
+     "launch_us": 98.20899999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 10,
+     "served": "replayed",
+     "host_us": 95.493,
+     "launch_us": 93.19,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 11,
+     "served": "replayed",
+     "host_us": 99.447,
+     "launch_us": 96.919,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 12,
+     "served": "replayed",
+     "host_us": 98.42099999999999,
+     "launch_us": 96.12599999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 13,
+     "served": "replayed",
+     "host_us": 95.864,
+     "launch_us": 94.42699999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 14,
+     "served": "replayed",
+     "host_us": 105.831,
+     "launch_us": 103.728,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 15,
+     "served": "replayed",
+     "host_us": 99.62,
+     "launch_us": 98.158,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 16,
+     "served": "replayed",
+     "host_us": 98.94800000000001,
+     "launch_us": 96.82400000000001,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 17,
+     "served": "replayed",
+     "host_us": 97.587,
+     "launch_us": 95.26,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 18,
+     "served": "replayed",
+     "host_us": 101.59400000000001,
+     "launch_us": 99.82799999999999,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 19,
+     "served": "replayed",
+     "host_us": 106.02099999999999,
+     "launch_us": 104.218,
+     "issue_s": 0.0001
+    },
+    {
+     "block": 20,
+     "served": "replayed",
+     "host_us": 140.236,
+     "launch_us": 138.551,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 21,
+     "served": "replayed",
+     "host_us": 144.607,
+     "launch_us": 142.723,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 22,
+     "served": "replayed",
+     "host_us": 146.133,
+     "launch_us": 143.692,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 23,
+     "served": "replayed",
+     "host_us": 141.749,
+     "launch_us": 138.999,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 24,
+     "served": "replayed",
+     "host_us": 39.718,
+     "launch_us": 38.455,
+     "issue_s": 0.0
+    }
+   ],
+   "token_values": 1,
+   "sequences": {},
+   "conversations": 1,
+   "parked": 63,
+   "padding": 0,
+   "diag": null,
+   "relErrRms_vs_exact": 0.0027289114173003983,
+   "relErrRms_vs_exact_worst_lane_slot": {
+    "q": 63,
+    "relErrRms": 0.0027289114173003983
+   },
+   "logits_relErrRms_vs_exact": 0.0010685124433109667,
+   "top1": {
+    "agree": 1,
+    "of": 1,
+    "slots": [
+     63
+    ],
+    "disagree": []
+   },
+   "top1_agree_vs_exact": 1.0
+  }
+ ],
+ "warmup": {
+  "pass": 0,
+  "timed": false,
+  "config": "prefill.0",
+  "config_id": 0,
+  "segments": [
+   {
+    "kind": "seq",
+    "home": [
+     0,
+     64
+    ],
+    "q0": 0,
+    "entry": "fresh",
+    "stream": "L",
+    "parked_from": null
+   }
+  ],
+  "describe": "seq L [0,64) q0 0 fresh",
+  "seconds": 16.367,
+  "fenced": true,
+  "issue_s": 16.361,
+  "served": "ccccccccccccccccccccccccc",
+  "restaged": false,
+  "staged": 0,
+  "stage_s": 0.0004,
+  "masks_s": 0.0,
+  "out_level": 40,
+  "refreshes_planned": 538,
+  "counters": {
+   "runs": 25,
+   "host_us": 12964904.615999999,
+   "launch_us": 0.0,
+   "captures": 25,
+   "replays": 0,
+   "eager": 0,
+   "capture_ms": 3373.2108689999995,
+   "invalidations": 0,
+   "pairs": [
+    0,
+    0
+   ],
+   "fused": 1464,
+   "stc_evictions": 0,
+   "stc_misses": 17
+  },
+  "mem_free_bytes": 17482448896,
+  "stages": [
+   {
+    "block": 0,
+    "served": "captured",
+    "host_us": 549261.1039999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6555
+   },
+   {
+    "block": 1,
+    "served": "captured",
+    "host_us": 534362.5109999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6539
+   },
+   {
+    "block": 2,
+    "served": "captured",
+    "host_us": 531713.564,
+    "launch_us": 0.0,
+    "wall_s": 0.6542
+   },
+   {
+    "block": 3,
+    "served": "captured",
+    "host_us": 532200.54,
+    "launch_us": 0.0,
+    "wall_s": 0.6559
+   },
+   {
+    "block": 4,
+    "served": "captured",
+    "host_us": 533780.96,
+    "launch_us": 0.0,
+    "wall_s": 0.658
+   },
+   {
+    "block": 5,
+    "served": "captured",
+    "host_us": 533340.225,
+    "launch_us": 0.0,
+    "wall_s": 0.6692
+   },
+   {
+    "block": 6,
+    "served": "captured",
+    "host_us": 532676.4299999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6767
+   },
+   {
+    "block": 7,
+    "served": "captured",
+    "host_us": 532826.6969999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6758
+   },
+   {
+    "block": 8,
+    "served": "captured",
+    "host_us": 532904.595,
+    "launch_us": 0.0,
+    "wall_s": 0.6748
+   },
+   {
+    "block": 9,
+    "served": "captured",
+    "host_us": 533008.424,
+    "launch_us": 0.0,
+    "wall_s": 0.6753
+   },
+   {
+    "block": 10,
+    "served": "captured",
+    "host_us": 533049.553,
+    "launch_us": 0.0,
+    "wall_s": 0.6779
+   },
+   {
+    "block": 11,
+    "served": "captured",
+    "host_us": 533349.779,
+    "launch_us": 0.0,
+    "wall_s": 0.6762
+   },
+   {
+    "block": 12,
+    "served": "captured",
+    "host_us": 533627.802,
+    "launch_us": 0.0,
+    "wall_s": 0.6781
+   },
+   {
+    "block": 13,
+    "served": "captured",
+    "host_us": 533615.285,
+    "launch_us": 0.0,
+    "wall_s": 0.6792
+   },
+   {
+    "block": 14,
+    "served": "captured",
+    "host_us": 533646.336,
+    "launch_us": 0.0,
+    "wall_s": 0.6771
+   },
+   {
+    "block": 15,
+    "served": "captured",
+    "host_us": 534494.5399999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6825
+   },
+   {
+    "block": 16,
+    "served": "captured",
+    "host_us": 533882.3489999999,
+    "launch_us": 0.0,
+    "wall_s": 0.6779
+   },
+   {
+    "block": 17,
+    "served": "captured",
+    "host_us": 534065.732,
+    "launch_us": 0.0,
+    "wall_s": 0.6808
+   },
+   {
+    "block": 18,
+    "served": "captured",
+    "host_us": 534884.3720000001,
+    "launch_us": 0.0,
+    "wall_s": 0.6812
+   },
+   {
+    "block": 19,
+    "served": "captured",
+    "host_us": 534369.742,
+    "launch_us": 0.0,
+    "wall_s": 0.6794
+   },
+   {
+    "block": 20,
+    "served": "captured",
+    "host_us": 534362.395,
+    "launch_us": 0.0,
+    "wall_s": 0.6783
+   },
+   {
+    "block": 21,
+    "served": "captured",
+    "host_us": 535840.775,
+    "launch_us": 0.0,
+    "wall_s": 0.6847
+   },
+   {
+    "block": 22,
+    "served": "captured",
+    "host_us": 534406.737,
+    "launch_us": 0.0,
+    "wall_s": 0.6806
+   },
+   {
+    "block": 23,
+    "served": "captured",
+    "host_us": 534765.024,
+    "launch_us": 0.0,
+    "wall_s": 0.6806
+   },
+   {
+    "block": 24,
+    "served": "captured",
+    "host_us": 140469.145,
+    "launch_us": 0.0,
+    "wall_s": 0.1821
+   }
+  ],
+  "token_values": 64,
+  "sequences": {
+   "L": 64
+  },
+  "conversations": 0,
+  "parked": 0,
+  "padding": 0,
+  "diag": null,
+  "relErrRms_vs_exact": 0.004506584841089081,
+  "relErrRms_vs_exact_worst_lane_slot": {
+   "q": 57,
+   "relErrRms": 0.00712691486638712
+  },
+  "logits_relErrRms_vs_exact": 0.0029872165501469874,
+  "top1": {
+   "agree": 1,
+   "of": 1,
+   "slots": [
+    63
+   ],
+   "disagree": []
+  },
+  "top1_agree_vs_exact": 1.0,
+  "note": "untimed: the first pass's configuration on random public tokens, from zero state; captures the CUDA graphs"
+ }
+}

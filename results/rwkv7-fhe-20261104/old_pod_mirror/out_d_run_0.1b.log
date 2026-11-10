@@ -1,0 +1,11 @@
+[d 2026-11-04T14:44:01Z] model /root/d_models/RWKV-x070-World-0.1B-v2.8-20241210-ctx4096.pth (60c98129b9529963); torch 2.11.0+cu128; load 1.28 1.44 1.04
+[d 2026-11-04T14:45:40Z] exact rc=0 in 99 s; {"config": "exact", "wt_ppl": 19.4044265131704, "lambada_acc": 0.48981176013972444, "lambada_ppl": 12.407351727000721, "seconds": 84.1}
+[d 2026-11-04T14:46:16Z] cal1024 rc=0 in 36 s; wrote /root/vd/runs/0.1b/ranges_ctx1024.json: 121 sites, 200000 tokens, 27.7 s
+[d 2026-11-04T14:47:57Z] cal4096 rc=0 in 101 s; wrote /root/vd/runs/0.1b/ranges_ctx4096.json: 121 sites, 200000 tokens, 96.5 s
+[d 2026-11-04T14:47:59Z] fit_t rc=0 in 2 s; wrote /root/vd/runs/0.1b/coeffs_t1e-3.json: 119 polynomial sites, 2 client-side exact
+[d 2026-11-04T14:48:00Z] fit_d15 rc=0 in 1 s; wrote /root/vd/runs/0.1b/coeffs_d15.json: 119 polynomial sites, 2 client-side exact
+[d 2026-11-04T14:51:01Z] poly_t rc=0 in 181 s; {"config": "poly:all", "wt_ppl": NaN, "top1_agree": 2.0916928418784795e-05, "kl_mean": NaN, "lambada_acc": 0.0, "lambada_ppl": NaN, "outside_frac_max": 0.224599365589041, "seconds": 171.0}
+[d 2026-11-04T14:54:03Z] poly_t_clamp rc=0 in 182 s; {"config": "poly:all", "wt_ppl": 783.6810361663094, "top1_agree": 0.25849837370881545, "kl_mean": 3.6783957375344367, "lambada_acc": 0.0034931108092373375, "lambada_ppl": 124025.11158408488, "outside_
+[d 2026-11-04T14:57:09Z] poly_d15_clamp rc=0 in 186 s; {"config": "poly:all", "wt_ppl": NaN, "top1_agree": 0.05238993337958298, "kl_mean": NaN, "lambada_acc": 0.004269357655734524, "lambada_ppl": 171508.3004276719, "outside_frac_max": 0.2824547320358557, 
+[d 2026-11-04T15:23:02Z] ablate_d15 rc=0 in 1553 s; {"config": "ablate:att.v_sigmoid", "wt_ppl": 19.46305588661011, "top1_agree": 0.9773434803677196, "kl_mean": 0.0020934110052079446, "lambada_acc": 0.49252862410246456, "lambada_ppl": 12.21998757225871
+[d 2026-11-04T15:23:02Z] done 0.1b

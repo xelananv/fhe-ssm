@@ -1,0 +1,28 @@
+{
+ "kind": "join",
+ "blocks": 1,
+ "batch": 4,
+ "lane": 0,
+ "capture_tick": 1,
+ "keys": [
+  "b0xa",
+  "b0xf"
+ ],
+ "new_keys": [
+  "b0nxa",
+  "b0nxf"
+ ],
+ "prefix": 1,
+ "pth_sha256": "c08cf602b33e59a5717b8f0cafaf7f04c50c1c67166e477aa2f47c5ca180da4a",
+ "coeffs_sha256": "ce08d3162141f855652e836a3b923bf80bd05d7f957f937818d1a9aed212ab62",
+ "width": 1024,
+ "shards": 1,
+ "lanes": 32,
+ "environment": {
+  "FIDESLIB_BTS_STC_FIRST": "2",
+  "FIDESLIB_BTS_STC_FIRST_ROUTES": "dense",
+  "FIDESLIB_BTS_STC_FIRST_CF": "13",
+  "FIDESLIB_BTS_RAISE_DROP": "512:1",
+  "AUTO_BTS_LEVEL": "44"
+ }
+}

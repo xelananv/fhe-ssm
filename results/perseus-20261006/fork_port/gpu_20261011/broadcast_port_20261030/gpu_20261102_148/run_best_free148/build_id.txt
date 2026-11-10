@@ -1,0 +1,1 @@
+commit=50666f6f dirty=0 pc_so=5bbae5e8d2c91ef7 nvcc= arch=? load=6.55 4.84 2.93 run_extra=--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table /root/cf/t_mildall.json --tokens /root/data/serve_LONG_tokens.json --free-run

@@ -1,0 +1,2 @@
+{"config": "poly:all", "wt_ppl": NaN, "top1_agree": 0.9874742460318844, "kl_mean": NaN, "lambada_acc": 0.48767708131185716, "lambada_ppl": NaN, "outside_frac_max": 0.0015713199941929479, "seconds": 127.8}
+[pod3 2026-11-04T23:26:43Z] gate 0.1b nc unclamped rc=0 135 s

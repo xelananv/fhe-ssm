@@ -1,0 +1,4 @@
+[capture] shifts (calib) for 287 linears in 0.0 s
+[capture] pass 0 out level 28 in 52.3 s
+[capture] pass 1 out level 28 in 146.7 s
+[capture] wrote /root/out_pod3/f2_04b/cap_rwkv7_pf32_filled (24 blocks + tail) in 206.8 s

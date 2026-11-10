@@ -1,0 +1,597 @@
+{
+ "driver": "perseus.examples.fhe_ssm.run_planned",
+ "mode": "run",
+ "build_id": {
+  "python": "3.12.3",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+  "commit": "3afbfdf3",
+  "dirty": 0,
+  "pc_so": "009427e7463beeca",
+  "pc_device_classes": [
+   "Session",
+   "Program",
+   "KeySource",
+   "Client",
+   "PtStore"
+  ],
+  "arch": null
+ },
+ "plan": {
+  "dir": "/root/out_r2/gpu/bootstrap_placements/plan_pcmm24_b1",
+  "axes": "LANDING=high PAIR=0 PLACER=mincut ILP_OBJECTIVE=count SPARSE_SLOTS=512,1 HARD_ENV_CAP=1 SPARSE_B_K=",
+  "recipe": "MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1",
+  "runtime": "FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48",
+  "planner": "bb0d1bf (python/perseus/plan's last commit)",
+  "tool": "tools/fhe_ssm/make_plan.sh (one planner pass over every stage: python/perseus/plan/run_bootstrap_all_blocks.sh)",
+  "stamp": {
+   "chain": {
+    "chain": "n32",
+    "composite_degree": 2
+   },
+   "bts": {
+    "auto_bts_level": 44,
+    "raise_drop": "512:1",
+    "stc_first": 2,
+    "stc_first_cf": 13,
+    "stc_first_routes": [
+     "dense"
+    ]
+   },
+   "quirks": {
+    "fake_bts_out": 32,
+    "fakecap_landings": "0:32,1:14,256:22,512:24"
+   }
+  }
+ },
+ "capture": {
+  "plan_graph": "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_stage.part/cap_high__linear_pcmm_pcmm_wbits_24_b1",
+  "plan_md5": "74c8eded1c4c474f03c84dd48783d77d",
+  "capture": "/root/out_r2/gpu/cap_high__linear_pcmm_pcmm_wbits_24_b1",
+  "md5": "74c8eded1c4c474f03c84dd48783d77d",
+  "checked": true
+ },
+ "argv": [
+  "--weights",
+  "/root/data/pbd430a_weights.npz",
+  "--seeds",
+  "/root/data/pbd430a_seeds.json",
+  "--config",
+  "/root/data/pbd430a_config.json",
+  "--levels",
+  "preset",
+  "--blocks",
+  "1",
+  "--plan",
+  "/root/out_r2/gpu/bootstrap_placements/plan_pcmm24_b1",
+  "--ticks",
+  "2",
+  "--profile",
+  "--profile-every",
+  "2",
+  "--keys",
+  "inproc",
+  "--linear",
+  "pcmm",
+  "--pcmm-wbits",
+  "24",
+  "--capture",
+  "/root/out_r2/gpu/cap_high__linear_pcmm_pcmm_wbits_24_b1",
+  "--pcmm-cf",
+  "10",
+  "--out",
+  "/root/out_r2/gpu/run_pcmm24_b1_d2_cf10/record.json"
+ ],
+ "flags": {
+  "weights": "/root/data/pbd430a_weights.npz",
+  "seeds": "/root/data/pbd430a_seeds.json",
+  "config": "/root/data/pbd430a_config.json",
+  "blocks": 1,
+  "logn": 16,
+  "levels": "preset",
+  "limit": null,
+  "bts_out": null,
+  "unit": 2,
+  "layout": "filled",
+  "payload": "pairs",
+  "pair_route": "split",
+  "scales": "shipped",
+  "conversations": null,
+  "newton_form": "perseus",
+  "newton_sites": "served",
+  "pack_stats": "off",
+  "linear": "pcmm",
+  "pcmm_wbits": 24,
+  "diag_hint": 1,
+  "lane_mix": "off",
+  "ms_norm_k": 5.5,
+  "newton_frac": 0.1,
+  "newton_min_iters": 12,
+  "no_carry": false,
+  "streams": 1,
+  "pass_kernels": "off",
+  "plan": "/root/out_r2/gpu/bootstrap_placements/plan_pcmm24_b1",
+  "capture": "/root/out_r2/gpu/cap_high__linear_pcmm_pcmm_wbits_24_b1",
+  "ticks": 2,
+  "scenario": null,
+  "lane_config": null,
+  "tokens": null,
+  "free_run": false,
+  "seed": 7,
+  "schedule": "program",
+  "diag_source": "values",
+  "profile": true,
+  "profile_every": 2,
+  "mirror": false,
+  "no_warmup": false,
+  "no_graphs": false,
+  "out": "/root/out_r2/gpu/run_pcmm24_b1_d2_cf10/record.json",
+  "work_dir": null,
+  "keys": "inproc",
+  "insecure_test_keys": false,
+  "keyspec": null,
+  "keygen": null,
+  "keyspec_file": null,
+  "threads": 8,
+  "prepare_only": false,
+  "lean": false,
+  "ref_token": 1,
+  "probe": 2,
+  "pt_rows": 28,
+  "stc_cache": 8,
+  "pool": 16,
+  "pcmm_cf": 10,
+  "diag_batch": null,
+  "diag_perturb": null,
+  "diag_probe": 0,
+  "pt_budget_gb": 40.0
+ },
+ "environment": {
+  "AUTO_BTS_LEVEL": "44",
+  "CUDA_HOME": "/usr/local/cuda-13.2",
+  "CUDA_VISIBLE_DEVICES": "0",
+  "FIDESLIB_BTS_RAISE_DROP": "512:1",
+  "FIDESLIB_BTS_STC_FIRST": "2",
+  "FIDESLIB_BTS_STC_FIRST_CF": "13",
+  "FIDESLIB_BTS_STC_FIRST_ROUTES": "dense",
+  "LADDER_RADIX_BITS": "0"
+ },
+ "model": {
+  "weights": {
+   "path": "/root/data/pbd430a_weights.npz",
+   "sha256": "3ec3f1d8b9b71e7eee38055a7621213991c6417a89576f1c02590963293e784b"
+  },
+  "seeds": {
+   "path": "/root/data/pbd430a_seeds.json",
+   "sha256": "d63288181655ebbb5370a16be4b59d7bd6745fcf98bf8ca14e1ca15ec51245b7"
+  },
+  "config": {
+   "path": "/root/data/pbd430a_config.json",
+   "sha256": "1829d34eeddbbfc4ce023a43d828085c6e71a2a941e7da8aa17790544b770ba7"
+  }
+ },
+ "axes": {
+  "newton_form": "perseus",
+  "newton_sites": "served",
+  "pack_stats": "off",
+  "linear": "pcmm",
+  "diag_hint": 1,
+  "pcmm_wbits": 24,
+  "lane_mix": "off",
+  "pass_kernels": "off"
+ },
+ "diag_source": "values",
+ "levels": {
+  "limit": 44,
+  "bts_out": 32,
+  "unit": 2,
+  "scales": "shipped"
+ },
+ "conversations": 64,
+ "capacity": 64,
+ "pass_kernels": "off",
+ "pass_list": null,
+ "key_needs": {
+  "slots": 32768,
+  "d": 1024,
+  "capacity": 64,
+  "rotation_steps": [
+   1,
+   32,
+   64,
+   96,
+   128,
+   160,
+   192,
+   224,
+   256,
+   288,
+   320,
+   352,
+   384,
+   416,
+   448,
+   480,
+   512,
+   544,
+   576,
+   608,
+   640,
+   672,
+   704,
+   736,
+   768,
+   800,
+   832,
+   864,
+   896,
+   928,
+   960,
+   992,
+   1024,
+   2048,
+   3072,
+   4096,
+   5120,
+   6144,
+   7168,
+   8192,
+   9216,
+   10240,
+   11264,
+   12288,
+   13312,
+   14336,
+   15360,
+   16384,
+   17408,
+   18432,
+   19456,
+   20480,
+   21504,
+   22528,
+   23552,
+   24576,
+   25600,
+   26624,
+   27648,
+   28672,
+   29696,
+   30720,
+   31744,
+   32767
+  ],
+  "n_rotation_steps": 64,
+  "conjugation": true,
+  "pcmm_t": [
+   32
+  ],
+  "linear": "pcmm"
+ },
+ "keys": {
+  "mode": "insecure-inproc",
+  "bundle": null,
+  "client_secret": false
+ },
+ "perseus_head": "3afbfdf3f7c66438387e6ad475585a8ddfc7611d",
+ "tokens": "random (seed 7)",
+ "scales_file": {
+  "path": "/root/perseus/python/perseus/examples/fhe_ssm/scales_pbd430a.json",
+  "sha256": "96e69e29236cc9ed3380e636f48d1ec815b68202980b425ba034653dfc418415"
+ },
+ "prepare": {
+  "compiled_by": "device",
+  "schedule": "program",
+  "conversations": 64,
+  "programs": {
+   "block_0": {
+    "n_ops": 662,
+    "n_launches": 623,
+    "n_bootstraps": 22,
+    "bts_batches": [
+     8,
+     21,
+     {
+      "1": 20,
+      "2": 1
+     },
+     {
+      "Sparse(512)": [
+       20,
+       20
+      ],
+      "StcFirst": [
+       2,
+       1
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     5,
+     11
+    ],
+    "check": [
+     580,
+     []
+    ],
+    "mem": [
+     463470592,
+     33
+    ]
+   },
+   "block_1": {
+    "n_ops": 215,
+    "n_launches": 215,
+    "n_bootstraps": 10,
+    "bts_batches": [
+     8,
+     10,
+     {
+      "1": 10
+     },
+     {
+      "Sparse(512)": [
+       10,
+       10
+      ]
+     }
+    ],
+    "n_pairs": 0,
+    "n_finishes": [
+     0,
+     0
+    ],
+    "check": [
+     173,
+     []
+    ],
+    "mem": [
+     94371840,
+     6
+    ]
+   }
+  },
+  "refreshes_planned": 32,
+  "check_errors": {},
+  "registers": 4,
+  "dynamic_steps": {},
+  "static_stream": true,
+  "carried": {
+   "0": [
+    "block_0.cache.n_prev-lvl=26",
+    "block_0.cache.s-lvl=26"
+   ],
+   "1": []
+  },
+  "plaintexts": {
+   "plaintexts": 69,
+   "rows": 28,
+   "bytes": 506462208,
+   "pass_refs": 0,
+   "static_refs": 69,
+   "by_alias": {
+    "slots": 38,
+    "pass": 0,
+    "static": 38,
+    "pass_ids": 0,
+    "bytes": 278921216
+   },
+   "reserved": "by_alias"
+  },
+  "diag_source": "values",
+  "sums": {
+   "diag": 0,
+   "stream": 0,
+   "diag_terms": {},
+   "stream_terms": {},
+   "per_program": {
+    "block_0": 0,
+    "block_1": 0
+   }
+  },
+  "prepare_s": 1.9,
+  "rotation_steps": [
+   -1,
+   1,
+   32,
+   64,
+   128,
+   256,
+   512,
+   1024,
+   2048,
+   4096,
+   8192,
+   16384
+  ],
+  "pass_kernels": false,
+  "pcmm": {
+   "declared": [
+    "b0.win",
+    "b0.wout",
+    "b0.wk",
+    "b0.wr",
+    "b0.wv"
+   ],
+   "linears": 5,
+   "finishes": 11
+  }
+ },
+ "setup": {
+  "total_s": 5.9,
+  "prepare_s": 1.9,
+  "session_s": 4.699146344,
+  "keygen_s": 1.586073554,
+  "mem_report": "context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 504.0 MB, ks.plans 4.0 MB, keys 6535.2 MB, keygen 31.5 MB, ks.groups 0.0 MB, ks.regen_a 189.0 MB, ops 45.0 MB, rescale 253.5 MB, pt_store 296.0 MB, encode 3.5 MB, encrypt 0.0 MB, decrypt 9.0 MB, keys.secret 31.5 MB, bts.dense 4328.2 MB, bts.stc_first 1708.9 MB, bts.sparse 945.0 MB, bts.sparse 827.2 MB, bts.route 0.0 MB, bts.work 4032.0 MB, replay.slab 1449.0 MB, replay.regs 49.0 MB, replay.groups 0.0 MB, pcmm 1343.6 MB, pcmm.weights 42.0 MB, pcmm.cts 252.0 MB, replay.side 2709.0 MB, ops 45.0 MB, rescale 253.5 MB, slack 256.0 MB, total 28726.7 MB",
+  "mem_free_bytes": 71242940416,
+  "mem_total_bytes": 101973491712,
+  "rotation_keys": [
+   12,
+   12
+  ],
+  "registers": 4,
+  "pcmm_uploaded": [
+   "b0.win",
+   "b0.wout",
+   "b0.wk",
+   "b0.wr",
+   "b0.wv"
+  ],
+  "plaintexts_staged": 38,
+  "pass_masks": null,
+  "diag_tiles_uploaded": 0,
+  "diag": null,
+  "has_secret": true,
+  "profile": "a device fence after every stage on the fenced ticks: stage walls are attributions, not the production wall"
+ },
+ "ticks": [
+  {
+   "pos": 0,
+   "timed": true,
+   "seconds": 0.782,
+   "fenced": true,
+   "issue_s": 0.778,
+   "served": "rr",
+   "out_level": 40,
+   "refreshes_planned": 32,
+   "counters": {
+    "runs": 2,
+    "host_us": 35272.473,
+    "launch_us": 35261.85,
+    "captures": 0,
+    "replays": 2,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 71159054336,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 33056.46000000001,
+     "launch_us": 33048.839,
+     "wall_s": 0.5626
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 2216.0130000000004,
+     "launch_us": 2213.011,
+     "wall_s": 0.1592
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.004494122961238517,
+   "relErrRms_vs_exact_worst_conversation": 0.005842216349378357,
+   "logits_relErrRms_vs_exact": 0.0017629860276564917,
+   "top1_agree_vs_exact": 0.984375
+  },
+  {
+   "pos": 1,
+   "timed": true,
+   "seconds": 0.774,
+   "fenced": false,
+   "issue_s": 0.051,
+   "served": "rr",
+   "out_level": 40,
+   "refreshes_planned": 32,
+   "counters": {
+    "runs": 2,
+    "host_us": 203.4539999999106,
+    "launch_us": 197.16500000000087,
+    "captures": 0,
+    "replays": 2,
+    "eager": 0,
+    "capture_ms": 0.0,
+    "invalidations": 0,
+    "pairs": [
+     0,
+     0
+    ],
+    "fused": 0,
+    "stc_evictions": 0,
+    "stc_misses": 0
+   },
+   "mem_free_bytes": 71159054336,
+   "stages": [
+    {
+     "block": 0,
+     "served": "replayed",
+     "host_us": 163.766,
+     "launch_us": 159.366,
+     "issue_s": 0.0002
+    },
+    {
+     "block": 1,
+     "served": "replayed",
+     "host_us": 39.687999999999995,
+     "launch_us": 37.799,
+     "issue_s": 0.0001
+    }
+   ],
+   "diag": null,
+   "relErrRms_vs_exact": 0.004911686267234082,
+   "relErrRms_vs_exact_worst_conversation": 0.007762137165826202,
+   "logits_relErrRms_vs_exact": 0.002568491155099478,
+   "top1_agree_vs_exact": 1.0
+  }
+ ],
+ "warmup": {
+  "pos": 0,
+  "timed": false,
+  "seconds": 0.868,
+  "fenced": true,
+  "issue_s": 0.863,
+  "served": "cc",
+  "out_level": 40,
+  "refreshes_planned": 32,
+  "counters": {
+   "runs": 2,
+   "host_us": 681250.353,
+   "launch_us": 0.0,
+   "captures": 2,
+   "replays": 0,
+   "eager": 0,
+   "capture_ms": 168.522049,
+   "invalidations": 0,
+   "pairs": [
+    0,
+    0
+   ],
+   "fused": 1,
+   "stc_evictions": 0,
+   "stc_misses": 6
+  },
+  "mem_free_bytes": 71159054336,
+  "stages": [
+   {
+    "block": 0,
+    "served": "captured",
+    "host_us": 541606.394,
+    "launch_us": 0.0,
+    "wall_s": 0.676
+   },
+   {
+    "block": 1,
+    "served": "captured",
+    "host_us": 139643.959,
+    "launch_us": 0.0,
+    "wall_s": 0.174
+   }
+  ],
+  "diag": null,
+  "relErrRms_vs_exact": 0.004385835435191704,
+  "relErrRms_vs_exact_worst_conversation": 0.006061392675887018,
+  "logits_relErrRms_vs_exact": 0.0015227370988174433,
+  "top1_agree_vs_exact": 1.0,
+  "note": "untimed, random public tokens, from zero state; captures the CUDA graphs"
+ }
+}

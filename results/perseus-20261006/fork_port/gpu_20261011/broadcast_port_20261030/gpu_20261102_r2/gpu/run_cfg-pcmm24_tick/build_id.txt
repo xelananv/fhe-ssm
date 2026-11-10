@@ -1,0 +1,1 @@
+commit=3afbfdf3 dirty=0 pc_so=009427e7463beeca nvcc= arch=? load=1.10 1.83 1.25 run_extra=--stc-cache 160 --pcmm-cf 8

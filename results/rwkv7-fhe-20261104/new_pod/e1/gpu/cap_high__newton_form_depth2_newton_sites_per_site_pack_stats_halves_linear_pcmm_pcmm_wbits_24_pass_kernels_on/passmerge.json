@@ -1,0 +1,8941 @@
+{
+ "base": "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__tick",
+ "captures": [
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__tick",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__seqfresh",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__seqcarry",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__mixed",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__longdoc",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__longtick",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__own16",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__own24",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__own25",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__own26",
+  "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_best/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24_pass_kernels_on__own57"
+ ],
+ "labels": [
+  "tick",
+  "seqfresh",
+  "seqcarry",
+  "mixed",
+  "longdoc",
+  "longtick",
+  "own16",
+  "own24",
+  "own25",
+  "own26",
+  "own57"
+ ],
+ "rule": "max of each statistic, the mean of the max_abs record",
+ "stats": [
+  "output_max_abs",
+  "output_mean",
+  "output_max_dev",
+  "output_max_coeff",
+  "output_max_coeff_ac"
+ ],
+ "sources": {
+  "tick": {
+   "capture_tick": 1,
+   "pass": {
+    "name": "tick.1",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "c0",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "carry",
+      "stream": "c1",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "carry",
+      "stream": "c2",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "carry",
+      "stream": "c3",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "carry",
+      "stream": "c4",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "carry",
+      "stream": "c5",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "carry",
+      "stream": "c6",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "carry",
+      "stream": "c7",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "carry",
+      "stream": "c8",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "carry",
+      "stream": "c9",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "carry",
+      "stream": "c10",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "carry",
+      "stream": "c11",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "carry",
+      "stream": "c12",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "carry",
+      "stream": "c13",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "carry",
+      "stream": "c14",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "carry",
+      "stream": "c15",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "carry",
+      "stream": "c16",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "carry",
+      "stream": "c17",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "carry",
+      "stream": "c18",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "carry",
+      "stream": "c19",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "carry",
+      "stream": "c20",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "carry",
+      "stream": "c21",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "carry",
+      "stream": "c22",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "carry",
+      "stream": "c23",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "carry",
+      "stream": "c24",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "carry",
+      "stream": "c25",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "carry",
+      "stream": "c26",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "carry",
+      "stream": "c27",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "carry",
+      "stream": "c28",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "carry",
+      "stream": "c29",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "carry",
+      "stream": "c30",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "carry",
+      "stream": "c31",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "carry",
+      "stream": "c32",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "carry",
+      "stream": "c33",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "carry",
+      "stream": "c34",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "carry",
+      "stream": "c35",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "carry",
+      "stream": "c36",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "carry",
+      "stream": "c37",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "carry",
+      "stream": "c38",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "carry",
+      "stream": "c39",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "carry",
+      "stream": "c40",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "carry",
+      "stream": "c41",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "carry",
+      "stream": "c42",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "carry",
+      "stream": "c43",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "carry",
+      "stream": "c44",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "carry",
+      "stream": "c45",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "carry",
+      "stream": "c46",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "carry",
+      "stream": "c47",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "c48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "c49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "carry",
+      "stream": "c50",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "c51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "c52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "c53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "c54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "c55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "c56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "c57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "c58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "c59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "c60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "carry",
+      "stream": "c61",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "c62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "c63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     49937,
+     592,
+     4886,
+     9673,
+     48719,
+     34793,
+     44336,
+     10085,
+     36248,
+     18579,
+     24586,
+     187,
+     31048,
+     41732,
+     33368,
+     7765,
+     26837,
+     13454,
+     48512,
+     44260,
+     9363,
+     25630,
+     47247,
+     42592,
+     35592,
+     32163,
+     2117,
+     37294,
+     23806,
+     4600,
+     12291,
+     27207,
+     36540,
+     25529,
+     30817,
+     43808,
+     34491,
+     18163,
+     32340,
+     30074,
+     5441,
+     2978,
+     33190,
+     19488,
+     30082,
+     16241,
+     11345,
+     7551,
+     19184,
+     41043,
+     20160,
+     19077,
+     28928,
+     49208,
+     19720,
+     29663,
+     22096,
+     30420,
+     22408,
+     32076,
+     27509,
+     34009,
+     48103,
+     7581
+    ]
+   },
+   "describe": "conv carry x64",
+   "mask_key": [
+    [
+     "conv",
+     [
+      0,
+      1
+     ],
+     0,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      1,
+      2
+     ],
+     1,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      2,
+      3
+     ],
+     2,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      3,
+      4
+     ],
+     3,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      4,
+      5
+     ],
+     4,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      5,
+      6
+     ],
+     5,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      6,
+      7
+     ],
+     6,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      7,
+      8
+     ],
+     7,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      8,
+      9
+     ],
+     8,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      9,
+      10
+     ],
+     9,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      10,
+      11
+     ],
+     10,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      11,
+      12
+     ],
+     11,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      12,
+      13
+     ],
+     12,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      13,
+      14
+     ],
+     13,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      14,
+      15
+     ],
+     14,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      15,
+      16
+     ],
+     15,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      16,
+      17
+     ],
+     16,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      17,
+      18
+     ],
+     17,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      18,
+      19
+     ],
+     18,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      19,
+      20
+     ],
+     19,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      20,
+      21
+     ],
+     20,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      21,
+      22
+     ],
+     21,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      22,
+      23
+     ],
+     22,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      23,
+      24
+     ],
+     23,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      24,
+      25
+     ],
+     24,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      25,
+      26
+     ],
+     25,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      26,
+      27
+     ],
+     26,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      27,
+      28
+     ],
+     27,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      28,
+      29
+     ],
+     28,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      29,
+      30
+     ],
+     29,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      30,
+      31
+     ],
+     30,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      31,
+      32
+     ],
+     31,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      32,
+      33
+     ],
+     32,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      33,
+      34
+     ],
+     33,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      34,
+      35
+     ],
+     34,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      35,
+      36
+     ],
+     35,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      36,
+      37
+     ],
+     36,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      37,
+      38
+     ],
+     37,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      38,
+      39
+     ],
+     38,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      39,
+      40
+     ],
+     39,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      40,
+      41
+     ],
+     40,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      41,
+      42
+     ],
+     41,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      42,
+      43
+     ],
+     42,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      43,
+      44
+     ],
+     43,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      44,
+      45
+     ],
+     44,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      45,
+      46
+     ],
+     45,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      46,
+      47
+     ],
+     46,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      47,
+      48
+     ],
+     47,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": null
+  },
+  "seqfresh": {
+   "capture_tick": 1,
+   "pass": {
+    "name": "seqfresh.1",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "fresh",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     47506,
+     31427,
+     34398,
+     45109,
+     29074,
+     38999,
+     41913,
+     11322,
+     2791,
+     15091,
+     14332,
+     43919,
+     45883,
+     264,
+     25127,
+     41288,
+     6608,
+     40074,
+     5987,
+     23526,
+     41049,
+     15235,
+     17174,
+     13998,
+     36172,
+     12814,
+     49797,
+     22377,
+     24039,
+     25367,
+     29288,
+     27828,
+     25613,
+     50050,
+     40606,
+     39852,
+     35207,
+     31281,
+     17145,
+     49721,
+     23440,
+     10825,
+     42488,
+     8054,
+     43109,
+     30796,
+     5767,
+     2209,
+     22361,
+     1793,
+     7117,
+     25887,
+     48781,
+     23439,
+     40646,
+     46112,
+     41401,
+     31635,
+     22192,
+     25848,
+     13387,
+     24981,
+     19073,
+     12444
+    ]
+   },
+   "describe": "seq L [0,64) q0 0 fresh",
+   "mask_key": [
+    [
+     "seq",
+     [
+      0,
+      64
+     ],
+     0,
+     "fresh"
+    ]
+   ],
+   "inject": null
+  },
+  "seqcarry": {
+   "capture_tick": 1,
+   "pass": {
+    "name": "prefill.1",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "L",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     49937,
+     592,
+     4886,
+     9673,
+     48719,
+     34793,
+     44336,
+     10085,
+     36248,
+     18579,
+     24586,
+     187,
+     31048,
+     41732,
+     33368,
+     7765,
+     26837,
+     13454,
+     48512,
+     44260,
+     9363,
+     25630,
+     47247,
+     42592,
+     35592,
+     32163,
+     2117,
+     37294,
+     23806,
+     4600,
+     12291,
+     27207,
+     36540,
+     25529,
+     30817,
+     43808,
+     34491,
+     18163,
+     32340,
+     30074,
+     5441,
+     2978,
+     33190,
+     19488,
+     30082,
+     16241,
+     11345,
+     7551,
+     19184,
+     41043,
+     20160,
+     19077,
+     28928,
+     49208,
+     19720,
+     29663,
+     22096,
+     30420,
+     22408,
+     32076,
+     27509,
+     34009,
+     48103,
+     7581
+    ]
+   },
+   "describe": "seq L [0,64) q0 0 carry",
+   "mask_key": [
+    [
+     "seq",
+     [
+      0,
+      64
+     ],
+     0,
+     "carry"
+    ]
+   ],
+   "inject": null
+  },
+  "mixed": {
+   "capture_tick": 1,
+   "pass": {
+    "name": "mixed.1",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       32
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "A",
+      "parked_from": null
+     },
+     {
+      "kind": "seq",
+      "home": [
+       32,
+       42
+      ],
+      "q0": 33,
+      "entry": "carry",
+      "stream": "B",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "carry",
+      "stream": "c42",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "carry",
+      "stream": "c43",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "carry",
+      "stream": "c44",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "fresh",
+      "stream": "c45.1",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "carry",
+      "stream": "c46",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "carry",
+      "stream": "c47",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "c48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "c49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "fresh",
+      "stream": "c50.1",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "c51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "c52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "c53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "c54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "c55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "c56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "c57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "c58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "c59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "c60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "fresh",
+      "stream": "c61.1",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "c62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "c63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     49937,
+     592,
+     4886,
+     9673,
+     48719,
+     34793,
+     44336,
+     10085,
+     36248,
+     18579,
+     24586,
+     187,
+     31048,
+     41732,
+     33368,
+     7765,
+     26837,
+     13454,
+     48512,
+     44260,
+     9363,
+     25630,
+     47247,
+     42592,
+     35592,
+     32163,
+     2117,
+     37294,
+     23806,
+     4600,
+     12291,
+     27207,
+     25529,
+     25529,
+     30817,
+     43808,
+     34491,
+     18163,
+     32340,
+     30074,
+     5441,
+     2978,
+     33190,
+     19488,
+     30082,
+     16241,
+     11345,
+     7551,
+     19184,
+     41043,
+     20160,
+     19077,
+     28928,
+     49208,
+     19720,
+     29663,
+     22096,
+     30420,
+     22408,
+     32076,
+     27509,
+     34009,
+     48103,
+     7581
+    ]
+   },
+   "describe": "seq A [0,32) q0 0 carry; seq B [32,42) q0 33 carry; conv fresh x3; conv carry x19",
+   "mask_key": [
+    [
+     "seq",
+     [
+      0,
+      32
+     ],
+     0,
+     "carry"
+    ],
+    [
+     "seq",
+     [
+      32,
+      42
+     ],
+     33,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      42,
+      43
+     ],
+     42,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      43,
+      44
+     ],
+     43,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      44,
+      45
+     ],
+     44,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      45,
+      46
+     ],
+     45,
+     "fresh"
+    ],
+    [
+     "conv",
+     [
+      46,
+      47
+     ],
+     46,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      47,
+      48
+     ],
+     47,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "fresh"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "fresh"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": null
+  },
+  "longdoc": {
+   "capture_tick": 1,
+   "pass": {
+    "name": "longdoc.1",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       64
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "D",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     390,
+     11528,
+     15,
+     1876,
+     37351,
+     476,
+     320,
+     11575,
+     285,
+     11462,
+     432,
+     253,
+     329,
+     1934,
+     2088,
+     4422,
+     313,
+     2700,
+     15,
+     66,
+     317,
+     522,
+     15,
+     2061,
+     481,
+     37351,
+     14526,
+     778,
+     417,
+     320,
+     23775,
+     13,
+     44223,
+     390,
+     9269,
+     327,
+     667,
+     643,
+     4422,
+     1293,
+     3542,
+     7578,
+     432,
+     329,
+     1934,
+     2088,
+     15,
+     10164,
+     5904,
+     403,
+     11460,
+     281,
+     2794,
+     4859,
+     281,
+     329,
+     1934,
+     2088,
+     434,
+     4422,
+     285,
+     2173,
+     37351,
+     14526
+    ]
+   },
+   "describe": "seq D [0,64) q0 0 carry",
+   "mask_key": [
+    [
+     "seq",
+     [
+      0,
+      64
+     ],
+     0,
+     "carry"
+    ]
+   ],
+   "inject": {
+    "positions": 606,
+    "streams": [
+     "D"
+    ],
+    "source": "FineWeb-Edu dedup shard 00000 row 0 id <urn:uuid:673b1bf6-2c30-40ae-992b-c387d00a836a>, positions 0..605 (j_doc_tokens.py, tokens sha256 4ae78b780dc402c06a2e9ea7986ce20ddae0b2e84417e8fc7ba2228d1cb47743)",
+    "tokens_sha256": "84a08f0ba4f356579a855431b4ec0e5ea87e88982cfee77b26b7c691c46e1be7"
+   }
+  },
+  "longtick": {
+   "capture_tick": 1,
+   "pass": {
+    "name": "longtick.1",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "c0",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "carry",
+      "stream": "c1",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "carry",
+      "stream": "c2",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "carry",
+      "stream": "c3",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "carry",
+      "stream": "c4",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "carry",
+      "stream": "c5",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "carry",
+      "stream": "c6",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "carry",
+      "stream": "c7",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "carry",
+      "stream": "c8",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "carry",
+      "stream": "c9",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "carry",
+      "stream": "c10",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "carry",
+      "stream": "c11",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "carry",
+      "stream": "c12",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "carry",
+      "stream": "c13",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "carry",
+      "stream": "c14",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "carry",
+      "stream": "c15",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "carry",
+      "stream": "c16",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "carry",
+      "stream": "c17",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "carry",
+      "stream": "c18",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "carry",
+      "stream": "c19",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "carry",
+      "stream": "c20",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "carry",
+      "stream": "c21",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "carry",
+      "stream": "c22",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "carry",
+      "stream": "c23",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "carry",
+      "stream": "c24",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "carry",
+      "stream": "c25",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "carry",
+      "stream": "c26",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "carry",
+      "stream": "c27",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "carry",
+      "stream": "c28",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "carry",
+      "stream": "c29",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "carry",
+      "stream": "c30",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "carry",
+      "stream": "c31",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "carry",
+      "stream": "c32",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "carry",
+      "stream": "c33",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "carry",
+      "stream": "c34",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "carry",
+      "stream": "c35",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "carry",
+      "stream": "c36",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "carry",
+      "stream": "c37",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "carry",
+      "stream": "c38",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "carry",
+      "stream": "c39",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "carry",
+      "stream": "c40",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "carry",
+      "stream": "c41",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "carry",
+      "stream": "c42",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "carry",
+      "stream": "c43",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "carry",
+      "stream": "c44",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "carry",
+      "stream": "c45",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "carry",
+      "stream": "c46",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "carry",
+      "stream": "c47",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "c48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "c49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "carry",
+      "stream": "c50",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "c51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "c52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "c53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "c54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "c55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "c56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "c57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "c58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "c59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "c60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "carry",
+      "stream": "c61",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "c62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "c63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     2695,
+     326,
+     352,
+     13,
+     281,
+     187,
+     644,
+     13,
+     14,
+     15,
+     3797,
+     1388,
+     29015,
+     310,
+     1979,
+     24508,
+     697,
+     1340,
+     285,
+     426,
+     285,
+     21372,
+     497,
+     13,
+     369,
+     380,
+     285,
+     285,
+     247,
+     253,
+     273,
+     510,
+     310,
+     310,
+     21295,
+     14847,
+     323,
+     253,
+     26111,
+     285,
+     253,
+     1180,
+     5859,
+     510,
+     14700,
+     1925,
+     13,
+     954,
+     1633,
+     285,
+     15,
+     253,
+     2316,
+     14221,
+     510,
+     1824,
+     6459,
+     778,
+     273,
+     13,
+     285,
+     1180,
+     187,
+     15
+    ]
+   },
+   "describe": "conv carry x64",
+   "mask_key": [
+    [
+     "conv",
+     [
+      0,
+      1
+     ],
+     0,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      1,
+      2
+     ],
+     1,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      2,
+      3
+     ],
+     2,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      3,
+      4
+     ],
+     3,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      4,
+      5
+     ],
+     4,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      5,
+      6
+     ],
+     5,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      6,
+      7
+     ],
+     6,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      7,
+      8
+     ],
+     7,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      8,
+      9
+     ],
+     8,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      9,
+      10
+     ],
+     9,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      10,
+      11
+     ],
+     10,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      11,
+      12
+     ],
+     11,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      12,
+      13
+     ],
+     12,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      13,
+      14
+     ],
+     13,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      14,
+      15
+     ],
+     14,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      15,
+      16
+     ],
+     15,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      16,
+      17
+     ],
+     16,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      17,
+      18
+     ],
+     17,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      18,
+      19
+     ],
+     18,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      19,
+      20
+     ],
+     19,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      20,
+      21
+     ],
+     20,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      21,
+      22
+     ],
+     21,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      22,
+      23
+     ],
+     22,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      23,
+      24
+     ],
+     23,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      24,
+      25
+     ],
+     24,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      25,
+      26
+     ],
+     25,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      26,
+      27
+     ],
+     26,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      27,
+      28
+     ],
+     27,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      28,
+      29
+     ],
+     28,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      29,
+      30
+     ],
+     29,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      30,
+      31
+     ],
+     30,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      31,
+      32
+     ],
+     31,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      32,
+      33
+     ],
+     32,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      33,
+      34
+     ],
+     33,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      34,
+      35
+     ],
+     34,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      35,
+      36
+     ],
+     35,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      36,
+      37
+     ],
+     36,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      37,
+      38
+     ],
+     37,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      38,
+      39
+     ],
+     38,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      39,
+      40
+     ],
+     39,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      40,
+      41
+     ],
+     40,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      41,
+      42
+     ],
+     41,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      42,
+      43
+     ],
+     42,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      43,
+      44
+     ],
+     43,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      44,
+      45
+     ],
+     44,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      45,
+      46
+     ],
+     45,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      46,
+      47
+     ],
+     46,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      47,
+      48
+     ],
+     47,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": {
+    "positions": 148,
+    "streams": [
+     "c0",
+     "c1",
+     "c10",
+     "c11",
+     "c12",
+     "c13",
+     "c14",
+     "c15",
+     "c16",
+     "c17",
+     "c18",
+     "c19",
+     "c2",
+     "c20",
+     "c21",
+     "c22",
+     "c23",
+     "c24",
+     "c25",
+     "c26",
+     "c27",
+     "c28",
+     "c29",
+     "c3",
+     "c30",
+     "c31",
+     "c32",
+     "c33",
+     "c34",
+     "c35",
+     "c36",
+     "c37",
+     "c38",
+     "c39",
+     "c4",
+     "c40",
+     "c41",
+     "c42",
+     "c43",
+     "c44",
+     "c45",
+     "c46",
+     "c47",
+     "c48",
+     "c49",
+     "c5",
+     "c50",
+     "c51",
+     "c52",
+     "c53",
+     "c54",
+     "c55",
+     "c56",
+     "c57",
+     "c58",
+     "c59",
+     "c6",
+     "c60",
+     "c61",
+     "c62",
+     "c63",
+     "c7",
+     "c8",
+     "c9"
+    ],
+    "source": "the published 148-tick run's fed tokens, positions 0..147 (pod_longrun_20260919 serve_LONG/tokens.json, lane q = conversation c<q>)",
+    "tokens_sha256": "e43d9aa60f73f5229f4836cb0be410c1a7da08c81f9e9d385deadbebae9e8763"
+   }
+  },
+  "own16": {
+   "capture_tick": 16,
+   "pass": {
+    "name": "readBC.16",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       32
+      ],
+      "q0": 0,
+      "entry": "fresh",
+      "stream": "B",
+      "parked_from": null
+     },
+     {
+      "kind": "seq",
+      "home": [
+       32,
+       48
+      ],
+      "q0": 32,
+      "entry": "fresh",
+      "stream": "C",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "a48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "a49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "carry",
+      "stream": "a50",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "a51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "a52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "a53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "a54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "a55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "a56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "a57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "a58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "a59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "a60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "carry",
+      "stream": "a61",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "a62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "a63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     324,
+     2178,
+     1142,
+     3082,
+     281,
+     3653,
+     1880,
+     253,
+     440,
+     6448,
+     6858,
+     310,
+     247,
+     5006,
+     390,
+     247,
+     187,
+     23660,
+     15,
+     380,
+     5628,
+     187,
+     81,
+     42502,
+     16832,
+     310,
+     271,
+     2223,
+     908,
+     187,
+     9349,
+     281,
+     33993,
+     1495,
+     13905,
+     275,
+     253,
+     4956,
+     27,
+     1249,
+     1107,
+     187,
+     5496,
+     27,
+     3127,
+     275,
+     313,
+     1235,
+     6011,
+     75,
+     388,
+     5783,
+     285,
+     15752,
+     427,
+     4962,
+     3995,
+     3872,
+     9506,
+     36822,
+     5015,
+     2512,
+     380,
+     14
+    ]
+   },
+   "describe": "seq B [0,32) q0 0 fresh; seq C [32,48) q0 32 fresh; conv carry x16",
+   "mask_key": [
+    [
+     "seq",
+     [
+      0,
+      32
+     ],
+     0,
+     "fresh"
+    ],
+    [
+     "seq",
+     [
+      32,
+      48
+     ],
+     32,
+     "fresh"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": null
+  },
+  "own24": {
+   "capture_tick": 24,
+   "pass": {
+    "name": "readBC.24",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       32
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "B",
+      "parked_from": null
+     },
+     {
+      "kind": "seq",
+      "home": [
+       32,
+       48
+      ],
+      "q0": 46,
+      "entry": "carry",
+      "stream": "C",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "a48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "a49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "carry",
+      "stream": "a50",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "a51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "a52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "a53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "a54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "a55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "a56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "a57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "a58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "a59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "a60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "carry",
+      "stream": "a61",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "a62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "a63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     16832,
+     187,
+     81,
+     42502,
+     16832,
+     310,
+     7976,
+     327,
+     253,
+     187,
+     77,
+     328,
+     274,
+     16832,
+     15,
+     733,
+     310,
+     187,
+     3169,
+     327,
+     253,
+     1770,
+     247,
+     6858,
+     310,
+     20913,
+     285,
+     417,
+     253,
+     4201,
+     1770,
+     15,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     27541,
+     14,
+     10763,
+     13,
+     29564,
+     1072,
+     13,
+     9129,
+     253,
+     253,
+     13,
+     13,
+     9129,
+     13,
+     9541,
+     14661,
+     8530,
+     1929
+    ]
+   },
+   "describe": "seq B [0,32) q0 0 carry; seq C [32,48) q0 46 carry; conv carry x16",
+   "mask_key": [
+    [
+     "seq",
+     [
+      0,
+      32
+     ],
+     0,
+     "carry"
+    ],
+    [
+     "seq",
+     [
+      32,
+      48
+     ],
+     46,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": null
+  },
+  "own25": {
+   "capture_tick": 25,
+   "pass": {
+    "name": "readBC.25",
+    "segments": [
+     {
+      "kind": "seq",
+      "home": [
+       0,
+       32
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "B",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "carry",
+      "stream": "c32",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "carry",
+      "stream": "c33",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "carry",
+      "stream": "c34",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "carry",
+      "stream": "c35",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "carry",
+      "stream": "c36",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "carry",
+      "stream": "c37",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "carry",
+      "stream": "c38",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "carry",
+      "stream": "c39",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "carry",
+      "stream": "c40",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "carry",
+      "stream": "c41",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "carry",
+      "stream": "c42",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "carry",
+      "stream": "c43",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "carry",
+      "stream": "c44",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "carry",
+      "stream": "c45",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "carry",
+      "stream": "c46",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "carry",
+      "stream": "c47",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "a48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "a49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "carry",
+      "stream": "a50",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "a51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "a52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "a53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "a54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "a55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "a56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "a57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "a58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "a59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "a60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "carry",
+      "stream": "a61",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "a62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "a63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     380,
+     187,
+     9815,
+     2803,
+     310,
+     253,
+     14431,
+     2363,
+     387,
+     253,
+     673,
+     273,
+     22086,
+     13,
+     6240,
+     898,
+     187,
+     17348,
+     281,
+     617,
+     2363,
+     281,
+     4575,
+     253,
+     41929,
+     16832,
+     15,
+     187,
+     585,
+     6991,
+     1770,
+     432,
+     273,
+     1107,
+     274,
+     9969,
+     6253,
+     448,
+     27762,
+     313,
+     8917,
+     353,
+     29988,
+     767,
+     1756,
+     14357,
+     3761,
+     13565,
+     13,
+     369,
+     275,
+     1659,
+     253,
+     11308,
+     1533,
+     16064,
+     310,
+     310,
+     22437,
+     310,
+     273,
+     13,
+     285,
+     1966
+    ]
+   },
+   "describe": "seq B [0,32) q0 0 carry; conv carry x32",
+   "mask_key": [
+    [
+     "seq",
+     [
+      0,
+      32
+     ],
+     0,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      32,
+      33
+     ],
+     32,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      33,
+      34
+     ],
+     33,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      34,
+      35
+     ],
+     34,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      35,
+      36
+     ],
+     35,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      36,
+      37
+     ],
+     36,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      37,
+      38
+     ],
+     37,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      38,
+      39
+     ],
+     38,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      39,
+      40
+     ],
+     39,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      40,
+      41
+     ],
+     40,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      41,
+      42
+     ],
+     41,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      42,
+      43
+     ],
+     42,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      43,
+      44
+     ],
+     43,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      44,
+      45
+     ],
+     44,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      45,
+      46
+     ],
+     45,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      46,
+      47
+     ],
+     46,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      47,
+      48
+     ],
+     47,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": null
+  },
+  "own26": {
+   "capture_tick": 26,
+   "pass": {
+    "name": "gen.26",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "b0",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "carry",
+      "stream": "b1",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "carry",
+      "stream": "b2",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "carry",
+      "stream": "b3",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "carry",
+      "stream": "b4",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "carry",
+      "stream": "b5",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "carry",
+      "stream": "b6",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "carry",
+      "stream": "b7",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "carry",
+      "stream": "b8",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "carry",
+      "stream": "b9",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "carry",
+      "stream": "b10",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "carry",
+      "stream": "b11",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "carry",
+      "stream": "b12",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "carry",
+      "stream": "b13",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "carry",
+      "stream": "b14",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "carry",
+      "stream": "b15",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "carry",
+      "stream": "b16",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "carry",
+      "stream": "b17",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "carry",
+      "stream": "b18",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "carry",
+      "stream": "b19",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "carry",
+      "stream": "b20",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "carry",
+      "stream": "b21",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "carry",
+      "stream": "b22",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "carry",
+      "stream": "b23",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "carry",
+      "stream": "b24",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "carry",
+      "stream": "b25",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "carry",
+      "stream": "b26",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "carry",
+      "stream": "b27",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "carry",
+      "stream": "b28",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "carry",
+      "stream": "b29",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "carry",
+      "stream": "b30",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "carry",
+      "stream": "b31",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "carry",
+      "stream": "c32",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "carry",
+      "stream": "c33",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "carry",
+      "stream": "c34",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "carry",
+      "stream": "c35",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "carry",
+      "stream": "c36",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "carry",
+      "stream": "c37",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "carry",
+      "stream": "c38",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "carry",
+      "stream": "c39",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "carry",
+      "stream": "c40",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "carry",
+      "stream": "c41",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "carry",
+      "stream": "c42",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "carry",
+      "stream": "c43",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "carry",
+      "stream": "c44",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "carry",
+      "stream": "c45",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "carry",
+      "stream": "c46",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "carry",
+      "stream": "c47",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "a48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "a49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "carry",
+      "stream": "a50",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "a51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "a52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "a53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "a54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "a55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "a56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "a57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "a58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "a59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "a60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "carry",
+      "stream": "a61",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "a62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "a63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     3738,
+     3576,
+     369,
+     3340,
+     12654,
+     2175,
+     21069,
+     642,
+     432,
+     390,
+     1754,
+     4148,
+     367,
+     13,
+     380,
+     310,
+     1039,
+     20687,
+     10438,
+     274,
+     850,
+     327,
+     1107,
+     253,
+     7200,
+     34,
+     7130,
+     49009,
+     22714,
+     2822,
+     6566,
+     253,
+     512,
+     3622,
+     2147,
+     281,
+     3417,
+     482,
+     407,
+     395,
+     368,
+     7707,
+     14,
+     14,
+     1981,
+     598,
+     1417,
+     8248,
+     285,
+     253,
+     253,
+     347,
+     6963,
+     278,
+     13,
+     369,
+     253,
+     247,
+     278,
+     253,
+     253,
+     534,
+     8530,
+     29564
+    ]
+   },
+   "describe": "conv carry x64",
+   "mask_key": [
+    [
+     "conv",
+     [
+      0,
+      1
+     ],
+     0,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      1,
+      2
+     ],
+     1,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      2,
+      3
+     ],
+     2,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      3,
+      4
+     ],
+     3,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      4,
+      5
+     ],
+     4,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      5,
+      6
+     ],
+     5,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      6,
+      7
+     ],
+     6,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      7,
+      8
+     ],
+     7,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      8,
+      9
+     ],
+     8,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      9,
+      10
+     ],
+     9,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      10,
+      11
+     ],
+     10,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      11,
+      12
+     ],
+     11,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      12,
+      13
+     ],
+     12,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      13,
+      14
+     ],
+     13,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      14,
+      15
+     ],
+     14,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      15,
+      16
+     ],
+     15,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      16,
+      17
+     ],
+     16,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      17,
+      18
+     ],
+     17,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      18,
+      19
+     ],
+     18,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      19,
+      20
+     ],
+     19,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      20,
+      21
+     ],
+     20,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      21,
+      22
+     ],
+     21,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      22,
+      23
+     ],
+     22,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      23,
+      24
+     ],
+     23,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      24,
+      25
+     ],
+     24,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      25,
+      26
+     ],
+     25,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      26,
+      27
+     ],
+     26,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      27,
+      28
+     ],
+     27,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      28,
+      29
+     ],
+     28,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      29,
+      30
+     ],
+     29,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      30,
+      31
+     ],
+     30,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      31,
+      32
+     ],
+     31,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      32,
+      33
+     ],
+     32,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      33,
+      34
+     ],
+     33,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      34,
+      35
+     ],
+     34,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      35,
+      36
+     ],
+     35,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      36,
+      37
+     ],
+     36,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      37,
+      38
+     ],
+     37,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      38,
+      39
+     ],
+     38,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      39,
+      40
+     ],
+     39,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      40,
+      41
+     ],
+     40,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      41,
+      42
+     ],
+     41,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      42,
+      43
+     ],
+     42,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      43,
+      44
+     ],
+     43,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      44,
+      45
+     ],
+     44,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      45,
+      46
+     ],
+     45,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      46,
+      47
+     ],
+     46,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      47,
+      48
+     ],
+     47,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": null
+  },
+  "own57": {
+   "capture_tick": 57,
+   "pass": {
+    "name": "gen.57",
+    "segments": [
+     {
+      "kind": "conv",
+      "home": [
+       0,
+       1
+      ],
+      "q0": 0,
+      "entry": "carry",
+      "stream": "b0",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       1,
+       2
+      ],
+      "q0": 1,
+      "entry": "carry",
+      "stream": "b1",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       2,
+       3
+      ],
+      "q0": 2,
+      "entry": "carry",
+      "stream": "b2",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       3,
+       4
+      ],
+      "q0": 3,
+      "entry": "carry",
+      "stream": "b3",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       4,
+       5
+      ],
+      "q0": 4,
+      "entry": "carry",
+      "stream": "b4",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       5,
+       6
+      ],
+      "q0": 5,
+      "entry": "carry",
+      "stream": "b5",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       6,
+       7
+      ],
+      "q0": 6,
+      "entry": "carry",
+      "stream": "b6",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       7,
+       8
+      ],
+      "q0": 7,
+      "entry": "carry",
+      "stream": "b7",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       8,
+       9
+      ],
+      "q0": 8,
+      "entry": "carry",
+      "stream": "b8",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       9,
+       10
+      ],
+      "q0": 9,
+      "entry": "carry",
+      "stream": "b9",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       10,
+       11
+      ],
+      "q0": 10,
+      "entry": "carry",
+      "stream": "b10",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       11,
+       12
+      ],
+      "q0": 11,
+      "entry": "carry",
+      "stream": "b11",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       12,
+       13
+      ],
+      "q0": 12,
+      "entry": "carry",
+      "stream": "b12",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       13,
+       14
+      ],
+      "q0": 13,
+      "entry": "carry",
+      "stream": "b13",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       14,
+       15
+      ],
+      "q0": 14,
+      "entry": "carry",
+      "stream": "b14",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       15,
+       16
+      ],
+      "q0": 15,
+      "entry": "carry",
+      "stream": "b15",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       16,
+       17
+      ],
+      "q0": 16,
+      "entry": "carry",
+      "stream": "b16",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       17,
+       18
+      ],
+      "q0": 17,
+      "entry": "carry",
+      "stream": "b17",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       18,
+       19
+      ],
+      "q0": 18,
+      "entry": "carry",
+      "stream": "b18",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       19,
+       20
+      ],
+      "q0": 19,
+      "entry": "carry",
+      "stream": "b19",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       20,
+       21
+      ],
+      "q0": 20,
+      "entry": "carry",
+      "stream": "b20",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       21,
+       22
+      ],
+      "q0": 21,
+      "entry": "carry",
+      "stream": "b21",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       22,
+       23
+      ],
+      "q0": 22,
+      "entry": "carry",
+      "stream": "b22",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       23,
+       24
+      ],
+      "q0": 23,
+      "entry": "carry",
+      "stream": "b23",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       24,
+       25
+      ],
+      "q0": 24,
+      "entry": "carry",
+      "stream": "b24",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       25,
+       26
+      ],
+      "q0": 25,
+      "entry": "carry",
+      "stream": "b25",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       26,
+       27
+      ],
+      "q0": 26,
+      "entry": "carry",
+      "stream": "b26",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       27,
+       28
+      ],
+      "q0": 27,
+      "entry": "carry",
+      "stream": "b27",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       28,
+       29
+      ],
+      "q0": 28,
+      "entry": "carry",
+      "stream": "b28",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       29,
+       30
+      ],
+      "q0": 29,
+      "entry": "carry",
+      "stream": "b29",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       30,
+       31
+      ],
+      "q0": 30,
+      "entry": "carry",
+      "stream": "b30",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       31,
+       32
+      ],
+      "q0": 31,
+      "entry": "carry",
+      "stream": "b31",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       32,
+       33
+      ],
+      "q0": 32,
+      "entry": "carry",
+      "stream": "c32",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       33,
+       34
+      ],
+      "q0": 33,
+      "entry": "carry",
+      "stream": "c33",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       34,
+       35
+      ],
+      "q0": 34,
+      "entry": "carry",
+      "stream": "c34",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       35,
+       36
+      ],
+      "q0": 35,
+      "entry": "carry",
+      "stream": "c35",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       36,
+       37
+      ],
+      "q0": 36,
+      "entry": "carry",
+      "stream": "c36",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       37,
+       38
+      ],
+      "q0": 37,
+      "entry": "carry",
+      "stream": "c37",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       38,
+       39
+      ],
+      "q0": 38,
+      "entry": "carry",
+      "stream": "c38",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       39,
+       40
+      ],
+      "q0": 39,
+      "entry": "carry",
+      "stream": "c39",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       40,
+       41
+      ],
+      "q0": 40,
+      "entry": "carry",
+      "stream": "c40",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       41,
+       42
+      ],
+      "q0": 41,
+      "entry": "carry",
+      "stream": "c41",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       42,
+       43
+      ],
+      "q0": 42,
+      "entry": "carry",
+      "stream": "c42",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       43,
+       44
+      ],
+      "q0": 43,
+      "entry": "carry",
+      "stream": "c43",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       44,
+       45
+      ],
+      "q0": 44,
+      "entry": "carry",
+      "stream": "c44",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       45,
+       46
+      ],
+      "q0": 45,
+      "entry": "carry",
+      "stream": "c45",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       46,
+       47
+      ],
+      "q0": 46,
+      "entry": "carry",
+      "stream": "c46",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       47,
+       48
+      ],
+      "q0": 47,
+      "entry": "carry",
+      "stream": "c47",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       48,
+       49
+      ],
+      "q0": 48,
+      "entry": "carry",
+      "stream": "a48",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       49,
+       50
+      ],
+      "q0": 49,
+      "entry": "carry",
+      "stream": "a49",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       50,
+       51
+      ],
+      "q0": 50,
+      "entry": "carry",
+      "stream": "a50",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       51,
+       52
+      ],
+      "q0": 51,
+      "entry": "carry",
+      "stream": "a51",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       52,
+       53
+      ],
+      "q0": 52,
+      "entry": "carry",
+      "stream": "a52",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       53,
+       54
+      ],
+      "q0": 53,
+      "entry": "carry",
+      "stream": "a53",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       54,
+       55
+      ],
+      "q0": 54,
+      "entry": "carry",
+      "stream": "a54",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       55,
+       56
+      ],
+      "q0": 55,
+      "entry": "carry",
+      "stream": "a55",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       56,
+       57
+      ],
+      "q0": 56,
+      "entry": "carry",
+      "stream": "a56",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       57,
+       58
+      ],
+      "q0": 57,
+      "entry": "carry",
+      "stream": "a57",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       58,
+       59
+      ],
+      "q0": 58,
+      "entry": "carry",
+      "stream": "a58",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       59,
+       60
+      ],
+      "q0": 59,
+      "entry": "carry",
+      "stream": "a59",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       60,
+       61
+      ],
+      "q0": 60,
+      "entry": "carry",
+      "stream": "a60",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       61,
+       62
+      ],
+      "q0": 61,
+      "entry": "carry",
+      "stream": "a61",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       62,
+       63
+      ],
+      "q0": 62,
+      "entry": "carry",
+      "stream": "a62",
+      "parked_from": null
+     },
+     {
+      "kind": "conv",
+      "home": [
+       63,
+       64
+      ],
+      "q0": 63,
+      "entry": "carry",
+      "stream": "a63",
+      "parked_from": null
+     }
+    ],
+    "tokens": [
+     327,
+     15,
+     273,
+     2363,
+     273,
+     1754,
+     1273,
+     1897,
+     1754,
+     1754,
+     510,
+     253,
+     187,
+     1406,
+     15,
+     1754,
+     297,
+     326,
+     806,
+     1897,
+     8925,
+     273,
+     434,
+     15,
+     187,
+     7565,
+     1273,
+     1770,
+     187,
+     1735,
+     41929,
+     15,
+     15063,
+     510,
+     2186,
+     187,
+     13,
+     310,
+     253,
+     15,
+     597,
+     353,
+     15,
+     4735,
+     1048,
+     13,
+     285,
+     2806,
+     534,
+     6278,
+     4614,
+     1768,
+     6963,
+     375,
+     310,
+     78,
+     1668,
+     427,
+     285,
+     273,
+     16064,
+     760,
+     47,
+     462
+    ]
+   },
+   "describe": "conv carry x64",
+   "mask_key": [
+    [
+     "conv",
+     [
+      0,
+      1
+     ],
+     0,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      1,
+      2
+     ],
+     1,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      2,
+      3
+     ],
+     2,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      3,
+      4
+     ],
+     3,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      4,
+      5
+     ],
+     4,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      5,
+      6
+     ],
+     5,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      6,
+      7
+     ],
+     6,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      7,
+      8
+     ],
+     7,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      8,
+      9
+     ],
+     8,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      9,
+      10
+     ],
+     9,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      10,
+      11
+     ],
+     10,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      11,
+      12
+     ],
+     11,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      12,
+      13
+     ],
+     12,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      13,
+      14
+     ],
+     13,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      14,
+      15
+     ],
+     14,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      15,
+      16
+     ],
+     15,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      16,
+      17
+     ],
+     16,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      17,
+      18
+     ],
+     17,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      18,
+      19
+     ],
+     18,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      19,
+      20
+     ],
+     19,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      20,
+      21
+     ],
+     20,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      21,
+      22
+     ],
+     21,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      22,
+      23
+     ],
+     22,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      23,
+      24
+     ],
+     23,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      24,
+      25
+     ],
+     24,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      25,
+      26
+     ],
+     25,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      26,
+      27
+     ],
+     26,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      27,
+      28
+     ],
+     27,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      28,
+      29
+     ],
+     28,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      29,
+      30
+     ],
+     29,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      30,
+      31
+     ],
+     30,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      31,
+      32
+     ],
+     31,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      32,
+      33
+     ],
+     32,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      33,
+      34
+     ],
+     33,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      34,
+      35
+     ],
+     34,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      35,
+      36
+     ],
+     35,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      36,
+      37
+     ],
+     36,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      37,
+      38
+     ],
+     37,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      38,
+      39
+     ],
+     38,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      39,
+      40
+     ],
+     39,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      40,
+      41
+     ],
+     40,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      41,
+      42
+     ],
+     41,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      42,
+      43
+     ],
+     42,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      43,
+      44
+     ],
+     43,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      44,
+      45
+     ],
+     44,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      45,
+      46
+     ],
+     45,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      46,
+      47
+     ],
+     46,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      47,
+      48
+     ],
+     47,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      48,
+      49
+     ],
+     48,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      49,
+      50
+     ],
+     49,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      50,
+      51
+     ],
+     50,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      51,
+      52
+     ],
+     51,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      52,
+      53
+     ],
+     52,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      53,
+      54
+     ],
+     53,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      54,
+      55
+     ],
+     54,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      55,
+      56
+     ],
+     55,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      56,
+      57
+     ],
+     56,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      57,
+      58
+     ],
+     57,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      58,
+      59
+     ],
+     58,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      59,
+      60
+     ],
+     59,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      60,
+      61
+     ],
+     60,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      61,
+      62
+     ],
+     61,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      62,
+      63
+     ],
+     62,
+     "carry"
+    ],
+    [
+     "conv",
+     [
+      63,
+      64
+     ],
+     63,
+     "carry"
+    ]
+   ],
+   "inject": null
+  }
+ },
+ "blocks": {
+  "block_0": {
+   "nodes": 716,
+   "grew": 642,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 21.55095680954866,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_278",
+     "ratio": 21.003066741263854,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_275",
+     "ratio": 20.995454986013232,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 74,
+    "seqfresh": 89,
+    "seqcarry": 66,
+    "mixed": 1,
+    "longdoc": 166,
+    "longtick": 77,
+    "own16": 74,
+    "own24": 23,
+    "own25": 19,
+    "own26": 67,
+    "own57": 60
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_1": {
+   "nodes": 714,
+   "grew": 644,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 18.759499445758273,
+     "from": "own57"
+    },
+    {
+     "output": "v_275",
+     "ratio": 18.759499445758273,
+     "from": "own57"
+    },
+    {
+     "output": "v_276",
+     "ratio": 18.637557278880244,
+     "from": "own57"
+    }
+   ],
+   "records_from": {
+    "tick": 70,
+    "seqfresh": 78,
+    "seqcarry": 23,
+    "mixed": 25,
+    "longdoc": 89,
+    "longtick": 106,
+    "own16": 47,
+    "own24": 137,
+    "own25": 37,
+    "own26": 30,
+    "own57": 72
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_2": {
+   "nodes": 714,
+   "grew": 670,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 13.098478923467237,
+     "from": "own57"
+    },
+    {
+     "output": "v_278",
+     "ratio": 13.0939907558876,
+     "from": "own57"
+    },
+    {
+     "output": "v_275",
+     "ratio": 13.0939907558876,
+     "from": "own57"
+    }
+   ],
+   "records_from": {
+    "tick": 44,
+    "seqfresh": 99,
+    "seqcarry": 13,
+    "mixed": 67,
+    "longdoc": 57,
+    "longtick": 154,
+    "own16": 31,
+    "own24": 99,
+    "own25": 51,
+    "own26": 21,
+    "own57": 78
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_3": {
+   "nodes": 714,
+   "grew": 683,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 13.729083622737997,
+     "from": "longtick"
+    },
+    {
+     "output": "v_275",
+     "ratio": 13.729083622737997,
+     "from": "longtick"
+    },
+    {
+     "output": "v_276",
+     "ratio": 13.516616728031488,
+     "from": "longtick"
+    }
+   ],
+   "records_from": {
+    "tick": 31,
+    "seqfresh": 59,
+    "seqcarry": 42,
+    "mixed": 17,
+    "longdoc": 91,
+    "longtick": 148,
+    "own16": 130,
+    "own24": 68,
+    "own25": 11,
+    "own26": 59,
+    "own57": 58
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_4": {
+   "nodes": 714,
+   "grew": 704,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 13.119889438573894,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_278",
+     "ratio": 12.814341936166397,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_275",
+     "ratio": 12.81011898299284,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 10,
+    "seqfresh": 59,
+    "seqcarry": 41,
+    "mixed": 2,
+    "longdoc": 43,
+    "longtick": 99,
+    "own16": 145,
+    "own24": 55,
+    "own25": 60,
+    "own26": 25,
+    "own57": 175
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_5": {
+   "nodes": 714,
+   "grew": 676,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 19.073557012675696,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_278",
+     "ratio": 18.698551424333434,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_275",
+     "ratio": 18.692666394937433,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 38,
+    "seqfresh": 39,
+    "seqcarry": 96,
+    "mixed": 24,
+    "longdoc": 39,
+    "longtick": 47,
+    "own16": 95,
+    "own24": 57,
+    "own25": 31,
+    "own26": 40,
+    "own57": 208
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_6": {
+   "nodes": 714,
+   "grew": 697,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 9.972357045127609,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_274",
+     "ratio": 9.776038230486892,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_278",
+     "ratio": 9.73762952323431,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 17,
+    "seqfresh": 90,
+    "seqcarry": 41,
+    "mixed": 15,
+    "longdoc": 48,
+    "longtick": 56,
+    "own16": 104,
+    "own24": 46,
+    "own25": 137,
+    "own26": 3,
+    "own57": 157
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_7": {
+   "nodes": 714,
+   "grew": 708,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 20.9444828477504,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_278",
+     "ratio": 20.42976125931121,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_275",
+     "ratio": 20.42233101975797,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 6,
+    "seqfresh": 135,
+    "seqcarry": 36,
+    "mixed": 18,
+    "longdoc": 63,
+    "longtick": 46,
+    "own16": 59,
+    "own24": 51,
+    "own25": 96,
+    "own26": 37,
+    "own57": 167
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_8": {
+   "nodes": 714,
+   "grew": 694,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_680",
+     "ratio": 9.250634100779296,
+     "from": "seqfresh"
+    },
+    {
+     "output": "v_673",
+     "ratio": 9.250634100779296,
+     "from": "seqfresh"
+    },
+    {
+     "output": "v_274",
+     "ratio": 8.399263230261482,
+     "from": "seqfresh"
+    }
+   ],
+   "records_from": {
+    "tick": 20,
+    "seqfresh": 152,
+    "seqcarry": 59,
+    "mixed": 19,
+    "longdoc": 22,
+    "longtick": 61,
+    "own16": 65,
+    "own24": 38,
+    "own25": 95,
+    "own26": 71,
+    "own57": 112
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_9": {
+   "nodes": 714,
+   "grew": 681,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_274",
+     "ratio": 8.3796947286858,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_241",
+     "ratio": 8.283301503362388,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_208",
+     "ratio": 7.416295238749821,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 33,
+    "seqfresh": 111,
+    "seqcarry": 52,
+    "mixed": 44,
+    "longdoc": 17,
+    "longtick": 39,
+    "own16": 101,
+    "own24": 129,
+    "own25": 64,
+    "own26": 29,
+    "own57": 95
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_10": {
+   "nodes": 714,
+   "grew": 672,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_678",
+     "ratio": 10.936765943662529,
+     "from": "own24"
+    },
+    {
+     "output": "v_659",
+     "ratio": 10.936765943662529,
+     "from": "own24"
+    },
+    {
+     "output": "v_695",
+     "ratio": 7.079140823124837,
+     "from": "own24"
+    }
+   ],
+   "records_from": {
+    "tick": 42,
+    "seqfresh": 86,
+    "seqcarry": 57,
+    "mixed": 54,
+    "longdoc": 8,
+    "longtick": 53,
+    "own16": 121,
+    "own24": 169,
+    "own25": 31,
+    "own26": 32,
+    "own57": 61
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_11": {
+   "nodes": 714,
+   "grew": 680,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_175",
+     "ratio": 6.752195692179179,
+     "from": "own16"
+    },
+    {
+     "output": "v_274",
+     "ratio": 6.575373334260731,
+     "from": "own16"
+    },
+    {
+     "output": "v_241",
+     "ratio": 6.575373334260731,
+     "from": "own16"
+    }
+   ],
+   "records_from": {
+    "tick": 34,
+    "seqfresh": 137,
+    "seqcarry": 35,
+    "mixed": 47,
+    "longdoc": 11,
+    "longtick": 83,
+    "own16": 170,
+    "own24": 75,
+    "own25": 13,
+    "own26": 54,
+    "own57": 55
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_12": {
+   "nodes": 714,
+   "grew": 675,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 13.800346899999697,
+     "from": "longtick"
+    },
+    {
+     "output": "v_275",
+     "ratio": 13.800346899999697,
+     "from": "longtick"
+    },
+    {
+     "output": "v_276",
+     "ratio": 13.496716154050345,
+     "from": "longtick"
+    }
+   ],
+   "records_from": {
+    "tick": 39,
+    "seqfresh": 133,
+    "seqcarry": 185,
+    "mixed": 13,
+    "longdoc": 25,
+    "longtick": 46,
+    "own16": 104,
+    "own24": 6,
+    "own25": 7,
+    "own26": 49,
+    "own57": 107
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_13": {
+   "nodes": 714,
+   "grew": 657,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 8.996192088074013,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_278",
+     "ratio": 8.913169655274054,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_275",
+     "ratio": 8.909000627186273,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 57,
+    "seqfresh": 160,
+    "seqcarry": 105,
+    "mixed": 8,
+    "longdoc": 12,
+    "longtick": 74,
+    "own16": 126,
+    "own24": 7,
+    "own25": 48,
+    "own26": 8,
+    "own57": 109
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_14": {
+   "nodes": 714,
+   "grew": 663,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 18.48048375371955,
+     "from": "longtick"
+    },
+    {
+     "output": "v_278",
+     "ratio": 18.450474414653865,
+     "from": "longtick"
+    },
+    {
+     "output": "v_275",
+     "ratio": 18.450474414653865,
+     "from": "longtick"
+    }
+   ],
+   "records_from": {
+    "tick": 51,
+    "seqfresh": 225,
+    "seqcarry": 58,
+    "mixed": 12,
+    "longdoc": 61,
+    "longtick": 43,
+    "own16": 90,
+    "own24": 8,
+    "own25": 30,
+    "own26": 10,
+    "own57": 126
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_15": {
+   "nodes": 714,
+   "grew": 649,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 15.52185568510607,
+     "from": "own57"
+    },
+    {
+     "output": "v_275",
+     "ratio": 15.52185568510607,
+     "from": "own57"
+    },
+    {
+     "output": "v_276",
+     "ratio": 14.780434265093005,
+     "from": "own57"
+    }
+   ],
+   "records_from": {
+    "tick": 65,
+    "seqfresh": 134,
+    "seqcarry": 50,
+    "mixed": 6,
+    "longdoc": 94,
+    "longtick": 41,
+    "own16": 107,
+    "own24": 95,
+    "own25": 35,
+    "own26": 9,
+    "own57": 78
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_16": {
+   "nodes": 714,
+   "grew": 665,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 17.780487875397952,
+     "from": "own57"
+    },
+    {
+     "output": "v_278",
+     "ratio": 17.634089589315384,
+     "from": "own57"
+    },
+    {
+     "output": "v_275",
+     "ratio": 17.634089589315384,
+     "from": "own57"
+    }
+   ],
+   "records_from": {
+    "tick": 49,
+    "seqfresh": 106,
+    "seqcarry": 17,
+    "mixed": 24,
+    "longdoc": 103,
+    "longtick": 27,
+    "own16": 57,
+    "own24": 142,
+    "own25": 95,
+    "own26": 12,
+    "own57": 82
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_17": {
+   "nodes": 714,
+   "grew": 667,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 28.020567777331216,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_275",
+     "ratio": 28.018378621183214,
+     "from": "seqcarry"
+    },
+    {
+     "output": "v_276",
+     "ratio": 27.715249330229003,
+     "from": "seqcarry"
+    }
+   ],
+   "records_from": {
+    "tick": 47,
+    "seqfresh": 49,
+    "seqcarry": 133,
+    "mixed": 6,
+    "longdoc": 133,
+    "longtick": 38,
+    "own16": 44,
+    "own24": 142,
+    "own25": 29,
+    "own26": 17,
+    "own57": 76
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_18": {
+   "nodes": 714,
+   "grew": 679,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 10.30531436440238,
+     "from": "own57"
+    },
+    {
+     "output": "v_275",
+     "ratio": 10.30531436440238,
+     "from": "own57"
+    },
+    {
+     "output": "v_276",
+     "ratio": 10.226902186435552,
+     "from": "own57"
+    }
+   ],
+   "records_from": {
+    "tick": 35,
+    "seqfresh": 64,
+    "seqcarry": 26,
+    "mixed": 8,
+    "longdoc": 184,
+    "longtick": 18,
+    "own16": 60,
+    "own24": 203,
+    "own25": 11,
+    "own26": 34,
+    "own57": 71
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_19": {
+   "nodes": 714,
+   "grew": 685,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 17.358394504363638,
+     "from": "longtick"
+    },
+    {
+     "output": "v_278",
+     "ratio": 17.04094493660552,
+     "from": "longtick"
+    },
+    {
+     "output": "v_275",
+     "ratio": 17.04094493660552,
+     "from": "longtick"
+    }
+   ],
+   "records_from": {
+    "tick": 29,
+    "seqfresh": 96,
+    "seqcarry": 29,
+    "mixed": 2,
+    "longdoc": 87,
+    "longtick": 27,
+    "own16": 61,
+    "own24": 143,
+    "own25": 27,
+    "own26": 55,
+    "own57": 158
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_20": {
+   "nodes": 714,
+   "grew": 697,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 20.213611867778734,
+     "from": "own57"
+    },
+    {
+     "output": "v_278",
+     "ratio": 20.190076928098748,
+     "from": "own57"
+    },
+    {
+     "output": "v_275",
+     "ratio": 20.190076928098748,
+     "from": "own57"
+    }
+   ],
+   "records_from": {
+    "tick": 17,
+    "seqfresh": 103,
+    "seqcarry": 41,
+    "mixed": 2,
+    "longdoc": 112,
+    "longtick": 39,
+    "own16": 90,
+    "own24": 148,
+    "own25": 27,
+    "own26": 81,
+    "own57": 54
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_21": {
+   "nodes": 714,
+   "grew": 692,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 15.504788325087166,
+     "from": "longtick"
+    },
+    {
+     "output": "v_275",
+     "ratio": 15.504788325087166,
+     "from": "longtick"
+    },
+    {
+     "output": "v_276",
+     "ratio": 15.33306536838368,
+     "from": "longtick"
+    }
+   ],
+   "records_from": {
+    "tick": 22,
+    "seqfresh": 138,
+    "seqcarry": 32,
+    "mixed": 50,
+    "longdoc": 102,
+    "longtick": 43,
+    "own16": 150,
+    "own24": 82,
+    "own25": 24,
+    "own26": 11,
+    "own57": 60
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_22": {
+   "nodes": 714,
+   "grew": 676,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_278",
+     "ratio": 17.012554111931546,
+     "from": "own57"
+    },
+    {
+     "output": "v_275",
+     "ratio": 17.012554111931546,
+     "from": "own57"
+    },
+    {
+     "output": "v_276",
+     "ratio": 16.91546028485413,
+     "from": "own57"
+    }
+   ],
+   "records_from": {
+    "tick": 38,
+    "seqfresh": 38,
+    "seqcarry": 48,
+    "mixed": 7,
+    "longdoc": 119,
+    "longtick": 99,
+    "own16": 129,
+    "own24": 108,
+    "own25": 35,
+    "own26": 22,
+    "own57": 71
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_23": {
+   "nodes": 714,
+   "grew": 635,
+   "grew_from_zero": 196,
+   "largest": [
+    {
+     "output": "v_276",
+     "ratio": 64.89273079166284,
+     "from": "longtick"
+    },
+    {
+     "output": "v_278",
+     "ratio": 63.92522582485831,
+     "from": "longtick"
+    },
+    {
+     "output": "v_275",
+     "ratio": 63.92522582485831,
+     "from": "longtick"
+    }
+   ],
+   "records_from": {
+    "tick": 79,
+    "seqfresh": 78,
+    "seqcarry": 43,
+    "mixed": 7,
+    "longdoc": 62,
+    "longtick": 123,
+    "own16": 109,
+    "own24": 87,
+    "own25": 24,
+    "own26": 21,
+    "own57": 81
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  },
+  "block_24": {
+   "nodes": 133,
+   "grew": 125,
+   "grew_from_zero": 0,
+   "largest": [
+    {
+     "output": "v_109",
+     "ratio": 1.891212785003316,
+     "from": "longtick"
+    },
+    {
+     "output": "v_104",
+     "ratio": 1.891152763226046,
+     "from": "longtick"
+    },
+    {
+     "output": "v_99_auto_bootstrapped",
+     "ratio": 1.879176184153103,
+     "from": "longtick"
+    }
+   ],
+   "records_from": {
+    "tick": 8,
+    "seqfresh": 2,
+    "seqcarry": 0,
+    "mixed": 0,
+    "longdoc": 0,
+    "longtick": 55,
+    "own16": 20,
+    "own24": 21,
+    "own25": 0,
+    "own26": 27,
+    "own57": 0
+   },
+   "coeff_above_chosen": 0,
+   "coeff_largest": []
+  }
+ }
+}

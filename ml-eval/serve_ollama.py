@@ -263,8 +263,9 @@ class Sampler(object):
 
     def __init__(self, temperature=0.0, top_p=0.9, top_k=40,
                  repeat_penalty=1.3, repeat_last_n=64, no_repeat_ngram=4,
-                 seed=None, torch=None):
+                 seed=None, torch=None, ban=()):
         self.temperature = float(temperature)
+        self.ban = tuple(int(b) for b in ban)
         self.top_p = float(top_p)
         self.top_k = int(top_k)
         self.repeat_penalty = float(repeat_penalty)
@@ -287,6 +288,10 @@ class Sampler(object):
         lg = logits.detach().cpu().to(torch.float64).reshape(-1).clone()
         if vocab_limit is not None and vocab_limit < lg.shape[0]:
             lg[vocab_limit:] = float("-inf")
+        # 0. banned tokens, first, as decode_policy.modified does (the pod's
+        #    client bans end-of-text: a free-running lane has no stop)
+        for b in self.ban:
+            lg[b] = float("-inf")
         # 1. repetition penalty over the last `window` fed tokens
         if self.repeat_penalty and self.repeat_penalty != 1.0 and history:
             idx = torch.tensor(sorted(set(history[-self.repeat_last_n:])), dtype=torch.long)
@@ -446,7 +451,7 @@ def options_to_sampler(opts, defaults, torch):
                    top_k=o.get("top_k", 40), repeat_penalty=o.get("repeat_penalty", 1.3),
                    repeat_last_n=o.get("repeat_last_n", 64),
                    no_repeat_ngram=o.get("no_repeat_ngram", 4),
-                   seed=o.get("seed"), torch=torch), o
+                   seed=o.get("seed"), torch=torch, ban=o.get("ban") or ()), o
 
 
 # ---------------------------------------------------------------------------
@@ -588,7 +593,7 @@ def make_handler(eng, args):
                 "modelfile": f"# served by ml-eval/serve_ollama.py from {eng.wpath}",
                 "parameters": (f"temperature {args.temperature}\nrepeat_penalty {args.repeat_penalty}\n"
                                f"repeat_last_n {args.repeat_last_n}\n"
-                               f"no_repeat_ngram {args.no_repeat_ngram}"),
+                               f"no_repeat_ngram {args.no_repeat_ngram}\nban_eot {args.ban_eot}"),
                 "template": "{{ .Prompt }}",
                 "details": details,
                 "model_info": {
@@ -607,7 +612,8 @@ def make_handler(eng, args):
         def _defaults(self):
             return {"temperature": args.temperature, "top_p": args.top_p, "top_k": args.top_k,
                     "repeat_penalty": args.repeat_penalty, "repeat_last_n": args.repeat_last_n,
-                    "no_repeat_ngram": args.no_repeat_ngram, "num_predict": args.num_predict}
+                    "no_repeat_ngram": args.no_repeat_ngram, "num_predict": args.num_predict,
+                    "ban": eot_ban(eng, args)}
 
         def _run(self, prompt, stops, opts, stream, emit, finish):
             sampler, o = options_to_sampler(opts, self._defaults(), torch)
@@ -825,9 +831,14 @@ def bench(eng, args, torch):
     return 0
 
 
-def cli_sampler(args, torch):
+def eot_ban(eng, args):
+    return [eng.eos] if args.ban_eot and eng.eos is not None else []
+
+
+def cli_sampler(args, torch, eng=None):
     return Sampler(args.temperature, args.top_p, args.top_k, args.repeat_penalty,
-                   args.repeat_last_n, args.no_repeat_ngram, torch=torch)
+                   args.repeat_last_n, args.no_repeat_ngram, torch=torch,
+                   ban=eot_ban(eng, args) if eng is not None else ())
 
 
 def repl(eng, args, torch):
@@ -844,7 +855,7 @@ def repl(eng, args, torch):
             continue
         history.append({"role": "user", "content": line})
         prompt, stops = build_prompt(history, args.chat_style, args.system)
-        sampler = cli_sampler(args, torch)
+        sampler = cli_sampler(args, torch, eng)
         r = eng.generate(prompt, sampler, args.num_predict, stops,
                          on_delta=lambda t: (sys.stdout.write(t), sys.stdout.flush()))
         print()
@@ -881,6 +892,9 @@ def main():
     ap.add_argument("--repeat-penalty", type=float, default=1.3)
     ap.add_argument("--repeat-last-n", type=int, default=64)
     ap.add_argument("--no-repeat-ngram", type=int, default=4, help="0 disables the ban")
+    ap.add_argument("--ban-eot", action="store_true",
+                    help="never pick end-of-text, as the pod's free-running client did "
+                         "(decode_policy ban=(eos,)); a reply then ends on a stop string or num_predict")
     ap.add_argument("--num-predict", type=int, default=128)
     ap.add_argument("--verbose", action="store_true")
     ap.add_argument("--repl", action="store_true")
@@ -904,7 +918,7 @@ def main():
     if args.bench:
         return bench(eng, args, torch)
     if args.prompt is not None:
-        sampler = cli_sampler(args, torch)
+        sampler = cli_sampler(args, torch, eng)
         r = eng.generate(args.prompt, sampler, args.num_predict, ["<|endoftext|>"],
                          on_delta=lambda t: (sys.stdout.write(t), sys.stdout.flush()))
         print()

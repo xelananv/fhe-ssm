@@ -1,0 +1,2 @@
+[run_gpu 20:34:41] capture best -> /root/out_148/gpu/cap_high__newton_form_depth2_newton_sites_per_site_pack_stats_halves_linear_pcmm_pcmm_wbits_24 (CPU only): FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 run_fake --newton-form depth2 --newton-sites per-site --pack-stats halves --linear pcmm --pcmm-wbits 24
+[run_gpu 20:35:39] capture best: done in 58 s

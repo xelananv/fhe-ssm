@@ -1,0 +1,2 @@
+{"config": "poly:all", "wt_ppl": 14.118385694269895, "top1_agree": 0.9130099808610105, "kl_mean": 0.030177300001508214, "lambada_acc": 0.5767514069474092, "lambada_ppl": 7.388296888090032, "outside_frac_max": 0.0004833872762932789, "seconds": 290.5}
+[pod3 2026-11-05T00:26:14Z] wide 0.4b unclamped rc=0 299 s

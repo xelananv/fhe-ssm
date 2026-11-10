@@ -174,3 +174,32 @@ OLLAMA_HOST=127.0.0.1:11435 ollama run fhe-ssm-430m
 Port 11435 because the real ollama holds 11434; the two do not interfere, and
 `ollama list` against 11434 will not show this model — it lives only in this
 process.
+
+## 2026-11-02: the 148-tick run's decode rule, replayed lane by lane
+
+The long run of 2026-09-19 (`results/dense-demo-s31/pod_longrun_20260919/`, POD_LOG 15:17:38 and 15:18:48) decoded
+with the client rule `norepeat`: repetition penalty 1.3 over the last 64 fed tokens, no-repeat 4-gram, **end-of-text
+banned**, then argmax. The server's defaults already carried the first three; the ban was missing (end-of-text was a
+stop). `--ban-eot` adds it: `Sampler(ban=...)` applies the ban first, as `spec_decode/decode_policy.py::modified`
+does, and `ml-eval/test_serve_ollama_policy.py` now plants a ban in every third case (400 cases, 134 with a ban,
+0 mismatches against `decode_policy.pick`, PASS).
+
+Check (`replay_longrun_lanes.py`): for each lane of `pod_pull/s37/serve_LONG/fidelity.json` whose encrypted pick
+equalled the plaintext pick on every generated tick (48 of 64; in the other 16 the run's trajectory left the
+plaintext one at least once), decode the lane's prompt tokens, send them raw to `/api/generate` with `num_predict` =
+the lane's generated count, and compare the reply with the decoded encrypted picks. Weights sha256 `3ec3f1d8…`
+re-verified 2026-11-02 against `pod_2xbw_20260917/pod_pull/stage_verify.txt`; MPS, fp32.
+
+| server | lanes text-identical | tokens (pod / server) | output |
+|---|---|---|---|
+| defaults (end-of-text = stop) | 44 / 48 | 5,434 / 5,286 | `replay_longrun_lanes_20261102.out` |
+| `--ban-eot` | **48 / 48** | **5,434 / 5,434** | `replay_longrun_lanes_20261102_baneot.out` |
+
+The four misses without the ban (lanes 0, 19, 32, 48) are strict prefixes of the run's text that end where the model's
+own pick was end-of-text (lane 32 at its first token); the run, which banned it, continued. Launch with the run's rule:
+
+    .venv/bin/python ml-eval/serve_ollama.py --port 11435 --num-predict 148 --ban-eot
+    OLLAMA_HOST=127.0.0.1:11435 ollama run fhe-ssm-430m
+
+`--num-predict 148` matches the run's tick count; the chat scaffold (`--chat-style qa`, the default) is not part of
+the run, whose lanes were raw continuations (`/api/generate`, or `--chat-style plain` for chat clients).

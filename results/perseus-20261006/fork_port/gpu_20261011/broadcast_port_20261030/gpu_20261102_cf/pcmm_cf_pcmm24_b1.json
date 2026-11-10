@@ -1,0 +1,22 @@
+{
+ "cf": {
+  "b0.win": 8,
+  "b0.wk": 6,
+  "b0.wout": 5,
+  "b0.wr": 6,
+  "b0.wv": 3
+ },
+ "max_abs": {
+  "b0.win": 6.253901541060783,
+  "b0.wk": 1.3959319927231995,
+  "b0.wout": 0.7732945834720261,
+  "b0.wr": 1.7683298872798907,
+  "b0.wv": 0.11316184317765386
+ },
+ "rule": "clamp(ceil(log2(safety max|y| / 0.01) + offset), cf_min, cf_max) (perseus/plan/btserr.py cf_for_magnitude)",
+ "safety": 2.0,
+ "offset": -2.5,
+ "cf_min": 2,
+ "cf_max": 20,
+ "capture": "$REPO/vendor/perseus-speedrun/.cache/fhe_ssm/b4_stage/cap_high__linear_pcmm_pcmm_wbits_24_b1"
+}

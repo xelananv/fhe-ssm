@@ -1,0 +1,9 @@
+{"mode": "decode", "n": 1, "rss_before_model_mb": 1227.453125, "rss_after_model_mb": 1436.921875}
+{"mode": "decode+shed", "n": 1, "token": 0, "stage": 0, "n_objs": 1318, "obj_vec_bytes": 2641496, "obj_dtypes": ["complex128(1,)", "complex128(32768,)", "float64(1,)"], "n_pts": 150, "pt_bytes": 29622272, "n_nodes": 2236, "nodes_pickle_bytes": 385346}
+{"mode": "decode+shed", "n": 1, "token": 0, "stage": 1, "n_objs": 3, "obj_vec_bytes": 524304, "obj_dtypes": ["complex128(1,)", "complex128(32768,)"], "n_pts": 1, "pt_bytes": 262144, "n_nodes": 3, "nodes_pickle_bytes": 764}
+{"mode": "decode+shed", "n": 1, "token": 0, "rss_delta_mb": 1108.8, "rss_mb": 2545.8, "record_s": 0.8}
+{"mode": "decode+shed", "n": 1, "token": 1, "stage": 0, "n_objs": 1318, "obj_vec_bytes": 2641464, "obj_dtypes": ["complex128(1,)", "complex128(32768,)", "float64(1,)"], "n_pts": 150, "pt_bytes": 0, "n_nodes": 2236, "nodes_pickle_bytes": 390938}
+{"mode": "decode+shed", "n": 1, "token": 1, "stage": 1, "n_objs": 3, "obj_vec_bytes": 524304, "obj_dtypes": ["complex128(1,)", "complex128(32768,)"], "n_pts": 1, "pt_bytes": 0, "n_nodes": 3, "nodes_pickle_bytes": 764}
+{"mode": "decode+shed", "n": 1, "token": 1, "rss_delta_mb": 34.7, "rss_mb": 2580.5, "record_s": 0.4}
+{"mode": "decode+shed", "n": 1, "shed_stats": {"vectors": 2542, "bytes": 1314390016, "kept": 20, "pts_shared": 302, "pt_bytes": 79167488}, "pt_intern_distinct": 114, "pt_intern_bytes": 29884416}
+{"mode": "decode+shed", "n": 1, "after_drop_objs_nodes_rss_mb": 2580.5, "freed_mb": 0.0}

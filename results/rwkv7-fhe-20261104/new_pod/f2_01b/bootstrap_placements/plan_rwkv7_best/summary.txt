@@ -1,0 +1,3 @@
+  planned in 49 s: 13 stages, 497 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:38@26 block_1:42@26 block_2:41@26 block_3:42@26 block_4:42@26 block_5:40@26 block_6:44@26 block_7:40@26 block_8:41@26 block_9:42@26 block_10:42@26 block_11:42@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)

@@ -29,7 +29,7 @@ stands on it.
 | Pythia-410M step6000 (12.58B tok — the dense-arm anchor) | **30.957** | 58.41 | **33.6%** | 37.91 |
 | Pythia-160M step6000 (the band16 live-param anchor) | **40.620** | 80.60 | **30.7%** | 55.80 |
 | Pythia-410M final (300B, report-only) | 18.170 | 31.07 | 51.6% | 10.78 |
-| Mamba-370M final (report-only) | running at freeze time — appended when done; NOT band-setting | | | |
+| Mamba-370M final (report-only; NOT band-setting; appended 2026-10-30 from `pod/state/runs/s31q_mamba370_final/anchor.jsonl`:2-3) | **16.040** | 26.80 | **55.6%** | 4.63 |
 
 ## The bands, FROZEN (the package §3 proposal, adopted at launch)
 

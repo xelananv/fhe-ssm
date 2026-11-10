@@ -1,0 +1,144 @@
+warning: unused import: `PrimeConst`
+ --> crates/pc-kernels/src/ring.rs:3:55
+  |
+3 | use crate::args::{BconvArgs, EwArgs, Launch, NttArgs, PrimeConst};
+  |                                                       ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::ffi::c_void`
+ --> crates/pc-kernels/src/ring.rs:5:5
+  |
+5 | use std::ffi::c_void;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: `pc-kernels` (lib) generated 2 warnings (run `cargo fix --lib -p pc-kernels` to apply 2 suggestions)
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.01s
+     Running `target/release/pc-bench bts --all --k 1,8 --reps 20 --keys packed --grid '8,13,20:0.5,1,2' --seeds 3`
+[bts-all] K=1: 75 rotation keys; MemPlan context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 31.5 MB, keys 6452.5 MB, keygen 31.5 MB, secret 63.0 MB, encrypt 0.0 MB, decrypt 3.0 MB, ks.plans 4.0 MB, ks.regen_a 189.0 MB, ops 14.5 MB, rescale 253.5 MB, tables 5796.1 MB, bts.work 1008.0 MB, tails 945.0 MB, tables 827.2 MB, bts.work 567.0 MB, tables 227.2 MB, bts.work 504.0 MB, tables 527.5 MB, bts.work 94.5 MB, bts.batch 31.5 MB, bench.cts 94.5 MB, total 20248.9 MB
+[bts-all] keygen 79 keys in 1.6 s
+[bts-all] K=1 setup 3.9 s; arena used 21.20 of 21.23 GB
+[bts-all] grid dense cf 8 A 0.5: bits min 6.39 mean 6.40; rms 12.51 (3 seeds), out level 32
+[bts-all] grid dense cf 13 A 0.5: bits min 1.42 mean 1.43; rms 7.51 (3 seeds), out level 32
+[bts-all] grid dense cf 20 A 0.5: bits min -5.60 mean -5.58; rms 0.52 (3 seeds), out level 32
+[bts-all] grid dense cf 8 A 1: bits min 7.41 mean 7.44; rms 13.52 (3 seeds), out level 32
+[bts-all] grid dense cf 13 A 1: bits min 2.41 mean 2.42; rms 8.52 (3 seeds), out level 32
+[bts-all] grid dense cf 20 A 1: bits min -4.59 mean -4.57; rms 1.51 (3 seeds), out level 32
+[bts-all] grid dense cf 8 A 2: bits min 8.41 mean 8.43; rms 14.52 (3 seeds), out level 32
+[bts-all] grid dense cf 13 A 2: bits min 3.42 mean 3.43; rms 9.51 (3 seeds), out level 32
+[bts-all] grid dense cf 20 A 2: bits min -3.56 mean -3.54; rms 2.52 (3 seeds), out level 32
+[bts-all] grid stcf cf 8 A 0.5: bits min 15.18 mean 15.19; rms 16.68 (3 seeds), out level 26
+[bts-all] grid stcf cf 13 A 0.5: bits min 13.52 mean 13.55; rms 15.57 (3 seeds), out level 26
+[bts-all] grid stcf cf 20 A 0.5: bits min 6.23 mean 6.43; rms 8.57 (3 seeds), out level 26
+[bts-all] grid stcf cf 8 A 1: bits min 13.27 mean 13.27; rms 14.68 (3 seeds), out level 26
+[bts-all] grid stcf cf 13 A 1: bits min 14.29 mean 14.47; rms 16.57 (3 seeds), out level 26
+[bts-all] grid stcf cf 20 A 1: bits min 7.29 mean 7.43; rms 9.56 (3 seeds), out level 26
+[bts-all] grid stcf cf 8 A 2: bits min 11.28 mean 11.28; rms 12.68 (3 seeds), out level 26
+[bts-all] grid stcf cf 13 A 2: bits min 15.38 mean 15.48; rms 17.56 (3 seeds), out level 26
+[bts-all] grid stcf cf 20 A 2: bits min 8.37 mean 8.52; rms 10.56 (3 seeds), out level 26
+[bts-all] grid 512 cf 8 A 0.5: bits min 16.12 mean 16.46; rms 18.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 13 A 0.5: bits min 11.41 mean 11.48; rms 13.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 20 A 0.5: bits min 4.23 mean 4.55; rms 6.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 8 A 1: bits min 17.44 mean 17.56; rms 19.25 (3 seeds), out level 24
+[bts-all] grid 512 cf 13 A 1: bits min 12.47 mean 12.57; rms 14.28 (3 seeds), out level 24
+[bts-all] grid 512 cf 20 A 1: bits min 5.24 mean 5.43; rms 7.25 (3 seeds), out level 24
+[bts-all] grid 512 cf 8 A 2: bits min 17.95 mean 18.32; rms 20.15 (3 seeds), out level 24
+[bts-all] grid 512 cf 13 A 2: bits min 13.38 mean 13.52; rms 15.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 20 A 2: bits min 6.17 mean 6.59; rms 8.27 (3 seeds), out level 24
+[bts-all] grid 256 cf 8 A 0.5: bits min 16.68 mean 16.97; rms 18.69 (3 seeds), out level 24
+[bts-all] grid 256 cf 13 A 0.5: bits min 12.01 mean 12.11; rms 13.78 (3 seeds), out level 24
+[bts-all] grid 256 cf 20 A 0.5: bits min 4.72 mean 5.02; rms 6.74 (3 seeds), out level 24
+[bts-all] grid 256 cf 8 A 1: bits min 17.90 mean 18.01; rms 19.64 (3 seeds), out level 24
+[bts-all] grid 256 cf 13 A 1: bits min 12.83 mean 13.00; rms 14.81 (3 seeds), out level 24
+[bts-all] grid 256 cf 20 A 1: bits min 5.97 mean 6.10; rms 7.70 (3 seeds), out level 24
+[bts-all] grid 256 cf 8 A 2: bits min 18.75 mean 19.03; rms 20.38 (3 seeds), out level 24
+[bts-all] grid 256 cf 13 A 2: bits min 14.02 mean 14.12; rms 15.73 (3 seeds), out level 24
+[bts-all] grid 256 cf 20 A 2: bits min 6.95 mean 7.11; rms 8.73 (3 seeds), out level 24
+[bts-all] grid 1 cf 8 A 0.5: bits min 18.86 mean 19.23; rms 19.47 (3 seeds), out level 14
+[bts-all] grid 1 cf 13 A 0.5: bits min 15.66 mean 15.94; rms 18.08 (3 seeds), out level 14
+[bts-all] grid 1 cf 20 A 0.5: bits min 9.48 mean 9.67; rms 11.82 (3 seeds), out level 14
+[bts-all] grid 1 cf 8 A 1: bits min 16.93 mean 17.49; rms 17.52 (3 seeds), out level 14
+[bts-all] grid 1 cf 13 A 1: bits min 17.10 mean 17.30; rms 19.30 (3 seeds), out level 14
+[bts-all] grid 1 cf 20 A 1: bits min 10.50 mean 10.76; rms 12.71 (3 seeds), out level 14
+[bts-all] grid 1 cf 8 A 2: bits min 14.95 mean 15.51; rms 15.51 (3 seeds), out level 14
+[bts-all] grid 1 cf 13 A 2: bits min 18.43 mean 18.65; rms 20.64 (3 seeds), out level 14
+[bts-all] grid 1 cf 20 A 2: bits min 10.94 mean 11.35; rms 13.38 (3 seeds), out level 14
+[bts-all] K=1: 0 graphs, 0 constant slots leased; stats GraphStats { captures: 0, replays: 0, invalidations: 0, capture_ms: 0.0 }
+[bts-all] K=8: 75 rotation keys; MemPlan context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 31.5 MB, keys 6452.5 MB, keygen 31.5 MB, secret 63.0 MB, encrypt 0.0 MB, decrypt 3.0 MB, ks.plans 4.0 MB, ks.regen_a 189.0 MB, ops 14.5 MB, rescale 253.5 MB, tables 5797.0 MB, bts.work 8064.0 MB, tails 945.0 MB, tables 827.5 MB, bts.work 4536.0 MB, tables 227.5 MB, bts.work 4032.0 MB, tables 1623.0 MB, bts.work 94.5 MB, bts.batch 252.0 MB, bench.cts 535.5 MB, total 36560.5 MB
+[bts-all] keygen 79 keys in 1.7 s
+[bts-all] K=8 setup 3.8 s; arena used 38.30 of 38.34 GB
+[bts-all] grid dense cf 8 A 0.5: bits min 6.39 mean 6.40; rms 12.51 (3 seeds), out level 32
+[bts-all] grid dense cf 13 A 0.5: bits min 1.42 mean 1.43; rms 7.51 (3 seeds), out level 32
+[bts-all] grid dense cf 20 A 0.5: bits min -5.60 mean -5.58; rms 0.52 (3 seeds), out level 32
+[bts-all] grid dense cf 8 A 1: bits min 7.41 mean 7.44; rms 13.52 (3 seeds), out level 32
+[bts-all] grid dense cf 13 A 1: bits min 2.41 mean 2.42; rms 8.52 (3 seeds), out level 32
+[bts-all] grid dense cf 20 A 1: bits min -4.59 mean -4.57; rms 1.51 (3 seeds), out level 32
+[bts-all] grid dense cf 8 A 2: bits min 8.41 mean 8.43; rms 14.52 (3 seeds), out level 32
+[bts-all] grid dense cf 13 A 2: bits min 3.42 mean 3.43; rms 9.51 (3 seeds), out level 32
+[bts-all] grid dense cf 20 A 2: bits min -3.56 mean -3.54; rms 2.52 (3 seeds), out level 32
+[bts-all] grid stcf cf 8 A 0.5: bits min 15.18 mean 15.19; rms 16.68 (3 seeds), out level 26
+[bts-all] grid stcf cf 13 A 0.5: bits min 13.52 mean 13.55; rms 15.57 (3 seeds), out level 26
+[bts-all] grid stcf cf 20 A 0.5: bits min 6.23 mean 6.43; rms 8.57 (3 seeds), out level 26
+[bts-all] grid stcf cf 8 A 1: bits min 13.27 mean 13.27; rms 14.68 (3 seeds), out level 26
+[bts-all] grid stcf cf 13 A 1: bits min 14.29 mean 14.47; rms 16.57 (3 seeds), out level 26
+[bts-all] grid stcf cf 20 A 1: bits min 7.29 mean 7.43; rms 9.56 (3 seeds), out level 26
+[bts-all] grid stcf cf 8 A 2: bits min 11.28 mean 11.28; rms 12.68 (3 seeds), out level 26
+[bts-all] grid stcf cf 13 A 2: bits min 15.38 mean 15.48; rms 17.56 (3 seeds), out level 26
+[bts-all] grid stcf cf 20 A 2: bits min 8.37 mean 8.52; rms 10.56 (3 seeds), out level 26
+[bts-all] grid 512 cf 8 A 0.5: bits min 16.12 mean 16.46; rms 18.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 13 A 0.5: bits min 11.41 mean 11.48; rms 13.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 20 A 0.5: bits min 4.23 mean 4.55; rms 6.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 8 A 1: bits min 17.44 mean 17.56; rms 19.25 (3 seeds), out level 24
+[bts-all] grid 512 cf 13 A 1: bits min 12.47 mean 12.57; rms 14.28 (3 seeds), out level 24
+[bts-all] grid 512 cf 20 A 1: bits min 5.24 mean 5.43; rms 7.25 (3 seeds), out level 24
+[bts-all] grid 512 cf 8 A 2: bits min 17.95 mean 18.32; rms 20.15 (3 seeds), out level 24
+[bts-all] grid 512 cf 13 A 2: bits min 13.38 mean 13.52; rms 15.24 (3 seeds), out level 24
+[bts-all] grid 512 cf 20 A 2: bits min 6.17 mean 6.59; rms 8.27 (3 seeds), out level 24
+[bts-all] grid 256 cf 8 A 0.5: bits min 16.68 mean 16.97; rms 18.69 (3 seeds), out level 24
+[bts-all] grid 256 cf 13 A 0.5: bits min 12.01 mean 12.11; rms 13.78 (3 seeds), out level 24
+[bts-all] grid 256 cf 20 A 0.5: bits min 4.72 mean 5.02; rms 6.74 (3 seeds), out level 24
+[bts-all] grid 256 cf 8 A 1: bits min 17.90 mean 18.01; rms 19.64 (3 seeds), out level 24
+[bts-all] grid 256 cf 13 A 1: bits min 12.83 mean 13.00; rms 14.81 (3 seeds), out level 24
+[bts-all] grid 256 cf 20 A 1: bits min 5.97 mean 6.10; rms 7.70 (3 seeds), out level 24
+[bts-all] grid 256 cf 8 A 2: bits min 18.75 mean 19.03; rms 20.38 (3 seeds), out level 24
+[bts-all] grid 256 cf 13 A 2: bits min 14.02 mean 14.12; rms 15.73 (3 seeds), out level 24
+[bts-all] grid 256 cf 20 A 2: bits min 6.95 mean 7.11; rms 8.73 (3 seeds), out level 24
+[bts-all] grid 1 cf 8 A 0.5: bits min 18.86 mean 19.23; rms 19.47 (3 seeds), out level 14
+[bts-all] grid 1 cf 13 A 0.5: bits min 15.66 mean 15.94; rms 18.08 (3 seeds), out level 14
+[bts-all] grid 1 cf 20 A 0.5: bits min 9.48 mean 9.67; rms 11.82 (3 seeds), out level 14
+[bts-all] grid 1 cf 8 A 1: bits min 16.93 mean 17.49; rms 17.52 (3 seeds), out level 14
+[bts-all] grid 1 cf 13 A 1: bits min 17.10 mean 17.30; rms 19.30 (3 seeds), out level 14
+[bts-all] grid 1 cf 20 A 1: bits min 10.50 mean 10.76; rms 12.71 (3 seeds), out level 14
+[bts-all] grid 1 cf 8 A 2: bits min 14.95 mean 15.51; rms 15.51 (3 seeds), out level 14
+[bts-all] grid 1 cf 13 A 2: bits min 18.43 mean 18.65; rms 20.64 (3 seeds), out level 14
+[bts-all] grid 1 cf 20 A 2: bits min 10.94 mean 11.35; rms 13.38 (3 seeds), out level 14
+[bts-all] K=8: 0 graphs, 0 constant slots leased; stats GraphStats { captures: 0, replays: 0, invalidations: 0, capture_ms: 0.0 }
+
+[bts-all] MemPlan prediction vs carved (bytes), per (route, K):
+| route | K | section | predicted | carved | |
+|---|---|---|---|---|---|
+| dense+stcf | 1 | tables | 6077647872 | 6077647872 | == |
+| dense+stcf | 1 | bts.work | 1056964608 | 1056964608 | == |
+| sparse | 1 | tails | 990904576 | 990904576 | == |
+| 512 | 1 | tables | 867400704 | 867400704 | == |
+| 512 | 1 | bts.work | 594542592 | 594542592 | == |
+| 256 | 1 | tables | 238228992 | 238228992 | == |
+| 256 | 1 | bts.work | 528482304 | 528482304 | == |
+| 1 | 1 | tables | 553152512 | 553152512 | == |
+| 1 | 1 | bts.work | 99090432 | 99090432 | == |
+| all | 1 | bts.batch | 33030144 | 33030144 | == |
+| dense+stcf | 8 | tables | 6078631424 | 6078631424 | == |
+| dense+stcf | 8 | bts.work | 8455716864 | 8455716864 | == |
+| sparse | 8 | tails | 990904576 | 990904576 | == |
+| 512 | 8 | tables | 867731200 | 867731200 | == |
+| 512 | 8 | bts.work | 4756340736 | 4756340736 | == |
+| 256 | 8 | tables | 238527232 | 238527232 | == |
+| 256 | 8 | bts.work | 4227858432 | 4227858432 | == |
+| 1 | 8 | tables | 1701879296 | 1701879296 | == |
+| 1 | 8 | bts.work | 99090432 | 99090432 | == |
+| all | 8 | bts.batch | 264241152 | 264241152 | == |
+
+[bts-all] route x K (device ms per ciphertext; median of 20 after 2 warm-ups):
+| route | K | eager | batched (gather) | graph replay | gather+scatter ms/call | capture+instantiate host ms | mismatches | old K=1 |
+|---|---|---|---|---|---|---|---|---|
+[bts-all] verdict: mismatches 0, MemPlan differences 0

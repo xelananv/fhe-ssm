@@ -46,19 +46,26 @@ def n_banned(history, n=4):
 def main():
     rng = np.random.default_rng(20260923)
     V = 2000
-    cases, fired, mismatches = 0, 0, []
+    cases, fired, ban_cases, mismatches = 0, 0, 0, []
     for trial in range(400):
         penalty = float(rng.choice([1.0, 1.1, 1.3, 1.5]))
         ngram = int(rng.choice([0, 2, 3, 4, 5]))
         window = int(rng.choice([8, 64, 256]))
         history = planted_history(rng, V) if trial % 2 else list(rng.integers(0, V, size=30))
         logits = rng.normal(0, 4, size=V)            # both signs: exercises the CTRL rule
+        # every third case bans the raw argmax (the pod banned end-of-text), so
+        # the ban provably changes the pick when it is applied
+        ban = (int(np.argmax(logits)),) if trial % 3 == 0 else ()
+        if ban:
+            ban_cases += 1
 
         ours = Sampler(temperature=0.0, repeat_penalty=penalty, repeat_last_n=window,
-                       no_repeat_ngram=ngram, torch=torch).pick(
+                       no_repeat_ngram=ngram, torch=torch, ban=ban).pick(
             torch.from_numpy(logits), [int(x) for x in history], torch)
         theirs = decode_policy.pick(logits, [int(x) for x in history], policy="norepeat",
-                                    penalty=penalty, window=window, ngram=ngram, ban=())
+                                    penalty=penalty, window=window, ngram=ngram, ban=ban)
+        if ban and ours == ban[0]:
+            mismatches.append({"trial": trial, "banned token picked": ours})
         cases += 1
         if n_banned(list(history), ngram):
             fired += 1
@@ -74,12 +81,13 @@ def main():
     d_theirs = decode_policy.pick(lg, [int(x) for x in hist], policy="norepeat")
     print(f"cases           : {cases}")
     print(f"ngram ban fired : {fired}  (a 0 here would make the test vacuous)")
+    print(f"ban cases       : {ban_cases}")
     print(f"mismatches      : {len(mismatches)}")
     print(f"pod defaults    : ours={d_ours} theirs={d_theirs} "
           f"(penalty 1.3, window 64, ngram 4)")
     for m in mismatches[:5]:
         print("  MISMATCH", m)
-    ok = not mismatches and fired > 0 and d_ours == d_theirs
+    ok = not mismatches and fired > 0 and ban_cases > 0 and d_ours == d_theirs
     print("PASS" if ok else "FAIL")
     return 0 if ok else 1
 

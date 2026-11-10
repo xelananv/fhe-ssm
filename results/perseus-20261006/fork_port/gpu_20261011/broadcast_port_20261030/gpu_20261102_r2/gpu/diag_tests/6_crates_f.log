@@ -1,0 +1,30 @@
+warning: unused import: `PrimeConst`
+ --> crates/pc-kernels/src/ring.rs:3:55
+  |
+3 | use crate::args::{BconvArgs, EwArgs, Launch, NttArgs, PrimeConst};
+  |                                                       ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::ffi::c_void`
+ --> crates/pc-kernels/src/ring.rs:5:5
+  |
+5 | use std::ffi::c_void;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: `pc-kernels` (lib) generated 2 warnings (run `cargo fix --lib -p pc-kernels` to apply 2 suggestions)
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.06s
+     Running tests/diag_gen_gpu.rs (target/release/deps/diag_gen_gpu-7bcb9c16081f46a7)
+
+running 1 test
+[diag_gen] (f) B = 1, 18 limbs: encoder 0.0845 ms per plaintext; fused sum 0.0922 ms per term (128 terms, 10 reps, CUDA events on the compute lane)
+[diag_gen] (f) B = 1, 10 limbs: encoder 0.0779 ms per plaintext; fused sum 0.0821 ms per term (128 terms, 10 reps, CUDA events on the compute lane)
+[diag_gen] (f) B = 32, 18 limbs: encoder 0.0438 ms per plaintext; fused sum 0.0557 ms per term (128 terms, 10 reps, CUDA events on the compute lane)
+[diag_gen] (f) B = 32, 10 limbs: encoder 0.0383 ms per plaintext; fused sum 0.0440 ms per term (128 terms, 10 reps, CUDA events on the compute lane)
+[diag_gen] (f) B = 128, 18 limbs: encoder 0.0433 ms per plaintext; fused sum 0.0543 ms per term (128 terms, 10 reps, CUDA events on the compute lane)
+[diag_gen] (f) B = 128, 10 limbs: encoder 0.0388 ms per plaintext; fused sum 0.0443 ms per term (128 terms, 10 reps, CUDA events on the compute lane)
+[diag_gen] (f) for scale only (another binary, another card): the fork's device encoder on an A6000, 20 limbs, 0.119 ms (B = 32), 0.083 ms (B = 128) per plaintext
+test f_device_ms_per_plaintext ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 1.42s
+

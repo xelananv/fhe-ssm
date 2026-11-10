@@ -1,0 +1,41 @@
+[pod3 2026-11-04T19:46:14Z] start: f8138f78 RWKV-7 prefill: chunk of T tokens per pass (token l on lane l), sequential WKV scan in the pass, decode/prefill programs in one session; levers PAIR=1 + fused EvalMod (LEVERS=best), CF table (CFTABLE=1); CPU: 31 passed, 2 skipped; planner T=32: 62 refreshes/pass block 0 vs 31/token decode; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W, 38 MiB
+[pod3 2026-11-04T19:47:06Z] 0.1b capture rc=0 52 s
+[pod3 2026-11-04T19:47:24Z] 0.1b plan rc=0 18 s
+[pod3 2026-11-04T19:55:53Z] 0.1b run P1 rc=0 509 s
+[pod3 2026-11-04T20:04:38Z] 0.1b run P2 rc=0 525 s
+[pod3 2026-11-04T20:17:22Z] 0.1b run P3 rc=0 764 s
+[pod3 2026-11-04T20:19:23Z] 0.4b cal4096 rc=0 121 s
+[pod3 2026-11-04T20:21:12Z] 0.4b exact rc=0 109 s
+[pod3 2026-11-04T20:25:54Z] 0.4b mixed rc=0 282 s
+[pod3 2026-11-04T20:28:39Z] 0.4b capture rc=0 165 s
+[pod3 2026-11-04T20:29:16Z] 0.4b plan rc=0 37 s
+[pod3 2026-11-04T20:29:21Z] 0.4b crosscheck rc=0 5 s
+[pod3 2026-11-04T20:30:38Z] 0.4b run P1 rc=1 77 s
+[pod3 2026-11-04T20:31:47Z] 0.4b run P2 rc=1 69 s
+[pod3 2026-11-04T20:32:55Z] 0.4b run P3 rc=1 68 s
+[pod3 2026-11-04T20:33:14Z] 0.1b pfcheck rc=0 19 s
+[pod3 2026-11-04T21:00:33Z] 0.1b pf rc=1 1639 s
+[pod3 2026-11-04T21:00:37Z] poly ref 0.1b P1 rc=0
+[pod3 2026-11-04T21:00:42Z] poly ref 0.1b P2 rc=0
+[pod3 2026-11-04T21:00:46Z] poly ref 0.1b P3 rc=0
+[pod3 2026-11-04T21:00:53Z] poly ref 0.4b P1 rc=0
+[pod3 2026-11-04T21:01:01Z] poly ref 0.4b P2 rc=0
+[pod3 2026-11-04T21:01:08Z] poly ref 0.4b P3 rc=0
+[pod3 2026-11-04T21:01:08Z] DONE
+[pod3 2026-11-04T21:19:20Z] 0.4b-s160 run P1 rc=0 1086 s
+[pod3 2026-11-04T21:37:57Z] 0.4b-s160 run P2 rc=0 1117 s
+[pod3 2026-11-04T22:04:42Z] 0.4b-s160 run P3 rc=0 1605 s
+[pod3 2026-11-04T22:04:42Z] DONE2
+[pod3 2026-11-04T22:04:48Z] batch sheet: f3eed49e RWKV-7 batched decode: K <= 32 conversations per pass (conversation c o
+[pod3 2026-11-04T22:04:48Z] p4 build rc=1 0 s
+[pod3 2026-11-04T22:04:48Z] DONE3
+[pod3 2026-11-04T22:05:18Z] pf sheet: 87fe1ab2 RWKV-7 prefill capture: Genesis 1:1-8 token 17 (',') drove block 7 att.
+[pod3 2026-11-04T22:05:18Z] p5 build rc=1 0 s
+[pod3 2026-11-04T22:05:18Z] DONE4
+[pod3 2026-11-04T22:06:54Z] batch+pf sheet: 87fe1ab2 RWKV-7 prefill capture: Genesis 1:1-8 token 17 (','
+[pod3 2026-11-04T22:07:15Z] p5 build rc=0 21 s
+[pod3 2026-11-04T22:07:27Z] p4 bcheck rc=0 12 s
+[pod3 2026-11-04T22:08:43Z] b smoke K4 1blk rc=0 76 s
+[pod3 2026-11-04T22:22:55Z] stopped pod3_batch_pf.sh (author: drop the best/prefill steps; they are re-measured on the final norm-fix code); its b K32 run (pid 49261) continues
+[pod3 2026-11-04T23:21:56Z] b K32 pool1024 stc64 rc=0 3455 s
+[pod3 2026-11-04T23:21:56Z] DONE6

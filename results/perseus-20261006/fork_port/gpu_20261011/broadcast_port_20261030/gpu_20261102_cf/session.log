@@ -1,0 +1,2 @@
+[run_gpu 16:20:28] build: PERSEUS_CORE_ARCH=120 PC_NVCC_JOBS=8 CUDA_HOME=/usr/local/cuda-13.2
+[run_gpu 16:20:54] build: done in 26 s; commit=50666f6f dirty=0 pc_so=5bbae5e8d2c91ef7 nvcc=13.2 arch=120 load=0.64 1.87 2.04

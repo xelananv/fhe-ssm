@@ -1,0 +1,9 @@
+[pub 2026-11-02T20:19:30Z] start: code 50666f6f, _pc 5bbae5e8d2c91ef7, load 0.15 0.14 0.10
+[pub 2026-11-02T20:21:23Z] keyspec: rc=0 in 113 s; [planned] prepared (device): 25 programs from token 1's stream, 0 dynamic steps, 73 registers, stream static, 48.7 s
+[pub 2026-11-02T20:21:34Z] keygen: rc=0 in 11 s; {"keygen": {"bytes": 7680224518.0, "ccmm_bytes": 0.0, "ccmm_s": 5.22e-07, "keys": 89.0, "ksk_bytes": 7633018800.0, "ksk_s": 10.336733354, "other_bytes": 28311552.0, "pcmm_bytes": 18874368.0, "pcmm_s": 0.30138579, "pk_s":
+[pub 2026-11-02T20:34:41Z] pub: rc=0 in 787 s; {"pass": 57, "timed": true, "config": "gen.57", "config_id": 6, "describe": "conv carry x64", "seconds": 8.857, "fenced": false, "issue_s": 0.107, "served": "rrrrrrrrrrrrrrrrrrrrrrrrr", "restaged": false, "staged": 0, "s
+[pub 2026-11-02T20:34:41Z] key directories deleted (keys_cfg-best-em, the morning's keys_cfg-pcmm24)
+[pub 2026-11-02T20:35:39Z] cap148: rc=0 in 58 s; [run_gpu 20:35:39] capture best: done in 58 s
+[pub 2026-11-02T20:35:44Z] plan148: rc=0 in 5 s; [run_gpu 20:35:44] plan best: /root/out_148/gpu/bootstrap_placements/plan_best
+[pub 2026-11-02T21:03:48Z] free148: rc=0 in 1684 s; {"pos": 147, "timed": true, "seconds": 8.936, "fenced": false, "issue_s": 0.047, "served": "rrrrrrrrrrrrrrrrrrrrrrrrr", "out_level": 32, "refreshes_planned": 195, "counters": {"runs": 25, "host_us": 1669.0970000009984, "
+[pub 2026-11-02T21:03:48Z] done;

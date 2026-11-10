@@ -1,0 +1,2 @@
+{"config": "exact", "wt_ppl": 13.752978840835087, "lambada_acc": 0.5849019988356298, "lambada_ppl": 6.941349491532349, "seconds": 97.7}
+[pod3 2026-11-04T20:21:12Z] 0.4b exact rc=0 109 s

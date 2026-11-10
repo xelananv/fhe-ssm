@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 698, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 561, in main
+    return main_batch(a)
+           ^^^^^^^^^^^^^
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 308, in main_batch
+    run.setup(public)
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 132, in setup
+    super().setup(rows, argmax)
+  File "/root/perseus-rwkv7/python/perseus/impl/driver.py", line 702, in setup
+    self.sess = self.open_session(kw)
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/perseus-rwkv7/python/perseus/impl/driver.py", line 736, in open_session
+    return _pc.Session(self.cfg, self.keys, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: memory: ct_pool = 33822867456: plan needs 103450379264 B, device has 101389893632 B free (context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 32256.0 MB, ks.plans 4.0 MB, keys 8519.8 MB, keygen 31.5 MB, ks.groups 0.0 MB, ks.regen_a 189.0 MB, ops 759.1 MB, rescale 253.5 MB, pt_store 3334.0 MB, encode 3.5 MB, encrypt 0.0 MB, decrypt 9.0 MB, keys.secret 31.5 MB, bts.dense 4906.7 MB, bts.stc_first 18091.4 MB, bts.sparse 0.0 MB, bts.work 4032.0 MB, replay.slab 4221.0 MB, replay.regs 11773.0 MB, replay.groups 3.9 MB, pcmm 1343.6 MB, pcmm.weights 2082.0 MB, pcmm.cts 252.0 MB, replay.side 2709.0 MB, ops 759.1 MB, rescale 253.5 MB, slack 256.0 MB, total 98658.0 MB)

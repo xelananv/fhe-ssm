@@ -1,0 +1,9 @@
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 25 block plans with the capture's Config; plan_rot_steps.json: 12 steps
+  planned in 3 s: 25 stages, 459 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:18@26 block_1:19@26 block_2:19@26 block_3:19@26 block_4:19@26 block_5:19@26 block_6:19@26 block_7:19@26 block_8:19@26 block_9:19@26 block_10:19@26 block_11:19@26 block_12:19@26 block_13:19@26 block_14:19@26 block_15:19@26 block_16:19@26 block_17:19@26 block_18:19@26 block_19:19@26 block_20:19@26 block_21:19@26 block_22:19@26 block_23:19@26 block_24:4@32
+  compile check (schedule siblings):
+    TOTAL refresh sites 195 (placed 98, fired hints 49, deliberate 48), PCMM finishes 120; launches 10337, refresh launches 194, refresh pairs 0; level richer 0; check errors 0; 1.2 s
+    ROUTES (route@landing level: sites) dense_stcf@26:95 s512_sb@24:100
+make_plan: /root/out_148/gpu/bootstrap_placements/plan_best
+[run_gpu 20:35:44] plan best: /root/out_148/gpu/bootstrap_placements/plan_best

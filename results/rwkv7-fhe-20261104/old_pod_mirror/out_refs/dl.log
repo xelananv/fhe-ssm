@@ -1,0 +1,4 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+dl RWKV-x070-World-1.5B-v3-20250127-ctx4096.pth rc=0
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+dl RWKV-x070-World-2.9B-v3-20250211-ctx4096.pth rc=0

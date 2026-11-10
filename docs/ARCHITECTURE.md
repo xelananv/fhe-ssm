@@ -5,7 +5,8 @@ the exact plaintext recurrent reference [spec_decode/plain_recurrent.py](../spec
 of the trainer's forward pass, used as the reference in every fidelity comparison), the GPU server
 [hpc_gpu_port/experimental/gpu_real_model_x.cu](../hpc_gpu_port/experimental/gpu_real_model_x.cu) and its CPU twin
 [hpc_gpu_port/experimental/cpu_real_model_x.cpp](../hpc_gpu_port/experimental/cpu_real_model_x.cpp), and the client
-[hpc_gpu_port/mac_fhe_client.cpp](../hpc_gpu_port/mac_fhe_client.cpp) / [ml-eval/fhe_client.py](../ml-eval/fhe_client.py).
+[hpc_gpu_port/mac_fhe_client.cpp](../hpc_gpu_port/mac_fhe_client.cpp) / [ml-eval/fhe_client.py](../ml-eval/fhe_client.py). Sections 5 and 6 are read from the
+two ports on the fork [github.com/xelananv/perseus](https://github.com/xelananv/perseus) (branches `fhe-ssm-speedrun` and `fhe-ssm-rwkv7-any`).
 
 ## 1. The model (tag `pbd430a`)
 
@@ -43,7 +44,7 @@ range from 0.9088 to 0.9918, i.e. time constants of 11 to 121 tokens ([results/d
 The model is closer to RWKV / Griffin-style recurrences than to Mamba: the decay is fixed per channel (not input-selective)
 and the state width per channel is 1.
 
-## 2. The encrypted circuit
+## 2. The encrypted circuit of the first run (FIDESlib, ring 2^17)
 
 **Parameters.** CKKS in FIDESlib (GPU) / OpenFHE (CPU twin), ring dimension N = 2^17, 65,536 slots, OpenFHE's
 `HEStd_128_classic` parameter set with a uniform ternary secret; multiplicative depth 41 (`--extra-depth 12` above the block chain); the modulus chain measured at 3,319 bits of Q·P against the 2^17 ceiling of 3,523 ([docs/SECURITY.md](SECURITY.md)).
@@ -74,7 +75,7 @@ test keys only) measures the overflow of every bootstrap input ([results/dense-d
 **Two GPUs.** The store and the ciphertexts are split across two cards (`--devices 0,1`); peer copies go through NCCL
 (`FIDESLIB_USE_MEMCPY_PEER=0 NCCL_P2P_DISABLE=1`) because direct peer DMA returned garbage on the PCIe box used.
 
-## 3. The serving protocol (one tick)
+## 3. The serving protocol of the first run (one tick)
 
 ```
 client                                              server (holds: public key, eval keys, weights, the encrypted state)
@@ -115,3 +116,118 @@ tick still yields 64 exact FHE-vs-plaintext comparisons ([spec_decode/fidelity_t
 - **Lanes** — because one bootstrap at ring 2^17 costs the same for 1 lane or 64; 64 lanes are the throughput.
 - **Client-side head and decoding** — the head is 51M parameters of plaintext arithmetic the client can afford, and it
   keeps the token choice (and any sampling rule) out of the circuit.
+
+## 5. The 405M model on the Perseus runtime (November 2026)
+
+The port is `python/perseus/examples/fhe_ssm` on the branch `fhe-ssm-speedrun` of [github.com/xelananv/perseus](https://github.com/xelananv/perseus),
+a fork of Perseus ([gladia-research-group/perseus](https://github.com/gladia-research-group/perseus), [arXiv 2611.04488](https://arxiv.org/abs/2611.04488)).
+The model is written on Perseus's leaf-primitive operations; the box procedure is `tools/fhe_ssm/run_gpu.sh`, and the changes
+to upstream files are listed in `tools/fhe_ssm/UPSTREAM_CHANGES.md` on that branch. The weights, seeds and config are the same
+files as in section 1.
+
+**Parameters.** Ring 2^16 (32,768 complex slots), the `n32` chain: 54 + 9 primes with composite scaling of
+degree 2, Q·P 1,705.34 bits ([SECURITY.md](SECURITY.md)).
+
+**Packing: the filled layout.** A complex slot carries two real values, one on each axis. 32,768 complex slots therefore hold
+65,536 reals = 64 conversations × 1,024 channels, and one bootstrap refreshes all 64 conversations. The first run needed ring
+2^17 to reach the same 64 lanes with one real per slot.
+
+**Capture, plan, compile, replay.** A step is not scheduled by hand:
+
+1. **Capture.** The model runs one step on a CPU twin (a numpy stand-in with the runtime's level rules) that records the
+   operation graph of every stage (24 blocks and a tail).
+2. **Plan.** A planner places the refreshes (bootstraps) on that graph: it chooses where each ciphertext is refreshed so that
+   every product has the levels it needs, minimising their number (`make_plan.sh`, one pass over every stage).
+3. **Compile.** `Program.compile` compiles the recorded stream against the plan; the stream is checked to be static across
+   probe steps (no dynamic step, the same plaintexts).
+4. **Replay.** The session uploads the weights, stages every plaintext once, captures the compiled programs as CUDA graphs on
+   an untimed warm-up step, and replays them every step. The carried state is two registers per block (`cache.s`,
+   `cache.n_prev`), 48 in all, returned to their canonical level each step.
+
+**Linears.** Two methods, a flag each:
+- *Diagonals*: the input is multiplied by every rotated diagonal of the weight matrix (baby-step giant-step, 32 × 32, 1,024
+  products per 1,024-wide matrix).
+- *PCMM* (plaintext–ciphertext matrix multiplication): the weights are packed into plaintext matrices at 24-bit precision
+  (`--pcmm-wbits 24`) and the product finishes with a correction-factor rescale (`--pcmm-cf 8`). On one build it runs a pass
+  2.27× faster than the diagonals, at a relErrRms of 0.002–0.005 against 1–2e-4 ([RESULTS.md](RESULTS.md) §5).
+
+**The norm.** The RMSNorm's Newton iteration runs at depth 2 per site (`--newton-form depth2 --newton-sites per-site`), and the norm statistics are packed into
+the two halves of one ciphertext (`--pack-stats halves`).
+
+**A pass in any lane configuration.** With `--pass-kernels on`, every lane-slot of a pass is either a conversation's next step
+or a position of a document being read, chosen per pass by plaintext masks that are re-staged on the host. One recorded stream
+serves every configuration: reading 64 positions of one document, 64 conversations generating, or a mix.
+
+**Where a pass goes.** In the fastest configuration a fenced pass is 25 stages: 24 blocks at 0.358 s mean and a tail of
+0.067 s, 8.667 s in all.
+
+**Keys.** `--keyspec` derives the key request from the plan's needs (rotation steps, encapsulation, PCMM keys); `--keygen`
+plays the client role: it samples a secret and writes the public and evaluation keys as a bundle, with `client_secret.bin`
+beside it. A session opened from the bundle refuses a secret (`has_secret: false`) and decrypts nothing itself; `--keys inproc`
+lets the session sample and hold the secret, for timing runs only.
+
+## 6. RWKV-7 on the Perseus runtime
+
+The port is `python/perseus/examples/rwkv7` on the branch `fhe-ssm-rwkv7-any` of the same fork; the box procedure is
+`tools/rwkv7/run_box.sh`, and `tools/rwkv7/size_pipeline.sh` takes any `RWKV-x070-World-*` checkpoint through calibration,
+fitting, the scans and the gate to the encrypted runs. The checkpoints are the public `RWKV-x070-World-0.1B-v2.8` (12 blocks,
+width 768) and `RWKV-x070-World-0.4B-v2.9` (24 blocks, width 1,024).
+
+**The stage interface** is one ciphertext `z = h + i·v_first`: the residual stream on the real axis and layer 0's value (which
+every later block's value residual reads) on the imaginary axis. A block reads `2h = z + conj z` and `2·v_first = i(conj z − z)`;
+a conjugation and a multiplication by `i` cost no level.
+
+**The layout.** Channel `c` of lane `l` sits at slot `c·t + l`, with 1,024 channels (768 padded to 1,024 at 0.1B) and t = 32
+lanes. A 64 × 64 head state lives in two ciphertexts. A vector of width ≤ 1,024 is one ciphertext at both sizes, so the cost
+grows with the block count: 2.0× from 12 to 24 blocks at the same lever settings (two points, not a law).
+
+**The polynomial sites.** Every non-polynomial operation of RWKV-7 is replaced:
+
+| site | what it computes | how |
+|---|---|---|
+| `att.w_tanh`, `att.decay` | the input-dependent decay `exp(−e^−0.5 σ(z))` after a tanh | Chebyshev series, the decay as one polynomial |
+| `att.a_sigmoid`, `att.g_sigmoid`, `att.v_sigmoid` | the in-context learning rate, the output gate, the value residual's gate | Chebyshev series |
+| `ffn.relu2` | the channel mix's squared ReLU | Chebyshev series |
+| `ln1.rsqrt`, `ln2.rsqrt`, `att.gn_rsqrt`, `att.kk_rsqrt` | the inverse square roots of the LayerNorms, the GroupNorm and the key normalisation | Newton iteration from a constant seed (two levels per step) |
+
+A Chebyshev series of degree d costs about 2√d ciphertext products and ⌈log₂ d⌉ + 1 levels (baby-step giant-step).
+
+**The intervals.** A ciphertext cannot be clamped to an interval, and a high-degree Chebyshev series explodes just outside its
+interval (as `cosh(d·acosh|t|)`, about 10^13 at |t| = 1.03 and d = 127). So each site's interval is its observed range on
+calibration text widened by 50 % (ReLU²: 20 %), at degree ≤ 255, and the inverse square roots use a constant seed that
+converges for every input below three times the widened top. Position 0 of a text leaves several intervals; every prompt
+therefore starts with the public separator `"\n\n"`, whose state is computed in plaintext and encrypted, and the encrypted
+decode starts at position 1.
+
+**The gate.** Before any encrypted run, the polynomial model is evaluated in plaintext, unclamped, over the whole
+WikiText-103 test and LAMBADA: perplexity within 0.5 % of the exact model, LAMBADA within 0.5 points, top-1 agreement with
+exact ≥ 98 %, and no non-finite value anywhere. 0.1B and 0.4B pass; 1.5B fails ([RESULTS.md](RESULTS.md) §7.5).
+
+**The block**, per token: LayerNorm (rotate-and-sum over the channels, Newton); PCMM on the pair `[x, x_prev]` with the token
+shift folded into the matrices; the decay, gates and learning rate through their sites; the state update
+`S ← S⊙w + (−S⊙κ̂)⊗(κ̂⊙a) + v⊗k̃`; the readout `y = S r`; GroupNorm; the output projection; the channel mix (LayerNorm, PCMM,
+ReLU², PCMM). The carried ciphertexts (the two state halves and the two token-shift inputs, four per block) are refreshed at
+block end every token, so every token runs the same op stream.
+
+**Batched decode.** Conversation c's current token sits on lane c, so every token-side operation serves K ≤ 32 conversations
+for the price of one. Each conversation keeps its own state ciphertexts per block; the token-shift carries are lane-form, one
+ciphertext for all K. Because the token-side ciphertexts are shared and a refresh mixes all slots, one conversation's
+out-of-interval value reaches every lane ([RESULTS.md](RESULTS.md) §7.5).
+
+**The filled state.** A head state's two value groups share one ciphertext, `S = S_0 + i·S_1`. Every operand on the update side
+is indexed by the key dimension, so it is real and the same for both groups: one product serves both. The readout splits the
+two with one conjugation. Half the state ciphertexts, carry refreshes and state products; three carried ciphertexts per block
+instead of four.
+
+**Prefill.** A pass puts token l of a 32-token chunk on lane l instead of copying one token over the lanes. The linears,
+polynomial sites and norms run unchanged (their reductions stay inside a lane); the token shift becomes a rotation by one lane,
+and the state update runs as a sequential scan inside the pass on the decode step's own state layout. A pass therefore ends
+with exactly the state a decode step carries, and decoding continues on the same registers.
+
+**The serve loop.** One session holds four program sets: decode, prefill, the K-lane batched pass and a join. An arrival is
+read alone while the batch waits, then joins a free lane: its state registers are handed over (no server arithmetic), and the
+join program writes its token-shift carries into lane c with plaintext masks, one refresh per carry. A finished conversation
+leaves: its lane returns to an encryption of the public prefix state.
+
+**The client's part.** The server's last step is the last block's output, masked to the live channels and refreshed once. The
+client decrypts it, applies `ln_out` (a LayerNorm) and the head in plaintext and picks the token.

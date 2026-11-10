@@ -1,0 +1,2 @@
+{"config": "poly:all", "wt_ppl": 14.118384680392307, "top1_agree": 0.9130134670157469, "kl_mean": 0.030177289555438323, "lambada_acc": 0.5767514069474092, "lambada_ppl": 7.388298653202177, "outside_frac_max": 0.0004833872762932789, "seconds": 290.2}
+[pod3 2026-11-05T00:21:15Z] wide 0.4b clamp rc=0 299 s

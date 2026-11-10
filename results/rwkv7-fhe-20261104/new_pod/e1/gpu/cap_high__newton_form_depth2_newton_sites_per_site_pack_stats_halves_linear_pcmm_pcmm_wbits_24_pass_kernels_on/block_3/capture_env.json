@@ -1,0 +1,43 @@
+{
+  "env": {
+    "CHAIN": null,
+    "LOGN": null,
+    "AUTO_BTS_LEVEL": "44",
+    "BTS_ITERATIONS": null,
+    "CKKS_COMPLEX": null,
+    "GPT2_PACKING": null,
+    "GPT2_CACHE": null,
+    "GPT2_FOLD_LN1": null,
+    "GPT2_FOLD_LN2": null,
+    "GPT2_FOLD_LNF": null,
+    "CACHE_READ_LEVEL_K": null,
+    "CACHE_READ_LEVEL_V": null,
+    "FHE_LMHEAD_CAP": null,
+    "SPARSE_BTS_SLOTS": null,
+    "SPARSE_AUTO": null,
+    "FUSED_SM_DEN": null,
+    "FUSED_LN_VAR": null,
+    "CORRECTION_FACTOR": null,
+    "FHE_PT_COEFF_ENCODE": null,
+    "SM_DEN_RECIP": null,
+    "GELU_FOLD": null,
+    "LN_CHEB": null,
+    "SM_GS_FIRST": null,
+    "SM_PERIODIC": null,
+    "SM_FOLD": null,
+    "KV_LANES": null,
+    "IMPL_SCOPED_NAMES": null,
+    "SM_HRS_PACK": null,
+    "CUTMAX_PAIR": null,
+    "IMPL_DEAD_OPS": null,
+    "LADDER_RADIX_BITS": "0",
+    "CHEB_ALIGN": null,
+    "SM_CHEB_GS": null,
+    "LLAMA_GQA": null
+  },
+  "session": {
+    "level_limit": 44,
+    "slots": 32768,
+    "logN": 16
+  }
+}

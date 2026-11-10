@@ -1,0 +1,33 @@
+{
+  "generated_by": "figures/make_figures.py",
+  "algorithm": "sha256",
+  "records": {
+    "results/dense-demo-s31/pod_longrun_20260919/plots_data/LONG_per_tick.csv": "f06c0c05cc1a01f0431527f4e68e35728225f704d95486a6aca6433e9f7d6064",
+    "results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_148/run_best_free148/record.json": "b470af4101220363b8a1abf77c220d1a7d5ef3fadaa8ef28ac144ab120ba6002",
+    "results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_cfg-best-em_own/record.json": "769a0bc040bd3a62c2d21e4508324f37a0d8abcf45f77cdf67910281f827627b",
+    "results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_pub/run_cfg-best-em_pub/record.json": "89bddedce1c94b9772a0a647ee64027e401aeddc0aa64b314a92eabf21e23ba9",
+    "results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/runs_d/anneal_out/decay_stats.txt": "d26aaf75ea797d3f360a100390472f7f51b3ca798820cdb933d75649068b6989",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/batch_k32_best_pob2.jsonl": "cdb6bdf0e324645058d7753656c5aa155c2c362cdfd9a15430b72e476933184c",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/batch_k32_best_pob2_lean.jsonl": "97f896bf34a817a8fedd39f6e85b3fe5c6d906103657bc47bce135b4c69e7a2b",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/batch_k32_best_pob2_shed.jsonl": "daa9f3cfc80e383f2ff93ff72a0d8d6f5320e01c0ad5047ee33b2c0dc5d07137",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/batch_k32_filled_best_pob2.jsonl": "022e8c2008887531d51bdf1528532db063c54a9ec9126757cc57fa742b05f026",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_best_P1.jsonl": "16e4fb7210bb9722021c52dd8b5a8dded513bd405cfda6ffc73e5a0a3c8a77f2",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_best_P2.jsonl": "96ce14591a5816f29de2b36119064dc2aad3a81f93e6f4b9a7a1de5360ea744d",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_best_P3.jsonl": "2eb209eed6d6faa5815c2e53bdc4880a544e4c69ee23346cff36b845d0cb8d4a",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_best_free148.jsonl": "c31491442f4265f9340a2b1afbd6f1112e599cedccda1e0e627589b43c3aa0eb",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_pf32_best_L1.jsonl": "e06d63cb61221506337d949e4c0c8b96b5de51521472e7ba8d672660682eda9f",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_pf32_best_L25.jsonl": "8cf55f95f77794454b17d803e93185a591df3dbc625ae2f8de9b0124ca020687",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_pf32_best_L5.jsonl": "2e9d84ac7abfeb5f84ec4c52490c93ecc9b3e78c4fa5e6a6ed33119778d3b11a",
+    "results/rwkv7-fhe-20261104/new_pod/f2_01b/run_pf32_best_L9.jsonl": "6c5a68980356ac10133fff4bf9532b60fc7661d66122e647538d6a7a46bf7a6b",
+    "results/rwkv7-fhe-20261104/new_pod/f2_04b/batch_k32_filled_best_pob2.jsonl": "e5fb6dac4f858f28ee886b5229d4924918236b5905d37ddd5d67be1a6e018814",
+    "results/rwkv7-fhe-20261104/new_pod/f2_04b/run_pf32_best_L1.jsonl": "2911b26ef95f2e131d0d45b637236c4e9386594dd4ef2fd305354fb2d88d6350",
+    "results/rwkv7-fhe-20261104/new_pod/f2_04b/run_pf32_best_L5.jsonl": "260b9514a8d1440bacc034ba63457749e46dd666512bbd2178be0dfa9f176200",
+    "results/rwkv7-fhe-20261104/new_pod/gate/0.1b/eval_final.jsonl": "181b622c9b4bd90d0c336d4feb93d9a4437b4c6b091fecd78df42d8b732dbf53",
+    "results/rwkv7-fhe-20261104/new_pod/gate/0.4b/eval.jsonl": "653b48a7a9adc17c0d1b7900fc779c7a20ae691e104dab615dc6b3a750cd9922",
+    "results/rwkv7-fhe-20261104/new_pod/gate/0.4b/eval_final.jsonl": "ec5bf3337114e031f1aab961711ab3c4f2484aa3c89a7e4a543dc7b2cded3e65",
+    "results/rwkv7-fhe-20261104/new_pod/monitor/usage_20261104.csv": "62b52d356a77bfa8b583bf85f045f32270446bd999d8ec3f21c61cf5ddc8fb1e",
+    "results/rwkv7-fhe-20261104/new_pod/sheet.log": "b30d0fbd6b4c87d1ad28a0021b58f56dbb7da9b64026a55bd8022d17380f71bf",
+    "results/rwkv7-fhe-20261104/new_pod/vd_runs/1.5b_pipe/verdict_final.json": "6add976a8ce736ba0b3a3797ad7b0776dd18835c7638575ca74276a7fa8c9ffa",
+    "results/rwkv7-fhe-20261104/old_pod_mirror/out_d_run_0.1b.log": "f8b7731163a9dbb13287237b105c0538cbcc5432c6e51c4a374786dafca8c474"
+  }
+}

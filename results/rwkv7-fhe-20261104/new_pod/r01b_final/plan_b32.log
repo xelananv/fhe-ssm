@@ -1,0 +1,10 @@
+make_plan: /root/out_pod3/r01b_final/cap_rwkv7_b32 -> /root/out_pod3/r01b_final/bootstrap_placements/plan_rwkv7_b32
+  axes:    LANDING=high PAIR=0 PLACER=mincut ILP_OBJECTIVE=count SPARSE_SLOTS=512,1 HARD_ENV_CAP=1 SPARSE_B_K=
+  recipe:  MAX_LEVEL=50 SRC_LEVEL=36 CACHE_READ_LEVEL=36 PLAN_LEVEL_UNIT=2 PLAN_CF_MAX=20 PLAN_NO_PRESCALE=1 PLAN_ACC_CHAIN=n32 PLAN_MAG_SAFETY=2 PLAN_HINT_ENV_VETO=1 PLAN_SPARSE_SLOTS=512,1 PLAN_PRUNE=1 PLAN_REAL_ROUTE=1 PLAN_RAISE_DROP_SET=1,3,5 PLAN_SHARED_REALIZE=1 PLAN_HARD_ENV_CAP=1 BTS_LEVEL=28 PLAN_SPARSE_BTS_OUT=1:16,512:26 PLAN_REFRESH_ENV_CAP=50 PLAN_RAISE_DROP_MAX=0 PLAN_RAISE_LANDING_MAX=42 PLAN_RAISE_ROUTES=0 PLAN_REFRESH_ENV_CAP_ROUTES=0:46 PLAN_SLIM_CUBIC=1 PLAN_STC_FIRST_ENTRY=46 PLAN_STC_FIRST_FALLBACK=34:1
+  runtime: FIDESLIB_BTS_SHIFT=1 FIDESLIB_SPRU=64 FIDESLIB_BTS_RAISE_DROPS=1,3,5 FIDESLIB_BTS_REAL=1 FIDESLIB_BTS_SPARSE_B=1 FIDESLIB_ROT_KEY_BAND=32 FIDESLIB_BTS_STC_FIRST=2 FIDESLIB_BTS_STC_FIRST_ROUTES=dense FIDESLIB_BTS_STC_FIRST_CF=13 FIDESLIB_BTS_RAISE_DROP=512:1 AUTO_BTS_LEVEL=44 BTS_MAX_INPUT_LEVEL=48
+  capture: stc_first=2 raise_drop=512:1 sparse_b=None auto_bts_level=44
+  stamped 13 block plans with the capture's Config; plan_rot_steps.json: 43 steps
+  planned in 672 s: 13 stages, 1424 refreshes (summary.total_bootstraps), per stage refreshes@exit level:
+    block_0:100@26 block_1:166@26 block_2:103@26 block_3:103@26 block_4:104@26 block_5:165@26 block_6:103@26 block_7:102@26 block_8:103@26 block_9:103@26 block_10:104@26 block_11:167@26 block_12:1@28
+  compile check: skipped (build it: bash tools/fhe_ssm/compile_check/build.sh)
+make_plan: /root/out_pod3/r01b_final/bootstrap_placements/plan_rwkv7_b32

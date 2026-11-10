@@ -1,0 +1,3 @@
+serve registers 18 programs 7 join ins ['b0nxa', 'b0nxf', 'b0xa', 'b0xf'] mask slots [('join/keep', 28), ('join/m', 28)]
+.
+1 passed, 10 deselected in 8.54s

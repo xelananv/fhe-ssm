@@ -1,0 +1,246 @@
+[pod3 2026-11-04T19:46:14Z] start: f8138f78 RWKV-7 prefill: chunk of T tokens per pass (token l on lane l), sequential WKV scan in the pass, decode/prefill programs in one session; levers PAIR=1 + fused EvalMod (LEVERS=best), CF table (CFTABLE=1); CPU: 31 passed, 2 skipped; planner T=32: 62 refreshes/pass block 0 vs 31/token decode; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W, 38 MiB
+[pod3 2026-11-04T19:47:06Z] 0.1b capture rc=0 52 s
+[pod3 2026-11-04T19:47:24Z] 0.1b plan rc=0 18 s
+[pod3 2026-11-04T19:55:53Z] 0.1b run P1 rc=0 509 s
+[pod3 2026-11-04T20:04:38Z] 0.1b run P2 rc=0 525 s
+[pod3 2026-11-04T20:17:22Z] 0.1b run P3 rc=0 764 s
+[pod3 2026-11-04T20:19:23Z] 0.4b cal4096 rc=0 121 s
+[pod3 2026-11-04T20:21:12Z] 0.4b exact rc=0 109 s
+[pod3 2026-11-04T20:25:54Z] 0.4b mixed rc=0 282 s
+[pod3 2026-11-04T20:28:39Z] 0.4b capture rc=0 165 s
+[pod3 2026-11-04T20:29:16Z] 0.4b plan rc=0 37 s
+[pod3 2026-11-04T20:29:21Z] 0.4b crosscheck rc=0 5 s
+[pod3 2026-11-04T20:30:38Z] 0.4b run P1 rc=1 77 s
+[pod3 2026-11-04T20:31:47Z] 0.4b run P2 rc=1 69 s
+[pod3 2026-11-04T20:32:55Z] 0.4b run P3 rc=1 68 s
+[pod3 2026-11-04T20:33:14Z] 0.1b pfcheck rc=0 19 s
+[pod3 2026-11-04T21:00:33Z] 0.1b pf rc=1 1639 s
+[pod3 2026-11-04T21:00:37Z] poly ref 0.1b P1 rc=0
+[pod3 2026-11-04T21:00:42Z] poly ref 0.1b P2 rc=0
+[pod3 2026-11-04T21:00:46Z] poly ref 0.1b P3 rc=0
+[pod3 2026-11-04T21:00:53Z] poly ref 0.4b P1 rc=0
+[pod3 2026-11-04T21:01:01Z] poly ref 0.4b P2 rc=0
+[pod3 2026-11-04T21:01:08Z] poly ref 0.4b P3 rc=0
+[pod3 2026-11-04T21:01:08Z] DONE
+[pod3 2026-11-04T21:19:20Z] 0.4b-s160 run P1 rc=0 1086 s
+[pod3 2026-11-04T21:37:57Z] 0.4b-s160 run P2 rc=0 1117 s
+[pod3 2026-11-04T22:04:42Z] 0.4b-s160 run P3 rc=0 1605 s
+[pod3 2026-11-04T22:04:42Z] DONE2
+[pod3 2026-11-04T22:04:48Z] batch sheet: f3eed49e RWKV-7 batched decode: K <= 32 conversations per pass (conversation c o
+[pod3 2026-11-04T22:04:48Z] p4 build rc=1 0 s
+[pod3 2026-11-04T22:04:48Z] DONE3
+[pod3 2026-11-04T22:05:18Z] pf sheet: 87fe1ab2 RWKV-7 prefill capture: Genesis 1:1-8 token 17 (',') drove block 7 att.
+[pod3 2026-11-04T22:05:18Z] p5 build rc=1 0 s
+[pod3 2026-11-04T22:05:18Z] DONE4
+[pod3 2026-11-04T22:06:54Z] batch+pf sheet: 87fe1ab2 RWKV-7 prefill capture: Genesis 1:1-8 token 17 (','
+[pod3 2026-11-04T22:07:15Z] p5 build rc=0 21 s
+[pod3 2026-11-04T22:07:27Z] p4 bcheck rc=0 12 s
+[pod3 2026-11-04T22:08:43Z] b smoke K4 1blk rc=0 76 s
+[pod3 2026-11-04T22:22:55Z] stopped pod3_batch_pf.sh (author: drop the best/prefill steps; they are re-measured on the final norm-fix code); its b K32 run (pid 49261) continues
+[pod3 2026-11-04T23:21:56Z] b K32 pool1024 stc64 rc=0 3455 s
+[pod3 2026-11-04T23:21:56Z] DONE6
+[pod3 2026-11-04T23:24:28Z] gate 0.1b nc clamp rc=0 134 s
+[pod3 2026-11-04T23:26:43Z] gate 0.1b nc unclamped rc=0 135 s
+[pod3 2026-11-04T23:27:20Z] gate 0.1b scan poly rc=0 37 s
+[pod3 2026-11-04T23:27:54Z] gate 0.1b scan exact rc=0 34 s
+[pod3 2026-11-04T23:32:36Z] gate 0.4b nc clamp rc=0 282 s
+[pod3 2026-11-04T23:37:15Z] gate 0.4b nc unclamped rc=0 279 s
+[pod3 2026-11-04T23:38:32Z] gate 0.4b scan poly rc=0 77 s
+[pod3 2026-11-04T23:39:40Z] gate 0.4b scan exact rc=0 68 s
+[pod3 2026-11-04T23:39:40Z] DONE7 (gate)
+[pod3 2026-11-04T23:44:43Z] scanfull 0.1b wiki rc=0 167 s
+[pod3 2026-11-04T23:48:49Z] scanfull 0.1b lambada rc=0 246 s
+[pod3 2026-11-04T23:54:20Z] scanfull 0.4b wiki rc=0 331 s
+[pod3 2026-11-05T00:02:18Z] scanfull 0.4b lambada rc=0 478 s
+[pod3 2026-11-05T00:02:18Z] DONE8
+[pod3 2026-11-05T00:04:16Z] wide 0.1b fit rc=0 9 s
+[pod3 2026-11-05T00:06:36Z] wide 0.1b clamp rc=0 140 s
+[pod3 2026-11-05T00:08:56Z] wide 0.1b unclamped rc=0 140 s
+[pod3 2026-11-05T00:11:51Z] wide 0.1b scan wiki rc=0 175 s
+[pod3 2026-11-05T00:16:03Z] wide 0.1b scan lambada rc=0 252 s
+[pod3 2026-11-05T00:16:16Z] wide 0.4b fit rc=0 13 s
+[pod3 2026-11-05T00:21:15Z] wide 0.4b clamp rc=0 299 s
+[pod3 2026-11-05T00:26:14Z] wide 0.4b unclamped rc=0 299 s
+[pod3 2026-11-05T00:32:01Z] wide 0.4b scan wiki rc=0 347 s
+[pod3 2026-11-05T00:40:20Z] wide 0.4b scan lambada rc=0 499 s
+[pod3 2026-11-05T00:40:20Z] code: 4bba3a93 RWKV-7 1/sqrt sites: constant-s
+[pod3 2026-11-05T00:40:42Z] p6 build rc=0 22 s
+[pod3 2026-11-05T00:41:34Z] 0.1b nc capture rc=0 52 s
+[pod3 2026-11-05T00:42:03Z] 0.1b nc plan rc=0 29 s
+[pod3 2026-11-05T00:42:59Z] 0.1b wide capture rc=0 56 s
+[pod3 2026-11-05T00:43:40Z] 0.1b wide plan rc=0 41 s
+[pod3 2026-11-05T00:43:40Z] DONE9
+[pod3 2026-11-05T01:01:44Z] ablate 0.1b wide rc=0 944 s
+[pod3 2026-11-05T01:01:44Z] DONE10
+[pod3 2026-11-05T01:02:50Z] g3 0.1b fit m0.2 rc=0 5 s
+[pod3 2026-11-05T01:02:50Z] g3 0.1b merge rc=0
+[pod3 2026-11-05T01:05:10Z] g3 0.1b clamp rc=0 140 s
+[pod3 2026-11-05T01:07:30Z] g3 0.1b unclamped rc=0 140 s
+[pod3 2026-11-05T01:10:27Z] g3 0.1b scan wiki rc=0 177 s
+[pod3 2026-11-05T01:14:38Z] g3 0.1b scan lambada rc=0 251 s
+[pod3 2026-11-05T01:14:45Z] g3 0.4b fit m0.2 rc=0 7 s
+[pod3 2026-11-05T01:14:45Z] g3 0.4b merge rc=0
+[pod3 2026-11-05T01:19:47Z] g3 0.4b clamp rc=0 302 s
+[pod3 2026-11-05T01:24:45Z] g3 0.4b unclamped rc=0 298 s
+[pod3 2026-11-05T01:30:33Z] g3 0.4b scan wiki rc=0 348 s
+[pod3 2026-11-05T01:38:51Z] g3 0.4b scan lambada rc=0 498 s
+[pod3 2026-11-05T01:39:47Z] 0.1b final capture rc=0 56 s
+[pod3 2026-11-05T01:40:28Z] 0.1b final plan rc=0 41 s
+[pod3 2026-11-05T01:40:28Z] DONE11
+[pod3 2026-11-05T01:40:36Z] final sheet: 4bba3a93 RWKV-7 1/sqrt sites: constant-seed Newton (newton_c; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W, 38 MiB
+[pod3 2026-11-05T01:40:36Z] 01b_best capture rc=0 0 s
+[pod3 2026-11-05T01:41:17Z] 01b_best plan rc=0 41 s
+[pod3 2026-11-05T01:49:52Z] 01b_best decode P1 rc=0 515 s
+[pod3 2026-11-05T01:58:53Z] 01b_best decode P2 rc=0 541 s
+[pod3 2026-11-05T02:11:54Z] 01b_best decode P3 rc=0 781 s
+[pod3 2026-11-05T02:14:18Z] 01b_best capture_pf rc=0 144 s
+[pod3 2026-11-05T02:42:20Z] 01b_best plan_pf rc=0 1682 s
+[pod3 2026-11-05T03:01:49Z] 01b_best prefill L1 (122 tokens) rc=0 1169 s
+[pod3 2026-11-05T03:17:25Z] 01b_best prefill L5 (128 tokens) rc=0 936 s
+[pod3 2026-11-05T03:35:23Z] 01b_best prefill L9 (116 tokens) rc=0 1078 s
+[pod3 2026-11-05T03:54:43Z] 01b_best prefill L25 (123 tokens) rc=0 1160 s
+[pod3 2026-11-05T04:48:17Z] 01b_best batched K32 rc=0 3214 s
+[pod3 2026-11-05T04:50:56Z] 04b_best capture rc=0 159 s
+[pod3 2026-11-05T04:51:53Z] 04b_best plan rc=0 57 s
+[pod3 2026-11-05T05:10:03Z] 04b_best decode P1 rc=0 1090 s
+[pod3 2026-11-05T05:29:03Z] 04b_best decode P2 rc=0 1140 s
+[pod3 2026-11-05T05:56:25Z] 04b_best decode P3 rc=0 1642 s
+[pod3 2026-11-05T06:01:33Z] 04b_best capture_pf rc=0 308 s
+[pod3 2026-11-05T06:42:58Z] 04b_best plan_pf rc=0 2485 s
+[pod3 2026-11-05T06:45:55Z] 04b_best prefill L1 (122 tokens) rc=1 177 s
+[pod3 2026-11-05T06:48:42Z] 04b_best prefill L5 (128 tokens) rc=1 167 s
+[pod3 2026-11-05T06:51:25Z] 04b_best prefill L9 (116 tokens) rc=1 163 s
+[pod3 2026-11-05T06:54:16Z] 04b_best prefill L25 (123 tokens) rc=1 171 s
+[pod3 2026-11-05T07:18:59Z] 04b_best batched K32 rc=1 1483 s
+[pod3 2026-11-05T07:33:57Z] 04b_best batched K16 rc=1 898 s
+[pod3 2026-11-05T07:33:57Z] 01b capture rc=0 0 s
+[pod3 2026-11-05T07:33:57Z] 01b plan rc=0 0 s
+[pod3 2026-11-05T07:42:47Z] 01b decode P1 rc=0 530 s
+[pod3 2026-11-05T07:52:04Z] 01b decode P2 rc=0 557 s
+[pod3 2026-11-05T08:05:26Z] 01b decode P3 rc=0 802 s
+[pod3 2026-11-05T08:05:26Z] 01b capture_pf rc=0 0 s
+[pod3 2026-11-05T08:33:28Z] 01b plan_pf rc=0 1682 s
+[pod3 2026-11-05T08:53:12Z] 01b prefill L1 (122 tokens) rc=0 1184 s
+[pod3 2026-11-05T09:09:13Z] 01b prefill L5 (128 tokens) rc=0 961 s
+[pod3 2026-11-05T09:27:39Z] 01b prefill L9 (116 tokens) rc=0 1106 s
+[pod3 2026-11-05T09:47:40Z] 01b prefill L25 (123 tokens) rc=0 1201 s
+[pod3 2026-11-05T10:42:33Z] 01b batched K32 rc=0 3293 s
+[pod3 2026-11-05T10:42:33Z] 04b capture rc=0 0 s
+[pod3 2026-11-05T10:43:31Z] 04b plan rc=0 58 s
+[pod3 2026-11-05T11:02:14Z] 04b decode P1 rc=0 1123 s
+[pod3 2026-11-05T11:21:51Z] 04b decode P2 rc=0 1177 s
+[pod3 2026-11-05T11:50:07Z] 04b decode P3 rc=0 1696 s
+[pod3 2026-11-05T11:50:07Z] 04b capture_pf rc=0 0 s
+[pod3 2026-11-05T11:50:13Z] pod3_final.sh ended after the 0.4B levers-off decode P3 (run_P3.jsonl: present); its remaining steps (0.4B levers-off prefill T=32 x4, batched K32, K16 at POOL_B=1024) are the same host-OOM / device-memory failures measured 06:01-07:33Z on this build and are skipped
+[pod3 2026-11-05T11:50:13Z] DONE12
+[pod3 2026-11-05T11:50:24Z] final2 sheet: 071cfa2c RWKV-7 any-size branch: fix round complete (reviews R1-R3): n; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W
+[pod3 2026-11-05T11:51:00Z] f2 build rc=0 36 s
+[pod3 2026-11-05T11:52:06Z] 01b capture rc=0 66 s
+[pod3 2026-11-05T11:52:56Z] 01b plan rc=0 50 s
+[pod3 2026-11-05T11:53:21Z] 01b keyspec decode rc=0 25 s
+[pod3 2026-11-05T11:53:30Z] 01b keygen decode rc=0 9 s
+[pod3 2026-11-05T12:02:29Z] 01b decode P1 rc=0 539 s
+[pod3 2026-11-05T12:11:56Z] 01b decode P2 rc=0 567 s
+[pod3 2026-11-05T12:25:30Z] 01b decode P3 rc=0 814 s
+[pod3 2026-11-05T12:27:59Z] 01b capture_pf rc=0 149 s
+[pod3 2026-11-05T12:58:11Z] 01b plan_pf rc=0 1812 s
+[pod3 2026-11-05T12:58:32Z] 01b pfcheck rc=0 21 s
+[pod3 2026-11-05T13:00:19Z] 01b keyspec pf rc=0 107 s
+[pod3 2026-11-05T13:00:28Z] 01b keygen pf rc=0 9 s
+[pod3 2026-11-05T13:19:39Z] 01b prefill T=32 L1 (122 tokens) rc=0 1151 s
+[pod3 2026-11-05T13:35:25Z] 01b prefill T=32 L5 (128 tokens) rc=0 946 s
+[pod3 2026-11-05T13:53:31Z] 01b prefill T=32 L9 (116 tokens) rc=0 1086 s
+[pod3 2026-11-05T14:13:06Z] 01b prefill T=32 L25 (123 tokens) rc=0 1175 s
+[pod3 2026-11-05T14:15:28Z] 01b capture_b rc=0 142 s
+[pod3 2026-11-05T14:27:08Z] 01b plan_b (b2) rc=0 700 s
+[pod3 2026-11-05T14:27:25Z] 01b bcheck rc=0 17 s
+[pod3 2026-11-05T14:28:52Z] 01b keyspec b rc=0 87 s
+[pod3 2026-11-05T14:29:01Z] 01b keygen b rc=0 9 s
+[pod3 2026-11-05T15:07:18Z] 01b batched K32 b2 rc=0 2297 s
+[pod3 2026-11-05T15:08:12Z] 01b-filled capture rc=0 54 s
+[pod3 2026-11-05T15:08:47Z] 01b-filled plan rc=0 35 s
+[pod3 2026-11-05T15:10:20Z] 01b-filled capture_b rc=0 93 s
+[pod3 2026-11-05T15:16:32Z] 01b-filled plan_b rc=0 372 s
+[pod3 2026-11-05T15:16:46Z] 01b-filled bcheck rc=0 14 s
+[pod3 2026-11-05T15:17:43Z] 01b-filled keyspec b rc=0 57 s
+[pod3 2026-11-05T15:17:52Z] 01b-filled keygen b rc=0 9 s
+[pod3 2026-11-05T15:45:34Z] 01b-filled batched K32 b2 rc=0 1662 s
+[pod3 2026-11-05T15:45:56Z] 01b-filled keyspec decode rc=0 22 s
+[pod3 2026-11-05T15:46:04Z] 01b-filled keygen decode rc=0 8 s
+[pod3 2026-11-05T15:54:28Z] 01b-filled decode P1 rc=0 504 s
+[pod3 2026-11-05T15:55:05Z] 01b scheck K4 rc=0 37 s
+[pod3 2026-11-05T15:59:42Z] 01b serve K4 (inproc) rc=1 277 s
+[pod3 2026-11-05T16:31:48Z] 01b free148 P1 rc=0 1926 s
+[pod3 2026-11-05T16:31:59Z] final2 sheet ended by watch_01b_end.sh after the 0.1B section (author: trim); the 0.4B/1.5B/2.9B steps continue, trimmed, in pod3_final3.sh
+[pod3 2026-11-05T16:31:59Z] DONE12b
+[pod3 2026-11-05T16:32:20Z] checkout advanced to 197cb0ba RWKV-7 twin shed, review fixes S1-S2: prepare's pro
+[pod3 2026-11-05T16:32:20Z] final3 sheet (trimmed, v4): 197cb0ba RWKV-7 twin shed, review fixes S1-S2: prepare's products comp; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W; _pc 1ef01cc1f9604226
+[pod3 2026-11-05T16:32:20Z] moved final2's partial f2_04b aside
+[pod3 2026-11-05T17:10:57Z] 01b batched K32 b2 SHED (RWKV7_SHED_TWIN=1) rc=0 2317 s
+[pod3 2026-11-05T17:22:10Z] 01b plan_b (ctrl, no b2) rc=0 673 s
+[pod3 2026-11-05T17:22:13Z] 01b bcheck ctrl rc=0 3 s
+[pod3 2026-11-05T17:23:40Z] 01b-ctrl keyspec b rc=0 87 s
+[pod3 2026-11-05T17:23:48Z] 01b-ctrl keygen b rc=0 8 s
+[pod3 2026-11-05T17:30:21Z] final3 v4 ended by watch_serve_end.sh after the serve smoke (author: 0.4B filled K=32 in, K=16 current out); v5 continues
+[pod3 2026-11-05T17:30:21Z] DONE12c
+[pod3 2026-11-05T17:30:46Z] checkout advanced to 197cb0ba RWKV-7 twin shed, review fixes S1-S2: prepare's pro
+[pod3 2026-11-05T17:30:46Z] final3 sheet (trimmed, v5: 0.4B onward; author 17:15Z: 0.4B filled K=32 in, the 0.4B K=16 current-layout arm out): 197cb0ba RWKV-7 twin shed, review fixes S1-S2: prepare's products comp; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W; _pc 1ef01cc1f9604226
+[pod3 2026-11-05T17:34:28Z] 04b capture rc=0 222 s
+[pod3 2026-11-05T17:35:38Z] 04b plan rc=0 70 s
+[pod3 2026-11-05T17:36:46Z] 04b keyspec decode rc=0 68 s
+[pod3 2026-11-05T17:37:00Z] 04b keygen decode rc=0 14 s
+[pod3 2026-11-05T17:38:14Z] 04b decode P1 rc=1 74 s
+[pod3 2026-11-05T17:43:28Z] 04b capture_pf T32 rc=0 314 s
+[pod3 2026-11-05T17:43:38Z] v5 ended by switch_v6.sh after the 0.4B prefill capture (author 17:35Z: 2.9B out, serve smoke first, 0.4B = prefill + filled K=32); v6 starts
+[pod3 2026-11-05T17:43:38Z] checkout advanced to 197cb0ba RWKV-7 twin shed, review fixes S1-S2: prepare's pro
+[pod3 2026-11-05T17:43:38Z] final3 sheet (trimmed, v6; author 17:35Z: 2.9B out, 0.4B = prefill + filled K=32 (K=16 only as the fallback), the 0.1B serve smoke re-inserted after watch_serve_end.sh misfired on an old log line): 197cb0ba RWKV-7 twin shed, review fixes S1-S2: prepare's products comp; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W; _pc 1ef01cc1f9604226
+[pod3 2026-11-05T17:43:38Z] moved final2's partial f2_04b aside
+[pod3 2026-11-05T17:43:47Z] 01b scheck K4 (SHED) rc=0 9 s
+[pod3 2026-11-05T18:11:07Z] 01b serve K4 (inproc, SHED) rc=0 1640 s
+[pod3 2026-11-05T18:13:44Z] 04b capture rc=0 157 s
+[pod3 2026-11-05T18:14:41Z] 04b plan rc=0 57 s
+[pod3 2026-11-05T18:19:47Z] 04b capture_pf T32 rc=0 306 s
+[pod3 2026-11-05T19:01:02Z] 04b plan_pf T32 rc=0 2475 s
+[pod3 2026-11-05T19:01:12Z] v6 ended by switch_v7.sh after its 0.4B prefill plan (cache = keys; the lean-prefix flag where reviewed); v7 starts
+[pod3 2026-11-05T19:01:12Z] checkout advanced to b4d825c1 RWKV-7 RWKV7_LEAN_PREFIX review fixes L1, L2: drive
+[pod3 2026-11-05T19:01:12Z] final3 sheet (trimmed, v7; DEVICE_MEM_20261105.md: cache = keys everywhere (STC_CACHE*=1), RWKV7_LEAN_PREFIX where /root/LEAN_OK exists; 0.4B filled K=32 needs it): b4d825c1 RWKV-7 RWKV7_LEAN_PREFIX review fixes L1, L2: driver tests an; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W; _pc 1ef01cc1f9604226
+[pod3 2026-11-05T19:34:38Z] 01b batched K32 b2 LEAN (RWKV7_LEAN_PREFIX=1, pool 160, cache=keys) rc=1 2006 s
+[pod3 2026-11-05T19:34:38Z] 04b capture rc=0 0 s
+[pod3 2026-11-05T19:34:39Z] 04b plan rc=0 1 s
+[pod3 2026-11-05T19:34:39Z] 0.4B prefill: lean, pool 160, cache = keys
+[pod3 2026-11-05T19:34:39Z] 04b capture_pf T32 rc=0 0 s
+[pod3 2026-11-05T19:34:39Z] 04b plan_pf T32 rc=0 0 s
+[pod3 2026-11-05T19:39:26Z] 04b keyspec pf rc=0 287 s
+[pod3 2026-11-05T19:39:34Z] 04b keygen pf rc=0 8 s
+[pod3 2026-11-05T20:22:01Z] 04b prefill T=32 L1 (122 tokens) pool 160 stc 1 rc=0 2546 s
+[pod3 2026-11-05T20:57:40Z] 04b prefill T=32 L5 (128 tokens) pool 160 stc 1 rc=0 2139 s
+[pod3 2026-11-05T20:57:49Z] v7 ended by switch_v9.sh after the 0.4B prefill (author 19:45Z: K=32, E1 early, serve K=32, 1.5B K=16); v9 starts
+[pod3 2026-11-05T20:57:49Z] checkout advanced to b4d825c1 RWKV-7 RWKV7_LEAN_PREFIX review fixes L1, L2: drive
+[pod3 2026-11-05T20:57:50Z] final3 sheet (v9, 20:10Z; E1 first, then author: 0.4B filled K=32, then E1 (DONE13 -> DONE14), then the 0.4B serve K=32 filled (fallback K=8), then 1.5B K=16 (fallback 8, 4); 1.5B prefill if time): b4d825c1 RWKV-7 RWKV7_LEAN_PREFIX review fixes L1, L2: driver tests an; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W; _pc 1ef01cc1f9604226
+[pod3 2026-11-05T20:57:50Z] DONE13
+[pod3 2026-11-05T20:58:29Z] E1 sheet: b4d825c1 RWKV-7 RWKV7_LEAN_PREFIX review fixes L1, L2: driver tests an; _pc 1ef01cc1f9604226; NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 600.00 W
+[pod3 2026-11-05T21:00:53Z] 04b-filled capture rc=0 183 s
+[pod3 2026-11-05T21:01:35Z] E1 cfg-best-em e1A rc=0 186 s; [run_gpu 21:01:35] run cfg-best-em: exit 0 in 186 s; nvidia-smi peak 80018 MiB; /root/out_e1/gpu/run_cfg-best-em_e1A/record.json; commit=b4d825c1 dirty=0 pc_so=1ef01cc1f9604226 nvcc=13.2 arch=? load=17.20 16.73 15.26
+[pod3 2026-11-05T21:02:13Z] 04b-filled plan rc=0 80 s
+[pod3 2026-11-05T21:04:18Z] E1 cfg-best-em e1B rc=0 163 s; [run_gpu 21:04:18] run cfg-best-em: exit 0 in 163 s; nvidia-smi peak 80018 MiB; /root/out_e1/gpu/run_cfg-best-em_e1B/record.json; commit=b4d825c1 dirty=0 pc_so=1ef01cc1f9604226 nvcc=13.2 arch=? load=9.38 14.32 14.63
+[pod3 2026-11-05T21:04:18Z] DONE14
+[pod3 2026-11-05T21:05:49Z] 04b-filled capture_b K32 rc=0 216 s
+[pod3 2026-11-05T21:17:32Z] 04b-filled plan_b K32 rc=0 703 s
+[pod3 2026-11-05T21:20:01Z] 04b-filled-k32 keyspec b rc=0 149 s
+[pod3 2026-11-05T21:20:10Z] 04b-filled-k32 keygen b rc=0 9 s
+[pod3 2026-11-05T22:16:33Z] 04b-filled batched K32 b2 LEAN (pool 160, cache=keys) rc=0 3383 s
+[pod3 2026-11-05T22:16:37Z] e1_clean: v9 tree stopped (3 pids) for a clean E1
+[pod3 2026-11-05T22:19:03Z] E1 clean cfg-best-em e1C rc=0 146 s; [run_gpu 22:19:03] run cfg-best-em: exit 0 in 146 s; nvidia-smi peak 80018 MiB; /root/out_e1/gpu/run_cfg-best-em_e1C/record.json; commit=b4d825c1 dirty=0 pc_so=1ef01cc1f9604226 nvcc=13.2 arch=? load=2
+[pod3 2026-11-05T22:21:30Z] E1 clean cfg-best-em e1D rc=0 147 s; [run_gpu 22:21:30] run cfg-best-em: exit 0 in 147 s; nvidia-smi peak 80018 MiB; /root/out_e1/gpu/run_cfg-best-em_e1D/record.json; commit=b4d825c1 dirty=0 pc_so=1ef01cc1f9604226 nvcc=13.2 arch=? load=6
+[pod3 2026-11-05T22:21:30Z] DONE14c (clean E1 done; v9 continues)
+[pod3 2026-11-05T22:22:04Z] 04b-filled scheck K32 rc=0 331 s
+[pod3 2026-11-05T22:55:10Z] 04b-filled serve K32 (inproc, cache=keys) rc=1 1986 s
+[pod3 2026-11-05T22:55:10Z] 0.4B serve K32 failed: K=8
+[pod3 2026-11-05T22:55:19Z] 04b-filled scheck K8 rc=0 9 s
+[pod3 2026-11-05T23:55:36Z] 04b-filled serve K8 (inproc, cache=keys) rc=0 3617 s
+[pod3 2026-11-06T00:23:08Z] 1.5b pipeline (no prefill, K=16) rc=1 1652 s
+[pod3 2026-11-06T00:23:08Z] 1.5b pipeline (prefill T=16) rc=1 0 s
+[pod3 2026-11-06T00:23:08Z] DONE15
+[pod3 2026-11-06T00:28:44Z] final4 sheet: 1.5B pipeline from gen (gen_greedy end-of-text fix), FORCE=1
+[pod3 2026-11-06T01:47:48Z] 1.5b pipeline (from gen, K=16) rc=3 4744 s
+[pod3 2026-11-06T01:47:48Z] DONE16

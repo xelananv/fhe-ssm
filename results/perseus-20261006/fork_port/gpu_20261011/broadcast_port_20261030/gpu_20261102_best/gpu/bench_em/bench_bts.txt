@@ -1,0 +1,74 @@
+warning: unused import: `PrimeConst`
+ --> crates/pc-kernels/src/ring.rs:3:55
+  |
+3 | use crate::args::{BconvArgs, EwArgs, Launch, NttArgs, PrimeConst};
+  |                                                       ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::ffi::c_void`
+ --> crates/pc-kernels/src/ring.rs:5:5
+  |
+5 | use std::ffi::c_void;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: `pc-kernels` (lib) generated 2 warnings (run `cargo fix --lib -p pc-kernels` to apply 2 suggestions)
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.01s
+     Running `target/release/pc-bench bts --all --k 1,8 --reps 20 --keys packed`
+[bts-all] K=1: 75 rotation keys; MemPlan context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 31.5 MB, keys 6452.5 MB, keygen 31.5 MB, secret 63.0 MB, encrypt 0.0 MB, decrypt 3.0 MB, ks.plans 4.0 MB, ks.regen_a 189.0 MB, ops 14.5 MB, rescale 253.5 MB, tables 5796.1 MB, bts.work 1008.0 MB, tails 945.0 MB, tables 827.2 MB, bts.work 567.0 MB, tables 227.2 MB, bts.work 504.0 MB, tables 527.5 MB, bts.work 94.5 MB, bts.batch 31.5 MB, bench.cts 94.5 MB, total 20248.9 MB
+[bts-all] keygen 79 keys in 1.6 s
+[bts-all] K=1 setup 3.9 s; arena used 21.20 of 21.23 GB
+[bts-all] route dense K=1: eager 17.15 / batched 17.24 / graph 16.80 ms/ct; gather+scatter 0.009 ms/call; capture 17.3 ms host; out level 32 deg 2; mismatches 0 of 66322432
+[bts-all] route stcf K=1: eager 14.41 / batched 14.44 / graph 14.12 ms/ct; gather+scatter 0.011 ms/call; capture 14.6 ms host; out level 26 deg 2; mismatches 0 of 84410368
+[bts-all] route 512 K=1: eager 14.26 / batched 14.33 / graph 13.90 ms/ct; gather+scatter 0.012 ms/call; capture 14.5 ms host; out level 24 deg 2; mismatches 0 of 90439680
+[bts-all] route 256 K=1: eager 13.09 / batched 13.16 / graph 12.74 ms/ct; gather+scatter 0.012 ms/call; capture 13.4 ms host; out level 24 deg 2; mismatches 0 of 90439680
+[bts-all] route 1 K=1: eager 7.90 / batched 7.94 / graph 7.76 ms/ct; gather+scatter 0.014 ms/call; capture 8.1 ms host; out level 14 deg 2; mismatches 0 of 120586240
+[bts-all] K=1: 5 graphs, 4 constant slots leased; stats GraphStats { captures: 5, replays: 110, invalidations: 0, capture_ms: 68.004917 }
+[bts-all] K=8: 75 rotation keys; MemPlan context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 31.5 MB, keys 6452.5 MB, keygen 31.5 MB, secret 63.0 MB, encrypt 0.0 MB, decrypt 3.0 MB, ks.plans 4.0 MB, ks.regen_a 189.0 MB, ops 14.5 MB, rescale 253.5 MB, tables 5797.0 MB, bts.work 8064.0 MB, tails 945.0 MB, tables 827.5 MB, bts.work 4536.0 MB, tables 227.5 MB, bts.work 4032.0 MB, tables 1623.0 MB, bts.work 94.5 MB, bts.batch 252.0 MB, bench.cts 535.5 MB, total 36560.5 MB
+[bts-all] keygen 79 keys in 1.7 s
+[bts-all] K=8 setup 3.9 s; arena used 38.30 of 38.34 GB
+[bts-all] route dense K=8: eager 15.24 / batched 15.28 / graph 14.99 ms/ct; gather+scatter 0.182 ms/call; capture 66.3 ms host; out level 32 deg 2; mismatches 0 of 530579456
+[bts-all] route stcf K=8: eager 12.18 / batched 12.21 / graph 11.98 ms/ct; gather+scatter 0.300 ms/call; capture 63.0 ms host; out level 26 deg 2; mismatches 0 of 675282944
+[bts-all] route 512 K=8: eager 13.83 / batched 13.86 / graph 13.74 ms/ct; gather+scatter 0.330 ms/call; capture 58.5 ms host; out level 24 deg 2; mismatches 0 of 723517440
+[bts-all] route 256 K=8: eager 13.44 / batched 13.47 / graph 13.36 ms/ct; gather+scatter 0.330 ms/call; capture 57.1 ms host; out level 24 deg 2; mismatches 0 of 723517440
+[bts-all] route 1 K=8: eager 8.43 / batched 8.47 / graph 8.36 ms/ct; gather+scatter 0.445 ms/call; capture 46.8 ms host; out level 14 deg 2; mismatches 0 of 964689920
+[bts-all] K=8: 5 graphs, 4 constant slots leased; stats GraphStats { captures: 5, replays: 110, invalidations: 0, capture_ms: 291.76502 }
+
+[bts-all] MemPlan prediction vs carved (bytes), per (route, K):
+| route | K | section | predicted | carved | |
+|---|---|---|---|---|---|
+| dense+stcf | 1 | tables | 6077647872 | 6077647872 | == |
+| dense+stcf | 1 | bts.work | 1056964608 | 1056964608 | == |
+| sparse | 1 | tails | 990904576 | 990904576 | == |
+| 512 | 1 | tables | 867400704 | 867400704 | == |
+| 512 | 1 | bts.work | 594542592 | 594542592 | == |
+| 256 | 1 | tables | 238228992 | 238228992 | == |
+| 256 | 1 | bts.work | 528482304 | 528482304 | == |
+| 1 | 1 | tables | 553152512 | 553152512 | == |
+| 1 | 1 | bts.work | 99090432 | 99090432 | == |
+| all | 1 | bts.batch | 33030144 | 33030144 | == |
+| dense+stcf | 8 | tables | 6078631424 | 6078631424 | == |
+| dense+stcf | 8 | bts.work | 8455716864 | 8455716864 | == |
+| sparse | 8 | tails | 990904576 | 990904576 | == |
+| 512 | 8 | tables | 867731200 | 867731200 | == |
+| 512 | 8 | bts.work | 4756340736 | 4756340736 | == |
+| 256 | 8 | tables | 238527232 | 238527232 | == |
+| 256 | 8 | bts.work | 4227858432 | 4227858432 | == |
+| 1 | 8 | tables | 1701879296 | 1701879296 | == |
+| 1 | 8 | bts.work | 99090432 | 99090432 | == |
+| all | 8 | bts.batch | 264241152 | 264241152 | == |
+
+[bts-all] route x K (device ms per ciphertext; median of 20 after 2 warm-ups):
+| route | K | eager | batched (gather) | graph replay | gather+scatter ms/call | capture+instantiate host ms | mismatches | old K=1 |
+|---|---|---|---|---|---|---|---|---|
+| dense | 1 | 17.15 | 17.24 | 16.80 | 0.009 | 17.3 | 0 of 66322432 | 28.8 |
+| stcf | 1 | 14.41 | 14.44 | 14.12 | 0.011 | 14.6 | 0 of 84410368 | 28.8 |
+| 512 | 1 | 14.26 | 14.33 | 13.90 | 0.012 | 14.5 | 0 of 90439680 | 18.6 |
+| 256 | 1 | 13.09 | 13.16 | 12.74 | 0.012 | 13.4 | 0 of 90439680 | - |
+| 1 | 1 | 7.90 | 7.94 | 7.76 | 0.014 | 8.1 | 0 of 120586240 | 16.1 |
+| dense | 8 | 15.24 | 15.28 | 14.99 | 0.182 | 66.3 | 0 of 530579456 | 28.8 |
+| stcf | 8 | 12.18 | 12.21 | 11.98 | 0.300 | 63.0 | 0 of 675282944 | 28.8 |
+| 512 | 8 | 13.83 | 13.86 | 13.74 | 0.330 | 58.5 | 0 of 723517440 | 18.6 |
+| 256 | 8 | 13.44 | 13.47 | 13.36 | 0.330 | 57.1 | 0 of 723517440 | - |
+| 1 | 8 | 8.43 | 8.47 | 8.36 | 0.445 | 46.8 | 0 of 964689920 | 16.1 |
+[bts-all] verdict: mismatches 0, MemPlan differences 0

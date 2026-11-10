@@ -1,0 +1,1 @@
+commit=50666f6f dirty=0 pc_so=5bbae5e8d2c91ef7 nvcc= arch=? load=1.37 2.15 1.56 run_extra=--pcmm-cf 8 --pcmm-cf-table /root/cf/t_mildall.json --stc-cache 160

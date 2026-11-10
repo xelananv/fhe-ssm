@@ -40,12 +40,15 @@ and the runbook names the scripts of every step.
 | `results/openfhe-bootstrap.md` | `ml-eval/remez_ablation.py` |
 | `results/quality-ladder` | `ml-eval/train_fhe_native_ssm.py` |
 | `results/remez-ablation.md` | `ml-eval/remez_ablation.py` |
+| `results/rwkv7-fhe-20261104/new_pod/DEVICE_MEM_20261105.md` | `results/rwkv7-fhe-20261104/new_pod/sheet.log` |
+| `results/rwkv7-fhe-20261104/new_pod/RESULTS.md` | `figures/README.md`, `results/rwkv7-fhe-20261104/new_pod/TEXTS_20261105.md` |
 | `results/s37-impl-20260905/V1_eps` | `tools/memguard.sh` |
 | `results/s37-impl-20260905/V1_eps/INCIDENT_20260910_footprint.txt` | `tools/memlib.sh` |
 | `results/theory/S33_REPORT_20260903.md` | `results/dense-demo-s31/pod_2xbw_20260917/pod_pull/preflight.txt`, `results/dense-demo-s31/pod_longrun_20260919/pod_pull/preflight.txt`, `results/dense-demo-s31/pod_tools/demo/00_box_preflight.sh` |
 | `results/theory/SCHEDULE_DESIGN_20260903.md` | `results/dense-demo-s31/pod_tools/demo/85_schedule_ab.sh`, `results/theory/tick_level_trace.py` |
 | `results/theory/TICK_SCALING_BOUNDS_20260903.md` | `results/theory/tick_level_trace.py` |
 | `results/theory/TIERB_SPEC_20260903.md` | `ml-eval/train_fhe_native_ssm.py` |
+| `results/vector-d-20261104/harness/rwkv_tokenizer.py` | `results/rwkv7-fhe-20261104/new_pod/decode_texts.py` |
 | `spec_decode/README.md` | `results/dense-demo-s31/pod_tools/demo/71_mac_demo_session.sh` |
 | `tools/mem_probe.sh` | `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/PROBE_B_REPORT.md`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/PROBE_B_REPORT.src.md`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/k768/K768_CPU_REPORT.md`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/k768/K768_CPU_REPORT.src.md`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/k768/build_openfhe_k768.sh`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/k768/build_probe_k768.sh`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/k768/build_variantB.sh`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/k768/run_k768.sh`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/run_dose.sh`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/run_planted.sh`, `results/dense-demo-s31/pod_2xbw_20260917/a11_tick42/overflow_probe/run_probe_c.sh` |
 | `training/DIAGNOSIS.md` | `ml-eval/staged_token_reader.py`, `ml-eval/train_fhe_native_ssm.py` |

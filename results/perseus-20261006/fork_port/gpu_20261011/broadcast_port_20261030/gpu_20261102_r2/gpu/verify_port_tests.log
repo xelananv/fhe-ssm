@@ -1,0 +1,28 @@
+........................................................................ [ 21%]
+........................................................................ [ 42%]
+........................................................................ [ 63%]
+........................................................................ [ 84%]
+...................................................                      [100%]
+=============================== warnings summary ===============================
+python/perseus/examples/fhe_ssm/tests/test_planned_contract.py::test_recorder_registers_the_named_state_and_prepare_carries_it
+  /root/perseus/python/perseus/impl/fakecap.py:461: RuntimeWarning: overflow encountered in multiply
+    return self._unary(a, a.vec * a.vec, self.shadow.square(a.meta), T.t_square(a.tag), "square", product=True)
+
+python/perseus/examples/fhe_ssm/tests/test_planned_contract.py::test_recorder_registers_the_named_state_and_prepare_carries_it
+  /root/perseus/python/perseus/impl/fakecap.py:451: RuntimeWarning: invalid value encountered in multiply
+    return self._binary(a, a.vec * b.vec, self.shadow.mult(a.meta, b.meta), T.t_mult(a.tag, b.tag), "mult",
+
+python/perseus/examples/fhe_ssm/tests/test_planned_contract.py::test_recorder_registers_the_named_state_and_prepare_carries_it
+  /root/perseus/python/perseus/impl/fakecap.py:451: RuntimeWarning: overflow encountered in multiply
+    return self._binary(a, a.vec * b.vec, self.shadow.mult(a.meta, b.meta), T.t_mult(a.tag, b.tag), "mult",
+
+python/perseus/examples/fhe_ssm/tests/test_planned_contract.py::test_recorder_registers_the_named_state_and_prepare_carries_it
+  /root/perseus/python/perseus/impl/fakecap.py:461: RuntimeWarning: invalid value encountered in multiply
+    return self._unary(a, a.vec * a.vec, self.shadow.square(a.meta), T.t_square(a.tag), "square", product=True)
+
+python/perseus/examples/fhe_ssm/tests/test_planned_contract.py::test_recorder_registers_the_named_state_and_prepare_carries_it
+  /root/perseus/python/perseus/impl/fakecap.py:457: RuntimeWarning: invalid value encountered in multiply
+    return self._binary(a, a.vec * c, self.shadow.mult_scalar(a.meta, c), T.t_mult_scalar(a.tag, c), "mult",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+339 passed, 30 deselected, 5 warnings in 64.52s (0:01:04)

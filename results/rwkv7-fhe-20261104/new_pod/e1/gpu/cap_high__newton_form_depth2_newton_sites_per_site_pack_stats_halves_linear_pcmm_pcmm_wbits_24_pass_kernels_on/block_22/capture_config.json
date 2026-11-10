@@ -1,0 +1,19 @@
+{
+  "chain": {
+    "chain": "n32",
+    "composite_degree": 2
+  },
+  "bts": {
+    "auto_bts_level": 44,
+    "raise_drop": "512:1",
+    "stc_first": 2,
+    "stc_first_cf": 13,
+    "stc_first_routes": [
+      "dense"
+    ]
+  },
+  "quirks": {
+    "fake_bts_out": 32,
+    "fakecap_landings": "0:32,1:14,256:22,512:24"
+  }
+}

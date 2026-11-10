@@ -1,0 +1,3 @@
+batched kv ['s0c0', 's0c1', 's0c2', 's0c3', 's1c0', 's1c1', 's1c2', 's1c3', 'xa', 'xf'] inputs [('anon_2207', 26, 1), ('block_0.cache.xa-lvl=26', 26, 2), ('block_0.cache.s0c0-lvl=26', 26, 2), ('block_0.cache.s1c0-lvl=26', 26, 2)]
+.
+1 passed, 14 deselected in 2.93s

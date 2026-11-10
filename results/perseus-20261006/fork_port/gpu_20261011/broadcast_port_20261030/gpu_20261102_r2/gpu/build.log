@@ -1,0 +1,38 @@
+Resolved 111 packages in 169ms
+   Building perseus @ file:///root/perseus
+      Built perseus @ file:///root/perseus
+Prepared 1 package in 12.54s
+Uninstalled 1 package in 0.44ms
+Installed 1 package in 2ms
+ ~ perseus==0.1.0 (from file:///root/perseus)
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.12 at /root/perseus/.venv/bin/python
+🔗 Found pyo3 bindings with abi3-py3.12 support
+📡 Using build options features from pyproject.toml
+Checked 24 packages in 1ms
+   Compiling pyo3-build-config v0.27.2
+warning: unused import: `PrimeConst`
+ --> crates/pc-kernels/src/ring.rs:3:55
+  |
+3 | use crate::args::{BconvArgs, EwArgs, Launch, NttArgs, PrimeConst};
+  |                                                       ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::ffi::c_void`
+ --> crates/pc-kernels/src/ring.rs:5:5
+  |
+5 | use std::ffi::c_void;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: `pc-kernels` (lib) generated 2 warnings (run `cargo fix --lib -p pc-kernels` to apply 2 suggestions)
+   Compiling pyo3-macros-backend v0.27.2
+   Compiling pyo3-ffi v0.27.2
+   Compiling pyo3 v0.27.2
+   Compiling pyo3-macros v0.27.2
+   Compiling pc-py v0.1.0 (/root/perseus/crates/pc-py)
+    Finished `release` profile [optimized + debuginfo] target(s) in 12.40s
+⚠️ Warning: Failed to set rpath for /root/perseus/target/maturin/lib_pc.so: Failed to execute 'patchelf', did you install it? Hint: Try `pip install maturin[patchelf]` (or just `pip install patchelf`)
+📦 Built wheel for abi3 Python ≥ 3.12 to /tmp/.tmp8Gkr36/perseus-0.1.0-cp312-abi3-linux_x86_64.whl
+✏️ Setting installed package as editable
+🛠 Installed perseus-0.1.0

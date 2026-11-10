@@ -1,0 +1,11 @@
+[capture] shifts (calib) for 11 linears in 1.8 s
+[capture] token 0 out level 28 in 0.8 s
+[capture] token 1 out level 28 in 1.7 s
+[capture] wrote /root/out_pod3/f2_01b/pfcheck/session_prepare/cap_dec (1 blocks + tail) in 4.5 s
+[capture] shifts (calib) for 11 linears in 0.0 s
+[capture] pass 0 out level 28 in 0.9 s
+[capture] pass 1 out level 28 in 2.4 s
+[capture] wrote /root/out_pod3/f2_01b/pfcheck/session_prepare/cap_pf4 (1 blocks + tail) in 3.7 s
+decode kv regs [0, 1, 2, 3] prefill kv regs [0, 1, 2, 3] prefill out regs [6, 7] total 8 prefill inputs [('anon_2211', 26, 1), ('block_0.cache.xa-lvl=26', 26, 2), ('block_0.cache.s0-lvl=26', 26, 2), ('block_0.cache.s1-lvl=26', 26, 2), ('block_0.cache.xf-lvl=26', 26, 2)]
+.
+1 passed, 7 deselected in 20.08s

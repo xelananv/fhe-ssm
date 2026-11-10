@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 698, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 561, in main
+    return main_batch(a)
+           ^^^^^^^^^^^^^
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 310, in main_batch
+    kv = run.state_cts(st)
+         ^^^^^^^^^^^^^^^^^
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 193, in state_cts
+    cts[i], m = self.encrypt_input(rows[b][names.index(key)], p, i, f"block {b} state {key}")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/perseus-rwkv7/python/perseus/examples/rwkv7/run_planned.py", line 170, in encrypt_input
+    ct = self.fhe.encrypt(v, lvl, deg)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: memory: MemCfg::pool = 192: all 192 slots of class k = 1 in use
+[planned] 13 programs from token 1's stream, 0 dynamic steps, 805 registers, 326 plaintexts; rotation keys 43 (plan_rot_steps.json 43); session setup 10.6 s (keygen 1.4), total 163.6 s
+[planned] context 63.9 MB, ks_work 1890.0 MB, bconv_work 126.0 MB, scratch 504.0 MB, ct_pool 6048.0 MB, ks.plans 4.0 MB, keys 8437.2 MB, keygen 31.5 MB, ks.groups 0.0 MB, ks.regen_a 189.0 MB, ops 490.4 MB, rescale 253.5 MB, pt_store 1664.5 MB, encode 3.5 MB, encrypt 0.0 MB, decrypt 9.0 MB, keys.secret 31.5 MB, bts.dense 4906.7 MB, bts.stc_first 32835.6 MB, bts.sparse 0.0 MB, bts.work 4032.0 MB, replay.slab 3591.0 MB, replay.regs 11269.0 MB, replay.groups 2.9 MB, pcmm 1054.6 MB, pcmm.weights 930.0 MB, pcmm.cts 220.5 MB, replay.side 2709.0 MB, ops 490.4 MB, rescale 253.5 MB, slack 256.0 MB, total 82297.2 MB
+[planned] 143 PCMM linears uploaded, 326 plaintext slots staged

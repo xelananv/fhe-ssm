@@ -1,0 +1,10 @@
+crates/pc-py/src/pcmm.rs
+crates/pc-py/src/session.rs
+python/perseus/examples/fhe_ssm/passmerge.py
+python/perseus/examples/fhe_ssm/pcmm_cf_table.py
+python/perseus/examples/fhe_ssm/planned.py
+python/perseus/examples/fhe_ssm/run_planned.py
+python/perseus/examples/fhe_ssm/tests/test_pass_capture.py
+python/perseus/examples/fhe_ssm/tests/test_pcmm_cf_table.py
+tools/fhe_ssm/RUNSHEET_GPU.md
+tools/fhe_ssm/run_gpu.sh

@@ -1,0 +1,13 @@
+413810 tokens, feed=poly, unclamped
+kind                tok_out      frac conv_out  nonfin                    range                     seen worst
+att.a_sigmoid             0  0.00e+00        0       0 [      -109,      94.9] [     -68.3,      47.7] 0x width at None
+att.decay                 0  0.00e+00        0       0 [     -74.9,      80.6] [     -36.5,      42.2] 0x width at None
+att.g_sigmoid             0  0.00e+00        0       0 [     -44.9,        39] [     -24.1,      19.7] 0x width at None
+att.gn_rsqrt              0  0.00e+00        0       0 [  4.12e-12,  2.81e+03] [   1.9e-11,       269] 0x width at None
+att.kk_rsqrt              0  0.00e+00        0       0 [  0.000986,  2.37e+03] [   0.00879,       237] 0x width at None
+att.v_sigmoid             0  0.00e+00        0       0 [     -76.8,       110] [     -42.4,      64.1] 0x width at None
+att.w_tanh                0  0.00e+00        0       0 [     -90.3,       101] [       -44,      52.3] 0x width at None
+ffn.relu2                 0  0.00e+00        0       0 [     -23.4,      19.5] [     -16.3,      13.3] 0x width at None
+ln1.rsqrt                 0  0.00e+00        0       0 [  0.000846,       413] [   0.00768,      36.1] 0x width at None
+ln2.rsqrt                 0  0.00e+00        0       0 [  0.000687,       411] [   0.00687,      37.6] 0x width at None
+[pod3 2026-11-05T01:14:38Z] g3 0.1b scan lambada rc=0 251 s

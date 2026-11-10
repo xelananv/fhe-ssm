@@ -1,0 +1,4 @@
+RWKV-x070-World-0.1B-v2.8-20241210-ctx4096.pth
+RWKV-x070-World-0.4B-v2.9-20250107-ctx4096.pth
+RWKV-x070-World-1.5B-v3-20250127-ctx4096.pth
+RWKV-x070-World-2.9B-v3-20250211-ctx4096.pth

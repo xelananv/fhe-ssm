@@ -1,0 +1,2 @@
+{"config": "poly:all", "wt_ppl": 19.398592636234227, "top1_agree": 0.9887432063559574, "kl_mean": 0.00043552725139610327, "lambada_acc": 0.4894236367164758, "lambada_ppl": 12.420590483184098, "outside_frac_max": 2.4314658726566598e-05, "seconds": 125.8}
+[pod3 2026-11-04T23:24:28Z] gate 0.1b nc clamp rc=0 134 s

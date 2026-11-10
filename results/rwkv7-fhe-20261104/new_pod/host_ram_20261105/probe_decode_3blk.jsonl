@@ -1,0 +1,14 @@
+{"mode": "decode", "n": 1, "rss_before_model_mb": 1339.03125, "rss_after_model_mb": 1726.5625}
+{"mode": "decode", "n": 1, "token": 0, "stage": 0, "n_objs": 1318, "obj_vec_bytes": 659816448, "obj_dtypes": ["complex128(32768,)", "float64(32768,)"], "n_pts": 150, "pt_bytes": 39321600, "n_nodes": 2236, "nodes_pickle_bytes": 385347}
+{"mode": "decode", "n": 1, "token": 0, "stage": 1, "n_objs": 1633, "obj_vec_bytes": 834142208, "obj_dtypes": ["complex128(32768,)", "float64(32768,)"], "n_pts": 151, "pt_bytes": 39583744, "n_nodes": 2752, "nodes_pickle_bytes": 476215}
+{"mode": "decode", "n": 1, "token": 0, "stage": 2, "n_objs": 1436, "obj_vec_bytes": 727711744, "obj_dtypes": ["complex128(32768,)", "float64(32768,)"], "n_pts": 151, "pt_bytes": 39583744, "n_nodes": 2424, "nodes_pickle_bytes": 421019}
+{"mode": "decode", "n": 1, "token": 0, "stage": 3, "n_objs": 3, "obj_vec_bytes": 1048576, "obj_dtypes": ["complex128(32768,)"], "n_pts": 1, "pt_bytes": 262144, "n_nodes": 3, "nodes_pickle_bytes": 764}
+{"mode": "decode", "n": 1, "token": 0, "rss_delta_mb": 490.9, "rss_mb": 2217.5, "record_s": 2.3}
+{"mode": "decode", "n": 1, "token": 1, "stage": 0, "n_objs": 1318, "obj_vec_bytes": 658767872, "obj_dtypes": ["complex128(32768,)", "float64(32768,)"], "n_pts": 150, "pt_bytes": 39321600, "n_nodes": 2236, "nodes_pickle_bytes": 390938}
+{"mode": "decode", "n": 1, "token": 1, "stage": 1, "n_objs": 1633, "obj_vec_bytes": 833093632, "obj_dtypes": ["complex128(32768,)"], "n_pts": 151, "pt_bytes": 39583744, "n_nodes": 2752, "nodes_pickle_bytes": 483478}
+{"mode": "decode", "n": 1, "token": 1, "stage": 2, "n_objs": 1436, "obj_vec_bytes": 726663168, "obj_dtypes": ["complex128(32768,)"], "n_pts": 151, "pt_bytes": 39583744, "n_nodes": 2424, "nodes_pickle_bytes": 424988}
+{"mode": "decode", "n": 1, "token": 1, "stage": 3, "n_objs": 3, "obj_vec_bytes": 1048576, "obj_dtypes": ["complex128(32768,)"], "n_pts": 1, "pt_bytes": 262144, "n_nodes": 3, "nodes_pickle_bytes": 764}
+{"mode": "decode", "n": 1, "token": 1, "rss_delta_mb": 388.4, "rss_mb": 2594.0, "record_s": 1.1}
+{"mode": "decode", "n": 1, "shed_stats": {"vectors": 0, "bytes": 0, "kept": 0, "pts_shared": 0, "pt_bytes": 0}, "pt_intern_distinct": 0, "pt_intern_bytes": 0}
+{"mode": "decode", "n": 1, "blocks": 3, "footprint_after_two_tokens": {"pid": 97353, "rssKB": 2658528, "footprintKB": 7064576, "swapUsedMB": 0}}
+{"mode": "decode", "n": 1, "after_drop_objs_nodes_rss_mb": 1960.0, "freed_mb": 624.0}

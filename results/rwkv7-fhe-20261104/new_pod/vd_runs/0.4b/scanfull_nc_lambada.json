@@ -1,0 +1,131 @@
+{
+ "model": "/root/d_models/RWKV-x070-World-0.4B-v2.9-20250107-ctx4096.pth",
+ "coeffs": "/root/vd/runs/0.4b/coeffs_mixed_nc.json",
+ "text": "/root/d_data/lambada_as_text.raw",
+ "tokens": 413810,
+ "ctx": 1024,
+ "feed": "poly",
+ "seconds": 475.88221406936646,
+ "kinds": {
+  "ln1.rsqrt": {
+   "lo": 0.0003453702200204134,
+   "hi": 628.4096145629883,
+   "method": "newton_const",
+   "min": 0.003303280333057046,
+   "max": 60.04230499267578,
+   "nonfinite": 210364,
+   "tokens_out": 97336,
+   "tokens_conv_out": 97336,
+   "worst_site": null,
+   "worst_excursion": 0.0
+  },
+  "att.w_tanh": {
+   "lo": -40.452734375,
+   "hi": 42.325521850585936,
+   "method": "cheb",
+   "min": -33.57075119018555,
+   "max": 41.3078498840332,
+   "nonfinite": 13463680,
+   "tokens_out": 97396,
+   "tokens_conv_out": 0,
+   "worst_site": "blocks.21.att.w_tanh",
+   "worst_excursion": 0.05592250699891322
+  },
+  "att.decay": {
+   "lo": -69.01983623504638,
+   "hi": 55.463968658447264,
+   "method": "cheb",
+   "min": -1.2389512526059012e+19,
+   "max": 3.144229421485916e+19,
+   "nonfinite": 215418880,
+   "tokens_out": 97336,
+   "tokens_conv_out": 0,
+   "worst_site": "blocks.21.att.decay",
+   "worst_excursion": 3.3341271312114195e+17
+  },
+  "att.a_sigmoid": {
+   "lo": -133.60243492126466,
+   "hi": 56.35962181091308,
+   "method": "cheb",
+   "min": -106.49927520751953,
+   "max": 44.79632568359375,
+   "nonfinite": 215418880,
+   "tokens_out": 97337,
+   "tokens_conv_out": 0,
+   "worst_site": "blocks.17.att.a_sigmoid",
+   "worst_excursion": 0.008753342392037886
+  },
+  "att.g_sigmoid": {
+   "lo": -42.029278945922854,
+   "hi": 14.889656162261963,
+   "method": "cheb",
+   "min": -40.82231903076172,
+   "max": 14.24624252319336,
+   "nonfinite": 26927360,
+   "tokens_out": 97336,
+   "tokens_conv_out": 0,
+   "worst_site": null,
+   "worst_excursion": 0.0
+  },
+  "att.kk_rsqrt": {
+   "lo": 0.00017611170187592506,
+   "hi": 4943.958435058594,
+   "method": "newton_const",
+   "min": 0.0017611166695132852,
+   "max": 643.6048583984375,
+   "nonfinite": 3365920,
+   "tokens_out": 97336,
+   "tokens_conv_out": 97336,
+   "worst_site": null,
+   "worst_excursion": 0.0
+  },
+  "att.gn_rsqrt": {
+   "lo": 5.460694830344837e-14,
+   "hi": 1243.7403869628906,
+   "method": "newton_const",
+   "min": 5.746605990543385e-13,
+   "max": 5.287495200223417e+36,
+   "nonfinite": 4841083,
+   "tokens_out": 97339,
+   "tokens_conv_out": 97336,
+   "worst_site": "blocks.21.att.gn_rsqrt",
+   "worst_excursion": 1.398394771702979e+34
+  },
+  "ln2.rsqrt": {
+   "lo": 0.00032238676212728026,
+   "hi": 660.4145812988281,
+   "method": "newton_const",
+   "min": 0.003119634697213769,
+   "max": 63.81267547607422,
+   "nonfinite": 307690,
+   "tokens_out": 97336,
+   "tokens_conv_out": 97336,
+   "worst_site": null,
+   "worst_excursion": 0.0
+  },
+  "ffn.relu2": {
+   "lo": -23.324721813201904,
+   "hi": 19.589001655578613,
+   "method": "cheb",
+   "min": -19.10326385498047,
+   "max": 15.538010597229004,
+   "nonfinite": 1260339200,
+   "tokens_out": 97336,
+   "tokens_conv_out": 0,
+   "worst_site": null,
+   "worst_excursion": 0.0
+  },
+  "att.v_sigmoid": {
+   "lo": -66.65771598815918,
+   "hi": 84.19812698364258,
+   "method": "cheb",
+   "min": -57.22370529174805,
+   "max": 72.66584014892578,
+   "nonfinite": 215418880,
+   "tokens_out": 97337,
+   "tokens_conv_out": 0,
+   "worst_site": "blocks.1.att.v_sigmoid",
+   "worst_excursion": 0.002626941975039025
+  }
+ }
+}
