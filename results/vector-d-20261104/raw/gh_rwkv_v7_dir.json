@@ -1,0 +1,338 @@
+[
+  {
+    "name": "README.md",
+    "path": "RWKV-v7/README.md",
+    "sha": "7825840de3cdc3acf1ef54a2961444a900711697",
+    "size": 475,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/README.md?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/README.md",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/7825840de3cdc3acf1ef54a2961444a900711697",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/README.md?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/7825840de3cdc3acf1ef54a2961444a900711697",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/README.md"
+    }
+  },
+  {
+    "name": "RWKV7-G1x-templates.txt",
+    "path": "RWKV-v7/RWKV7-G1x-templates.txt",
+    "sha": "a00c398d7d40ab3f46b5a33e312f9bcfb50d8424",
+    "size": 2280,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/RWKV7-G1x-templates.txt?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/RWKV7-G1x-templates.txt",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/a00c398d7d40ab3f46b5a33e312f9bcfb50d8424",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/RWKV7-G1x-templates.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/RWKV7-G1x-templates.txt?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/a00c398d7d40ab3f46b5a33e312f9bcfb50d8424",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/RWKV7-G1x-templates.txt"
+    }
+  },
+  {
+    "name": "cuda",
+    "path": "RWKV-v7/cuda",
+    "sha": "55ca25142645155701a7f25cf056423342ed476d",
+    "size": 0,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/cuda?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/cuda",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/55ca25142645155701a7f25cf056423342ed476d",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/cuda?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/55ca25142645155701a7f25cf056423342ed476d",
+      "html": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/cuda"
+    }
+  },
+  {
+    "name": "misc",
+    "path": "RWKV-v7/misc",
+    "sha": "59bdf23b6063faed976eb2e5da1cdb87c6ca689a",
+    "size": 0,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/misc?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/misc",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/59bdf23b6063faed976eb2e5da1cdb87c6ca689a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/misc?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/59bdf23b6063faed976eb2e5da1cdb87c6ca689a",
+      "html": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/misc"
+    }
+  },
+  {
+    "name": "mmlu_dev_dataset",
+    "path": "RWKV-v7/mmlu_dev_dataset",
+    "sha": "6d0bb272c3f5478b56396361500e8e51f3278789",
+    "size": 0,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/mmlu_dev_dataset?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/mmlu_dev_dataset",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/6d0bb272c3f5478b56396361500e8e51f3278789",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/mmlu_dev_dataset?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/6d0bb272c3f5478b56396361500e8e51f3278789",
+      "html": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/mmlu_dev_dataset"
+    }
+  },
+  {
+    "name": "mmlu_test_dataset",
+    "path": "RWKV-v7/mmlu_test_dataset",
+    "sha": "2fe7ec7bcf1d65def7529821127eec3d70375c7f",
+    "size": 0,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/mmlu_test_dataset?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/mmlu_test_dataset",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/2fe7ec7bcf1d65def7529821127eec3d70375c7f",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/mmlu_test_dataset?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/2fe7ec7bcf1d65def7529821127eec3d70375c7f",
+      "html": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/mmlu_test_dataset"
+    }
+  },
+  {
+    "name": "run_qwen35_make_pth.py",
+    "path": "RWKV-v7/run_qwen35_make_pth.py",
+    "sha": "f3cf9be5ecc495363579e295447256eb2c164119",
+    "size": 7204,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_qwen35_make_pth.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_qwen35_make_pth.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/f3cf9be5ecc495363579e295447256eb2c164119",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/run_qwen35_make_pth.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_qwen35_make_pth.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/f3cf9be5ecc495363579e295447256eb2c164119",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_qwen35_make_pth.py"
+    }
+  },
+  {
+    "name": "run_rwkv7_context_parallelism.py",
+    "path": "RWKV-v7/run_rwkv7_context_parallelism.py",
+    "sha": "2984d14b5c059e773f92a163aaa7c7205b4ec917",
+    "size": 8922,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_rwkv7_context_parallelism.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_rwkv7_context_parallelism.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/2984d14b5c059e773f92a163aaa7c7205b4ec917",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/run_rwkv7_context_parallelism.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_rwkv7_context_parallelism.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/2984d14b5c059e773f92a163aaa7c7205b4ec917",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_rwkv7_context_parallelism.py"
+    }
+  },
+  {
+    "name": "run_rwkv7_qwen35.md",
+    "path": "RWKV-v7/run_rwkv7_qwen35.md",
+    "sha": "4acb8883577cf1f1cf7c9e8960d0364ab0518fdd",
+    "size": 4196,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_rwkv7_qwen35.md?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_rwkv7_qwen35.md",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/4acb8883577cf1f1cf7c9e8960d0364ab0518fdd",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/run_rwkv7_qwen35.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_rwkv7_qwen35.md?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/4acb8883577cf1f1cf7c9e8960d0364ab0518fdd",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_rwkv7_qwen35.md"
+    }
+  },
+  {
+    "name": "run_rwkv7_qwen35.py",
+    "path": "RWKV-v7/run_rwkv7_qwen35.py",
+    "sha": "1b8cbf77f6caf0128957eb855876e2e14feed8cb",
+    "size": 11961,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_rwkv7_qwen35.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_rwkv7_qwen35.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/1b8cbf77f6caf0128957eb855876e2e14feed8cb",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/run_rwkv7_qwen35.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/run_rwkv7_qwen35.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/1b8cbf77f6caf0128957eb855876e2e14feed8cb",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/run_rwkv7_qwen35.py"
+    }
+  },
+  {
+    "name": "rwkv_mmlu_eval.py",
+    "path": "RWKV-v7/rwkv_mmlu_eval.py",
+    "sha": "64470591f440bf74f95082ea9012c066296a7bcf",
+    "size": 4331,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_mmlu_eval.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_mmlu_eval.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/64470591f440bf74f95082ea9012c066296a7bcf",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_mmlu_eval.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_mmlu_eval.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/64470591f440bf74f95082ea9012c066296a7bcf",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_mmlu_eval.py"
+    }
+  },
+  {
+    "name": "rwkv_v7_demo.py",
+    "path": "RWKV-v7/rwkv_v7_demo.py",
+    "sha": "cb08f2a7bf872047c7f5017d82414708547bee2d",
+    "size": 15698,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_demo.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_demo.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/cb08f2a7bf872047c7f5017d82414708547bee2d",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v7_demo.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_demo.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/cb08f2a7bf872047c7f5017d82414708547bee2d",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_demo.py"
+    }
+  },
+  {
+    "name": "rwkv_v7_demo_fast.py",
+    "path": "RWKV-v7/rwkv_v7_demo_fast.py",
+    "sha": "1ba146e47c6e074b0088ed490499fbfe36c9b06d",
+    "size": 18571,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_demo_fast.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_demo_fast.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/1ba146e47c6e074b0088ed490499fbfe36c9b06d",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v7_demo_fast.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_demo_fast.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/1ba146e47c6e074b0088ed490499fbfe36c9b06d",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_demo_fast.py"
+    }
+  },
+  {
+    "name": "rwkv_v7_demo_rnn.py",
+    "path": "RWKV-v7/rwkv_v7_demo_rnn.py",
+    "sha": "bc8e6b5974c1e90005e7091b7414be79f29ea887",
+    "size": 14370,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_demo_rnn.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_demo_rnn.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/bc8e6b5974c1e90005e7091b7414be79f29ea887",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v7_demo_rnn.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_demo_rnn.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/bc8e6b5974c1e90005e7091b7414be79f29ea887",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_demo_rnn.py"
+    }
+  },
+  {
+    "name": "rwkv_v7_numpy.py",
+    "path": "RWKV-v7/rwkv_v7_numpy.py",
+    "sha": "9537bde2fa3cf40284d7b68fd377cf4cce39f41c",
+    "size": 4049,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_numpy.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_numpy.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/9537bde2fa3cf40284d7b68fd377cf4cce39f41c",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v7_numpy.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7_numpy.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/9537bde2fa3cf40284d7b68fd377cf4cce39f41c",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7_numpy.py"
+    }
+  },
+  {
+    "name": "rwkv_v7a_demo.py",
+    "path": "RWKV-v7/rwkv_v7a_demo.py",
+    "sha": "fb0703725cfcc1d2688a8c6629bbc074b7d4e901",
+    "size": 19310,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7a_demo.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7a_demo.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/fb0703725cfcc1d2688a8c6629bbc074b7d4e901",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v7a_demo.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7a_demo.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/fb0703725cfcc1d2688a8c6629bbc074b7d4e901",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7a_demo.py"
+    }
+  },
+  {
+    "name": "rwkv_v7b_demo.py",
+    "path": "RWKV-v7/rwkv_v7b_demo.py",
+    "sha": "241f630a1d84d6620f21b8df699217bce3076f51",
+    "size": 18956,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7b_demo.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7b_demo.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/241f630a1d84d6620f21b8df699217bce3076f51",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v7b_demo.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v7b_demo.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/241f630a1d84d6620f21b8df699217bce3076f51",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v7b_demo.py"
+    }
+  },
+  {
+    "name": "rwkv_v8_rc00_demo.py",
+    "path": "RWKV-v7/rwkv_v8_rc00_demo.py",
+    "sha": "186426eb42d2af35f6209a9556a8a1f1d05ee57a",
+    "size": 19464,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v8_rc00_demo.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v8_rc00_demo.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/186426eb42d2af35f6209a9556a8a1f1d05ee57a",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v8_rc00_demo.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v8_rc00_demo.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/186426eb42d2af35f6209a9556a8a1f1d05ee57a",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v8_rc00_demo.py"
+    }
+  },
+  {
+    "name": "rwkv_v8_rc00_hybrid_demo.py",
+    "path": "RWKV-v7/rwkv_v8_rc00_hybrid_demo.py",
+    "sha": "4df701525ef2b53380ab50ef89b97c6e42b411be",
+    "size": 18340,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v8_rc00_hybrid_demo.py?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v8_rc00_hybrid_demo.py",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/4df701525ef2b53380ab50ef89b97c6e42b411be",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_v8_rc00_hybrid_demo.py",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_v8_rc00_hybrid_demo.py?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/4df701525ef2b53380ab50ef89b97c6e42b411be",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_v8_rc00_hybrid_demo.py"
+    }
+  },
+  {
+    "name": "rwkv_vocab_v20230424.txt",
+    "path": "RWKV-v7/rwkv_vocab_v20230424.txt",
+    "sha": "b8c3f7260d2cac8b83bfbe7bc43f462fef8c4012",
+    "size": 1093733,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_vocab_v20230424.txt?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_vocab_v20230424.txt",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/b8c3f7260d2cac8b83bfbe7bc43f462fef8c4012",
+    "download_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/main/RWKV-v7/rwkv_vocab_v20230424.txt",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/rwkv_vocab_v20230424.txt?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/blobs/b8c3f7260d2cac8b83bfbe7bc43f462fef8c4012",
+      "html": "https://github.com/BlinkDL/RWKV-LM/blob/main/RWKV-v7/rwkv_vocab_v20230424.txt"
+    }
+  },
+  {
+    "name": "train_temp",
+    "path": "RWKV-v7/train_temp",
+    "sha": "29d4cf02ea886f91b6a0eb06b78687193a8a272a",
+    "size": 0,
+    "url": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/train_temp?ref=main",
+    "html_url": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/train_temp",
+    "git_url": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/29d4cf02ea886f91b6a0eb06b78687193a8a272a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/BlinkDL/RWKV-LM/contents/RWKV-v7/train_temp?ref=main",
+      "git": "https://api.github.com/repos/BlinkDL/RWKV-LM/git/trees/29d4cf02ea886f91b6a0eb06b78687193a8a272a",
+      "html": "https://github.com/BlinkDL/RWKV-LM/tree/main/RWKV-v7/train_temp"
+    }
+  }
+]

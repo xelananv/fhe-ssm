@@ -1,0 +1,5 @@
+{
+ "source": "vendor/perseus-rwkv7 tests/test_newton_const.py::test_plan_cost_old_vs_nc --rwkv7-plan (2026-11-05, this Mac, CPU planner); 1-block decode capture of 0.1B, LANDING=high, test_capture.HIGH env, default levers; census of block_0_placement.json",
+ "old": {"refreshes": 14, "by_step": {"blk0.tm.kk": 7, "blk0.tm.gn": 4, "blk0.tm.norm": 1, "blk0.tm.lora": 1, "blk0.cm.norm": 1}, "nodes": 2232},
+ "nc":  {"refreshes": 21, "by_step": {"blk0.tm.kk": 9, "blk0.tm.norm": 4, "blk0.tm.gn": 4, "blk0.cm.norm": 3, "blk0.tm.lora": 1}, "nodes": 2345}
+}

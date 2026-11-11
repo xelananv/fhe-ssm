@@ -128,7 +128,7 @@ Every run goes through the same four steps:
 ### 7.1 The 405M model (`tools/fhe_ssm/run_gpu.sh`, branch `fhe-ssm-speedrun`)
 
 ```bash
-# on the box, the fork checked out at /root/perseus; DATA holds pbd430a_weights.npz, pbd430a_seeds.json, pbd430a_config.json
+# on the box, the fork checked out at /root/perseus; DATA holds pbd430a_weights.npz alongside pbd430a_seeds.json + pbd430a_config.json (also in tools/fhe_ssm/configs/)
 export DATA=/root/data PROFILE_EVERY=2
 bash tools/fhe_ssm/run_gpu.sh box                 # record the box: GPU, driver, nvcc, RAM, disk, load, commit
 bash tools/fhe_ssm/run_gpu.sh build               # uv venv + editable install + maturin develop --release
@@ -136,18 +136,18 @@ bash tools/fhe_ssm/run_gpu.sh verify              # _pc loads, the CPU compile c
 bash tools/fhe_ssm/run_gpu.sh arms                # the configurations ("arms") and what each sets
 bash tools/fhe_ssm/run_gpu.sh capture cfg-best-em && bash tools/fhe_ssm/run_gpu.sh plan cfg-best-em
 # the publication run: client bundle, the three-document scenario as a lane configuration
-LANE_CONFIG=own.passes.json bash tools/fhe_ssm/run_gpu.sh keyspec cfg-best-em
+LANE_CONFIG=tools/fhe_ssm/configs/own.passes.json bash tools/fhe_ssm/run_gpu.sh keyspec cfg-best-em
 bash tools/fhe_ssm/run_gpu.sh keygen cfg-best-em
-KEYS=bundle FHE_SSM_KEYS=$OUT/keys_cfg-best-em LANE_CONFIG=own.passes.json \
-  RUN_EXTRA="--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table t_mildall.json" bash tools/fhe_ssm/run_gpu.sh run cfg-best-em
+KEYS=bundle FHE_SSM_KEYS=$OUT/keys_cfg-best-em LANE_CONFIG=tools/fhe_ssm/configs/own.passes.json \
+  RUN_EXTRA="--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table tools/fhe_ssm/configs/t_mildall.json" bash tools/fhe_ssm/run_gpu.sh run cfg-best-em
 # the 148-step free run: in-process keys, the screened prompts of the first run
 bash tools/fhe_ssm/run_gpu.sh capture best && bash tools/fhe_ssm/run_gpu.sh plan best
-KEYS=inproc TICKS=148 RUN_EXTRA="--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table t_mildall.json --tokens serve_LONG_tokens.json --free-run" \
+KEYS=inproc TICKS=148 RUN_EXTRA="--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table tools/fhe_ssm/configs/t_mildall.json --tokens serve_LONG_tokens.json --free-run" \
   bash tools/fhe_ssm/run_gpu.sh run best
 ```
 
-- The lane configuration of the three-document scenario is [own.passes.json](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/cfgs_best/own.passes.json).
-- `t_mildall.json` is the per-site correction-factor table: 7 for the `wk`, `wout` and `wv` products of every block, 8 for every
+- The lane configuration of the three-document scenario is [own.passes.json](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/cfgs_best/own.passes.json) (and bundled in `tools/fhe_ssm/configs/own.passes.json` on both Perseus branches).
+- [t_mildall.json](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_cf/t_mildall.json) (also `tools/fhe_ssm/configs/t_mildall.json`) is the per-site correction-factor table: 7 for the `wk`, `wout` and `wv` products of every block, 8 for every
   other PCMM product.
 - `--stc-cache 160` sizes the bootstrap stage cache for the whole model; below it a whole-model run fails in its warm-up.
 - Each run writes `record.json` (build identity, plan, key mode, every pass with its seconds, fenced flag, errors and top-1)
@@ -155,10 +155,13 @@ KEYS=inproc TICKS=148 RUN_EXTRA="--stc-cache 160 --pcmm-cf 8 --pcmm-cf-table t_m
 
 ### 7.2 RWKV-7 (`tools/rwkv7/run_box.sh`, branch `fhe-ssm-rwkv7-any`)
 
+The branch bundles the PyTorch polynomial harness and World tokenizer (`tools/rwkv7/harness/`, `tools/rwkv7/raw/`), the fitted coefficient/range JSONs for 0.1B, 0.4B, and 1.5B (`tools/rwkv7/coeffs/`), prompt/arrival files (`tools/rwkv7/{batch_prompts,longrun_prompts64,serve_arrivals}.txt`), and a SHA-256-verified checkpoint/dataset downloader (`tools/rwkv7/fetch_data.py`). When `/root/d_models` is not present, `run_box.sh` defaults cleanly to `.cache/rwkv7/`, `tools/rwkv7/coeffs/`, `tools/rwkv7/harness/`, and `.cache/rwkv7_out/`.
+
 ```bash
 # the recorded environment: the best levers, client bundles, the stage cache at 160, 32 generated tokens
 export LEVERS=best KEYS=bundle STC_CACHE=160 B_GENERATE=32 PF_GENERATE=32
 bash tools/rwkv7/run_box.sh build
+bash tools/rwkv7/run_box.sh fetch check           # downloads + SHA-256 verifies 0.1B (.pth) and runs the CPU checks
 # decode: capture, plan, keys (KEYMODE = decode | pf | b), then the run
 bash tools/rwkv7/run_box.sh capture && bash tools/rwkv7/run_box.sh plan
 KEYMODE=decode bash tools/rwkv7/run_box.sh keyspec && KEYMODE=decode bash tools/rwkv7/run_box.sh keygen
@@ -171,9 +174,9 @@ PF_TEXT=... PF_TOKENS=... POOL_PF=256 bash tools/rwkv7/run_box.sh run_pf
 export LAYOUT=filled PLANOPT=b2 B_K=32
 bash tools/rwkv7/run_box.sh capture_b && bash tools/rwkv7/run_box.sh plan_b && bash tools/rwkv7/run_box.sh bcheck
 KEYMODE=b bash tools/rwkv7/run_box.sh keyspec && KEYMODE=b bash tools/rwkv7/run_box.sh keygen
-RWKV7_SHED_TWIN=1 RWKV7_LEAN_PREFIX=1 bash tools/rwkv7/run_box.sh batch
+RWKV7_SHED_TWIN=1 RWKV7_LEAN_PREFIX=1 POOL_B=160 STC_CACHE_B=1 bash tools/rwkv7/run_box.sh batch
 # continuous batching (in-process keys), 8 conversations from tools/rwkv7/serve_arrivals.txt
-B_K=4 bash tools/rwkv7/run_box.sh scheck && B_K=4 KEYS=inproc S_GENERATE=8 POOL_S=256 bash tools/rwkv7/run_box.sh s
+B_K=4 bash tools/rwkv7/run_box.sh scheck && RWKV7_SHED_TWIN=1 B_K=4 KEYS=inproc S_GENERATE=8 POOL_S=256 bash tools/rwkv7/run_box.sh s
 ```
 
 - The 0.4B runs set the checkpoint and its coefficients (`PTH`, `COEFFS`), and both memory flags.
