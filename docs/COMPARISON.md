@@ -48,7 +48,7 @@ tokens per pass; per parameter, divide by the parameter count (ours: 404.7 M tot
 |---|---|---|---|
 | this repository, September (2 cards × 175.6–188 s ÷ 64) | 5.49–5.88 | 13.6–14.5 | 175.6–188 |
 | this repository, November, 405M (8.857 s ÷ 64) | **0.138** | 0.342 (total) / 0.392 (encrypted blocks) | 8.86 |
-| this repository, November, RWKV-7 0.1B batched (19.36 s ÷ 32) | 0.605 | 3.17 (191.0 M total) / 6.70 (90.4 M server-side) | 19.36 |
+| this repository, November, RWKV-7 0.1B batched (19.36 s ÷ 32) | 0.605 | 3.17 (191.0 M total) / 6.69 (90.4 M server-side) | 19.36 |
 | this repository, November, RWKV-7 0.1B single stream | 9.74–9.76 | 51 (total) | 9.74–9.76 |
 | this repository, November, RWKV-7 0.4B batched (39.08 s ÷ 32) | 1.22 | parameter count not on record | 39.08 |
 | Perseus, GPT-2 small, batch 1 | 1.9 | 15.3 | 1.9 |
@@ -110,7 +110,7 @@ tokens per pass; per parameter, divide by the parameter count (ours: 404.7 M tot
   conversation waits 8.86 s per token in the 405M batch and 9.74–9.76 s alone on RWKV-7 0.1B. The lanes are throughput, not
   latency.
 - **Reading throughput.** Perseus reads a 128-token prompt in 54.8 s (Llama-3-8B, 0.43 s per prompt token) and 6.8 s (GPT-2
-  small, 0.053 s), 18–36× its own decode per token. Here RWKV-7 0.1B reads 0.76 s per prompt token, 12.8× its own decode, and
+  small, 0.053 s), 18–36× its own decode per token. Here RWKV-7 0.1B reads 0.76 s per prompt token, 12.9× its own decode, and
   the 405M model reads 64 positions of one document per 8.8 s pass.
 - **A selective recurrence.** fhe-mamba (above) runs Mamba models under CKKS with a selective (input-dependent) decay; the
   405M model here has a fixed, trained decay (RWKV-7's decay is input-dependent). Its first release (2026-09-22) was four

@@ -151,8 +151,8 @@ Every whole-model run uses 8. No PCMM configuration reaches a relErrRms under 1e
 | PCMM-24, two controls | mean **14.043** (13.965–14.11) | 4.56 | 0.0022–0.0039 | 63–64/64 | [ctlC](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_pcmm24_ctlC/record.json) |
 | `cfg-best`, the stack | 8.817 / 8.848 / 8.875 | 7.21–7.26 | 0.0031–0.0037 | 64/64, 63/64 on pass 5 | [record](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_cfg-best_tick/record.json) |
 | `cfg-best-em`, the stack + fused rescale | 8.67 / 8.703 / 8.741 | 7.32–7.38 | 0.0030–0.0038 | 64/64, 61/64 on pass 5 | [record](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_cfg-best-em_tick/record.json) |
-| three documents on `cfg-best-em`, 58 passes | read A **8.772** (7 steady passes); 58 timed passes in 510.9 s | 7.30 (reading) | per pass 0.0016–0.0024 | 63–64/64 | [record](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_cfg-best-em_own/record.json) |
-| the same 58 passes on PCMM-24 | 58 timed passes in 823.7 s | 4.5 | per pass 0.0015–0.0023 | 63–64/64 | [record](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_cfg-pcmm24-own_own/record.json) |
+| three documents on `cfg-best-em`, 58 passes | read A **8.772** (7 steady passes); 58 timed passes in 510.9 s | 7.30 (reading) | per pass 0.0016–0.0024 | 63–64/64 on full passes; 17/18 on one reading pass (pass 23) | [record](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_cfg-best-em_own/record.json) |
+| the same 58 passes on PCMM-24 | 58 timed passes in 823.7 s | 4.5 | per pass 0.0015–0.0023 | 63–64/64 on full passes; 17/18 on one reading pass (pass 23) | [record](../results/perseus-20261006/fork_port/gpu_20261011/broadcast_port_20261030/gpu_20261102_best/gpu/run_cfg-pcmm24-own_own/record.json) |
 
 - **The stack** is Newton depth-2 at every norm site, the norm statistics packed in halves, PCMM-24 linears, a sibling schedule
   and paired refreshes. On this build it runs the three-document scenario **1.61×** faster than PCMM-24 alone (823.7 ÷ 510.9
@@ -213,7 +213,7 @@ power-law rise did not follow that bound's shape. Each trend is one run per buil
 
 ## 7. RWKV-7 World 0.1B and 0.4B (2026-11-04/05)
 
-**Box.** One NVIDIA RTX PRO 6000 Blackwell Workstation (600 W, 97,887 MiB), 32 cores, 186 GB of host RAM, CUDA 13.2. Ring
+**Box.** One NVIDIA RTX PRO 6000 Blackwell Workstation (600 W, 97,887 MiB), 32 cores, 186,252 MiB of host RAM, CUDA 13.2. Ring
 2^16, the `n32` chain, PCMM linears, planned refreshes, the levers `PAIR=1`, fused EvalMod and the sibling schedule.
 **Build:** branch `fhe-ssm-rwkv7-any`, one `_pc` .so (`1ef01cc1f9604226`) and three Python checkouts: `071cfa2c` (0.1B decode,
 prefill, batched, free run), `197cb0ba` (the host-memory flag, the 0.1B serve loop), `b4d825c1` (the device-memory flag,
@@ -243,8 +243,8 @@ A pass reads T = 32 prompt tokens of one conversation, one per lane, then the se
 
 | model | s per 32-token pass | **s per prompt token** | decode in the same sessions | ratio | top-1 prefilled + decoded |
 |---|---|---|---|---|---|
-| 0.1B (4 prompts) | 24.2–24.6 | **0.76** | 9.750–9.766 s | 12.8× | 409 / 416 + 198 / 201 |
-| 0.4B (2 prompts) | 48.8–49.9 | **1.53–1.54** | 19.74–19.77 s | 12.8× | 223 / 224 + 90 / 90 |
+| 0.1B (4 prompts) | 24.2–24.6 | **0.76** | 9.750–9.766 s | 12.9× | 409 / 416 + 198 / 201 |
+| 0.4B (2 prompts) | 48.8–49.9 | **1.53–1.54** | 19.74–19.77 s | 12.9× | 223 / 224 + 90 / 90 |
 
 The prefill passes' error (0.1B medians 3.2–6.6e-3) exceeds the decode-only runs' (1.7–2.4e-3), and so do the decode tails
 of the same sessions (4.3–9.6e-3), so prompt length or position is an untested confound; the cause is not established.
@@ -283,7 +283,7 @@ pre-screened.
 | logits relErrRms, median | 1.3e-3, 2.1e-3, 2.7e-3, 4.5e-3, 3.7e-3, 2.8e-3, 2.4e-3, 2.5e-3 |
 | hidden state against the circuit's mirror, median | 4.5e-3, 8.0e-3, 1.1e-2, 1.4e-2, 1.4e-2, 1.5e-2, 1.6e-2, 1.6e-2 |
 
-Top-1 155 / 155; no site left its interval. The hidden-state error still rose 14 % over the last four windows.
+Top-1 155 / 155; no site left its interval. The hidden-state error still rose 17 % over the last four windows (medians 0.0137 → 0.0159).
 
 ### 7.5 The polynomial models and the gate ([gate/](../results/rwkv7-fhe-20261104/new_pod/gate/))
 

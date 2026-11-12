@@ -32,8 +32,8 @@ Read from each record's header: `keys` / `has_secret` / `input_encryption` in th
 |---|---|---|
 | secret on another machine | the client's secret never on the GPU machine; the client encrypts and decrypts over the network | the 2026-09-18 session (18 ticks) only |
 | no server secret, client role co-located, client encrypts and decrypts | the server session is verified secret-free (`has_secret: false`); a client object in the same process on the GPU machine encrypts every input and decrypts every reply (`input_encryption: client`) | RWKV-7 in `f2_01b/`: decode P1–P3, prefill L1/L5/L9/L25, every 32-conversation batch, the free run; in `f2_04b/`: prefill L1/L5, the 32-conversation batch |
-| no server secret, client role co-located, server encrypts inputs | the server session is verified secret-free; it encrypts block 0's inputs with the public key from plaintext rows held in the same process, and the client secret in that process decrypts the replies | the 405M publication run (58 passes) |
-| in-process | the session holds the secret (`insecure-inproc`, or server-generated test keys) | 2026-09-19 (the flight recorder reads the secret); the 405M 148-step run and the lever runs of 2026-11-02; the earlier RWKV-7 runs; both RWKV-7 serve loops |
+| no server secret, client role co-located, server encrypts inputs | the server session is verified secret-free; it encrypts block 0's inputs with the public key from plaintext rows held in the same process, and the client secret in that process decrypts the replies | the 405M publication run (58 passes); the phase-B run `run_cfg-pcmm24_bundle` (6 passes) |
+| in-process | the session holds the secret (`insecure-inproc`, or server-generated test keys) | 2026-09-19 (the flight recorder reads the secret); the 405M 148-step run and the other lever runs of 2026-11-02; the earlier RWKV-7 runs; both RWKV-7 serve loops |
 
 A session with only the public and evaluation keys does the same work per step as one that also holds the secret. The
 co-located client means the November runs demonstrate the server's side of the protocol, not the separation of machines.

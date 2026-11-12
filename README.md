@@ -31,8 +31,8 @@ the record is linked beside it.
 | **Reading 64 positions per pass** | the same run read document A at 64 positions of the one document per pass: 8.793 s mean over its 8 unfenced reading passes | [publication run][pub] |
 | **Fidelity, no secret in the server session** | top-1 agreement with the exact model 1.0 on 56 timed passes and 0.984375 (63 of 64) on two; the session recorded `has_secret: false` | [publication run][pub] |
 | **148 free-running steps, 405M model** | unfenced mean **8.929 s** per step (8.793–8.951, 74 steps); one device-memory value over the whole run; raw top-1 9,462 / 9,472, the 10 differences all at plaintext top-two margins ≤ 0.0067; median logit relErrRms per 10-step block 0.00059–0.00069 with no trend; reply relErrRms 0.00163 (first ten steps) → 0.00182 (last ten), a rise to a plateau. In-process keys; the 64 prompts pre-screened as in the first run | [148-step run][f148], [per-block table](docs/RESULTS.md) |
-| **RWKV-7 0.1B** | decode **9.74–9.76 s** per token, 141 / 141 top-1 against the polynomial model; prefill **0.76 s** per prompt token, 12.8× its decode; 32 conversations **19.36 s** per pass = 1.65 tok/s at 32 active lanes (1.11 realised as conversations finish), 1,300 / 1,306; 148 free-running steps 155 / 155 at 9.68–9.77 s per token | [f2_01b/][f01] |
-| **RWKV-7 0.4B** | decode 19.74–19.77 s; prefill 1.53–1.54 s per prompt token (12.8×); 32 conversations **39.08 s** per pass = 0.82 tok/s (0.55 realised), 1,302 / 1,306; each conversation waits 39.08 s per token | [f2_04b/][f04] |
+| **RWKV-7 0.1B** | decode **9.74–9.76 s** per token, 141 / 141 top-1 against the polynomial model; prefill **0.76 s** per prompt token, 12.9× its decode; 32 conversations **19.36 s** per pass = 1.65 tok/s at 32 active lanes (1.11 realised as conversations finish), 1,300 / 1,306; 148 free-running steps 155 / 155 at 9.68–9.77 s per token | [f2_01b/][f01] |
+| **RWKV-7 0.4B** | decode 19.74–19.77 s; prefill 1.53–1.54 s per prompt token (12.9×); 32 conversations **39.08 s** per pass = 0.82 tok/s (0.55 realised), 1,302 / 1,306; each conversation waits 39.08 s per token | [f2_04b/][f04] |
 | **The polynomial RWKV-7 is quality-neutral by the gate** | WikiText-103 token perplexity 19.4144 vs 19.4044 exact (0.1B) and 13.7484 vs 13.7530 (0.4B); LAMBADA 48.96 vs 48.98 % and 58.33 vs 58.49 %; top-1 against exact 98.17 % and 98.08 %; unclamped equals clamped; 286,849 + 413,810 scanned tokens, 0 non-finite. The 1.5B fails (9.800 vs 9.618, top-1 93.07 %) and was not run encrypted | [gate][gate], [1.5B verdict][v15] |
 | **Memory of a 32-conversation session** | RWKV-7 0.1B: host 149,520 → 26,425 MiB and device 90,905 → 63,689 MiB with two flags that leave the compiled programs unchanged; 0.4B: 70,687 MiB device, 39,462 MiB host | [shed][shed], [lean][lean], [0.4B][b04] |
 | **Continuous batching on the device** | conversations join a free lane after their prefill and leave when done: 8 conversations at K = 4 (0.1B, 245 / 248) and K = 8 (0.4B, 247 / 248), a join 3–5 ms; in-process keys; 0.4B at K = 32 ran out of device memory at CUDA graph instantiation | [K = 4][s4], [K = 8][s8] |
@@ -120,7 +120,8 @@ both runtimes are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 - **Not a good model (405M).** WikiText-103 28.55, LAMBADA 9 %.
 - **Not a deployment with the secret elsewhere, in November.** The client role ran on the GPU machine in every November run;
   only the 2026-09-18 session kept the secret on another machine.
-- **Not a guarantee for every prompt (RWKV-7).** The intervals held over 700,659 tokens of corpus text; an adversarial prompt
+- **Not a guarantee for every prompt (RWKV-7).** Scanned unclamped over 700,659 tokens of corpus text, neither model produced a non-finite value, and four tokens in all
+  fell below one site kind's accuracy interval, inside its convergence region; an adversarial prompt
   is not excluded, and an earlier, narrower fit broke all 32 conversations of a batched run from one conversation's own
   generated text.
 - **Not an error law.** Each error trend comes from one run per build.

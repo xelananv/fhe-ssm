@@ -11,9 +11,11 @@
   same card class ([COMPARISON.md](COMPARISON.md)).
 - **Error trends from one run per build.** The 405M model's logit error is flat over the November 148 steps and rose 2.4×
   over the September 148 steps; the cause of the rise is not established, and no controlled pair separates runtime, ring,
-  linears and keys. RWKV-7's hidden-state error rose 14 % over the last four 20-position windows of its 148-step run.
-- **RWKV-7 robustness is empirical.** No site left its interval over 700,659 tokens of WikiText-103 test and LAMBADA,
-  unclamped, nor over 61 passes of 32 conversations with the final fit. Corpus scans do not cover a model's own generated
+  linears and keys. RWKV-7's hidden-state error rose 17 % over the last four 20-position windows of its 148-step run.
+- **RWKV-7 robustness is empirical.** Over 700,659 tokens of WikiText-103 test and LAMBADA, unclamped, no value went
+  non-finite and four tokens in all (1, 0, 2 and 1 across the two models and two corpora) fell below the accuracy interval of
+  one site kind (`att.gn_rsqrt`), inside its convergence region; no site left its interval over 61 passes of 32 conversations
+  with the final fit. Corpus scans do not cover a model's own generated
   text, and an earlier, narrower fit broke all 32 conversations of a batch from one conversation's generated answer
   ([RESULTS.md](RESULTS.md) §7.5). An adversarial prompt is not excluded.
 - **The gate's margins are thin and do not scale yet.** Top-1 against exact is 98.17 % (0.1B) and 98.08 % (0.4B) against a
@@ -22,7 +24,7 @@
 - **Unexplained errors.** The RWKV-7 prefill passes' error exceeds the decode-only runs' (prompt length and position are an
   untested confound), and the filled layout's error grows token by token in single-conversation decode while it does not in
   the batched runs.
-- **PCMM fidelity.** No PCMM configuration of the 405M model reaches a relErrRms under 1e-3 (0.002–0.005 against 1–2e-4 for
+- **PCMM fidelity.** No PCMM configuration of the 405M model reaches a relErrRms under 1e-3 (0.0014–0.0053 across the recorded whole-model runs, against 1–2e-4 for
   diagonals); top-1 holds because the differences sit at near-ties.
 - **No 405M prefill at more than one position per lane, and no 405M run with client-side input encryption** on the Perseus
   runtime.

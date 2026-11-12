@@ -121,7 +121,7 @@ summaries).
 
 **Shows.** For each model, seconds per prompt token read (pale) and seconds per generated token for one conversation
 (solid), log x, with the ratio inside the same session.
-- RWKV-7 0.1B: `new_pod/f2_01b/run_pf32_best_L{1,5,9,25}.jsonl`. **Correction to the brief:** the prefill rows are
+- RWKV-7 0.1B: `new_pod/f2_01b/run_pf32_best_L{1,5,9,25}.jsonl`. Note: the prefill rows are
   `kind == "prefill"` (fields `seconds`, `T`, `seconds_per_token`), not `kind == "pass"`; the decode tail is the token
   rows with `mode == "decode"` (token rows with `mode == "prefill"` are the per-position fidelity rows of the prefill
   passes and carry the pass time). Per prompt token = `seconds / T` (T = 32 in every row), median over 13 passes = 0.7583 s;
@@ -153,7 +153,7 @@ polynomial model; no encryption involved. The gate bars are read from the 1.5B v
 | 0.4B | 13.7530 | 13.7484 | 58.49 % | 58.33 % | 98.08 % |
 | 1.5B | 9.6180 | 9.7997 | 69.34 % | 69.07 % | 93.07 % (FAIL) |
 
-**Records and corrections to the brief.** `new_pod/gate/{0.1b,0.4b}/eval_final.jsonl` holds two lines per model,
+**Records.** `new_pod/gate/{0.1b,0.4b}/eval_final.jsonl` holds two lines per model,
 `tag` `final_clamp` (`clamp: true`) and `final_unclamped` (`clamp: false`); there is **no separate exact row** in these
 files. The exact perplexity is the field `wt_ppl_exact_same_run` of the unclamped row. The exact LAMBADA accuracy is not
 in `eval_final.jsonl`: for 0.4B it is read from `new_pod/gate/0.4b/eval.jsonl` (row `tag == "exact"`, whose `wt_ppl`
@@ -193,7 +193,7 @@ two different Python checkouts of the same build (the no-flag run on one, the fl
 
 ## What did not reproduce or needed a correction
 
-- Figure 3: the 0.4B batched-vs-decode multiple prints as 16.2× (0.8188 / 0.0506); the published figure is "16×".
-- Figure 4: pooled medians give 12.9× for both RWKV-7 sizes; the published per-session figure is 12.8× (0.76 s vs
+- Figure 3: the 0.4B batched-vs-decode multiple prints as 16.2× (0.8188 / 0.0506); the README rounds it to 16×.
+- Figure 4: pooled medians give 12.9× for both RWKV-7 sizes; dividing the rounded per-session ranges gives 12.8× (0.76 s vs
   9.750–9.766 s; 1.53–1.54 s vs 19.74–19.77 s). Same records, different pooling.
 - Figure 5: no exact row in `eval_final.jsonl`; exact values come from `wt_ppl_exact_same_run` and two other files (above).

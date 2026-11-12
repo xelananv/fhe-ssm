@@ -149,7 +149,7 @@ degree 2, Q·P 1,705.34 bits ([SECURITY.md](SECURITY.md)).
   products per 1,024-wide matrix).
 - *PCMM* (plaintext–ciphertext matrix multiplication): the weights are packed into plaintext matrices at 24-bit precision
   (`--pcmm-wbits 24`) and the product finishes with a correction-factor rescale (`--pcmm-cf 8`). On one build it runs a pass
-  2.27× faster than the diagonals, at a relErrRms of 0.002–0.005 against 1–2e-4 ([RESULTS.md](RESULTS.md) §5).
+  2.27× faster than the diagonals, at a relErrRms of 0.0031–0.0053 against 1–2e-4 ([RESULTS.md](RESULTS.md) §5).
 
 **The norm.** The RMSNorm's Newton iteration runs at depth 2 per site (`--newton-form depth2 --newton-sites per-site`), and the norm statistics are packed into
 the two halves of one ciphertext (`--pack-stats halves`).

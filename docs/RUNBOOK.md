@@ -113,7 +113,7 @@ carry the MIT license.
 | | recorded box |
 |---|---|
 | 405M runs | 1× RTX PRO 6000 Blackwell Workstation Edition (97,887 MiB), driver 595.84, CUDA 13.2, 20 host cores |
-| RWKV-7 runs | 1× RTX PRO 6000 Blackwell Workstation (600 W, 97,887 MiB), CUDA 13.2, 32 host cores, 186 GB of host RAM |
+| RWKV-7 runs | 1× RTX PRO 6000 Blackwell Workstation (600 W, 97,887 MiB), CUDA 13.2, 32 host cores, 186,252 MiB of host RAM |
 
 Every run goes through the same four steps:
 
