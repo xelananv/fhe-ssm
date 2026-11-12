@@ -1,4 +1,4 @@
-import{a as e,r as t}from"./index-DvNFOQFh.js";var n=t(),r=`time-mix     u  = rmsnorm(h)
+import{a as e,r as t}from"./index-C7XorHUc.js";var n=t(),r=`time-mix     u  = rmsnorm(h)
              um = mix ⊙ u + (1 − mix) ⊙ u_prev        token shift: one token of history per channel
              x  = W_in · um
              S  = a ⊙ S + (1 − a) ⊙ x                  the recurrence: one scalar state per channel
